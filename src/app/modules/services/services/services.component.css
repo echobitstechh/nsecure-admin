@@ -1,0 +1,13 @@
+.ellipsis {
+  max-width: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.page-item.active .page-link {
+  background-color: #1A345C;
+  border-color: #1A345C;
+  color: #fff; /* Optional: change the text color for better contrast */
+}
+

@@ -1,0 +1,43 @@
+<!-- Sidebar -->
+<nav >
+
+  <div class="container mt-3">
+    <div class="row d-flex align-items-center"> <!-- Updated class here -->
+      <div class="col-auto">
+        <img src="assets/images/logo.png" width="50" height="50">
+      </div>
+      <div class="col-auto">
+        <p class="fw-bold fs-4" style="color: #0E2954;">kenma-uk</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="position-sticky pt-3">
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2">
+        <a class="nav-link" aria-current="page" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <img src="assets/icons/category.svg" alt="Dashboard" class="icon"> <!-- Your custom icon -->
+          Dashboard
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link" aria-current="page" routerLink="/user-management" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <img src="assets/icons/user.svg" alt="User Management" class="icon"> <!-- Your custom icon -->
+          User Management
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link" aria-current="page" routerLink="/services" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <img src="assets/icons/mouse-circle.svg" alt="Services" class="icon"> <!-- Your custom icon -->
+          Services
+        </a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link" aria-current="page" routerLink="/settings" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <img src="assets/icons/setting-2.svg" alt="Settings" class="icon"> <!-- Your custom icon -->
+          Settings
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
