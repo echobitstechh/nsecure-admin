@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center flex-column">
+  <div style="justify-content: center; display: flex">
+    <progressbar class="progress active"
+                 style="height: 4px;
+                   max-width: 225px;"
+                 [value]="progress"
+                 [animate]="true"
+    ></progressbar>
+  </div>
+  <div style="justify-content: center" *ngIf="customText" class="text-capitalize fw-light fs-14 mt-2 align-self-center justify-content-center">
+    {{ customText }}
+  </div>
+</div>

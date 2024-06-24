@@ -1,0 +1,15 @@
+<button
+  class="btn"
+  [type]="buttonType"
+  [ngClass]="classText"
+  [disabled]="isProcessing"
+  (click)="emitOnClickEvent()"
+>
+  <div [innerHTML]="icon"></div>
+  {{ isProcessing ? workingStateText : idleStateText }}
+  <ng-container *ngIf="isProcessing">
+    <div class="spinner-border spinner-border-sm" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </ng-container>
+</button>

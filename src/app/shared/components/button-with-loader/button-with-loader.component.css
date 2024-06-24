@@ -1,0 +1,7 @@
+.btn-custom {
+  padding: .75rem 1.25rem; /* Bigger button padding */
+  font-size: 1.25rem; /* Bigger font size */
+  border-radius: .3rem; /* Rounded corners */
+  background-color: #0E2954; /* Primary color */
+  color: white; /* Text color */
+}
