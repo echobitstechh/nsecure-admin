@@ -1,7 +1,6 @@
 // auth.service.ts
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { UserControllerService } from "../api";
 import { tap } from "rxjs/operators";
 import {Router} from "@angular/router";
 
@@ -13,7 +12,7 @@ export class AuthService {
   private readonly REFRESH_TOKEN = 'REFRESH_TOKEN';
   private readonly USER_ID = 'USER_ID';
 
-  constructor(private authService: UserControllerService,
+  constructor(
               private router: Router) {}
 
   refreshToken(): Observable<any> {
