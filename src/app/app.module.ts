@@ -11,7 +11,7 @@ import {ProfileComponent} from "./modules/settings/profile/profile.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared/shared.module";
 import { HttpClientModule} from "@angular/common/http";
-import {httpInterceptorProviders} from "./auth.interceptor";
+// import {httpInterceptorProviders} from "./auth.interceptor";
 import {NotificationComponent} from "./modules/settings/notification/notification.component";
 import {ModalModule} from "ngx-bootstrap/modal";
 import {SuccessDialogComponent} from "./shared/components/success-dialog/success-dialog.component";
@@ -53,7 +53,7 @@ export function lottiePlayerFactory(): any {
     LayoutModule,
     ReactiveFormsModule
   ],
-  providers: [ httpInterceptorProviders
+  providers: [
   ],
   bootstrap: [AppComponent]
 })

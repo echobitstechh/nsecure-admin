@@ -15,16 +15,16 @@ export class AuthService {
   constructor(
               private router: Router) {}
 
-  refreshToken(): Observable<any> {
-    return this.authService.refreshToken().pipe(
-      tap((response) => {
-        if (response.status === 200) {
-          this.storeJwtToken(response?.data?.accessToken!);
-          this.storeRefreshToken(response?.data?.refreshToken!);
-        }
-      })
-    );
-  }
+  // refreshToken(): Observable<any> {
+  //   return this.authService.refreshToken().pipe(
+  //     tap((response) => {
+  //       if (response.status === 200) {
+  //         this.storeJwtToken(response?.data?.accessToken!);
+  //         this.storeRefreshToken(response?.data?.refreshToken!);
+  //       }
+  //     })
+  //   );
+  // }
 
   getJwtToken() {
     return localStorage.getItem(this.JWT_TOKEN);
