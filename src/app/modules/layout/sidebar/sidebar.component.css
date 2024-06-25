@@ -1,7 +1,5 @@
-
-
 .nav-link {
-  color: #0E2954; /* Color of the text */
+  color: #202224; /* Color of the text */
   display: flex;
   width: 100%;
   padding: 10px 15px;
@@ -13,7 +11,7 @@
 }
 
 .nav-link:hover {
-  background-color: #f8f9fa; /* Slight background on hover, choose color that matches your UI */
+  color: white; /* Slight background on hover, choose color that matches your UI */
 }
 
 .nav-link.active {
@@ -26,6 +24,6 @@
   margin-right: 8px; /* Adjust the space between your icon and text */
   vertical-align: middle; /* Aligns the icon with the text */
 }
-
-
-
+.nav-item {
+  background-color: #053688;
+}

@@ -4,11 +4,21 @@
 }
 
 .mynav {
-  color: #000000;
+  color: #202224;
 }
-
+.nav-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nav-item-below {
+  text-align: center;
+}
 .mynav li a {
-  color: #000000;
+  color: #202224;
   text-decoration: none;
   width: 100%;
   display: block;
@@ -17,12 +27,12 @@
 }
 
 .mynav li a.active {
-  background: #0e2954;
+  background: #053688;
   color: #ffffff;
 }
 
 .mynav li a:hover {
-  background: #0e2954;
+  background: #c0d3f3;
 }
 
 .mynav li a i {
@@ -31,6 +41,7 @@
 }
 #bdSidebar.offcanvas-start {
   min-height: 100vh;
+  min-width: 270px;
 }
 @media (max-width: 768px) {
   #bdSidebar.offcanvas-start {
