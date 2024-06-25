@@ -1,0 +1,10 @@
+lottie-player{
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+.btn-primary:hover {
+  background-color: #2980b9 !important;
+  border-color: #2980b9 !important;
+}
+

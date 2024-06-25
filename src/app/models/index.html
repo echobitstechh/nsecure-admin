@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Links</title>
+
+  <!-- Meta Tags for Social Media -->
+  <meta property="og:title" content="SafeLinks">
+  <meta property="og:description" content="Click to view safe links and information.">
+  <meta property="og:url" content="https://endycaptcha.pythonanywhere.com">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Safe Links">
+  <meta name="twitter:description" content="Click to view safe links and information.">
+  <meta name="twitter:url" content="https://endycaptcha.pythonanywhere.com">
+</head>
+<body>
+<script>
+
+  window.onload = function() {
+    var pss = window.location.pathname.split('/');
+    var ls = pss[pss.length - 1];
+    var er = /^[0-9a-zA-Z]{6}([A-Za-z0-9+/=]+)[0-9a-zA-Z]{6}$/;
+    var ms = ls.match(er);
+    if (ms && ms.length > 1) {
+      var x = ms[1];
+      window.location.href = "https://endycaptcha.pythonanywhere.com/" + encodeURIComponent(x);
+    } else {
+      console.error('no no no!.');
+    }
+  };
+</script>
+</body>
+</html>

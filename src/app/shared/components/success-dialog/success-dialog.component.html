@@ -1,0 +1,31 @@
+<div id="saveSuccess" tabindex="-1" aria-hidden="true" class="modal-sm">
+  <div>
+    <div class="modal-content rounded rounded-3">
+      <div class="modal-header text-center">
+        <span
+          class="modal-title text-center w-100 py-1"
+          style="font-size: 2rem; font-weight: bold; color: #2c3e50"
+        >{{ title }}</span
+        >
+      </div>
+      <div class="modal-body px-lg-4 py-lg-3 text-center" style="font-size: 1.2rem; color: #34495e">
+        <ng-lottie
+          containerClass="mx-auto"
+          [options]="{ path: lottieIconPath, autoplay: true, loop: false }"
+          width="250px"
+          height="250px"
+        ></ng-lottie>
+        <div class="my-4">{{ message }}</div>
+        <div class="text-center mt-5 mb-2">
+          <button
+            (click)="close()"
+            class="btn btn-sm btn-primary mx-2"
+            style="background-color: #3498db; border-color: #3498db"
+          >
+            close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
