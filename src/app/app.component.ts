@@ -15,7 +15,7 @@ import * as bootstrap from 'bootstrap';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'kenmauk-admin';
+  title = 'Nsecure-admin';
   text = 'loading';
   isExtranet = false;
   loading = false;
@@ -52,7 +52,8 @@ export class AppComponent implements OnInit, OnDestroy {
         // At this point, 'event' is of type NavigationEnd thanks to the type guard
         this.showSidebarAndHeader = !(
           event.urlAfterRedirects === '/login' ||
-          event.urlAfterRedirects === '/'  || event.urlAfterRedirects === '/forgot-password'
+          event.urlAfterRedirects === '/' ||
+          event.urlAfterRedirects === '/forgot-password'
         );
       });
   }

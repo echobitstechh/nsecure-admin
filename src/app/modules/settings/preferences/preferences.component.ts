@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-notification',
   // standalone: true,
   // imports: [],
-  templateUrl: './notification.component.html',
-  styleUrl: './notification.component.css'
+  templateUrl: './preferences.component.html',
+  styleUrl: './preferences.component.css',
 })
-export class NotificationComponent {
-
-}
+export class PreferencesComponent {}
