@@ -6,7 +6,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.comp
 import { UsersComponent } from './modules/user-management/users/users.component';
 import { ServicesComponent } from './modules/services/services/services.component';
 import { ProfileComponent } from './modules/settings/profile/profile.component';
-import { NotificationComponent } from './modules/settings/preferences/preferences.component';
+import { PreferencesComponent } from './modules/settings/preferences/preferences.component';
 import { AddUserComponent } from './modules/user-management/add-user/add-user.component';
 import { AddServiceComponent } from './modules/services/add-service/add-service.component';
 import { AuthGuard } from './services/authGuard.service';

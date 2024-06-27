@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-notification',
+  selector: 'app-preferences',
   // standalone: true,
   // imports: [],
   templateUrl: './preferences.component.html',
