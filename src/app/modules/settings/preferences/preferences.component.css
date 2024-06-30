@@ -1,0 +1,14 @@
+.preferences-select {
+  padding: 14px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  width: 550px;
+}
+.custom-round {
+  border-radius: 14px;
+}
+.pref-label {
+  color: #232323;
+  font-size: 20px;
+}
