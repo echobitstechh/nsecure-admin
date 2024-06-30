@@ -7,7 +7,7 @@ import { SecurityComponent } from './security/security.component';
 
 const routes: Routes = [
   {
-    path: 'profile',
+    path: '',
     component: ProfileComponent,
     pathMatch: 'full',
     data: {

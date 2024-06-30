@@ -1,21 +1,26 @@
-Sidebar
-<nav>
-  <div class="container mt-3">
-    <div class="row d-flex align-items-center">
-      Updated class here
+<div class="container-fluid p-0 d-flex h-100">
+  <div
+    *ngIf="showSidebarAndHeader"
+    id="bdSidebar"
+    class="d-flex flex-column p-3 text-black offcanvas-md offcanvas-start"
+    tabindex="-1"
+    aria-labelledby="bdSidebarLabel"
+  >
+    <div class="navbar-brand row d-flex align-items-center mb-4">
+      <!--      <button class="btn-close text-reset d-md-none" style="margin-left: auto;" data-bs-dismiss="bdSidebar"></button> &lt;!&ndash; Close button for mobile &ndash;&gt;-->
       <div class="col-auto">
-        <img src="assets/images/Nsecure.svg" width="50" height="50" />
+        <img src="assets/images/Nsecure.svg" width="106" height="33" />
       </div>
-      <div class="col-auto">
+      <!-- <div class="col-auto">
         <p class="fw-bold fs-4" style="color: #0e2954">kenma-uk</p>
-      </div>
+      </div> -->
     </div>
-  </div>
-  <hr />
-  <div class="position-sticky pt-3">
-    <ul class="nav flex-column">
-      <li class="nav-item mb-2">
+
+    <!-- <hr /> -->
+    <ul class="mynav nav nav-pills flex-column mb-auto">
+      <li class="nav-item mb-3">
         <a
+          data-bs-dismiss="bdSidebar"
           class="nav-link"
           aria-current="page"
           routerLink="/dashboard"
@@ -23,66 +28,177 @@ Sidebar
           [routerLinkActiveOptions]="{ exact: true }"
         >
           <img src="assets/icons/category.svg" alt="Dashboard" class="icon" />
-          <!-- Your custom icon -->
           Dashboard
         </a>
       </li>
-      <li class="nav-item mb-2">
+      <li class="nav-item mb-3">
         <a
+          data-bs-dismiss="bdSidebar"
           class="nav-link"
           aria-current="page"
-          routerLink="/management"
+          routerLink="/analytics"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <img src="assets/icons/user.svg" alt="Management" class="icon" />
-          <!-- Your custom icon -->
-          Management
+          <img src="assets/icons/analytics.svg" alt="Analytics" class="icon" />
+          Analytics
         </a>
       </li>
-      <li class="nav-item mb-2">
+      <li class="nav-item mb-3">
         <a
+          data-bs-dismiss="bdSidebar"
           class="nav-link"
           aria-current="page"
-          routerLink="/management"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          <img src="assets/icons/user.svg" alt="Management" class="icon" />
-          <!-- Your custom icon -->
-          Management
-        </a>
-      </li>
-      <li class="nav-item mb-2">
-        <a
-          class="nav-link"
-          aria-current="page"
-          routerLink="/services"
+          routerLink="/contact-and-support"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
           <img
-            src="assets/icons/mouse-circle.svg"
-            alt="Services"
-            class="icon"
+            src="assets/icons/contandsup.svg"
+            alt="Contact and support"
+            class="icon text-wrap-nowrap"
           />
-          <!-- Your custom icon -->
-          Services
+          Contact & Support
         </a>
       </li>
-      <li class="nav-item mb-2">
+      <li class="nav-item mb-3">
         <a
+          data-bs-dismiss="bdSidebar"
           class="nav-link"
           aria-current="page"
-          routerLink="/settings"
+          routerLink="/management"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
-          <img src="assets/icons/setting-2.svg" alt="Settings" class="icon" />
-          <!-- Your custom icon  -->
-          Settings
+          <img
+            src="assets/icons/management.svg"
+            alt="Management"
+            class="icon"
+          />
+          Management
+        </a>
+      </li>
+      <li class="nav-item mb-3">
+        <a
+          data-bs-dismiss="bdSidebar"
+          class="nav-link"
+          aria-current="page"
+          routerLink="/transport-workers"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <img src="assets/icons/transwor.svg" alt="Management" class="icon" />
+          Transport Workers
+        </a>
+      </li>
+      <li class="nav-item mb-3">
+        <a
+          data-bs-dismiss="bdSidebar"
+          class="nav-link"
+          aria-current="page"
+          routerLink="/tax-collection"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <img src="assets/icons/taxcol.svg" alt="Management" class="icon" />
+          Tax Collection
+        </a>
+      </li>
+      <li class="nav-item mb-3">
+        <a
+          data-bs-dismiss="bdSidebar"
+          class="nav-link"
+          aria-current="page"
+          routerLink="/reporting"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <img src="assets/icons/reporting.svg" alt="Management" class="icon" />
+          Reporting
+        </a>
+      </li>
+      <li class="nav-item mb-3">
+        <a
+          data-bs-dismiss="bdSidebar"
+          class="nav-link"
+          aria-current="page"
+          routerLink="/receipts"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <img src="assets/icons/receipts.svg" alt="receipts" class="icon" />
+          Receipts
+        </a>
+      </li>
+      <li class="nav-item mb-3">
+        <a
+          data-bs-dismiss="bdSidebar"
+          class="nav-link"
+          aria-current="page"
+          routerLink="/team"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <img src="assets/icons/team.svg" alt="team" class="icon" />
+          Team
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          aria-current="page"
+          routerLink="/audit-log"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <img src="assets/icons/audit.svg" alt="audit logs" class="icon" />
+          Audit Log
         </a>
       </li>
     </ul>
+    <hr />
+    <div class="nav-item-below mb-2">
+      <a
+        class="nav-link"
+        aria-current="page"
+        routerLink="/settings"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Settings
+      </a>
+    </div>
+    <div class="nav-item-below mt-3">
+      <a
+        class="nav-link"
+        aria-current="page"
+        routerLink="/logout"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Logout
+      </a>
+    </div>
   </div>
-</nav>
+  <!-- showSidebarAndHeader -->
+  <div class="bg-light w-100">
+    <div
+      *ngIf="showSidebarAndHeader"
+      class="p-2 d-md-none d-flex text-black"
+      style="background-color: #0e2954"
+    >
+      <a
+        href="#"
+        class="text-white"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#bdSidebar"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </a>
+      <span class="ms-3 text-white">Nsecure Admin</span>
+    </div>
+    <div class="p-2 p-lg-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

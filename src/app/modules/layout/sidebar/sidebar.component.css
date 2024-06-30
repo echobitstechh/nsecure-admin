@@ -1,29 +1,50 @@
+.gfg {
+  height: 50px;
+  width: 50px;
+}
+
+.mynav {
+  color: #202224;
+}
 .nav-link {
-  color: #202224; /* Color of the text */
-  display: flex;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.nav-item-below {
+  text-align: center;
+}
+.mynav li a {
+  color: #202224;
+  text-decoration: none;
   width: 100%;
-  padding: 10px 15px;
-  align-items: center; /* Ensures vertical centering of text and icon */
-  /*padding: 0.5rem 1rem; !* Adjust padding as needed *!*/
-  white-space: nowrap; /* Prevents the text from wrapping */
-  overflow: hidden; /* Keeps the text from overflowing the container */
-  text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
+  display: block;
+  border-radius: 5px;
+  padding: 8px 5px;
 }
 
-.nav-link:hover {
-  color: white; /* Slight background on hover, choose color that matches your UI */
+.mynav li a.active {
+  background: #053688;
+  color: #ffffff;
 }
 
-.nav-link.active {
-  background-color: #e9ecef; /* Active state background, choose color that matches your UI */
-  border-radius: 0.25rem; /* Optional: rounded corners for the active link */
+.mynav li a:hover {
+  background: #c0d3f3;
 }
-.icon {
-  object-fit: contain;
-  width: 20px; /* Or the size of your icons */
-  margin-right: 8px; /* Adjust the space between your icon and text */
-  vertical-align: middle; /* Aligns the icon with the text */
+
+.mynav li a i {
+  width: 25px;
+  text-align: center;
 }
-.nav-item {
-  background-color: #053688;
+#bdSidebar.offcanvas-start {
+  min-height: 100vh;
+  min-width: 270px;
+}
+@media (max-width: 768px) {
+  #bdSidebar.offcanvas-start {
+    max-width: 260px; /* Adjust this value to change the sidebar width on mobile */
+  }
 }

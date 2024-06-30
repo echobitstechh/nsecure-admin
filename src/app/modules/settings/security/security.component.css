@@ -1,0 +1,35 @@
+.password-chg {
+}
+.password-chg h4 {
+  color: #333b69;
+}
+.password-chg div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+  margin-bottom: 16px;
+}
+.password-chg div label {
+  color: #232323;
+  font-size: 19px;
+}
+.password-chg div input {
+  color: #232323;
+}
+.custom-round {
+  border-radius: 14px;
+}
+.security-inputs {
+  padding: 14px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+}
+.authentication-div {
+  display: flex;
+  gap: 32px;
+}
+.authentication-div h4 {
+  color: #333b69;
+}
