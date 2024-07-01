@@ -4,6 +4,7 @@
   border: 1px solid #ccc;
   border-radius: 14px;
   width: 550px;
+  outline: none;
 }
 .pref-label {
   color: #232323;

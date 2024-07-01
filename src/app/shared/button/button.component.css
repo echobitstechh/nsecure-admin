@@ -1,0 +1,26 @@
+button {
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.btn-primary {
+  background-color: #053688;
+  padding: 0.3rem 2rem;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #c0d3f3;
+}
+
+.btn-secondary {
+}
+
+.btn-secondary:hover {
+}
