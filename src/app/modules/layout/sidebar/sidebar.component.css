@@ -30,7 +30,17 @@
   background: #053688;
   color: #ffffff;
 }
-
+.nav-item-below {
+  padding: 8px 5px;
+  border-radius: 5px;
+}
+.nav-item-below a.active {
+  background: #053688;
+  color: #ffffff;
+}
+.nav-item-below a:hover {
+  background: #c0d3f3;
+}
 .mynav li a:hover {
   background: #c0d3f3;
 }

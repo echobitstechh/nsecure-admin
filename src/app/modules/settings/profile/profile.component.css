@@ -3,9 +3,6 @@
   grid-template-columns: repeat(2, 1fr); /* Two columns */
   gap: 1.5rem; /* Gap between grid items */
 }
-.custom-round {
-  border-radius: 14px;
-}
 .profile-inputs-cont div {
   display: flex;
   flex-direction: column;

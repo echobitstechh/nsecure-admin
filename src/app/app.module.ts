@@ -7,12 +7,12 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
 import { AddServiceComponent } from './modules/services/add-service/add-service.component';
 import { ServicesComponent } from './modules/services/services/services.component';
-import { ProfileComponent } from './modules/settings/profile/profile.component';
+// import { ProfileComponent } from './modules/settings/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 // import {httpInterceptorProviders} from "./auth.interceptor";
-import { PreferencesComponent } from './modules/settings/preferences/preferences.component';
+// import { PreferencesComponent } from './modules/settings/preferences/preferences.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SuccessDialogComponent } from './shared/components/success-dialog/success-dialog.component';
 import { LayoutModule } from './modules/layout/layout.module';
@@ -33,8 +33,8 @@ export function lottiePlayerFactory(): any {
     AppComponent,
     AddServiceComponent,
     ServicesComponent,
-    ProfileComponent,
-    PreferencesComponent,
+    // ProfileComponent,
+    // PreferencesComponent,
     SuccessDialogComponent,
     ToggleSidebarDirective,
   ],

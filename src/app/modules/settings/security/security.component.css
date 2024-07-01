@@ -1,5 +1,3 @@
-.password-chg {
-}
 .password-chg h4 {
   color: #333b69;
 }
@@ -17,9 +15,6 @@
 .password-chg div input {
   color: #232323;
 }
-.custom-round {
-  border-radius: 14px;
-}
 .security-inputs {
   padding: 14px 10px;
   font-size: 14px;
@@ -28,7 +23,8 @@
 }
 .authentication-div div {
   display: flex;
-  gap: 32px;
+  align-items: center;
+  gap: 8px;
 }
 .authentication-div h4 {
   color: #333b69;

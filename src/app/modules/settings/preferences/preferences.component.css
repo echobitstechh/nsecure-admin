@@ -5,10 +5,12 @@
   border-radius: 14px;
   width: 550px;
 }
-.custom-round {
-  border-radius: 14px;
-}
 .pref-label {
   color: #232323;
   font-size: 20px;
+}
+.icon-div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
