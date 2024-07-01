@@ -42,6 +42,14 @@ const routes: Routes = [
   },
   // Redirect to log in
   {
+    path: 'contact-and-support',
+    loadChildren: () =>
+      import('./modules/contact-and-support/contact-and-support.module').then(
+        (m) => m.ContactAndSupportModule
+      ),
+    // canActivate: [AuthGuard],
+  },
+  {
     path: 'management',
     loadChildren: () =>
       import('./modules/user-management/user-management.module').then(
