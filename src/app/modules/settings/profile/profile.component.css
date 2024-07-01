@@ -1,42 +1,29 @@
-/* Optional custom styles */
-.nav-tabs .nav-link.active {
-  border-color: #dee2e6 #dee2e6 #fff;
+.profile-inputs-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 1.5rem; /* Gap between grid items */
 }
-
-.rounded-circle {
-  object-fit: cover; /* Ensures the image covers the area */
+.custom-round {
+  border-radius: 14px;
 }
-
-.reset-password-section {
-  border-top: 1px solid #ccc;
-  padding-top: 20px;
-  margin-top: 20px;
+.profile-inputs-cont div {
+  display: flex;
+  flex-direction: column;
 }
-
-.position-relative {
-  /* Make the parent element positioned relative so the button can be positioned absolutely within it */
-  position: relative;
-  display: inline-block; /* Change the display to allow for text-center to align it */
+.profile-labels {
+  margin-bottom: 6px; /* Margin below labels */
+  color: #232323;
 }
-
-.btn-edit-icon {
-  border: none; /* Remove border if not needed */
-  background: none; /* Remove background if you want a transparent button */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  cursor: pointer; /* Change cursor to pointer on hover */
-
-  /* Position the button at the bottom-right corner of the image */
-  position: absolute;
-  bottom: -10px; /* Adjust the position to place it correctly */
-  right: -10px; /* Adjust the position to place it correctly */
-  /*background-color: #yourColor; !* Background color of the circle *!*/
-  border-radius: 50%; /* Make it round */
-  padding: 10px; /* Padding to make the circle larger */
+.profile-inputs {
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  width: 100%; /* Full width input */
 }
-
-.btn-edit-icon img {
-  display: block; /* Ensure the SVG scales correctly */
-  width: 40px; /* Adjust size accordingly */
-  height: 40px; /* Adjust size accordingly */
+.round-it {
+  width: 200px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: blue;
 }

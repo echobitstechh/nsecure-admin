@@ -5,7 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {SharedModule} from "../../shared/shared.module";
 import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors} from "@angular/common/http";
-import {AuthInterceptor} from "../../auth.interceptor";
+// import {AuthInterceptor} from "../../auth.interceptor";
 
 
 @NgModule({
