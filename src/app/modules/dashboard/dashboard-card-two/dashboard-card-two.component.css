@@ -1,0 +1,41 @@
+.card {
+  padding: 6px 2px;
+  border: none;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  background-color: #fff;
+  border-bottom: none;
+}
+
+.card-title {
+  font-size: 16px;
+  color: #232d42;
+}
+
+.card-timeframe {
+  font-size: 16px;
+  color: #8a92a6;
+  border: none;
+  background: none;
+}
+
+.card-chart {
+  margin-top: 16px;
+}
+
+select.card-timeframe {
+  font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+select.card-timeframe:focus {
+  outline: none;
+}

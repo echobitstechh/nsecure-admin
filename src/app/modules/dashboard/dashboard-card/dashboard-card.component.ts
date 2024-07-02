@@ -6,10 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./dashboard-card.component.css'],
 })
 export class DashboardCardComponent {
-  @Input() title: string = 'Placeholder Title';
-  @Input() value: string = 'Placeholder Value';
-  @Input() trend: string = 'Placeholder Trend';
-  @Input() trendText: string = 'Placeholder Trend Text';
+  @Input() title: string = '';
+  @Input() value: string = '';
+  @Input() trend: string = '';
+  @Input() trendText: string = '';
   @Input() iconUrl: string = '';
   @Input() iconUrlTwo: string = '';
   @Input() trendColor: 'green' | 'red' = 'green';
