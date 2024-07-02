@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 6px;
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 10px;
+  background-color: #fff;
+  width: 278px;
+  height: 160px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 16px;
+  color: #202224;
+  opacity: 70%;
+  margin-top: 10px;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #202224;
+}
+
+.card-trend {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.trend-value {
+  font-size: 16px;
+  color: #00b69b;
+  margin-right: 4px;
+}
+
+.trend-text {
+  font-size: 14px;
+  color: #606060;
+}

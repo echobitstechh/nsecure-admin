@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-content">
+    <div class="card-title">{{ title }}</div>
+    <div class="card-value">{{ value }}</div>
+    <div class="card-trend">
+      <img *ngIf="iconUrlTwo" [src]="iconUrlTwo" alt="icon" />
+      <span class="trend-value">{{ trend }}</span>
+      <span class="trend-text">{{ trendText }}</span>
+    </div>
+  </div>
+  <div class="">
+    <img *ngIf="iconUrl" [src]="iconUrl" alt="icon" />
+  </div>
+</div>
