@@ -12,4 +12,5 @@ export class DashboardCardComponent {
   @Input() trendText: string = 'Placeholder Trend Text';
   @Input() iconUrl: string = '';
   @Input() iconUrlTwo: string = '';
+  @Input() trendColor: 'green' | 'red' = 'green';
 }

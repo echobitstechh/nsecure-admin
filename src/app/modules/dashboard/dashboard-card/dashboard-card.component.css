@@ -1,9 +1,5 @@
 .card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 6px;
-  /* border: 1px solid #e0e0e0; */
+  padding: 8px 8px;
   border-radius: 10px;
   background-color: #fff;
   width: 278px;
@@ -12,7 +8,8 @@
 
 .card-content {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: space-between;
 }
 
 .card-title {
@@ -33,14 +30,23 @@
   align-items: center;
   margin-top: 32px;
 }
-
-.trend-value {
+.card-trend img {
+  width: 20px;
+  margin-right: 4px;
+}
+.trend-value.green {
   font-size: 16px;
   color: #00b69b;
   margin-right: 4px;
 }
 
+.trend-value.red {
+  font-size: 16px;
+  color: #f93c65;
+  margin-right: 4px;
+}
 .trend-text {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
   color: #606060;
 }
