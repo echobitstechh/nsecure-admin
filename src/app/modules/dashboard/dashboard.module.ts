@@ -10,10 +10,15 @@ import {
   withInterceptors,
 } from '@angular/common/http';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
+import { DashboardCardTwoComponent } from './dashboard-card-two/dashboard-card-two.component';
 // import {AuthInterceptor} from "../../auth.interceptor";
 
 @NgModule({
-  declarations: [DashboardComponent, DashboardCardComponent],
+  declarations: [
+    DashboardComponent,
+    DashboardCardComponent,
+    DashboardCardTwoComponent,
+  ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule],
   providers: [],
 })

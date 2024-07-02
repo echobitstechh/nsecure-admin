@@ -1,4 +1,8 @@
 .dashboard-first-div {
   display: flex;
-  gap: 16px;
+  gap: 27px;
+}
+.dashboard-second-div {
+  display: flex;
+  gap: 27px;
 }
