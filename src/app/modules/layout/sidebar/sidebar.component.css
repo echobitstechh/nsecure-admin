@@ -14,9 +14,6 @@
   font-weight: 600;
   white-space: nowrap;
 }
-.nav-item-below {
-  text-align: center;
-}
 .mynav li a {
   color: #202224;
   text-decoration: none;
@@ -30,14 +27,35 @@
   background: #053688;
   color: #ffffff;
 }
-
 .mynav li a:hover {
   background: #c0d3f3;
 }
-
 .mynav li a i {
   width: 25px;
   text-align: center;
+}
+.nav-items-below {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 5px;
+}
+.nav-links-below {
+  list-style-type: none;
+  text-align: center;
+}
+.nav-links-below a {
+  border-radius: 5px;
+  padding: 8px 5px;
+  width: 100%;
+  text-align: center;
+}
+.nav-links-below a:hover {
+  background: #c0d3f3;
+}
+.nav-items-below li a.active {
+  background: #053688 !important;
+  color: #ffffff !important;
 }
 #bdSidebar.offcanvas-start {
   min-height: 100vh;

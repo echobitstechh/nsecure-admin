@@ -1,8 +1,8 @@
-<div class="shadow-lg p-4 custom-round">
+<div class="p-4">
   <div class="authentication-div">
     <h4>Two Factor Authentication</h4>
-    <div>
-      icon
+    <div class="">
+      <app-notification-toggle></app-notification-toggle>
       <p style="color: #232323">Enable or disable two factor authentication</p>
     </div>
   </div>
@@ -16,5 +16,8 @@
       <label for="new-password" class="block">New Password</label>
       <input type="password" placeholder="********" class="security-inputs" />
     </div>
+  </div>
+  <div class="d-flex justify-content-end mt-5">
+    <app-button label="Save" class="btn-primary"></app-button>
   </div>
 </div>

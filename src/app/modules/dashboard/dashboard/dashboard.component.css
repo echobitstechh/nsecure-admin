@@ -1,11 +1,4 @@
-.faint-header {
-  color: #6c757d; /* Bootstrap's secondary text color */
-  font-size: 0.875rem; /* Smaller font size */
-}
-
-.icon {
-  object-fit: contain;
-  width: 60px; /* Or the size of your icons */
-  margin-right: 4px; /* Adjust the space between your icon and text */
-  vertical-align: middle; /* Aligns the icon with the text */
+.dashboard-first-div {
+  display: flex;
+  gap: 16px;
 }

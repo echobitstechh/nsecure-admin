@@ -1,0 +1,20 @@
+.nav-item {
+  list-style: none;
+  color: #718ebf;
+}
+.housing {
+  display: flex;
+  gap: 38px;
+  padding: 6px 12px 0 12px;
+
+  border-bottom: 1px solid gray;
+}
+.parent-housing {
+  padding: 0 20px;
+}
+.housing li a.active {
+  /* background: #053688; */
+  color: #053688;
+  border-bottom: 2px solid #053688;
+  padding-bottom: 6px;
+}

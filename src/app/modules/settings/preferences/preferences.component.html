@@ -1,4 +1,4 @@
-<div class="shadow-lg p-4 custom-round d-flex flex-column gap-5">
+<div class="p-4 d-flex flex-column gap-4">
   <div class="d-flex gap-5">
     <div>
       <label for="currency" class="d-block mb-2 pref-label">Currency</label>
@@ -19,7 +19,24 @@
       </select>
     </div>
   </div>
-  <div>
+  <div class="">
     <h5 style="color: #333b69">Notification</h5>
+    <div class="not-items-div">
+      <div class="icon-div">
+        <app-notification-toggle></app-notification-toggle>
+        <p style="color: #232323">Lorem ipsum</p>
+      </div>
+      <div class="icon-div">
+        <app-notification-toggle></app-notification-toggle>
+        <p style="color: #232323">Lorem ipsum sit amet</p>
+      </div>
+      <div class="icon-div">
+        <app-notification-toggle></app-notification-toggle>
+        <p style="color: #232323">Placeholder text</p>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end mt-5">
+    <app-button label="Save" class="btn-primary"></app-button>
   </div>
 </div>
