@@ -1,7 +1,7 @@
-.gfg {
+/* .gfg {
   height: 50px;
   width: 50px;
-}
+} */
 
 .mynav {
   color: #202224;
@@ -59,7 +59,7 @@
 }
 #bdSidebar.offcanvas-start {
   min-height: 100vh;
-  min-width: 270px;
+  width: 240px;
 }
 @media (max-width: 768px) {
   #bdSidebar.offcanvas-start {

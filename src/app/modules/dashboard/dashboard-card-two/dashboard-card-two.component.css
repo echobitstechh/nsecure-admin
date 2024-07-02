@@ -1,17 +1,16 @@
 .card {
-  padding: 16px;
+  padding: 6px 2px;
   border: none;
   border-radius: 8px;
   background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
+  background-color: #fff;
+  border-bottom: none;
 }
 
 .card-title {
@@ -20,7 +19,7 @@
 }
 
 .card-timeframe {
-  font-size: 14px;
+  font-size: 16px;
   color: #8a92a6;
   border: none;
   background: none;
@@ -30,13 +29,12 @@
   margin-top: 16px;
 }
 
-/* select.card-timeframe {
-  font-size: 14px;
-  color: #757575;
+select.card-timeframe {
+  font-size: 16px;
   border: none;
   background: none;
   cursor: pointer;
-} */
+}
 
 select.card-timeframe:focus {
   outline: none;
