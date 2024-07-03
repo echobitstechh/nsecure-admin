@@ -15,3 +15,18 @@
   align-items: center;
   gap: 8px;
 }
+@media (max-width: 820px) {
+  .pref-fir-div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px !important;
+  }
+  .preferences-select {
+    width: 100%;
+  }
+  .pref-btn-con {
+    margin-top: 14px !important;
+    display: flex;
+    justify-content: center !important;
+  }
+}

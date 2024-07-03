@@ -11,6 +11,8 @@ import {
 } from '@angular/common/http';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { DashboardCardTwoComponent } from './dashboard-card-two/dashboard-card-two.component';
+import { EnumeratorListCardComponent } from './enumerator-list-card/enumerator-list-card.component';
+import { RegisterCardComponent } from './register-card/register-card.component';
 // import {AuthInterceptor} from "../../auth.interceptor";
 
 @NgModule({
@@ -18,6 +20,8 @@ import { DashboardCardTwoComponent } from './dashboard-card-two/dashboard-card-t
     DashboardComponent,
     DashboardCardComponent,
     DashboardCardTwoComponent,
+    EnumeratorListCardComponent,
+    RegisterCardComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule],
   providers: [],

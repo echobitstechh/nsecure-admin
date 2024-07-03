@@ -6,3 +6,7 @@
   display: flex;
   gap: 27px;
 }
+.dashboard-third-div {
+  display: flex;
+  gap: 16px;
+}

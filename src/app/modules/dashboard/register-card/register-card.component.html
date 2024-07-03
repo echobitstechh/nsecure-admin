@@ -1,0 +1,21 @@
+<div class="card shadow-sm">
+  <div class="card-header">
+    <span class="title">Daily Register</span>
+    <span
+      [ngClass]="{ positive: isPositiveChange, negative: !isPositiveChange }"
+    >
+      <i
+        class="icon"
+        [ngClass]="{
+          'icon-up': isPositiveChange,
+          'icon-down': !isPositiveChange
+        }"
+      ></i>
+      {{ percentageChange | number : "1.2-2" }}%
+    </span>
+  </div>
+  <div class="card-body">
+    <h2>{{ userCount }}</h2>
+    <small>Users</small>
+  </div>
+</div>
