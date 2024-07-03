@@ -25,3 +25,29 @@
   border-radius: 50%;
   background-color: blue;
 }
+@media (max-width: 820px) {
+  .profile-inputs-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .prof-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .prof-con {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  .round-it {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: blue;
+  }
+  .prof-btn-con {
+    justify-content: center !important;
+    margin-top: 40px !important;
+  }
+}
