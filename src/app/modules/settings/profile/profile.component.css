@@ -17,7 +17,7 @@
   border: 1px solid #ccc;
   border-radius: 14px;
   outline: none !important;
-  width: 100%; /* Full width input */
+  width: 100%; /* Full width input to size the container */
 }
 .round-it {
   width: 180px;

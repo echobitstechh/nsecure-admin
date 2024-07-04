@@ -27,14 +27,6 @@
     flex-direction: column;
     gap: 8px;
   }
-  .dashboard-second-div {
-    display: flex;
-    gap: 27px;
-  }
-  .dashboard-third-div {
-    display: flex;
-    gap: 16px;
-  }
   .dashboard-first-div-card {
     width: 100%;
   }
