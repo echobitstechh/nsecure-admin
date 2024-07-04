@@ -17,11 +17,11 @@
   border: 1px solid #ccc;
   border-radius: 14px;
   outline: none !important;
-  width: 100%; /* Full width input */
+  width: 100%; /* Full width input to size the container */
 }
 .round-it {
-  width: 200px;
-  height: 160px;
+  width: 180px;
+  height: 170px;
   border-radius: 50%;
   background-color: blue;
 }
@@ -49,5 +49,9 @@
   .prof-btn-con {
     justify-content: center !important;
     margin-top: 40px !important;
+  }
+  .round-div-par {
+    display: flex;
+    justify-content: center;
   }
 }
