@@ -5,7 +5,7 @@
 
   <div class="dashboard-first-div">
     <app-dashboard-card
-      style="width: 25%"
+      class="dashboard-first-div-card"
       title="Public Transport Workers"
       value="40,689"
       trend="8.5%"
@@ -15,7 +15,7 @@
     >
     </app-dashboard-card>
     <app-dashboard-card
-      style="width: 25%"
+      class="dashboard-first-div-card"
       title="Active Enumerators"
       value="2040"
       trend="1.3%"
@@ -25,7 +25,7 @@
     >
     </app-dashboard-card>
     <app-dashboard-card
-      style="width: 25%"
+      class="dashboard-first-div-card"
       title="Newly Registered"
       value="193"
       trend="1.3%"
@@ -35,7 +35,7 @@
     >
     </app-dashboard-card>
     <app-dashboard-card
-      style="width: 25%"
+      class="dashboard-first-div-card"
       title="Total Tax generated"
       value="#30,244.00"
       trend="4.3%"
@@ -48,13 +48,13 @@
   </div>
   <div class="dashboard-second-div mt-5">
     <app-dashboard-card-two
-      style="width: 40%"
+      class="dashboard-second-div-card-one"
       title="Transport Workers"
       [timeFrames]="['This Week', 'Last Week', 'This Month', 'Last Month']"
     >
     </app-dashboard-card-two>
     <app-dashboard-card-two
-      style="width: 60%"
+      class="dashboard-second-div-card-two"
       title="Total Tax Generated"
       [timeFrames]="['This Week', 'Last Week', 'This Month', 'Last Month']"
     >
@@ -62,13 +62,15 @@
   </div>
 
   <div class="dashboard-third-div mt-5">
-    <app-register-card style="flex: 1"></app-register-card>
+    <app-register-card class="dashboard-third-div-card"></app-register-card>
     <app-dashboard-card-two
-      style="flex: 1"
+      class="dashboard-third-div-card"
       title="Your Pie Chart"
       [timeFrames]="['Monthly', 'Weekly', 'Daily']"
     >
     </app-dashboard-card-two>
-    <app-enumerator-list-card style="flex: 1"></app-enumerator-list-card>
+    <app-enumerator-list-card
+      class="dashboard-third-div-card"
+    ></app-enumerator-list-card>
   </div>
 </div>
