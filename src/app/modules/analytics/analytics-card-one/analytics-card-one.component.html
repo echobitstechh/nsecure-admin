@@ -1,8 +1,9 @@
 <div class="card">
+  <div class="card-header">
+    <img *ngIf="iconAnaUrl" [src]="iconAnaUrl" alt="icon" />
+    <button class="analytics-more-button">⋮</button>
+  </div>
   <div class="card-content">
-    <div class="card-icon">
-      <img src="assets/icons/employee-icon.svg" alt="Employee Icon" />
-    </div>
     <div class="card-text">
       <h3>{{ title }}</h3>
       <p>{{ subtitle }}</p>

@@ -6,7 +6,10 @@ import { AnalyticsCardOneComponent } from './analytics-card-one/analytics-card-o
 
 @NgModule({
   declarations: [AnalyticsDashboardComponent, AnalyticsCardOneComponent],
-  imports: [CommonModule, AnalyticsDashboardComponenttRoutingModule],
+  imports: [
+    CommonModule,
+    AnalyticsDashboardComponenttRoutingModule,
+  ],
   exports: [AnalyticsDashboardComponent],
 })
 export class AnalyticsModule {}
