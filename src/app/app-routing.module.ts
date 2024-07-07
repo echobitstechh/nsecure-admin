@@ -22,6 +22,14 @@ const routes: Routes = [
     // canActivate: [AuthGuard]
   },
   {
+    path: 'analytics',
+    loadChildren: () =>
+      import('./modules/analytics/analytics.module').then(
+        (m) => m.AnalyticsModule
+      ),
+    // canActivate: [AuthGuard],
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./modules/layout/layout.module').then((m) => m.LayoutModule),
