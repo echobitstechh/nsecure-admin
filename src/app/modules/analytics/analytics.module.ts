@@ -3,13 +3,21 @@ import { CommonModule } from '@angular/common';
 import { AnalyticsDashboardComponent } from './analytics-dashboard/analytics-dashboard.component';
 import { AnalyticsDashboardComponenttRoutingModule } from './analytics-routing.module';
 import { AnalyticsCardOneComponent } from './analytics-card-one/analytics-card-one.component';
+import { ActiveEnumeratorCardComponent } from './active-enumerator-card/active-enumerator-card.component';
+import { AnalyticsCardTwoComponent } from './analytics-card-two/analytics-card-two.component';
+import { RecentPayersComponent } from './recent-payers/recent-payers.component';
+import { TaxProgressCardComponent } from './tax-progress-card/tax-progress-card.component';
 
 @NgModule({
-  declarations: [AnalyticsDashboardComponent, AnalyticsCardOneComponent],
-  imports: [
-    CommonModule,
-    AnalyticsDashboardComponenttRoutingModule,
+  declarations: [
+    AnalyticsDashboardComponent,
+    AnalyticsCardOneComponent,
+    ActiveEnumeratorCardComponent,
+    AnalyticsCardTwoComponent,
+    RecentPayersComponent,
+    TaxProgressCardComponent,
   ],
+  imports: [CommonModule, AnalyticsDashboardComponenttRoutingModule],
   exports: [AnalyticsDashboardComponent],
 })
 export class AnalyticsModule {}
