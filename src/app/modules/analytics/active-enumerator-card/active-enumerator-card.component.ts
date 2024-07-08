@@ -11,14 +11,14 @@ interface Enumerator {
   styleUrls: ['./active-enumerator-card.component.css'],
 })
 export class ActiveEnumeratorCardComponent {
-  public enumerators: Enumerator[] = [
+  @Input() enumerators: Enumerator[] = [
     { name: 'Mavin', park: 'Mangu' },
-    { name: 'Dee', park: 'Mararaba' },
-    { name: 'Dee', park: 'Mararaba' },
-    { name: 'Dee', park: 'Mararaba' },
-    { name: 'Dee', park: 'Mararaba' },
-    { name: 'Dee', park: 'Mararaba' },
-    { name: 'Dee', park: 'Mararaba' },
-    { name: 'Dee', park: 'Mararaba' },
+    { name: 'Mavin', park: 'Mararaba' },
+    { name: 'Dickson', park: 'Oshodi' },
+    { name: 'Dee', park: 'Ikorodu' },
+    { name: 'Pop', park: 'Ogoja' },
+    { name: 'Derek', park: 'Mararaba' },
+    { name: 'Isak', park: 'Mararaba' },
+    { name: 'Jackson', park: 'Mararaba' },
   ];
 }
