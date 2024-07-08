@@ -12,15 +12,12 @@
   border-bottom: none !important;
   color: #081332;
 }
-.table thead tr th {
+.table th,
+.table td {
   border-bottom: none !important;
   color: #5e6066;
   font-size: 14px;
-}
-.table tbody tr td {
-  border-bottom: none !important;
-  color: #5e6066;
-  font-size: 14px;
+  font-weight: 400;
 }
 .card-body {
   padding: 0px 8px;

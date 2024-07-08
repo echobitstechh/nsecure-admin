@@ -5,6 +5,8 @@ import { AnalyticsDashboardComponenttRoutingModule } from './analytics-routing.m
 import { AnalyticsCardOneComponent } from './analytics-card-one/analytics-card-one.component';
 import { ActiveEnumeratorCardComponent } from './active-enumerator-card/active-enumerator-card.component';
 import { AnalyticsCardTwoComponent } from './analytics-card-two/analytics-card-two.component';
+import { RecentPayersComponent } from './recent-payers/recent-payers.component';
+import { TaxProgressCardComponent } from './tax-progress-card/tax-progress-card.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,8 @@ import { AnalyticsCardTwoComponent } from './analytics-card-two/analytics-card-t
     AnalyticsCardOneComponent,
     ActiveEnumeratorCardComponent,
     AnalyticsCardTwoComponent,
+    RecentPayersComponent,
+    TaxProgressCardComponent,
   ],
   imports: [CommonModule, AnalyticsDashboardComponenttRoutingModule],
   exports: [AnalyticsDashboardComponent],

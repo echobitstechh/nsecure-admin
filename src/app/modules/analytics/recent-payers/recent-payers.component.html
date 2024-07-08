@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Recent Payers</h3>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>ID</th>
+          <th>Park</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payer of payers; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ payer.name }}</td>
+          <td>{{ payer.email }}</td>
+          <td>{{ payer.id }}</td>
+          <td>{{ payer.park }}</td>
+          <td>{{ payer.amount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

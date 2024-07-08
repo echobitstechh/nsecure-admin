@@ -6,6 +6,9 @@
 }
 .analytics-right-div {
   width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .analytics-left-div-one-card {
   width: 50%;
