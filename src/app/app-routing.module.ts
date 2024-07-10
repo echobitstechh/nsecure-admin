@@ -4,11 +4,9 @@ import { LoginComponent } from './modules/authentication/login/login.component';
 import { HomeComponent } from './modules/layout/home/home.component';
 import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
 import { UsersComponent } from './modules/user-management/users/users.component';
-import { ServicesComponent } from './modules/services/services/services.component';
 import { ProfileComponent } from './modules/settings/profile/profile.component';
 import { PreferencesComponent } from './modules/settings/preferences/preferences.component';
 import { AddUserComponent } from './modules/user-management/add-user/add-user.component';
-import { AddServiceComponent } from './modules/services/add-service/add-service.component';
 import { AuthGuard } from './services/authGuard.service';
 import { ForgotPasswordComponent } from './modules/authentication/forgot-password/forgot-password.component';
 
@@ -74,9 +72,9 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'services',
+    path: 'transport_workers',
     loadChildren: () =>
-      import('./modules/services/services.module').then(
+      import('./modules/transport-workers/transport-workers.module').then(
         (m) => m.ServicesModule
       ),
     // canActivate: [AuthGuard],
