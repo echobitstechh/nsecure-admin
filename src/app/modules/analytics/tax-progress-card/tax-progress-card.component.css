@@ -1,7 +1,6 @@
 .card {
   border: none;
   border-radius: 24px;
-  /* background: white; */
 }
 .card-header {
   margin-bottom: 10px;
@@ -53,4 +52,6 @@
 .amount {
   font-size: 12px;
   font-weight: 400;
+}
+@media (max-width: 820px) {
 }
