@@ -17,6 +17,7 @@ import { LayoutModule } from './modules/layout/layout.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LottieModule } from 'ngx-lottie';
 import { ToggleSidebarDirective } from './toggle-sidebar.directive';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export function lottiePlayerFactory(): any {
   return import('lottie-web/build/player/lottie_svg');
@@ -46,7 +47,9 @@ export function lottiePlayerFactory(): any {
     LayoutModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

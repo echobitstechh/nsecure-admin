@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TransportWorkersRoutingModule } from './transport-workers-routing.module';
+import { SharedModule } from '../../shared/shared.module';
+import { TransportWorkersDashboardComponent } from './transport-workers-dashboard/transport-workers-dashboard.component';
+import { TransportWorkersTableComponent } from './transport-workers-table/transport-workers-table.component';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, TransportWorkersRoutingModule],
+  declarations: [TransportWorkersDashboardComponent, TransportWorkersTableComponent],
+  imports: [CommonModule, TransportWorkersRoutingModule, SharedModule],
 })
 export class ServicesModule {}

@@ -1,0 +1,34 @@
+.workers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workers-table th,
+.workers-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.workers-table th {
+  text-align: center;
+}
+
+.worker-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.headarr {
+  color: #8a92a6;
+  font-size: 13px;
+  font-weight: 400;
+}
+.headarrimg {
+  margin-left: 3px;
+}
+.dataflex{
+  display: flex;
+  gap:4px;
+}

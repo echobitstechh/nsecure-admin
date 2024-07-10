@@ -1,0 +1,62 @@
+<table class="workers-table">
+  <thead>
+    <tr>
+      <th class="headarr">
+        Transport Workers
+        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+      </th>
+      <th class="headarr">
+        Category
+        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+      </th>
+      <th class="headarr">
+        Car Type
+        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+      </th>
+      <th class="headarr">
+        Plate Number
+        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+      </th>
+      <th class="headarr">
+        Address
+        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+      </th>
+      <th class="headarr">
+        Car Park
+        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+      </th>
+      <th class="headarr"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let worker of workers">
+      <td class="dataflex">
+        <img [src]="worker.image" alt="worker image" class="worker-image" />
+        <div>
+          <p>{{ worker.name }}</p>
+          <p>{{ worker.email }}</p>
+        </div>
+      </td>
+      <td>{{ worker.category }}</td>
+      <td>{{ worker.carType }}</td>
+      <td>{{ worker.plateNumber }}</td>
+      <td>{{ worker.address }}</td>
+      <td>{{ worker.carPark }}</td>
+      <td>
+        <button mat-button (click)="openDetails(worker)">View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal template -->
+<ng-template #detailsModal let-data class="">
+  <h2>{{ data.name }}</h2>
+  <p>Email: {{ data.email }}</p>
+  <p>Category: {{ data.category }}</p>
+  <p>Car Type: {{ data.carType }}</p>
+  <p>Plate Number: {{ data.plateNumber }}</p>
+  <p>Address: {{ data.address }}</p>
+  <p>Car Park: {{ data.carPark }}</p>
+  <button mat-button (click)="closeModal()">Close</button>
+</ng-template>

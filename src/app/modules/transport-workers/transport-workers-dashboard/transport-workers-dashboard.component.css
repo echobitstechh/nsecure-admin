@@ -1,13 +1,22 @@
-.ellipsis {
-  max-width: 40px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+.filter-btn {
+  background-color: #ffffff;
+  border: none;
+  color: #344054;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 9px;
+  width: 100px;
+  height: 45px;
 }
-
-.page-item.active .page-link {
-  background-color: #1A345C;
-  border-color: #1A345C;
-  color: #fff; /* Optional: change the text color for better contrast */
+.tw-first-div {
+  display: flex;
+  justify-content: space-between;
 }
-
+.search-input {
+  border: none;
+  border-radius: 9px;
+}
