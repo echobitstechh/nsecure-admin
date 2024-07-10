@@ -13,3 +13,22 @@
 .analytics-left-div-one-card {
   width: 50%;
 }
+@media (max-width: 820px) {
+  .analytics-dash-cont {
+    flex-direction: column;
+  }
+  .analytics-left-div-one {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .analytics-left-div-one-card {
+    width: 100%;
+  }
+  .analytics-right-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

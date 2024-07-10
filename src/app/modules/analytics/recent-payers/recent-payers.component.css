@@ -16,10 +16,17 @@
 .table {
   border-collapse: collapse;
 }
+.table-container {
+  flex: 1;
+  overflow-y: auto;
+}
 .table th,
 .table td {
   border-bottom: none;
   color: #5e6066;
   font-size: 14px;
   font-weight: 400;
+  text-wrap: nowrap;
+}
+@media (max-width: 820px) {
 }
