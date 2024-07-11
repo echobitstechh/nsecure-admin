@@ -1,1 +1,22 @@
-<div>transport-workers-dasboard works</div>
+<div style="background-color: #f5f6fa; min-height: 100vh">
+  <p class="" style="color: #202224; font-weight: 700; font-size: 32px">
+    Transport Workers
+  </p>
+  <div class="tw-first-div">
+    <div class="d-flex gap-3 filtandseardiv">
+      <button class="filter-btn shadow-sm">
+        <img src="assets/icons/filterlines.svg" alt="" />Filters
+      </button>
+      <div class="d-flex align-items-center shadow-sm search-div">
+        <img src="assets/icons/search.svg" alt="" />
+        <input type="text" placeholder="Search" class="py-2 search-input" />
+      </div>
+    </div>
+    <app-button
+      label="Add Workers"
+      class="btn-primary"
+      icon="assets/icons/add.svg"
+    ></app-button>
+  </div>
+  <app-transport-workers></app-transport-workers>
+</div>

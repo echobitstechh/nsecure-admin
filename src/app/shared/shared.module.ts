@@ -6,6 +6,8 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { ButtonWithLoaderComponent } from './components/button-with-loader/button-with-loader.component';
 import { LottieModule } from 'ngx-lottie';
 import { lottiePlayerFactory } from '../app.module';
+import { ButtonComponent } from './components/button/button.component';
+import { NotificationToggleComponent } from './components/notification-toggle/notification-toggle.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -13,8 +15,15 @@ import { lottiePlayerFactory } from '../app.module';
     FullPageLoaderComponent,
     ProgressBarLoaderComponent,
     ButtonWithLoaderComponent,
+    ButtonComponent,
+    NotificationToggleComponent,
   ],
-  exports: [ButtonWithLoaderComponent, FullPageLoaderComponent],
+  exports: [
+    ButtonWithLoaderComponent,
+    FullPageLoaderComponent,
+    ButtonComponent,
+    NotificationToggleComponent,
+  ],
   imports: [
     CommonModule,
     ProgressbarModule,

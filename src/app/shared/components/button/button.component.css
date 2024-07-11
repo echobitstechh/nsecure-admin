@@ -2,20 +2,23 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 6px;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-
+.btn-img {
+  width: 25px;
+  height: 25px;
+}
 button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
 }
 .btn-primary {
   background-color: #053688;
-  padding: 0.3rem 2rem;
+  padding: 0.6rem 2rem;
   color: white;
 }
 
