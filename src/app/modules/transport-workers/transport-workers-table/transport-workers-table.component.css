@@ -1,6 +1,7 @@
 .workers-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 15px;
 }
 
 .workers-table th,
@@ -11,6 +12,8 @@
 
 .workers-table th {
   text-align: center;
+  padding: 18px;
+  background-color: #bdbec0;
 }
 
 .worker-image {
@@ -28,7 +31,16 @@
 .headarrimg {
   margin-left: 3px;
 }
-.dataflex{
+.dataflex {
   display: flex;
-  gap:4px;
+  gap: 4px;
+}
+.dataflex div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.workers-table td button {
+  padding: 12px;
+  border: none;
 }
