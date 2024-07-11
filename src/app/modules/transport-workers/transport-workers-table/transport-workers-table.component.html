@@ -1,62 +1,87 @@
-<table class="workers-table">
-  <thead>
-    <tr>
-      <th class="headarr">
-        Transport Workers
-        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
-      </th>
-      <th class="headarr">
-        Category
-        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
-      </th>
-      <th class="headarr">
-        Car Type
-        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
-      </th>
-      <th class="headarr">
-        Plate Number
-        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
-      </th>
-      <th class="headarr">
-        Address
-        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
-      </th>
-      <th class="headarr">
-        Car Park
-        <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
-      </th>
-      <th class="headarr"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let worker of workers">
-      <td class="dataflex">
-        <img [src]="worker.image" alt="worker image" class="worker-image" />
-        <div>
-          <span>{{ worker.name }}</span>
-          <span>{{ worker.email }}</span>
-        </div>
-      </td>
-      <td>{{ worker.category }}</td>
-      <td>{{ worker.carType }}</td>
-      <td>{{ worker.plateNumber }}</td>
-      <td>{{ worker.address }}</td>
-      <td>{{ worker.carPark }}</td>
-      <td>
-        <button mat-button (click)="openDetails(worker)">View Details</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-cont">
+  <table class="workers-table">
+    <thead>
+      <tr>
+        <th class="headarr">
+          <input type="checkbox" (change)="toggleAll($event)" />
+        </th>
+        <th class="headarr">
+          Transport Workers
+          <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+        </th>
+        <th class="headarr">
+          Category
+          <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+        </th>
+        <th class="headarr">
+          Car Type
+          <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+        </th>
+        <th class="headarr">
+          Plate Number
+          <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+        </th>
+        <th class="headarr">
+          Address
+          <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+        </th>
+        <th class="headarr">
+          Car Park
+          <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+        </th>
+        <th class="headarr"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let worker of workers">
+        <td>
+          <input type="checkbox" [(ngModel)]="worker.selected" />
+        </td>
+        <td class="dataflex">
+          <img [src]="worker.image" alt="worker image" class="worker-image" />
+          <div>
+            <span style="color: #101828; font-size: 16px; font-weight: 400">
+              {{ worker.name }}
+            </span>
+            <span style="color: #667085; font-size: 14px; font-weight: 400">
+              {{ worker.email }}
+            </span>
+          </div>
+        </td>
+        <td>{{ worker.category }}</td>
+        <td>{{ worker.carType }}</td>
+        <td>{{ worker.plateNumber }}</td>
+        <td>{{ worker.address }}</td>
+        <td>{{ worker.carPark }}</td>
+        <td>
+          <button mat-button (click)="openDetails(worker)" class="shadow-sm">
+            View Details
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination-controls">
+    <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToNextPage()" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+</div>
 
 <!-- Modal template -->
-<ng-template #detailsModal let-data class="">
-  <h2>{{ data.name }}</h2>
-  <p>Email: {{ data.email }}</p>
-  <p>Category: {{ data.category }}</p>
-  <p>Car Type: {{ data.carType }}</p>
-  <p>Plate Number: {{ data.plateNumber }}</p>
-  <p>Address: {{ data.address }}</p>
-  <p>Car Park: {{ data.carPark }}</p>
-  <button mat-button (click)="closeModal()">Close</button>
+<ng-template #detailsModal let-data>
+  <div class="modal-tw-details">
+    <h4>{{ data.name }}</h4>
+    <p>Email: {{ data.email }}</p>
+    <p>Category: {{ data.category }}</p>
+    <p>Car Type: {{ data.carType }}</p>
+    <p>Plate Number: {{ data.plateNumber }}</p>
+    <p>Address: {{ data.address }}</p>
+    <p>Car Park: {{ data.carPark }}</p>
+    <div><button mat-button (click)="closeModal()">Close</button></div>
+  </div>
 </ng-template>
