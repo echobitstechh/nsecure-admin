@@ -1,5 +1,5 @@
 .header {
-  padding: 8px !important;
+  padding: 10px !important;
   width: 1201px;
   background-color: #ffffff;
 }
@@ -47,4 +47,9 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  outline: none;
+}
+.lang-div-inner div img {
+  width: 44px;
+  height: 44px;
 }
