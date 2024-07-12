@@ -27,6 +27,8 @@
 .search-input {
   border: none;
   border-radius: 9px;
+  outline: none;
+  cursor: pointer;
 }
 @media (max-width: 820px) {
   .tw-first-div {

@@ -63,6 +63,6 @@
 }
 @media (max-width: 768px) {
   #bdSidebar.offcanvas-start {
-    max-width: 260px; /* Adjust this value to change the sidebar width on mobile */
+    max-width: 220px; /* Adjust this value to change the sidebar width on mobile */
   }
 }
