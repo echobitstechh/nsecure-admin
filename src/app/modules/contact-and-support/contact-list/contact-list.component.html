@@ -1,0 +1,18 @@
+<div class="pt-3 big-cont">
+  <div class="d-flex align-items-center shadow-sm cs-search">
+    <img src="assets/icons/search.svg" alt="" />
+    <input type="text" placeholder="Search" class="py-2 csl-search-input" />
+  </div>
+  <div
+    *ngFor="let contact of contacts"
+    (click)="selectContact(contact)"
+    class="contact"
+  >
+    <img [src]="contact.image" alt="Avatar" />
+    <div class="contact-info">
+      <h4>{{ contact.name }}</h4>
+      <p>{{ contact.lastMessage }}</p>
+    </div>
+    <span class="time">{{ contact.time }}</span>
+  </div>
+</div>

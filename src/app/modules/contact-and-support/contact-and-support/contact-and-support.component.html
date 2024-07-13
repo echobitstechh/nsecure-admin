@@ -1,1 +1,15 @@
-<p>contact-and-support works!</p>
+<div style="background-color: #f5f6fa">
+  <p class="" style="color: #202224; font-weight: 700; font-size: 32px">
+    Contact & Support
+  </p>
+  <div class="container">
+    <app-contact-list
+      class="contact-list shadow-lg"
+      (contactSelected)="onContactSelected($event)"
+    ></app-contact-list>
+    <app-chat-window
+      class="chat-window shadow-lg"
+      [selectedContact]="selectedContact"
+    ></app-chat-window>
+  </div>
+</div>
