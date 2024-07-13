@@ -58,15 +58,10 @@
   color: #ffffff !important;
 }
 #bdSidebar.offcanvas-start {
-  height: 100vh;
-  position: sticky;
-  top: 0;
   width: 240px;
 }
 @media (max-width: 768px) {
   #bdSidebar.offcanvas-start {
-    max-width: 220px; /* Adjust this value to change the sidebar width on mobile */
-    height: auto; /* Auto height */
-    position: relative;
+    max-width: 220px;
   }
 }
