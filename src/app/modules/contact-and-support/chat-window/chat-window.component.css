@@ -86,11 +86,12 @@
 }
 
 .message-input {
-  width: 694px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 14px 12px 14px;
+  /* margin: 5px; */
+  /* margin: 12px 14px 12px 14px; */
   padding: 10px 15px;
   border: 1px solid #c6d3fe;
   background-color: #f5f6fa;
