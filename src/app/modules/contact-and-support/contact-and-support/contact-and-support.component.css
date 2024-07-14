@@ -30,7 +30,9 @@
 .hamburger {
   display: none;
 }
-
+.chat-window {
+  padding: 8px;
+}
 @media (max-width: 820px) {
   .container {
     position: relative;
