@@ -90,8 +90,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin: 5px; */
-  /* margin: 12px 14px 12px 14px; */
   padding: 10px 15px;
   border: 1px solid #c6d3fe;
   background-color: #f5f6fa;
@@ -119,5 +117,11 @@
   .message-input {
     width: 100%;
     margin: 0px;
+  }
+  .message {
+    margin-bottom: 20px;
+  }
+  .message-content {
+    max-width: max-content;
   }
 }
