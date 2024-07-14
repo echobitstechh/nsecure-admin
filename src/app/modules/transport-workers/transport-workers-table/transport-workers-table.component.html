@@ -33,7 +33,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let worker of workers">
+      <tr *ngFor="let worker of paginatedWorkers">
         <td>
           <input type="checkbox" [(ngModel)]="worker.selected" />
         </td>
