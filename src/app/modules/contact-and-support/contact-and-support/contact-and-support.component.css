@@ -15,7 +15,7 @@
 }
 
 .chat-window {
-  width: 70%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -25,4 +25,49 @@
 .message-input {
   padding: 10px;
   border-top: 1px solid #ddd;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  .container {
+    position: relative;
+    gap: 6px;
+  }
+
+  .contact-list {
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+  }
+  .chat-window {
+    padding: 6px;
+    margin-left: 16px;
+  }
+  .contact-list.hidden {
+    transform: translateX(-100%);
+    display: none;
+  }
+
+  .contact-list.visible {
+    transform: translateX(0);
+    display: block;
+  }
+
+  .hamburger {
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: -5px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 20;
+    color: #295dfa;
+    background-color: #f5f6fa;
+    padding: 5px;
+  }
 }

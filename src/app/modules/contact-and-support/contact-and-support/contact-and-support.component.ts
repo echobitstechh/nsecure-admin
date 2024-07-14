@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class ContactAndSupportComponent {
   selectedContact: any;
+  isContactListVisible = false;
 
+  toggleContactList() {
+    this.isContactListVisible = !this.isContactListVisible;
+  }
   onContactSelected(contact: any) {
     this.selectedContact = contact;
+    this.isContactListVisible = false;
   }
 }

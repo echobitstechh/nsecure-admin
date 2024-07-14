@@ -3,8 +3,13 @@
     Contact & Support
   </p>
   <div class="container">
+    <button class="hamburger shadow-lg" (click)="toggleContactList()">☰</button>
     <app-contact-list
       class="contact-list shadow-lg"
+      [ngClass]="{
+        hidden: !isContactListVisible,
+        visible: isContactListVisible
+      }"
       (contactSelected)="onContactSelected($event)"
     ></app-contact-list>
     <app-chat-window
