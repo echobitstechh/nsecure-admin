@@ -1,0 +1,12 @@
+.signup-labels {
+  margin-bottom: 6px;
+  color: #232323;
+}
+.signup-inputs {
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  outline: none !important;
+  width: 100%;
+}

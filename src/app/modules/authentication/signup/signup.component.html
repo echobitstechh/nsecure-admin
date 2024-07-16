@@ -1,0 +1,120 @@
+<div class="signup-form">
+  <h2>Sign Up</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstname" class="d-block signup-labels">First Name</label>
+      <input
+        type="text"
+        id="firstname"
+        formControlName="firstname"
+        class="signup-inputs"
+        required
+      />
+      <div
+        *ngIf="
+          signupForm.get('firstname')!.hasError('required') &&
+          signupForm.get('firstname')!.touched
+        "
+      >
+        First Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastname" class="d-block signup-labels">Last Name</label>
+      <input
+        type="text"
+        id="lastname"
+        formControlName="lastname"
+        class="signup-inputs"
+        required
+      />
+      <div
+        *ngIf="
+          signupForm.get('lastname')!.hasError('required') &&
+          signupForm.get('lastname')!.touched
+        "
+      >
+        Last Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="username" class="d-block signup-labels">Username</label>
+      <input
+        type="text"
+        id="username"
+        formControlName="username"
+        class="signup-inputs"
+        required
+      />
+      <div
+        *ngIf="
+          signupForm.get('username')!.hasError('required') &&
+          signupForm.get('username')!.touched
+        "
+      >
+        Username is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="d-block signup-labels">Email</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="signup-inputs"
+        required
+      />
+      <div
+        *ngIf="
+          signupForm.get('email')!.hasError('required') &&
+          signupForm.get('email')!.touched
+        "
+      >
+        Email is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" class="d-block signup-labels">Password</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        class="signup-inputs"
+        required
+      />
+      <div
+        *ngIf="
+          signupForm.get('password')!.hasError('required') &&
+          signupForm.get('password')!.touched
+        "
+      >
+        Password is required.
+      </div>
+      <div
+        *ngIf="
+          signupForm.get('password')!.hasError('minlength') &&
+          signupForm.get('password')!.touched
+        "
+      >
+        Password must be at least 8 characters long.
+      </div>
+      <div
+        *ngIf="
+          signupForm.get('password')!.hasError('invalidPassword') &&
+          signupForm.get('password')!.touched
+        "
+      >
+        Password must contain at least one uppercase letter, one lowercase
+        letter, one digit, and one special character.
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+      <app-button
+        type="submit"
+        label="Save"
+        class="btn-primary"
+        [disabled]="signupForm.invalid"
+      ></app-button>
+    </div>
+  </form>
+</div>

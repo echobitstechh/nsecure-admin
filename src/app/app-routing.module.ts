@@ -9,6 +9,7 @@ import { PreferencesComponent } from './modules/settings/preferences/preferences
 import { AddUserComponent } from './modules/user-management/add-user/add-user.component';
 import { AuthGuard } from './services/authGuard.service';
 import { ForgotPasswordComponent } from './modules/authentication/forgot-password/forgot-password.component';
+import { SignupComponent } from './modules/authentication/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -28,9 +29,11 @@ const routes: Routes = [
     // canActivate: [AuthGuard],
   },
   {
-    path: 'home',
+    path: '',
     loadChildren: () =>
-      import('./modules/layout/layout.module').then((m) => m.LayoutModule),
+      import('./modules/authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
+      ),
     // canActivate: [AuthGuard],
   },
   {
@@ -40,6 +43,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
   },
   {
     path: '',

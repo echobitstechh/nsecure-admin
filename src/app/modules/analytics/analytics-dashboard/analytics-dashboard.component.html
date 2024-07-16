@@ -5,17 +5,18 @@
         class="analytics-left-div-one-card"
         title="Employees"
         subtitle="Attendance Percentage"
-        [percentage]="80"
         iconAnaUrl="assets/icons/people.svg"
-      >
+        ><app-gauge-chart [percentage]="80"></app-gauge-chart>
       </app-analytics-card-one>
       <app-analytics-card-one
         class="analytics-left-div-one-card"
         title="Earning"
         subtitle="Through Bonus"
-        [percentage]="65"
         iconAnaUrl="assets/icons/earning.svg"
-      >
+        ><app-gauge-chart
+          [percentage]="65"
+          fillColor="#053688"
+        ></app-gauge-chart>
       </app-analytics-card-one>
     </div>
     <app-analytics-card-two></app-analytics-card-two>
