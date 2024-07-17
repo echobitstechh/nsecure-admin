@@ -1,7 +1,17 @@
 <div class="login-cont">
-  <div>to display the company's logo</div>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-    <h2>Login</h2>
+  <div class="login-cont-div">
+    <img
+      src="assets/images/Nsecure.svg"
+      alt="An image showing the Nsecure logo"
+    />
+    <p style="text-align: end; padding-top: 10px">admin</p>
+  </div>
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    class="login-form shadow-lg"
+  >
+    <h2 style="text-align: center">Login here</h2>
     <div class="form-group">
       <label for="usernameOrEmail" class="d-block login-labels"
         >Username/Email</label
@@ -11,6 +21,7 @@
         id="usernameOrEmail"
         formControlName="usernameOrEmail"
         class="login-inputs"
+        placeholder="johnDoe/johndoe@gmail.com"
         required
       />
       <div
@@ -40,6 +51,7 @@
         id="password"
         formControlName="password"
         class="login-inputs"
+        placeholder="password100"
         required
       />
       <div
@@ -59,6 +71,22 @@
         Password must be at least 8 characters long.
       </div>
     </div>
+    <div class="remember-me-div">
+      <div class="form-group d-flex gap-1 align-items-center">
+        <input
+          type="checkbox"
+          id="rememberMe"
+          (change)="onCheckBoxChange($event)"
+          [checked]="checkBox"
+        />
+        <label for="rememberMe">Remember Me</label>
+      </div>
+      <span
+        >Forgot Password?
+        <a aria-current="page" routerLink="/forgot-password"> Reset </a></span
+      >
+    </div>
+
     <div class="d-flex justify-content-center mt-5">
       <app-button
         type="submit"
