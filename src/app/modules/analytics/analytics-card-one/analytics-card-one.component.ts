@@ -8,7 +8,6 @@ import { Component, Input } from '@angular/core';
 export class AnalyticsCardOneComponent {
   @Input() title: string = '';
   @Input() subtitle: string = '';
-  @Input() percentage: number = 0;
   @Input() iconAnaUrl: string = '';
 
   constructor() {}
