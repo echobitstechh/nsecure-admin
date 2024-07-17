@@ -1,10 +1,10 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {BsModalRef} from "ngx-bootstrap/modal";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-success-dialog',
   templateUrl: './success-dialog.component.html',
-  styleUrl: './success-dialog.component.css'
+  styleUrl: './success-dialog.component.css',
 })
 export class SuccessDialogComponent {
   @Input() title = 'Success';
