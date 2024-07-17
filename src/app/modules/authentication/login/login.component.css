@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .login-labels {
@@ -39,15 +40,17 @@
   border: 1px solid #ccc;
   border-radius: 14px;
   outline: none !important;
-  width: 100%;
+  width: 25rem;
 }
 .form-group {
   margin-top: 20px;
 }
 .remember-me-div {
   display: flex;
-  justify-content: space-between;
-  align-items: end;
+  flex-direction: column;
+  gap: 8px;
+  /* justify-content: center; */
+  align-items: center;
 }
 .remember-me-div span {
   display: inline-flex;

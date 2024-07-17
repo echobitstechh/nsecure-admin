@@ -28,7 +28,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
 
-    const storedDetails = JSON.parse(localStorage.getItem('login') || '{}');
+    const storedDetails = JSON.parse(
+      localStorage.getItem('loginDetails') || '{}'
+    );
     if (
       storedDetails &&
       storedDetails.usernameOrEmail &&
@@ -44,11 +46,13 @@ export class LoginComponent implements OnInit, OnDestroy {
   onSubmit() {
     if (this.loginForm.valid) {
       if (this.checkBox) {
-        localStorage.setItem('login', JSON.stringify(this.loginForm.value));
+        localStorage.setItem(
+          'loginDetails',
+          JSON.stringify(this.loginForm.value)
+        );
       } else {
-        localStorage.removeItem('login');
+        localStorage.removeItem('loginDetails');
       }
-      console.log(this.loginForm.value);
       this.router.navigate(['/dashboard']);
     }
   }
