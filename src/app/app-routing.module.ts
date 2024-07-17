@@ -9,7 +9,6 @@ import { PreferencesComponent } from './modules/settings/preferences/preferences
 import { AddUserComponent } from './modules/user-management/add-user/add-user.component';
 import { AuthGuard } from './services/authGuard.service';
 import { ForgotPasswordComponent } from './modules/authentication/forgot-password/forgot-password.component';
-import { SignupComponent } from './modules/authentication/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -18,7 +17,7 @@ const routes: Routes = [
       import('./modules/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'analytics',
@@ -26,7 +25,7 @@ const routes: Routes = [
       import('./modules/analytics/analytics.module').then(
         (m) => m.AnalyticsModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: '',
@@ -34,7 +33,7 @@ const routes: Routes = [
       import('./modules/authentication/authentication.module').then(
         (m) => m.AuthenticationModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'forgot-password',
@@ -43,10 +42,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: 'signup',
-    component: SignupComponent,
   },
   {
     path: '',
@@ -60,7 +55,7 @@ const routes: Routes = [
       import('./modules/contact-and-support/contact-and-support.module').then(
         (m) => m.ContactAndSupportModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'management',
@@ -68,7 +63,7 @@ const routes: Routes = [
       import('./modules/user-management/user-management.module').then(
         (m) => m.UserManagementModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'authentication',
@@ -84,7 +79,7 @@ const routes: Routes = [
       import('./modules/transport-workers/transport-workers.module').then(
         (m) => m.ServicesModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'settings',
@@ -92,7 +87,7 @@ const routes: Routes = [
       import('./modules/settings/settings.module').then(
         (m) => m.SettingsModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
 ];
 

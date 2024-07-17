@@ -1,72 +1,23 @@
-/* Add your global styles or reset styles here */
-body {
-  background-color: #f8f9fa; /* A background color that matches the design */
-}
-
-/* Styles for the card */
-.card {
-  margin-top: -100px; /* Adjust as necessary */
-  border: none; /* Optional: removes the default card border */
+.login-form {
+  border: none;
   width: 30rem;
 }
 
-/* Styles for the form and its elements */
-.form-label {
-  font-weight: 600; /* Make labels bold */
+.login-labels {
+  margin-bottom: 6px;
+  color: #232323;
+}
+.login-inputs {
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  outline: none !important;
+  width: 100%;
 }
 
-.btn-warning {
-  background-color: #ffc107; /* A yellow color that matches the design */
-  border: none; /* Removes the border */
-  color: #fff; /* White text */
-}
-
-.btn-warning:hover {
-  background-color: #e0a800; /* A darker yellow for the hover state */
-}
-
-/* Link styles */
-a.text-primary {
-  color: #007bff; /* Bootstrap primary color */
-}
-
-a.text-secondary {
-  color: #6c757d; /* Bootstrap secondary color */
-}
-
-.btn-custom {
-  background-color: #0E2954;
-  color: white;
-  /* Add any additional styling for the button here */
-  border: none; /* Removes the border, add if needed */
-  padding: 10px 20px;
-}
-
-/* Optional media query for smaller screens */
 @media (max-width: 576px) {
-  .card {
-    width: auto; /* Allows the card to adjust to the width of the screen */
+  .login-form {
+    width: auto;
   }
-}
-
-
-.form-control-lg {
-  height: calc(1.5em + 1rem + 2px);
-  padding: .5rem 1rem;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  border-radius: .3rem;
-}
-
-.form-label {
-  font-weight: normal; /* Less boldness */
-  font-size: 1rem;
-}
-
-.btn-custom {
-  padding: .75rem 1.25rem; /* Bigger button padding */
-  font-size: 1.25rem; /* Bigger font size */
-  border-radius: .3rem; /* Rounded corners */
-  background-color: #0E2954; /* Primary color */
-  color: white; /* Text color */
 }
