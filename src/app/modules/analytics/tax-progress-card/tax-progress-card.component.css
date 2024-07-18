@@ -53,5 +53,13 @@
   font-size: 12px;
   font-weight: 400;
 }
+.dot-lastMonth {
+  fill: orange;
+}
+
+.dot-thisMonth {
+  fill: blue;
+}
+
 @media (max-width: 820px) {
 }

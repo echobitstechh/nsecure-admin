@@ -15,9 +15,9 @@ import * as d3 from 'd3';
 export class LineChartComponent implements OnChanges {
   @Input() public data!: { value: number; month: string }[];
 
-  private width = 650;
+  private width = 600;
   private height = 300;
-  private margin = 50;
+  private margin = 20;
 
   public svg!: d3.Selection<SVGSVGElement, unknown, HTMLElement, any>;
   public svgInner!: d3.Selection<SVGGElement, unknown, HTMLElement, any>;
