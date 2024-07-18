@@ -22,7 +22,10 @@
         ></app-gauge-chart>
       </app-analytics-card-one>
     </div>
-    <app-analytics-card-two></app-analytics-card-two>
+    <app-analytics-card-two
+      >
+      <app-line-chart [data]="data"></app-line-chart>
+    </app-analytics-card-two>
     <app-recent-payers></app-recent-payers>
   </div>
   <div class="analytics-right-div">
