@@ -15,7 +15,7 @@ import * as d3 from 'd3';
 export class LineChartComponent implements OnChanges {
   @Input() public data!: { value: number; month: string }[];
 
-  private width = 600;
+  private width = 60;
   private height = 300;
   private margin = 20;
 
@@ -40,6 +40,7 @@ export class LineChartComponent implements OnChanges {
   }
 
   private initializeChart(): void {
+    this.width = this.chartElem.nativeElement.getBoundingClientRect().width;
     this.svg = d3
       .select<HTMLElement, unknown>(this.chartElem.nativeElement)
       .select<SVGSVGElement>('.linechart')
@@ -78,16 +79,16 @@ export class LineChartComponent implements OnChanges {
       .domain([100, 500])
       .range([this.height - 2 * this.margin, 0]);
 
-    this.yAxis = this.svgInner
-      .append<SVGGElement>('g')
-      .attr('id', 'y-axis')
-      .style('transform', `translate(${this.margin}px, 0)`);
-
     this.xScale = d3
       .scaleBand()
       .domain(this.data.map((d) => d.month))
       .range([this.margin, this.width - 2 * this.margin])
       .padding(0.1);
+
+    this.yAxis = this.svgInner
+      .append<SVGGElement>('g')
+      .attr('id', 'y-axis')
+      .style('transform', `translate(${this.margin}px, 0)`);
 
     this.xAxis = this.svgInner
       .append<SVGGElement>('g')
