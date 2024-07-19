@@ -20,6 +20,7 @@
   flex-direction: column;
   background-color: #ffffff;
   border-radius: 20px;
+  padding: 0px 2px;
 }
 
 .message-input {
@@ -30,9 +31,7 @@
 .hamburger {
   display: none;
 }
-.chat-window {
-  padding: 8px;
-}
+
 @media (max-width: 820px) {
   .container {
     position: relative;

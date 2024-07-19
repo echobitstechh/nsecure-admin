@@ -8,6 +8,7 @@ import { AnalyticsCardTwoComponent } from './analytics-card-two/analytics-card-t
 import { RecentPayersComponent } from './recent-payers/recent-payers.component';
 import { TaxProgressCardComponent } from './tax-progress-card/tax-progress-card.component';
 import { GaugeChartComponent } from './gauge-chart/gauge-chart.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +17,9 @@ import { GaugeChartComponent } from './gauge-chart/gauge-chart.component';
     ActiveEnumeratorCardComponent,
     AnalyticsCardTwoComponent,
     RecentPayersComponent,
-    TaxProgressCardComponent,
     GaugeChartComponent,
+    LineChartComponent,
+    TaxProgressCardComponent,
   ],
   imports: [CommonModule, AnalyticsDashboardComponenttRoutingModule],
   exports: [AnalyticsDashboardComponent],

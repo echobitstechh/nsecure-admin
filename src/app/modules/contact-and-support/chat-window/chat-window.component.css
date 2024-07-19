@@ -4,6 +4,8 @@
   padding: 10px 14px;
   border-bottom: 1px solid #c6d3fe;
   background-color: #f5f6fa !important;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 .chat-header img {
@@ -94,6 +96,7 @@
   border: 1px solid #c6d3fe;
   background-color: #f5f6fa;
   border-radius: 20px;
+  margin-bottom: 4px;
 }
 
 .input-container {

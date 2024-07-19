@@ -36,8 +36,3 @@
   display: flex;
   justify-content: space-between;
 }
-.card-progress {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
