@@ -57,7 +57,7 @@
       class="dashboard-second-div-card-two"
       title="Total Tax Generated"
       [timeFrames]="['This Week', 'Last Week', 'This Month', 'Last Month']"
-    >
+      ><app-tax-chart-card [data]="taxChartData"></app-tax-chart-card>
     </app-dashboard-card-two>
   </div>
 
@@ -68,6 +68,7 @@
       title="Your Pie Chart"
       [timeFrames]="['Monthly', 'Weekly', 'Daily']"
     >
+      <app-pie-chart [data]="pieChartData"></app-pie-chart>
     </app-dashboard-card-two>
     <app-enumerator-list-card
       class="dashboard-third-div-card"

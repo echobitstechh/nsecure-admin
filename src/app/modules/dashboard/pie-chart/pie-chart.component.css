@@ -1,0 +1,19 @@
+#pieChart {
+  width: 133;
+  /* height: 300px; */
+}
+
+.text-div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.text-div div {
+  display: flex;
+  align-items: center;
+}
+
+.text-div span {
+  margin-right: 5px;
+}
