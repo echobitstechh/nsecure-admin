@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 // }
 export class SidebarComponent implements OnInit {
-  @Input() showSidebarAndHeader: boolean = false; // Use @Input to receive data from parent
+  @Input() showSidebarAndHeader: boolean = false;
 
   ngOnInit(): void {}
 }

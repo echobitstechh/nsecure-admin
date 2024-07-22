@@ -1,0 +1,38 @@
+.card {
+  border: none !important;
+  border-radius: 20px;
+  padding: 12px 10px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  margin-bottom: 16px;
+}
+.card-header img {
+  width: 25px;
+  height: 25px;
+}
+.analytics-more-button {
+  background: none;
+  border: none;
+  color: #081332;
+  font-size: 16px;
+  cursor: pointer;
+}
+.card-text h3 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #081332;
+  margin-bottom: 16px;
+}
+.card-text p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #5e6066;
+}
+.card-content {
+  display: flex;
+  justify-content: space-between;
+}

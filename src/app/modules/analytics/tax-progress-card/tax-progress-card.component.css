@@ -1,0 +1,80 @@
+.card {
+  border: none;
+  border-radius: 24px;
+}
+
+.card-header {
+  margin-bottom: 10px;
+  background: transparent;
+  border-bottom: none !important;
+}
+
+.card-header h3 {
+  color: #081332;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  border-top: none !important;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid grey !important;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  color: #5e6066;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.last-month {
+  background-color: #ff9066;
+}
+
+.this-month {
+  background-color: #053688;
+}
+
+.amounts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.dot-lastMonth {
+  fill: orange;
+}
+
+.dot-thisMonth {
+  fill: blue;
+}
+
+@media (max-width: 820px) {
+}

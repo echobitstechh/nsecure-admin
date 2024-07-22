@@ -1,0 +1,24 @@
+.card {
+  border: none;
+  border-radius: 24px;
+}
+.card-header {
+  border-bottom: none !important;
+  background: transparent;
+}
+.card-header h3 {
+  font-weight: 600;
+  font-size: 24px;
+  border-bottom: none !important;
+  color: #081332;
+}
+.table th,
+.table td {
+  border-bottom: none !important;
+  color: #5e6066;
+  font-size: 14px;
+  font-weight: 400;
+}
+.card-body {
+  padding: 0px 8px;
+}

@@ -1,0 +1,34 @@
+<p class="" style="color: #202224; font-weight: 700; font-size: 32px">
+  Analytics
+</p>
+<div class="d-flex gap-4 analytics-dash-cont">
+  <div class="analytics-left-div">
+    <div class="d-flex gap-3 analytics-left-div-one">
+      <app-analytics-card-one
+        class="analytics-left-div-one-card"
+        title="Employees"
+        subtitle="Attendance Percentage"
+        iconAnaUrl="assets/icons/people.svg"
+        ><app-gauge-chart [percentage]="80"></app-gauge-chart>
+      </app-analytics-card-one>
+      <app-analytics-card-one
+        class="analytics-left-div-one-card"
+        title="Earning"
+        subtitle="Through Bonus"
+        iconAnaUrl="assets/icons/earning.svg"
+        ><app-gauge-chart
+          [percentage]="65"
+          fillColor="#053688"
+        ></app-gauge-chart>
+      </app-analytics-card-one>
+    </div>
+    <app-analytics-card-two>
+      <app-line-chart [data]="data"></app-line-chart>
+    </app-analytics-card-two>
+    <app-recent-payers></app-recent-payers>
+  </div>
+  <div class="analytics-right-div">
+    <app-active-enumerator-card></app-active-enumerator-card>
+    <app-tax-progress-card></app-tax-progress-card>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <img *ngIf="iconAnaUrl" [src]="iconAnaUrl" alt="icon" />
+    <button class="analytics-more-button">⋮</button>
+  </div>
+  <div class="card-content">
+    <div class="card-text">
+      <h3>{{ title }}</h3>
+      <p>{{ subtitle }}</p>
+    </div>
+    <div class="card-progress">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

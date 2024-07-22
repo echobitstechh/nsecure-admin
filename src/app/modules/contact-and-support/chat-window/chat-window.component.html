@@ -1,0 +1,36 @@
+<div class="chat-header">
+  <img *ngIf="selectedContact" [src]="selectedContact.image" alt="Avatar" />
+  <div class="chat-header-info">
+    <p style="color: #081332; font-weight: 400; font-size: 16px">
+      {{ selectedContact?.name }}
+    </p>
+    <span style="color: #5e6066; font-size: 12px">User</span>
+  </div>
+  <div class="chat-header-actions">
+    <i class="material-icons" style="color: #295dfa">videocam</i>
+    <i class="material-icons" style="color: #295dfa">call</i>
+    <i class="material-icons" style="color: #081332">more_vert</i>
+  </div>
+</div>
+
+<div class="chat-body">
+  <div
+    class="message"
+    *ngFor="let message of messages"
+    [ngClass]="message.type"
+  >
+    <img [src]="message.senderImage" alt="Avatar" />
+    <div class="message-content">
+      <p>{{ message.text }}</p>
+      <span class="time">{{ message.time }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="message-input">
+  <div class="input-container">
+    <img src="assets/icons/file.svg" alt="file sending icon" />
+    <textarea placeholder="Write a message..." rows="1"></textarea>
+  </div>
+  <img src="assets/icons/send.svg" alt="send icon" />
+</div>

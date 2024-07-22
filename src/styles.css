@@ -1,4 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --primary-color: #0E2954; /* Replace with your preferred color */
+  --primary-color: #0e2954; /* Replace with your preferred color */
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

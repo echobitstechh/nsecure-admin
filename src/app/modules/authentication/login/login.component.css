@@ -1,72 +1,83 @@
-/* Add your global styles or reset styles here */
-body {
-  background-color: #f8f9fa; /* A background color that matches the design */
+.login-cont {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.login-cont-div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: 4px;
+  width: 50%;
+}
+.login-cont-div p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #202224;
+}
+.login-form {
+  border: none;
+  flex: 1;
+  padding: 16px;
+  border-radius: 14px;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Styles for the card */
-.card {
-  margin-top: -100px; /* Adjust as necessary */
-  border: none; /* Optional: removes the default card border */
-  width: 30rem;
+.login-labels {
+  margin-bottom: 6px;
+  color: #232323;
+  font-size: 14px;
+  font-weight: 500;
 }
-
-/* Styles for the form and its elements */
-.form-label {
-  font-weight: 600; /* Make labels bold */
+.login-inputs {
+  padding: 6px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  outline: none !important;
+  width: 25rem;
 }
-
-.btn-warning {
-  background-color: #ffc107; /* A yellow color that matches the design */
-  border: none; /* Removes the border */
-  color: #fff; /* White text */
+.form-group {
+  margin-top: 20px;
 }
-
-.btn-warning:hover {
-  background-color: #e0a800; /* A darker yellow for the hover state */
+.remember-me-div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* justify-content: center; */
+  align-items: center;
 }
-
-/* Link styles */
-a.text-primary {
-  color: #007bff; /* Bootstrap primary color */
+.remember-me-div span {
+  display: inline-flex;
+  gap: 2px !important;
+  align-items: center;
+  color: #053688;
 }
-
-a.text-secondary {
-  color: #6c757d; /* Bootstrap secondary color */
+.remember-me-div span a {
+  color: #053688;
+  text-decoration: none;
 }
-
-.btn-custom {
-  background-color: #0E2954;
-  color: white;
-  /* Add any additional styling for the button here */
-  border: none; /* Removes the border, add if needed */
-  padding: 10px 20px;
-}
-
-/* Optional media query for smaller screens */
-@media (max-width: 576px) {
-  .card {
-    width: auto; /* Allows the card to adjust to the width of the screen */
+@media (max-width: 820px) {
+  .login-cont {
+    display: flex;
+    flex-direction: column;
   }
-}
-
-
-.form-control-lg {
-  height: calc(1.5em + 1rem + 2px);
-  padding: .5rem 1rem;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  border-radius: .3rem;
-}
-
-.form-label {
-  font-weight: normal; /* Less boldness */
-  font-size: 1rem;
-}
-
-.btn-custom {
-  padding: .75rem 1.25rem; /* Bigger button padding */
-  font-size: 1.25rem; /* Bigger font size */
-  border-radius: .3rem; /* Rounded corners */
-  background-color: #0E2954; /* Primary color */
-  color: white; /* Text color */
+  .login-cont-div {
+    width: 100%;
+  }
+  .login-form {
+    width: 100%;
+    height: max-content;
+  }
+  .remember-me-div {
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
 }

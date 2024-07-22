@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: SettingsHomeComponent,
     children: [
-      { path: 'profile', component: ProfileComponent },
+      { path: 'edit-profile', component: ProfileComponent },
       { path: 'preferences', component: PreferencesComponent },
       { path: 'security', component: SecurityComponent },
       { path: '', redirectTo: 'profile', pathMatch: 'full' },
