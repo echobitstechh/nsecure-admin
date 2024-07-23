@@ -52,12 +52,17 @@
       title="Transport Workers"
       [timeFrames]="['This Week', 'Last Week', 'This Month', 'Last Month']"
     >
+      <app-circular-progress-chart
+        [data]="transportWorkersChartData"
+        [size]="218"
+        [strokeWidth]="5"
+      ></app-circular-progress-chart>
     </app-dashboard-card-two>
     <app-dashboard-card-two
       class="dashboard-second-div-card-two"
       title="Total Tax Generated"
       [timeFrames]="['This Week', 'Last Week', 'This Month', 'Last Month']"
-      ><app-tax-chart-card [data]="taxChartData"></app-tax-chart-card>
+      ><app-bar-chart [data]="barChartData"></app-bar-chart>
     </app-dashboard-card-two>
   </div>
 

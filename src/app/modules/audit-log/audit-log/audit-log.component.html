@@ -1,5 +1,26 @@
-<div style="background-color: #f5f6fa">
-  <p class="" style="color: #202224; font-weight: 700; font-size: 32px">
-    Audit Logs
-  </p>
+<p class="" style="color: #202224; font-weight: 700; font-size: 32px">
+  Audit Logs
+</p>
+<div style="background-color: #f5f6fa" class="audit-cont">
+  <div class="audit-div-one">
+    <app-audit-log-card class="div-one-card"></app-audit-log-card
+    ><app-audit-log-card class="div-one-card"></app-audit-log-card
+    ><app-audit-log-card class="div-one-card"></app-audit-log-card>
+  </div>
+  <div class="d-flex gap-3">
+    <p style="color: #151515; font-size: 24px; font-weight: 500">Activities</p>
+    <div class="d-flex gap-3 audit-filtandseardiv">
+      <button class="audit-filter-btn shadow-sm">
+        <img src="assets/icons/filterlines.svg" alt="" />Filters
+      </button>
+      <div class="d-flex align-items-center shadow-sm audit-search-div">
+        <img src="assets/icons/search.svg" alt="" />
+        <input
+          type="text"
+          placeholder="Search"
+          class="py-2 audit-search-input"
+        />
+      </div>
+    </div>
+  </div>
 </div>

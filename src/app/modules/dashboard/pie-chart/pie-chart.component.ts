@@ -16,8 +16,8 @@ export class PieChartComponent implements OnInit {
 
   private svg: any;
   private margin = 10;
-  private width = 300;
-  private height = 300;
+  private width = 170;
+  private height = 170;
   private radius = Math.min(this.width, this.height) / 2 - this.margin;
 
   private colors: any;
