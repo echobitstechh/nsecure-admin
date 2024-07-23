@@ -1,0 +1,40 @@
+<div class="circular-progress-chart">
+  <svg [attr.width]="size" [attr.height]="size">
+    <ng-container *ngFor="let item of data; let i = index">
+      <circle
+        [attr.stroke]="backgroundColor"
+        fill="transparent"
+        [attr.stroke-width]="strokeWidth"
+        [attr.r]="getRadius(i)"
+        [attr.cx]="center"
+        [attr.cy]="center"
+      ></circle>
+      <circle
+        [attr.stroke]="item.color"
+        fill="transparent"
+        [attr.stroke-width]="strokeWidth"
+        [attr.stroke-dasharray]="getCircumference(getRadius(i))"
+        [attr.stroke-dashoffset]="
+          getStrokeDashOffset(i, getCircumference(getRadius(i)))
+        "
+        [attr.r]="getRadius(i)"
+        [attr.cx]="center"
+        [attr.cy]="center"
+        style="transform: rotate(-90deg); transform-origin: center"
+      ></circle>
+    </ng-container>
+  </svg>
+  <div class="legend">
+    <div *ngFor="let item of data" class="legend-item">
+      <span class="legend-color" [style.background-color]="item.color"></span>
+      <div>
+        <span class="legend-label" style="color: #8a92a6; font-size: 18px">{{
+          item.label
+        }}</span>
+        <p class="legend-value" style="color: #232d42; font-size: 16px">
+          {{ item.valueLabel }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

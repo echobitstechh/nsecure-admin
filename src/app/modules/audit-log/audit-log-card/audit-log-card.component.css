@@ -1,0 +1,23 @@
+.audit-card {
+  background-color: #ffffff;
+  padding: 10px 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.audit-card-title {
+  color: #202224;
+  font-size: 18px;
+  opacity: 70%;
+}
+.audit-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.audit-card-price {
+  font-weight: 700;
+  color: #565656;
+  font-size: 28px;
+}

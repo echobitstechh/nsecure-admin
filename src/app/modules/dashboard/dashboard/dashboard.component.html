@@ -52,22 +52,31 @@
       title="Transport Workers"
       [timeFrames]="['This Week', 'Last Week', 'This Month', 'Last Month']"
     >
+      <app-circular-progress-chart
+        [data]="transportWorkersChartData"
+        [size]="218"
+        [strokeWidth]="5"
+      ></app-circular-progress-chart>
     </app-dashboard-card-two>
     <app-dashboard-card-two
       class="dashboard-second-div-card-two"
       title="Total Tax Generated"
       [timeFrames]="['This Week', 'Last Week', 'This Month', 'Last Month']"
-    >
+      ><app-bar-chart [data]="barChartData"></app-bar-chart>
     </app-dashboard-card-two>
   </div>
 
   <div class="dashboard-third-div mt-5">
-    <app-register-card class="dashboard-third-div-card"></app-register-card>
+    <app-register-card
+      class="dashboard-third-div-card"
+      [data]="registerChartData"
+    ></app-register-card>
     <app-dashboard-card-two
       class="dashboard-third-div-card"
       title="Your Pie Chart"
       [timeFrames]="['Monthly', 'Weekly', 'Daily']"
     >
+      <app-pie-chart [data]="pieChartData"></app-pie-chart>
     </app-dashboard-card-two>
     <app-enumerator-list-card
       class="dashboard-third-div-card"

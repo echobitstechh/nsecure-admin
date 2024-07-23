@@ -13,6 +13,9 @@ import { DashboardCardComponent } from './dashboard-card/dashboard-card.componen
 import { DashboardCardTwoComponent } from './dashboard-card-two/dashboard-card-two.component';
 import { EnumeratorListCardComponent } from './enumerator-list-card/enumerator-list-card.component';
 import { RegisterCardComponent } from './register-card/register-card.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { CircularProgressChartComponent } from './circular-progress-chart/circular-progress-chart.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 // import {AuthInterceptor} from "../../auth.interceptor";
 
 @NgModule({
@@ -22,6 +25,9 @@ import { RegisterCardComponent } from './register-card/register-card.component';
     DashboardCardTwoComponent,
     EnumeratorListCardComponent,
     RegisterCardComponent,
+    PieChartComponent,
+    CircularProgressChartComponent,
+    BarChartComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule],
   providers: [],

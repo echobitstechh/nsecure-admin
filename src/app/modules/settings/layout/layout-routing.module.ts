@@ -13,7 +13,7 @@ const routes: Routes = [
       { path: 'edit-profile', component: ProfileComponent },
       { path: 'preferences', component: PreferencesComponent },
       { path: 'security', component: SecurityComponent },
-      { path: '', redirectTo: 'profile', pathMatch: 'full' },
+      { path: '', redirectTo: 'edit-profile', pathMatch: 'full' },
     ],
   },
 ];

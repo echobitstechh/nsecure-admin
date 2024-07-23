@@ -27,6 +27,8 @@
 
 .card-chart {
   margin-top: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 select.card-timeframe {
