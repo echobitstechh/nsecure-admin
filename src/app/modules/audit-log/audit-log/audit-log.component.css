@@ -1,0 +1,28 @@
+.audit-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.audit-div-one {
+  display: flex;
+  gap: 12px;
+}
+.div-one-card {
+  flex: 1;
+}
+.audit-search-div {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+  gap: 3px;
+  padding: 0px 14px;
+  width: 324px;
+  height: 45px;
+}
+.audit-search-input {
+  border: none;
+  border-radius: 9px;
+  outline: none;
+  cursor: pointer;
+}

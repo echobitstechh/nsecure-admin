@@ -1,0 +1,11 @@
+<div class="audit-card">
+  <p class="audit-card-title">{{ title }}</p>
+  <div class="audit-card-content">
+    <select class="card-timeframe" (change)="onTimeFrameChange($event)">
+      <option *ngFor="let timeFrame of timeFrames" [value]="timeFrame">
+        {{ timeFrame }}
+      </option>
+    </select>
+    <p class="audit-card-price">{{ value }}</p>
+  </div>
+</div>

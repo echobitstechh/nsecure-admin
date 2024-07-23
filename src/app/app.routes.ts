@@ -33,10 +33,10 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'services',
+    path: 'transport_workers',
     loadChildren: () =>
       import('./modules/transport-workers/transport-workers.module').then(
-        (m) => m.ServicesModule
+        (m) => m.TransportWorkersModule
       ),
   },
   {
