@@ -24,7 +24,7 @@ const routes: Routes = [
       import('./modules/analytics/analytics.module').then(
         (m) => m.AnalyticsModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'forgot-password',
@@ -40,7 +40,7 @@ const routes: Routes = [
       import('./modules/contact-and-support/contact-and-support.module').then(
         (m) => m.ContactAndSupportModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'management',
@@ -48,7 +48,7 @@ const routes: Routes = [
       import('./modules/user-management/user-management.module').then(
         (m) => m.UserManagementModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'authentication',
@@ -56,7 +56,7 @@ const routes: Routes = [
       import('./modules/authentication/authentication.module').then(
         (m) => m.AuthenticationModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'transport_workers',
@@ -64,7 +64,7 @@ const routes: Routes = [
       import('./modules/transport-workers/transport-workers.module').then(
         (m) => m.TransportWorkersModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'audit_log',
@@ -72,7 +72,7 @@ const routes: Routes = [
       import('./modules/audit-log/audit-log.module').then(
         (m) => m.AuditLogModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'settings',
@@ -80,7 +80,7 @@ const routes: Routes = [
       import('./modules/settings/settings.module').then(
         (m) => m.SettingsModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: '**',
