@@ -27,7 +27,27 @@ button:disabled {
 }
 
 .btn-secondary {
+  background-color: #ffffff;
+  border: none;
+  color: #344054;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 9px;
+  width: 100px;
+  height: 45px;
 }
 
-.btn-secondary:hover {
+.btn-extra {
+  border: solid 1px #053688;
+  background: transparent;
+  padding: 0.5rem 2rem;
+  color: #053688;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }

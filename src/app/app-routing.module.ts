@@ -1,16 +1,15 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './modules/authentication/login/login.component';
-import { HomeComponent } from './modules/layout/home/home.component';
-import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
-import { UsersComponent } from './modules/user-management/users/users.component';
-import { ProfileComponent } from './modules/settings/profile/profile.component';
-import { PreferencesComponent } from './modules/settings/preferences/preferences.component';
-import { AddUserComponent } from './modules/user-management/add-user/add-user.component';
-import { AuthGuard } from './services/authGuard.service';
 import { ForgotPasswordComponent } from './modules/authentication/forgot-password/forgot-password.component';
+import { AuthGuard } from './services/authGuard.service';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
   {
     path: 'dashboard',
     loadChildren: () =>
@@ -25,15 +24,7 @@ const routes: Routes = [
       import('./modules/analytics/analytics.module').then(
         (m) => m.AnalyticsModule
       ),
-    // canActivate: [AuthGuard],
-  },
-  {
-    path: '',
-    loadChildren: () =>
-      import('./modules/authentication/authentication.module').then(
-        (m) => m.AuthenticationModule
-      ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'forgot-password',
@@ -44,18 +35,12 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  // Redirect to log in
-  {
     path: 'contact-and-support',
     loadChildren: () =>
       import('./modules/contact-and-support/contact-and-support.module').then(
         (m) => m.ContactAndSupportModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'management',
@@ -63,23 +48,23 @@ const routes: Routes = [
       import('./modules/user-management/user-management.module').then(
         (m) => m.UserManagementModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
-  // {
-  //   path: 'authentication',
-  //   loadChildren: () =>
-  //     import('./modules/authentication/authentication.module').then(
-  //       (m) => m.AuthenticationModule
-  //     ),
-  //   canActivate: [AuthGuard],
-  // },
+  {
+    path: 'authentication',
+    loadChildren: () =>
+      import('./modules/authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
+      ),
+    canActivate: [AuthGuard],
+  },
   {
     path: 'transport_workers',
     loadChildren: () =>
       import('./modules/transport-workers/transport-workers.module').then(
         (m) => m.TransportWorkersModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'audit_log',
@@ -87,7 +72,7 @@ const routes: Routes = [
       import('./modules/audit-log/audit-log.module').then(
         (m) => m.AuditLogModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'settings',
@@ -95,7 +80,11 @@ const routes: Routes = [
       import('./modules/settings/settings.module').then(
         (m) => m.SettingsModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
   },
 ];
 

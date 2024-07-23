@@ -46,6 +46,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { day: 'T', lowValue: 40, highValue: 30 },
     { day: 'W', lowValue: 50, highValue: 30 },
   ];
+  registerChartData = [
+    { label: '00', value: 35 },
+    { label: '04', value: 20 },
+    { label: '08', value: 45 },
+    { label: '12', value: 40 },
+    { label: '14', value: 47 },
+    { label: '16', value: 60 },
+    { label: '18', value: 10 },
+  ];
   ngOnInit(): void {}
 
   constructor() {}
