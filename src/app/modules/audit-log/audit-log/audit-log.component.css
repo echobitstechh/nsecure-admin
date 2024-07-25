@@ -26,3 +26,27 @@
   outline: none;
   cursor: pointer;
 }
+@media (max-width: 820px) {
+  .audit-div-one {
+    gap: 6px;
+    flex-direction: column;
+  }
+  .audit {
+    text-align: center;
+  }
+  .audit-div-two {
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+  }
+  .audit-div-two-inner {
+    flex-direction: column;
+    line-height: 2px;
+  }
+  .audit-search-div {
+    width: 240px;
+  }
+  .audit-search-input {
+    flex: 1;
+  }
+}

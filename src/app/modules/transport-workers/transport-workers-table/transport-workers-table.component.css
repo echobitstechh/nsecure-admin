@@ -137,5 +137,6 @@
   .workers-table td button {
     padding: 4px 8px;
     font-size: 12px;
+    text-wrap: nowrap;
   }
 }
