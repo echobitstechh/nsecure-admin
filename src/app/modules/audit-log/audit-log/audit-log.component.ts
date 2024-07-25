@@ -32,4 +32,27 @@ export class AuditLogComponent {
   onSearch(query: string) {
     console.log('Searching for:', query);
   }
+  auditLogs = [
+    {
+      time: '2024-07-18 13:00:00',
+      userName: 'Marvellous Amusan',
+      role: 'Enumerator',
+      activityType: 'Login',
+      details: 'Marvellous Amusan logged in from his desktop computer.',
+    },
+    {
+      time: '2024-07-18 13:00:00',
+      userName: 'Dee Mavin',
+      role: 'Admin',
+      activityType: 'Sign-out',
+      details: 'Dee Mavin  signed-out ',
+    },
+    {
+      time: '2024-07-18 13:00:00',
+      userName: 'Solomon Louis',
+      role: 'Enumerator',
+      activityType: 'Login',
+      details: 'Solomon Loius ###############################################',
+    },
+  ];
 }
