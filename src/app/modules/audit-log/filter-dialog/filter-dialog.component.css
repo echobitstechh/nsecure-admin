@@ -1,0 +1,28 @@
+h2 {
+  color: #101828;
+  font-weight: 500;
+  font-size: 16px;
+}
+.cancel-btn {
+  background-color: transparent;
+  border: none;
+}
+.filter-controls label {
+  display: block;
+  margin-top: 10px;
+}
+
+.filter-controls select,
+.filter-controls input {
+  width: 182px;
+  padding: 8px;
+  margin: 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+.apply-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}

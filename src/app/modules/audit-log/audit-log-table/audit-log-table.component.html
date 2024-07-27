@@ -1,0 +1,85 @@
+<div class="table-responsive">
+  <table class="table table-striped table-striped-custom">
+    <thead>
+      <tr>
+        <th class="d-flex gap-1 align-items-center">
+          S/N <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+        </th>
+        <th>Time</th>
+        <th>User Name</th>
+        <th>Role</th>
+        <th style="text-wrap: nowrap">Activity Type</th>
+        <th>Details</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of paginatedLogs; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ log.time }}</td>
+        <td>{{ log.username }}</td>
+        <td>{{ log.role }}</td>
+        <td>{{ log.activityType }}</td>
+        <td>{{ log.details }}</td>
+        <td>
+          <app-button
+            label="View"
+            class="btn-primary"
+            mat-button
+            (click)="openDetails(log)"
+          ></app-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button
+      class="pagination-btn"
+      (click)="goToPreviousPage()"
+      [disabled]="currentPage === 1"
+    >
+      Previous
+    </button>
+    <button
+      class="pagination-btn"
+      (click)="goToNextPage()"
+      [disabled]="currentPage === totalPages"
+    >
+      Next</button
+    ><span>Page {{ currentPage }}</span>
+  </div>
+</div>
+
+<!-- Modal Template -->
+<ng-template #detailsModal let-data>
+  <div class="auditlog-modal-details">
+    <div>
+      <h4>Activity</h4>
+      <button mat-button (click)="closeModal()">X</button>
+    </div>
+    <p>
+      Event Type: <span>{{ data.activityType }}</span>
+    </p>
+    <p>
+      TimeStamp: <span>{{ data.time }}</span>
+    </p>
+    <p>
+      User Name: <span>{{ data.username }}</span>
+    </p>
+    <p>
+      Role: <span>{{ data.role }}</span>
+    </p>
+    <p>
+      Session ID: <span>{{ data.ssesion_id }}</span>
+    </p>
+    <p>
+      IP Address: <span>{{ data.ip_address }}</span>
+    </p>
+    <p>
+      Duration: <span>{{ data.duration }}</span>
+    </p>
+    <p>
+      Details: <span>{{ data.details }}</span>
+    </p>
+  </div>
+</ng-template>

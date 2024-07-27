@@ -14,10 +14,18 @@
 .audit-card-content {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center !important;
 }
 .audit-card-price {
   font-weight: 700;
   color: #565656;
   font-size: 28px;
+}
+select {
+  outline: none;
+  border: #d7d7d7 1.5px solid;
+  padding: 8px;
+  border-radius: 8px;
+  width: 132px;
+  cursor: pointer;
 }

@@ -1,0 +1,43 @@
+<div class="p-3">
+  <div
+    class="d-flex justify-content-between align-items-center"
+    style="border-bottom: 1px solid #d7d7d7"
+  >
+    <h2>Filter by</h2>
+    <button (click)="onNoClick()" class="cancel-btn">X</button>
+  </div>
+  <div class="filter-controls">
+    <select id="userType" [(ngModel)]="data.userType">
+      <option value="">User Type</option>
+      <option value="Admin">Admin</option>
+      <option value="User">User</option>
+      <option value="Guest">Guest</option>
+    </select>
+
+    <select id="activity" [(ngModel)]="data.activity" class="d-block">
+      <option value="">Activity</option>
+      <option value="Login">Login</option>
+      <option value="Logout">Sign out</option>
+      <option value="Data Entry">Error Log</option>
+    </select>
+
+    <div class="date-div d-flex gap-3">
+      <div>
+        <label for="fromDate">From</label>
+        <input type="date" id="fromDate" [(ngModel)]="data.fromDate" />
+      </div>
+
+      <div>
+        <label for="toDate">To</label>
+        <input type="date" id="toDate" [(ngModel)]="data.toDate" />
+      </div>
+    </div>
+  </div>
+  <div class="apply-btn">
+    <app-button
+      label="Apply"
+      class="btn-primary"
+      (click)="applyFilters()"
+    ></app-button>
+  </div>
+</div>
