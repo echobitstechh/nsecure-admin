@@ -1,23 +1,12 @@
-import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
-
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrl: './users.component.css'
+  styleUrl: './users.component.css',
 })
-export class UsersComponent implements OnInit{
+export class UsersComponent implements OnInit {
+  constructor() {}
 
-
-
-  constructor(
-  ) {
-
-  }
-
-
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
 }
