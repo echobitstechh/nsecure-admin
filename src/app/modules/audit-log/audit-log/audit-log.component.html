@@ -1,14 +1,20 @@
-<p class="" style="color: #202224; font-weight: 700; font-size: 32px">
+<p class="audit" style="color: #202224; font-weight: 700; font-size: 32px">
   Audit Logs
 </p>
 <div style="background-color: #f5f6fa" class="audit-cont">
   <div class="audit-div-one">
     <app-audit-log-card class="div-one-card"></app-audit-log-card
-    ><app-audit-log-card class="div-one-card"></app-audit-log-card
-    ><app-audit-log-card class="div-one-card"></app-audit-log-card>
+    ><app-audit-log-card
+      class="div-one-card"
+      title="Total User Logins by Date"
+    ></app-audit-log-card
+    ><app-audit-log-card
+      class="div-one-card"
+      title="Total System Errors Incurred by Date"
+    ></app-audit-log-card>
   </div>
   <div class="audit-div-two d-flex justify-content-between align-items-center">
-    <div class="d-flex gap-3 align-items-center">
+    <div class="d-flex gap-3 align-items-center audit-div-two-inner">
       <p style="color: #151515; font-size: 24px; font-weight: 500">
         Activities
       </p>
@@ -17,6 +23,7 @@
           label="Filters"
           class="btn-secondary"
           icon="assets/icons/filterlines.svg"
+          (click)="openFilterDialog()"
         ></app-button>
         <div class="d-flex align-items-center shadow-sm audit-search-div">
           <img src="assets/icons/search.svg" alt="" />
@@ -34,5 +41,6 @@
       icon="assets/icons/download.svg"
     ></app-button>
   </div>
-  <div class="audit-div-three"></div>
+  <div class="audit-div-three"><app-audit-log-table [logs]="auditLogs"></app-audit-log-table>
+</div>
 </div>

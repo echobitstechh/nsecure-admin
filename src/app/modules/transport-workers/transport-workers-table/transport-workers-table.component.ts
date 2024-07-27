@@ -1,6 +1,17 @@
-import { Component, ViewChild, TemplateRef } from '@angular/core';
+import { Component, ViewChild, TemplateRef, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
+interface workers {
+  name: string;
+  email: string;
+  category: string;
+  carType: string;
+  plateNumber: string;
+  address: string;
+  carPark: string;
+  image: string;
+  selected: boolean;
+}
 @Component({
   selector: 'app-transport-workers',
   templateUrl: './transport-workers-table.component.html',
@@ -9,7 +20,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class TransportWorkersTableComponent {
   @ViewChild('detailsModal') detailsModal!: TemplateRef<any>;
 
-  workers = [
+  @Input() workers: workers[] = [
     {
       name: 'Mavin Dee',
       email: 'mavindee@gmail.com',

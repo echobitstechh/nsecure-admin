@@ -5,20 +5,20 @@
   width: 100%;
 }
 
-.workers-table {
+.table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
-.workers-table th,
-.workers-table td {
+.table th,
+.table td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
   text-align: left;
 }
 
-.workers-table th {
+.table th {
   text-align: center;
   padding: 18px;
   background-color: #eaecf0;
@@ -26,7 +26,7 @@
   top: 0;
 }
 
-.worker-image {
+.table-image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -137,6 +137,5 @@
   .workers-table td button {
     padding: 4px 8px;
     font-size: 12px;
-    text-wrap: nowrap;
   }
 }
