@@ -7,21 +7,27 @@ import {
   ValidationErrors,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import {HttpClient} from "@angular/common/http";
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
+
 export class LoginComponent implements OnInit, OnDestroy {
   loginForm!: FormGroup;
   checkBox: boolean = false;
 
-  constructor(private lf: FormBuilder, private router: Router) {}
+  constructor(private lf: FormBuilder, private router: Router, private http: HttpClient) {
+    // this.loginForm = new FormGroup()
+  }
 
   ngOnInit(): void {
     this.loginForm = this.lf.group({
-      usernameOrEmail: [
+      email: [
         '',
         [Validators.required, this.usernameOrEmailValidator],
       ],
@@ -44,17 +50,45 @@ export class LoginComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {}
 
   onSubmit() {
-    if (this.loginForm.valid) {
-      if (this.checkBox) {
-        localStorage.setItem(
-          'loginDetails',
-          JSON.stringify(this.loginForm.value)
-        );
-      } else {
-        localStorage.removeItem('loginDetails');
-      }
-      this.router.navigate(['/dashboard']);
+    if(this.loginForm.valid){
+      const loginData = this.loginForm.value;
+      this.http.post('http://localhost:3000/api/v1/admin/signin', loginData).subscribe((response:any) =>{
+        console.log(response)
+        if (response.data?.success) {
+
+          const loginData = this.loginForm.value
+          const token = response.data?.token;
+          // const authUser = response.data?.user;
+          // console.log("auth",authUser)
+
+          if (token) {
+            window.localStorage.setItem("token", token);
+            // window.localStorage.setItem("authUser", JSON.stringify(authUser));
+
+            this.router.navigate(["/login"]);
+          } else {
+            this.router.navigate(['/dashboard']);
+
+          }
+        } else {
+          console.log("Unauthorize")
+        }
+      })
+
     }
+
+
+    // if (this.loginForm.valid) {
+    //   if (this.checkBox) {
+    //     localStorage.setItem(
+    //       'loginDetails',
+    //       JSON.stringify(this.loginForm.value)
+    //     );
+    //   } else {
+    //     localStorage.removeItem('loginDetails');
+    //   }
+    //   this.router.navigate(['/dashboard']);
+    // }
   }
 
   usernameOrEmailValidator(control: AbstractControl): ValidationErrors | null {
