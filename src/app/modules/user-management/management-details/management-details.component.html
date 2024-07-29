@@ -1,3 +1,91 @@
-<a aria-current="page" routerLink="/management" routerLinkActive="active">
+<!-- <a aria-current="page" routerLink="/management"> Back </a> -->
+<a
+  aria-current="page"
+  routerLink="/management"
+  routerLinkActive="active"
+  style="text-decoration: none"
+>
   Back
 </a>
+<div>
+  <form action="">
+    <div class="mngd-inputs-cont w-100">
+      <div class="">
+        <label for="name" class="d-block mngd-labels">Title</label>
+        <input type="text" placeholder="Admin" class="mngd-inputs" readonly />
+      </div>
+      <div class="">
+        <label for="username" class="d-block mngd-labels">Name of Admin</label>
+        <input
+          type="text"
+          placeholder="Mavin Dee"
+          class="mngd-inputs"
+          readonly
+        />
+      </div>
+      <div class="">
+        <label for="email" class="d-block mngd-labels">Email</label>
+        <input
+          type="email"
+          placeholder="kodewarlock@gmail.com"
+          class="mngd-inputs"
+          readonly
+        />
+      </div>
+      <div class="">
+        <label for="email" class="d-block mngd-labels">Phone number</label>
+        <input
+          type="password"
+          placeholder="+234 81 233 48 723"
+          class="mngd-inputs"
+          readonly
+        />
+      </div>
+      <div class="">
+        <label for="email" class="d-block mngd-labels">Role</label>
+        <select name="" id="" class="mngd-select">
+          <option value="">Select role</option>
+          <option value="">Auditor</option>
+          <option value="">Customer Care</option>
+        </select>
+      </div>
+    </div>
+    <p class="mt-4" style="color: #151515; font-size: 18px; font-weight: 500">
+      Access level
+    </p>
+    <div class="access-level-div">
+      <div class="">
+        <label for="dashboard" class="d-block mngd-labels">Dashboard</label>
+        <select name="" id="" class="mngd-select">
+          <option value="">Select level</option>
+          <option value="">Level one</option>
+          <option value="">Level two</option>
+        </select>
+      </div>
+      <div class="">
+        <label for="analytics" class="d-block mngd-labels">Analytics</label>
+        <select name="" id="" class="mngd-select">
+          <option value="">Select level</option>
+          <option value="">Level one</option>
+          <option value="">Level two</option>
+        </select>
+      </div>
+      <div class="">
+        <label for="enumerator" class="d-block mngd-labels">Enumerator</label>
+        <select name="" id="" class="mngd-select">
+          <option value="">Select level</option>
+          <option value="">Level one</option>
+          <option value="">Level two</option>
+        </select>
+      </div>
+      <div class="">
+        <label for="report" class="d-block mngd-labels">Report</label>
+        <select name="" id="" class="mngd-select">
+          <option value="">Select level</option>
+          <option value="">Level one</option>
+          <option value="">Level two</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
