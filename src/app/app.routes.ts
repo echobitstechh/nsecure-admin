@@ -19,7 +19,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   }, // Redirect to log in
   {
-    path: 'user-management',
+    path: 'management',
     loadChildren: () =>
       import('./modules/user-management/management.module').then(
         (m) => m.ManagementModule
