@@ -49,3 +49,8 @@ input::-ms-input-placeholder {
     width: 100%;
   }
 }
+.management-avatar-div p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #151515;
+}

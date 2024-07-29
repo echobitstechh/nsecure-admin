@@ -83,6 +83,36 @@ const routes: Routes = [
     // canActivate: [AuthGuard],
   },
   {
+    path: 'reporting',
+    loadChildren: () =>
+      import('./modules/reporting/reporting.module').then(
+        (m) => m.ReportingModule
+      ),
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'receipts',
+    loadChildren: () =>
+      import('./modules/receipts/receipts.module').then(
+        (m) => m.ReceiptsModule
+      ),
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'team',
+    loadChildren: () =>
+      import('./modules/team/team.module').then((m) => m.TeamModule),
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'tax-collection',
+    loadChildren: () =>
+      import('./modules/tax-collection/tax-collection.module').then(
+        (m) => m.TaxCollectionModule
+      ),
+    // canActivate: [AuthGuard],
+  },
+  {
     path: '**',
     redirectTo: 'login',
   },
