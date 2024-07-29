@@ -8,8 +8,6 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import {HttpClient} from "@angular/common/http";
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -54,24 +52,23 @@ export class LoginComponent implements OnInit, OnDestroy {
       const loginData = this.loginForm.value;
       this.http.post('http://localhost:3000/api/v1/admin/signin', loginData).subscribe((response:any) =>{
         console.log(response)
-        if (response.data?.success) {
-
-          const loginData = this.loginForm.value
-          const token = response.data?.token;
+        if (response) {
+          const token = response.token;
           // const authUser = response.data?.user;
           // console.log("auth",authUser)
-
           if (token) {
             window.localStorage.setItem("token", token);
             // window.localStorage.setItem("authUser", JSON.stringify(authUser));
 
-            this.router.navigate(["/login"]);
-          } else {
             this.router.navigate(['/dashboard']);
+
+          } else {
+            this.router.navigate(["/login"]);
+
 
           }
         } else {
-          console.log("Unauthorize")
+          console.log("Unauthorized")
         }
       })
 

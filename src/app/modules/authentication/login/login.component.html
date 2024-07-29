@@ -13,21 +13,21 @@
   >
     <h2 style="text-align: center">Login here</h2>
     <div class="form-group">
-      <label for="usernameOrEmail" class="d-block login-labels"
+      <label for="email" class="d-block login-labels"
         >Username/Email</label
       >
       <input
         type="text"
-        id="usernameOrEmail"
-        formControlName="usernameOrEmail"
+        id="email"
+        formControlName="email"
         class="login-inputs"
         placeholder="johnDoe/johndoe@gmail.com"
         required
       />
       <div
         *ngIf="
-          loginForm.get('usernameOrEmail')!.hasError('required') &&
-          loginForm.get('usernameOrEmail')!.touched
+          loginForm.get('email')!.hasError('required') &&
+          loginForm.get('email')!.touched
         "
       >
         Username or Email is required.
@@ -35,9 +35,9 @@
       <div
         *ngIf="
           loginForm
-            .get('usernameOrEmail')!
+            .get('email')!
             .hasError('invalidUsernameOrEmail') &&
-          loginForm.get('usernameOrEmail')!.touched
+          loginForm.get('email')!.touched
         "
       >
         Please enter a valid username or email.
