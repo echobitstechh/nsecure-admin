@@ -27,7 +27,8 @@ export class TaxProgressCardComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {    this.createChart();
+}
 
   ngAfterViewInit(): void {
     this.createChart();
