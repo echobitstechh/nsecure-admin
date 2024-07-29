@@ -49,7 +49,6 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  /* justify-content: center; */
   align-items: center;
 }
 .remember-me-div span {
@@ -72,12 +71,18 @@
   }
   .login-form {
     width: 100%;
-    height: max-content;
+    height: fit-content;
   }
   .remember-me-div {
     justify-content: center;
     flex-direction: column;
     gap: 4px;
     align-items: center;
+  }
+  .login-inputs {
+    width: 24rem;
+  }
+  .form-group {
+    margin-top: 10px;
   }
 }
