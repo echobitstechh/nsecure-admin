@@ -165,15 +165,7 @@
         </a>
       </li>
       <li class="nav-links-below">
-        <a
-          class="nav-link"
-          aria-current="page"
-          routerLink="/logout"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          Logout
-        </a>
+        <a class="nav-link" (click)="openConfirmDialog()"> Logout </a>
       </li>
     </ul>
   </div>

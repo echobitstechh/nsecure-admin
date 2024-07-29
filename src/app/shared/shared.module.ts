@@ -8,7 +8,7 @@ import { LottieModule } from 'ngx-lottie';
 import { lottiePlayerFactory } from '../app.module';
 import { ButtonComponent } from './components/button/button.component';
 import { NotificationToggleComponent } from './components/notification-toggle/notification-toggle.component';
-import { TableComponent } from './components/table/table.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -18,14 +18,14 @@ import { TableComponent } from './components/table/table.component';
     ButtonWithLoaderComponent,
     ButtonComponent,
     NotificationToggleComponent,
-    TableComponent,
+    ConfirmDialogComponent,
   ],
   exports: [
     ButtonWithLoaderComponent,
     FullPageLoaderComponent,
     ButtonComponent,
     NotificationToggleComponent,
-    TableComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     CommonModule,
