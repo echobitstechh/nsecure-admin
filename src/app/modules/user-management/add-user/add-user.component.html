@@ -1,1 +1,103 @@
-<p>add-user works!</p>
+<a aria-current="page" routerLink="/management" routerLinkActive="active">
+  Back
+</a>
+<div style="background-color: #f5f6fa">
+  <div class="management-avatar-div">
+    <p>Create new users</p>
+    <!-- <div><p>Choose avatar</p></div> -->
+  </div>
+  <div class="mt-5 inputs-cont">
+    <div class="d-flex gap-2 input-cont-div">
+      <label for="last-name" class="user-comp-label"
+        >Last Name<sup class="text-danger">*</sup></label
+      >
+      <input
+        type="text"
+        name=""
+        class="shadow-sm user-inputs"
+        placeholder="Last name"
+        required
+      />
+    </div>
+    <div class="d-flex gap-2">
+      <label for="last-name" class="user-comp-label"
+        >ID<sup class="text-danger">*</sup></label
+      >
+      <input
+        type="text"
+        class="shadow-sm user-inputs"
+        placeholder="NIN"
+        required
+      />
+    </div>
+    <div class="d-flex gap-2">
+      <label for="last-name" class="user-comp-label"
+        >First Name<sup class="text-danger">*</sup></label
+      >
+      <input
+        type="text"
+        name=""
+        class="shadow-sm user-inputs"
+        placeholder="First name"
+        required
+      />
+    </div>
+    <div class="d-flex gap-2">
+      <label for="last-name" class="user-comp-label"
+        >Email<sup class="text-danger">*</sup></label
+      >
+      <input
+        name=""
+        type="email"
+        class="shadow-sm user-inputs"
+        placeholder="Email"
+        required
+      />
+    </div>
+    <div class="d-flex gap-2">
+      <label for="last-name" class="user-comp-label"
+        >Gender<sup class="text-danger">*</sup></label
+      >
+      <select name="" class="shadow-sm user-inputs" style="color: #c4c4c4">
+        <option>Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Others</option>
+      </select>
+    </div>
+    <div class="d-flex gap-2">
+      <label for="last-name" class="user-comp-label"
+        >Date of Birth<sup class="text-danger">*</sup></label
+      >
+      <input
+        type="text"
+        name=""
+        class="shadow-sm user-inputs"
+        placeholder="Date of Birth"
+        required
+      />
+    </div>
+    <div class="d-flex gap-2">
+      <label for="last-name" class="user-comp-label"
+        >Category<sup class="text-danger">*</sup></label
+      >
+      <select name="" class="shadow-sm user-inputs" style="color: #c4c4c4">
+        <option>Select Category</option>
+        <option>Admin</option>
+        <option>Enumerator</option>
+        <option>Driver</option>
+      </select>
+    </div>
+    <div class="d-flex gap-2">
+      <label for="park" class="user-comp-label"
+        >Park<sup class="text-danger">*</sup></label
+      >
+      <input
+        name=""
+        class="shadow-sm user-inputs"
+        placeholder="Park Name"
+        required
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+@media (max-width: 820px) {
+  .management-header {
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+  }
+}

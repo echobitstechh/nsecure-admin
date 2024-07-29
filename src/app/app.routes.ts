@@ -21,8 +21,8 @@ export const routes: Routes = [
   {
     path: 'user-management',
     loadChildren: () =>
-      import('./modules/user-management/user-management.module').then(
-        (m) => m.UserManagementModule
+      import('./modules/user-management/management.module').then(
+        (m) => m.ManagementModule
       ),
   },
   {

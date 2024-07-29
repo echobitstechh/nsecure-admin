@@ -8,7 +8,6 @@ import { LottieModule } from 'ngx-lottie';
 import { lottiePlayerFactory } from '../app.module';
 import { ButtonComponent } from './components/button/button.component';
 import { NotificationToggleComponent } from './components/notification-toggle/notification-toggle.component';
-import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -18,14 +17,12 @@ import { TableComponent } from './components/table/table.component';
     ButtonWithLoaderComponent,
     ButtonComponent,
     NotificationToggleComponent,
-    TableComponent,
   ],
   exports: [
     ButtonWithLoaderComponent,
     FullPageLoaderComponent,
     ButtonComponent,
     NotificationToggleComponent,
-    TableComponent,
   ],
   imports: [
     CommonModule,
