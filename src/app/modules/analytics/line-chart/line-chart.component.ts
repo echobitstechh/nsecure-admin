@@ -3,6 +3,7 @@ import {
   ElementRef,
   Input,
   OnChanges,
+  OnInit,
   SimpleChanges,
 } from '@angular/core';
 import * as d3 from 'd3';
@@ -12,7 +13,7 @@ import * as d3 from 'd3';
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.scss'],
 })
-export class LineChartComponent implements OnChanges {
+export class LineChartComponent implements OnChanges, OnInit {
   @Input() public data!: { value: number; month: string }[];
 
   private width = 60;
@@ -29,7 +30,9 @@ export class LineChartComponent implements OnChanges {
   public areaGroup!: d3.Selection<SVGPathElement, unknown, HTMLElement, any>;
 
   constructor(public chartElem: ElementRef) {}
-
+  ngOnInit(): void {
+    this.drawChart();
+  }
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes.hasOwnProperty('data') && this.data) {
       this.initializeChart();
