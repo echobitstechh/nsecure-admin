@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button',
@@ -11,4 +12,13 @@ export class ButtonComponent {
   @Input() disabled: boolean = false;
   @Input() class: string = '';
   @Input() icon: string | null = null;
+  @Input() routerLink!: string;
+
+  constructor(private router: Router) {}
+
+  navigate() {
+    if (this.routerLink) {
+      this.router.navigate([this.routerLink]);
+    }
+  }
 }

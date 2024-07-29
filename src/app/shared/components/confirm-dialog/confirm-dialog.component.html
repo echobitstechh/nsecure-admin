@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <h4 class="modal-title w-100 text-center">{{ title }}</h4>
+</div>
+<div class="modal-body">
+  <p class="text-center">{{ message }}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" [ngClass]="confirmBtnClass" (click)="confirm()">
+    {{ confirmText }}
+  </button>
+  <button type="button" [ngClass]="cancelBtnClass" (click)="cancel()">
+    {{ cancelText }}
+  </button>
+</div>

@@ -5,6 +5,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import {HeaderComponent} from "./header/header.component";
 import {HomeComponent} from "./home/home.component";
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import {HomeComponent} from "./home/home.component";
   ],
   imports: [
     CommonModule,
-    LayoutRoutingModule
+    LayoutRoutingModule, SharedModule
   ]
 })
 export class LayoutModule { }
