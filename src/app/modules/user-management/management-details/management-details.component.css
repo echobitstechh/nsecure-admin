@@ -1,0 +1,60 @@
+.mngd-inputs-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.mngd-inputs-cont div {
+  display: flex;
+  flex-direction: column;
+}
+.mngd-labels {
+  margin-bottom: 2px;
+  color: #344054;
+}
+.mngd-inputs {
+  padding: 6px 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  outline: none !important;
+  width: 100%;
+  background-color: #ffffff;
+  border: #d0d5dd 1px solid;
+}
+.mngd-select {
+  padding: 8px 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  outline: none !important;
+  width: 100%;
+  background-color: #ffffff;
+  border: #d0d5dd 1px solid;
+}
+
+.access-level-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.access-level-div div {
+  display: flex;
+  flex-direction: column;
+}
+.account-credentials div {
+}
+.password-input-container {
+  display: flex;
+  background-color: #ffffff;
+  justify-content: space-between;
+  width: 352px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 4px;
+}
+.password-input-container button {
+  border: none !important;
+  background: #ffffff;
+}
+.password-input-container input {
+  border: none !important;
+  outline: none !important;
+}
