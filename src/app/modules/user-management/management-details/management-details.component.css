@@ -39,3 +39,22 @@
   display: flex;
   flex-direction: column;
 }
+.account-credentials div {
+}
+.password-input-container {
+  display: flex;
+  background-color: #ffffff;
+  justify-content: space-between;
+  width: 352px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 4px;
+}
+.password-input-container button {
+  border: none !important;
+  background: #ffffff;
+}
+.password-input-container input {
+  border: none !important;
+  outline: none !important;
+}
