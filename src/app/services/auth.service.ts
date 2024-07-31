@@ -52,12 +52,12 @@ export class AuthService {
 
   deleteTokens() {
     // Retrieve the loginDetails item
-    const loginDetails = localStorage.getItem('loginDetails');
+    const savedLoginDetails = localStorage.getItem('loginDetails');
     // Clear all local storage items
     localStorage.clear();
     // Restore the loginDetails item if it exists
-    if (loginDetails) {
-      localStorage.setItem('loginDetails', loginDetails);
+    if (savedLoginDetails) {
+      localStorage.setItem('loginDetails', savedLoginDetails);
     }
   }
 
