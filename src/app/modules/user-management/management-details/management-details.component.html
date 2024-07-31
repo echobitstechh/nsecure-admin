@@ -159,12 +159,12 @@
       <p style="color: #101828; font-weight: 700; font-size: 24px">
         Activity log
       </p>
-      <div class="activity-log-table">
+      <div class="activity-log-table table-responsive">
         <table class="table table-striped">
           <thead>
             <tr>
               <th>Date and Time</th>
-              <th>Description</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -173,12 +173,12 @@
               <td>{{ log.description }}</td>
             </tr>
           </tbody>
+          <div class="md-pagination">
+            <button class="btn btn-secondary">Previous</button>
+            <button class="btn btn-secondary">Next</button>
+            <span>Page 1</span>
+          </div>
         </table>
-        <div class="pagination">
-          <button class="btn btn-secondary">Previous</button>
-          <span>Page 1</span>
-          <button class="btn btn-secondary">Next</button>
-        </div>
       </div>
     </div>
   </div>
