@@ -1,6 +1,8 @@
 .nav-item {
   list-style: none;
-  color: #718ebf;
+  color: #565656;
+  font-weight: 500;
+  font-size: 24px;
 }
 .housing {
   display: flex;
@@ -13,16 +15,18 @@
 }
 .housing li a.active {
   color: #053688;
-  border-bottom: 2px solid #053688;
   padding-bottom: 6px;
 }
 @media (max-width: 820px) {
+  .nav-item {
+    font-weight: 400;
+    font-size: 16px;
+  }
   .housing {
     display: flex;
     justify-content: center;
     gap: 12px;
     padding: 4px 8px 0 8px;
-    border-bottom: 1px solid gray;
   }
   .housing li a.active {
     padding-bottom: 4px;

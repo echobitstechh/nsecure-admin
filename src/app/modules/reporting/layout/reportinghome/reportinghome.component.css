@@ -1,0 +1,13 @@
+.custom-round {
+  border-radius: 14px;
+}
+@media (max-width: 820px) {
+  .reporting-header {
+    font-weight: 500;
+    font-size: 22px;
+    text-align: center;
+  }
+  .custom-round {
+    border-radius: 10px;
+  }
+}
