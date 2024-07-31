@@ -1,19 +1,18 @@
 // auth.service.ts
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { tap } from "rxjs/operators";
-import {Router} from "@angular/router";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private readonly JWT_TOKEN = 'JWT_TOKEN';
   private readonly REFRESH_TOKEN = 'REFRESH_TOKEN';
   private readonly USER_ID = 'USER_ID';
 
-  constructor(
-              private router: Router) {}
+  constructor(private router: Router) {}
 
   // refreshToken(): Observable<any> {
   //   return this.authService.refreshToken().pipe(
@@ -51,8 +50,15 @@ export class AuthService {
     localStorage.setItem(this.USER_ID, userId.toString());
   }
 
-  deleteTokens(){
-    localStorage.clear()
+  deleteTokens() {
+    // Retrieve the loginDetails item
+    const loginDetails = localStorage.getItem('loginDetails');
+    // Clear all local storage items
+    localStorage.clear();
+    // Restore the loginDetails item if it exists
+    if (loginDetails) {
+      localStorage.setItem('loginDetails', loginDetails);
+    }
   }
 
   logOut() {
