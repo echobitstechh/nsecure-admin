@@ -1,0 +1,46 @@
+<div class="table-cont">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns" [ngClass]="column.class">
+          {{ column.label }}
+          <img
+            *ngIf="column.sortable"
+            src="assets/icons/arrowdown.svg"
+            alt=""
+            class="headarrimg"
+          />
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of paginatedData; let i = index">
+        <td *ngFor="let column of columns">
+          <ng-container *ngIf="!column.template">{{
+            row[column.field]
+          }}</ng-container>
+          <ng-container
+            *ngTemplateOutlet="column.template; context: { $implicit: row }"
+          ></ng-container>
+        </td>
+        <td *ngIf="rowActions.length > 0">
+          <button
+            *ngFor="let action of rowActions"
+            (click)="action.method(row)"
+          >
+            {{ action.label }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination-controls">
+    <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <span>Page {{ currentPage }}</span>
+    <button (click)="goToNextPage()" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+</div>

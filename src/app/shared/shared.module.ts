@@ -9,6 +9,7 @@ import { lottiePlayerFactory } from '../app.module';
 import { ButtonComponent } from './components/button/button.component';
 import { NotificationToggleComponent } from './components/notification-toggle/notification-toggle.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { GenericTableComponent } from './components/generic-table/generic-table.component';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -19,6 +20,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     ButtonComponent,
     NotificationToggleComponent,
     ConfirmDialogComponent,
+    GenericTableComponent,
   ],
   exports: [
     ButtonWithLoaderComponent,
@@ -26,6 +28,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     ButtonComponent,
     NotificationToggleComponent,
     ConfirmDialogComponent,
+    GenericTableComponent,
   ],
   imports: [
     CommonModule,

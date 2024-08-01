@@ -19,12 +19,12 @@
         Activities
       </p>
       <div class="d-flex gap-3 align-items-center audit-filtandseardiv">
-        <app-button
+        <!-- <app-button
           label="Filters"
           class="btn-secondary"
           icon="assets/icons/filterlines.svg"
           (click)="openFilterDialog()"
-        ></app-button>
+        ></app-button> -->
         <div class="d-flex align-items-center shadow-sm audit-search-div">
           <img src="assets/icons/search.svg" alt="" />
           <input
@@ -41,6 +41,16 @@
       icon="assets/icons/download.svg"
     ></app-button>
   </div>
-  <div class="audit-div-three"><app-audit-log-table [logs]="auditLogs"></app-audit-log-table>
-</div>
+  <div class="audit-div-three">
+    <!-- <app-audit-log-table [logs]="auditLogs"></app-audit-log-table> --><app-generic-table
+      [columns]="auditLogColumns"
+      [data]="logs"
+      [rowActions]="auditLogActions"
+    >
+    </app-generic-table>
+
+    <ng-template #detailsButton let-log>
+      <button mat-button (click)="openDetails(log)">View Details</button>
+    </ng-template>
+  </div>
 </div>
