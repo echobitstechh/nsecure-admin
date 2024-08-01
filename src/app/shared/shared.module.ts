@@ -10,6 +10,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { NotificationToggleComponent } from './components/notification-toggle/notification-toggle.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { GenericTableComponent } from './components/generic-table/generic-table.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -33,6 +34,7 @@ import { GenericTableComponent } from './components/generic-table/generic-table.
   imports: [
     CommonModule,
     ProgressbarModule,
+    FormsModule,
     LottieModule.forRoot({ player: lottiePlayerFactory }),
   ],
 })

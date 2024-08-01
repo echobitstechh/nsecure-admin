@@ -42,14 +42,21 @@
     ></app-button>
   </div>
   <div class="audit-div-three">
-    <!-- <app-audit-log-table [logs]="auditLogs"></app-audit-log-table> --><app-generic-table
-      [columns]="auditLogColumns"
-      [data]="logs"
-      [rowActions]="auditLogActions"
-    >
-    </app-generic-table>
-
-    <ng-template #detailsModal let-data>
+    <!-- <app-audit-log-table [logs]="auditLogs"></app-audit-log-table> -->
+    <app-generic-table
+      [tableDatas]="auditLogs"
+      [columns]="[
+        { field: 'time', label: 'Time' },
+        { field: 'username', label: 'User Name' },
+        { field: 'role', label: 'Role' },
+        { field: 'activityType', label: 'Activty Type' },
+        { field: 'details', label: 'Details' },
+        { field: 'actions', label: '' }
+      ]"
+      [modalTemplate]="customModal"
+      [fontSizeClass]="fontSizeClass"
+    ></app-generic-table>
+    <ng-template #customModal let-data>
       <div class="auditlog-modal-details">
         <div>
           <h4>Activity</h4>
