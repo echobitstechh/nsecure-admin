@@ -94,8 +94,102 @@
 //     },
 //   ];
 // }
-import { Component, ViewChild, TemplateRef } from '@angular/core';
+// import { Component, ViewChild, TemplateRef } from '@angular/core';
+// import { MatDialog } from '@angular/material/dialog';
+// import { FilterDialogComponent } from '../filter-dialog/filter-dialog.component';
+
+// interface AuditLog {
+//   time: string;
+//   username: string;
+//   role: string;
+//   activityType: string;
+//   details: string;
+//   sessionId?: string;
+//   ipAddress?: string;
+//   duration?: string;
+// }
+
+// @Component({
+//   selector: 'app-audit-log',
+//   templateUrl: './audit-log.component.html',
+//   styleUrls: ['./audit-log.component.css'],
+// })
+// export class AuditLogComponent {
+//   @ViewChild('detailsButton') detailsButton!: TemplateRef<any>;
+
+//   logs: AuditLog[] = [
+//     {
+//       time: '2024-07-01 10:00',
+//       username: 'john.doe',
+//       role: 'Admin',
+//       activityType: 'Login',
+//       details: 'Logged in successfully',
+//       sessionId: '123',
+//       ipAddress: '192.168.0.1',
+//       duration: '5m',
+//     },
+//     {
+//       time: '2024-07-01 10:15',
+//       username: 'jane.smith',
+//       role: 'User',
+//       activityType: 'File Upload',
+//       details: 'Uploaded a document',
+//       sessionId: '124',
+//       ipAddress: '192.168.0.2',
+//       duration: '3m',
+//     },
+//     // More log entries
+//   ];
+
+//   auditLogColumns = [
+//     { field: 'time', label: 'Time', sortable: true },
+//     { field: 'username', label: 'User Name', sortable: true },
+//     { field: 'role', label: 'Role', sortable: true },
+//     { field: 'activityType', label: 'Activity Type', sortable: true },
+//     { field: 'details', label: 'Details', sortable: true },
+//     { field: '', label: '', template: this.detailsButton },
+//   ];
+
+//   auditLogActions = [
+//     // You can define actions if necessary, or leave it empty
+//   ];
+
+//   constructor(private dialog: MatDialog) {}
+
+//     openFilterDialog(): void {
+//       const dialogRef = this.dialog.open(FilterDialogComponent, {
+//         disableClose: true,
+//         width: '400px',
+//         data: {
+//           userType: '',
+//           activity: '',
+//           fromDate: '',
+//           toDate: '',
+//         },
+//       });
+
+//       dialogRef.afterClosed().subscribe((result) => {
+//         if (result) {
+//           console.log('Filters applied:', result);
+//         }
+//       });
+//     }
+//   openDetails(log: AuditLog) {
+//     this.dialog.open(this.detailsButton, {
+//       data: log,
+//       disableClose: true,
+//     });
+//   }
+// }
+
+import {
+  Component,
+  ViewChild,
+  TemplateRef,
+  AfterViewInit,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { FilterDialogComponent } from '../filter-dialog/filter-dialog.component';
 
 interface AuditLog {
   time: string;
@@ -113,7 +207,7 @@ interface AuditLog {
   templateUrl: './audit-log.component.html',
   styleUrls: ['./audit-log.component.css'],
 })
-export class AuditLogComponent {
+export class AuditLogComponent implements AfterViewInit {
   @ViewChild('detailsButton') detailsButton!: TemplateRef<any>;
 
   logs: AuditLog[] = [
@@ -140,35 +234,49 @@ export class AuditLogComponent {
     // More log entries
   ];
 
-  auditLogColumns = [
-    { field: 'time', label: 'Time', sortable: true },
-    { field: 'username', label: 'User Name', sortable: true },
-    { field: 'role', label: 'Role', sortable: true },
-    { field: 'activityType', label: 'Activity Type', sortable: true },
-    { field: 'details', label: 'Details', sortable: true },
-    { field: '', label: '', template: this.detailsButton },
-  ];
-
+  auditLogColumns: any[] = [];
   auditLogActions = [
     // You can define actions if necessary, or leave it empty
   ];
-
   constructor(private dialog: MatDialog) {}
-  //   openFilterDialog(): void {
-  //     const dialogRef = this.dialog.open(FilterDialogComponent, {
-  //       disableClose: true,
-  //       width: '400px',
-  //       data: {
-  //         userType: '',
-  //         activity: '',
-  //         fromDate: '',
-  //         toDate: '',
-  //       },
-  //     });
+
+  ngAfterViewInit(): void {
+    this.auditLogColumns = [
+      { field: 'time', label: 'Time', sortable: true },
+      { field: 'username', label: 'User Name', sortable: true },
+      { field: 'role', label: 'Role', sortable: true },
+      { field: 'activityType', label: 'Activity Type', sortable: true },
+      { field: 'details', label: 'Details', sortable: true },
+      { field: '', label: '', template: this.detailsButton },
+    ];
+  }
+
+  openFilterDialog(): void {
+    const dialogRef = this.dialog.open(FilterDialogComponent, {
+      disableClose: true,
+      width: '400px',
+      data: {
+        userType: '',
+        activity: '',
+        fromDate: '',
+        toDate: '',
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        console.log('Filters applied:', result);
+      }
+    });
+  }
+
   openDetails(log: AuditLog) {
     this.dialog.open(this.detailsButton, {
       data: log,
       disableClose: true,
     });
+  }
+  closeModal() {
+    this.dialog.closeAll();
   }
 }

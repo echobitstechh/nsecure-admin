@@ -19,12 +19,12 @@
         Activities
       </p>
       <div class="d-flex gap-3 align-items-center audit-filtandseardiv">
-        <!-- <app-button
+        <app-button
           label="Filters"
           class="btn-secondary"
           icon="assets/icons/filterlines.svg"
           (click)="openFilterDialog()"
-        ></app-button> -->
+        ></app-button>
         <div class="d-flex align-items-center shadow-sm audit-search-div">
           <img src="assets/icons/search.svg" alt="" />
           <input
@@ -49,8 +49,37 @@
     >
     </app-generic-table>
 
-    <ng-template #detailsButton let-log>
-      <button mat-button (click)="openDetails(log)">View Details</button>
+    <ng-template #detailsModal let-data>
+      <div class="auditlog-modal-details">
+        <div>
+          <h4>Activity</h4>
+          <button mat-button (click)="closeModal()">X</button>
+        </div>
+        <p>
+          Event Type: <span>{{ data.activityType }}</span>
+        </p>
+        <p>
+          TimeStamp: <span>{{ data.time }}</span>
+        </p>
+        <p>
+          User Name: <span>{{ data.username }}</span>
+        </p>
+        <p>
+          Role: <span>{{ data.role }}</span>
+        </p>
+        <p>
+          Session ID: <span>{{ data.ssesion_id }}</span>
+        </p>
+        <p>
+          IP Address: <span>{{ data.ip_address }}</span>
+        </p>
+        <p>
+          Duration: <span>{{ data.duration }}</span>
+        </p>
+        <p>
+          Details: <span>{{ data.details }}</span>
+        </p>
+      </div>
     </ng-template>
   </div>
 </div>
