@@ -1,13 +1,15 @@
 .header {
   padding: 10px !important;
-  width: 1201px;
   background-color: #ffffff;
+
 }
+
 .cont-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .header-search {
   background-color: #f5f6fa;
   display: flex;
@@ -20,6 +22,7 @@
   width: 388px;
   cursor: pointer;
 }
+
 .header-search-input {
   border: none;
   border-radius: 9px;
@@ -28,18 +31,22 @@
   width: 100%;
   cursor: pointer;
 }
+
 .lang-div {
   display: flex;
   gap: 82px;
 }
+
 .lang-div img {
   cursor: pointer;
 }
+
 .lang-div-inner {
   display: flex;
   gap: 27px;
   align-items: center;
 }
+
 .lang-div-inner select {
   color: #646464;
   height: 29px;
@@ -49,6 +56,7 @@
   cursor: pointer;
   outline: none;
 }
+
 .lang-div-inner div img {
   width: 44px;
   height: 44px;

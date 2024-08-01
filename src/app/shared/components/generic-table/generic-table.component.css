@@ -5,28 +5,28 @@
   width: 100%;
 }
 
-.workers-table {
+.generic-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
 }
 
-.workers-table th,
-.workers-table td {
+.generic-table th,
+.generic-table td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
   text-align: left;
 }
 
-.workers-table th {
-  text-align: center;
+.generic-table th {
+  /* text-align: center; */
   padding: 18px;
-  background-color: #eaecf0;
+  /* background-color: #eaecf0; */
   position: sticky;
   top: 0;
 }
 
-.worker-image {
+.generic-image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -35,7 +35,7 @@
 
 .headarr {
   color: #8a92a6;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
 }
 
@@ -55,7 +55,7 @@
   gap: 1px;
 }
 
-.workers-table td button {
+.generic-table td button {
   padding: 6px 10px;
   border: none;
   background-color: #f0f3fa;
@@ -65,33 +65,11 @@
   cursor: pointer;
 }
 
-.workers-table td {
+.generic-table td {
   color: #202224;
   background-color: #ffffff;
   text-align: left;
-}
-
-.modal-tw-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 16px;
-  padding: 12px 30px;
-}
-
-.modal-tw-details div {
-  display: flex;
-  justify-content: center;
-}
-
-.modal-tw-details div button {
-  padding: 8px 18px;
-  border: none;
-  background-color: #f0f3fa;
-  color: #0644aa;
-  font-weight: 500;
-  border-radius: 14px;
-  cursor: pointer;
+  font-size: 12px;
 }
 .pagination-controls {
   display: flex;
@@ -118,10 +96,12 @@
 .pagination-controls span {
   margin: 0 10px;
 }
-
+.btn-primary {
+  background: #f0f3fa;
+}
 @media (max-width: 820px) {
-  .workers-table th,
-  .workers-table td {
+  .generic-table th,
+  .generic-table td {
     padding: 8px;
     font-size: 12px;
   }
@@ -134,7 +114,7 @@
   .dataflex span {
     text-align: center;
   }
-  .workers-table td button {
+  .generic-table td button {
     padding: 4px 8px;
     font-size: 12px;
     text-wrap: nowrap;

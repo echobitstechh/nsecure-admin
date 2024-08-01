@@ -4,13 +4,9 @@ import { Injectable, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
-// import { ProfileComponent } from './modules/settings/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-// import {httpInterceptorProviders} from "./auth.interceptor";
-// import { PreferencesComponent } from './modules/settings/preferences/preferences.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { SuccessDialogComponent } from './shared/components/success-dialog/success-dialog.component';
 import { LayoutModule } from './modules/layout/layout.module';
@@ -18,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LottieModule } from 'ngx-lottie';
 import { ToggleSidebarDirective } from './toggle-sidebar.directive';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {httpInterceptorProviders} from "./auth.interceptor";
 
 export function lottiePlayerFactory(): any {
   return import('lottie-web/build/player/lottie_svg');
@@ -48,6 +45,7 @@ export function lottiePlayerFactory(): any {
     ReactiveFormsModule,
   ],
   providers: [
+    httpInterceptorProviders,
     provideAnimationsAsync()
   ],
   bootstrap: [AppComponent],
