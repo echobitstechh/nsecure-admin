@@ -41,6 +41,50 @@
       icon="assets/icons/download.svg"
     ></app-button>
   </div>
-  <div class="audit-div-three"><app-audit-log-table [logs]="auditLogs"></app-audit-log-table>
-</div>
+  <div class="audit-div-three">
+    <app-generic-table
+      [tableDatas]="auditLogs"
+      [columns]="[
+        { field: 'time', label: 'Time' },
+        { field: 'username', label: 'User Name' },
+        { field: 'role', label: 'Role' },
+        { field: 'activityType', label: 'Activty Type' },
+        { field: 'details', label: 'Details' },
+        { field: 'actions', label: '' }
+      ]"
+      [modalTemplate]="customModal"
+    ></app-generic-table>
+    <ng-template #customModal let-data>
+      <div class="auditlog-modal-details">
+        <div>
+          <h4>Activity</h4>
+          <button mat-button (click)="closeModal()">X</button>
+        </div>
+        <p>
+          Event Type: <span>{{ data.activityType }}</span>
+        </p>
+        <p>
+          TimeStamp: <span>{{ data.time }}</span>
+        </p>
+        <p>
+          User Name: <span>{{ data.username }}</span>
+        </p>
+        <p>
+          Role: <span>{{ data.role }}</span>
+        </p>
+        <p>
+          Session ID: <span>{{ data.ssesion_id }}</span>
+        </p>
+        <p>
+          IP Address: <span>{{ data.ip_address }}</span>
+        </p>
+        <p>
+          Duration: <span>{{ data.duration }}</span>
+        </p>
+        <p>
+          Details: <span>{{ data.details }}</span>
+        </p>
+      </div>
+    </ng-template>
+  </div>
 </div>
