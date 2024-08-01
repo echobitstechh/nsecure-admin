@@ -25,7 +25,7 @@
           <input type="checkbox" [(ngModel)]="tableData.selected" />
         </td>
         <td *ngIf="showSerialNumber">{{ i + 1 }}</td>
-        <td *ngFor="let column of columns" [ngClass]="fontSizeClass">
+        <td *ngFor="let column of columns">
           <ng-container [ngSwitch]="column.field">
             <ng-container *ngSwitchCase="'name'">
               <div class="dataflex">

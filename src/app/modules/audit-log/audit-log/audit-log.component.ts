@@ -32,7 +32,6 @@ export class AuditLogComponent {
   onSearch(query: string) {
     console.log('Searching for:', query);
   }
-  fontSizeClass = '12px';
   auditLogs = [
     {
       time: '2024-07-18 13:00:00',

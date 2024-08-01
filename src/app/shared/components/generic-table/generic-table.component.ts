@@ -126,19 +126,7 @@ export class GenericTableComponent implements OnInit {
   @Input() showCheckboxColumn = false;
   @Input() showSerialNumber = true;
   @Input() modalTemplate: TemplateRef<any> | null = null;
-  @Input() fontSizeClass: string = 'font-medium';
-  setFontSize(size: string): void {
-    if (size === 'small') {
-      this.fontSizeClass = 'font-small';
-    } else if (size === 'medium') {
-      this.fontSizeClass = 'font-medium';
-    } else if (size === 'large') {
-      this.fontSizeClass = 'font-large';
-    }
-  }
-  ngOnInit(): void {
-    this.setFontSize('large');
-  }
+  ngOnInit(): void {}
   pageSize = 10;
   currentPage = 1;
   totalPages = Math.ceil(this.tableDatas.length / this.pageSize);
