@@ -75,17 +75,17 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
 
-    // if (this.loginForm.valid) {
-    //   if (this.checkBox) {
-    //     localStorage.setItem(
-    //       'loginDetails',
-    //       JSON.stringify(this.loginForm.value)
-    //     );
-    //   } else {
-    //     localStorage.removeItem('loginDetails');
-    //   }
-    //   this.router.navigate(['/dashboard']);
-    // }
+  //   if (this.loginForm.valid) {
+  //     if (this.checkBox) {
+  //       localStorage.setItem(
+  //         'loginDetails',
+  //         JSON.stringify(this.loginForm.value)
+  //       );
+  //     } else {
+  //       localStorage.removeItem('loginDetails');
+  //     }
+  //     this.router.navigate(['/dashboard']);
+  //   }
   }
 
   usernameOrEmailValidator(control: AbstractControl): ValidationErrors | null {
