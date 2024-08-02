@@ -1,0 +1,8 @@
+{
+  "components": {
+    "select": {
+      "import": "@shadcn/ui",
+      "default": true
+    }
+  }
+}

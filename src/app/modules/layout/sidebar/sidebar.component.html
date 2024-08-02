@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 d-flex">
+<div class=" d-flex">
   <div
     *ngIf="showSidebarAndHeader"
     id="bdSidebar"
@@ -165,15 +165,7 @@
         </a>
       </li>
       <li class="nav-links-below">
-        <a
-          class="nav-link"
-          aria-current="page"
-          routerLink="/logout"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-        >
-          Logout
-        </a>
+        <a class="nav-link" (click)="openConfirmDialog()"> Logout </a>
       </li>
     </ul>
   </div>
@@ -194,7 +186,7 @@
       </a>
       <span class="ms-3 text-white">Nsecure Admin</span>
     </div>
-    <div class="p-2 p-lg-4">
+    <div class="p-2">
       <router-outlet></router-outlet>
     </div>
   </div>

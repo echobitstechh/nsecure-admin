@@ -93,4 +93,7 @@ export class AuditLogComponent {
       details: 'Dee Mavin  signed-out ',
     },
   ];
+  closeModal() {
+    this.dialog.closeAll();
+  }
 }

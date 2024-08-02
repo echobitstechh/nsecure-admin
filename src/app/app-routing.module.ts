@@ -45,8 +45,8 @@ const routes: Routes = [
   {
     path: 'management',
     loadChildren: () =>
-      import('./modules/user-management/user-management.module').then(
-        (m) => m.UserManagementModule
+      import('./modules/user-management/management.module').then(
+        (m) => m.ManagementModule
       ),
     // canActivate: [AuthGuard],
   },
@@ -79,6 +79,36 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/settings/settings.module').then(
         (m) => m.SettingsModule
+      ),
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'reporting',
+    loadChildren: () =>
+      import('./modules/reporting/reporting.module').then(
+        (m) => m.ReportingModule
+      ),
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'receipts',
+    loadChildren: () =>
+      import('./modules/receipts/receipts.module').then(
+        (m) => m.ReceiptsModule
+      ),
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'team',
+    loadChildren: () =>
+      import('./modules/team/team.module').then((m) => m.TeamModule),
+    // canActivate: [AuthGuard],
+  },
+  {
+    path: 'tax-collection',
+    loadChildren: () =>
+      import('./modules/tax-collection/tax-collection.module').then(
+        (m) => m.TaxCollectionModule
       ),
     // canActivate: [AuthGuard],
   },

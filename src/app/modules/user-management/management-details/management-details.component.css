@@ -1,0 +1,117 @@
+.mngd-inputs-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.mngd-inputs-cont div {
+  display: flex;
+  flex-direction: column;
+}
+.mngd-labels {
+  margin-bottom: 2px;
+  color: #344054;
+}
+.mngd-inputs {
+  padding: 6px 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  outline: none !important;
+  width: 100%;
+  background-color: #ffffff;
+  border: #d0d5dd 1px solid;
+}
+.mngd-select {
+  padding: 8px 8px;
+  font-size: 14px;
+  border-radius: 8px;
+  outline: none !important;
+  width: 100%;
+  background-color: #ffffff;
+  border: #d0d5dd 1px solid;
+}
+
+.access-level-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.access-level-div div {
+  display: flex;
+  flex-direction: column;
+}
+/* .account-credentials div {
+} */
+.password-input-container {
+  display: flex;
+  background-color: #ffffff;
+  justify-content: space-between;
+  width: 352px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  padding: 4px;
+}
+.password-input-container button {
+  border: none !important;
+  background: #ffffff;
+}
+.password-input-container input {
+  border: none !important;
+  outline: none !important;
+}
+.table {
+  width: 975px;
+  border-radius: 10px;
+  border: 1px solid #eaecf0;
+}
+th {
+  padding: 10px 8px;
+  color: #7d8497;
+  font-size: 12px;
+  font-weight: 500;
+}
+td {
+  font-weight: 400;
+  font-size: 12px;
+  color: #101828;
+  padding: 10px 8px;
+}
+.md-pagination {
+  padding: 10px 4px;
+  display: flex;
+  align-items: center;
+}
+
+.md-pagination button {
+  margin: 0 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: #d0d5dd 1px solid;
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: #344054;
+}
+.md-pagination button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #f0f0f0;
+  color: #a0a0a0;
+}
+.md-pagination span {
+  text-align: end;
+  flex: 1;
+  color: #344054;
+  font-weight: 500;
+  font-size: 14px;
+}
+@media (max-width: 820px) {
+  .mngd-inputs-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .access-level-div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}

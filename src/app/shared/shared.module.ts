@@ -8,7 +8,9 @@ import { LottieModule } from 'ngx-lottie';
 import { lottiePlayerFactory } from '../app.module';
 import { ButtonComponent } from './components/button/button.component';
 import { NotificationToggleComponent } from './components/notification-toggle/notification-toggle.component';
-import { TableComponent } from './components/table/table.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { GenericTableComponent } from './components/generic-table/generic-table.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -18,18 +20,21 @@ import { TableComponent } from './components/table/table.component';
     ButtonWithLoaderComponent,
     ButtonComponent,
     NotificationToggleComponent,
-    TableComponent,
+    ConfirmDialogComponent,
+    GenericTableComponent,
   ],
   exports: [
     ButtonWithLoaderComponent,
     FullPageLoaderComponent,
     ButtonComponent,
     NotificationToggleComponent,
-    TableComponent,
+    ConfirmDialogComponent,
+    GenericTableComponent,
   ],
   imports: [
     CommonModule,
     ProgressbarModule,
+    FormsModule,
     LottieModule.forRoot({ player: lottiePlayerFactory }),
   ],
 })

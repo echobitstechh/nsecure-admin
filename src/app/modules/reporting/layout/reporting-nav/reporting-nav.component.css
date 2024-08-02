@@ -1,0 +1,37 @@
+.nav-item {
+  list-style: none;
+  color: #565656;
+  font-weight: 500;
+  font-size: 24px;
+}
+.housing {
+  display: flex;
+  gap: 38px;
+  padding: 6px 12px 0 12px;
+  border-bottom: 1px solid gray;
+}
+.parent-housing {
+  padding: 0 20px;
+}
+.housing li a.active {
+  color: #053688;
+  padding-bottom: 6px;
+}
+@media (max-width: 820px) {
+  .nav-item {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .housing {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 4px 8px 0 8px;
+  }
+  .housing li a.active {
+    padding-bottom: 4px;
+  }
+  .parent-housing {
+    padding: 0 14px;
+  }
+}

@@ -1,0 +1,117 @@
+<div class="table-cont table-responsive">
+  <table class="generic-table table table-striped">
+    <thead>
+      <tr>
+        <th *ngIf="showCheckboxColumn" class="headarr">
+          <input type="checkbox" (change)="toggleAll($event)" />
+        </th>
+        <th *ngIf="showSerialNumber" class="headarr">
+          S/N <img src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+        </th>
+        <th *ngFor="let column of columns" class="headarr">
+          {{ column.label }}
+          <img
+            *ngIf="column.field !== 'actions'"
+            src="assets/icons/arrowdown.svg"
+            alt=""
+            class="headarrimg"
+          />
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tableData of paginatedtableDatas; let i = index">
+        <td *ngIf="showCheckboxColumn">
+          <input type="checkbox" [(ngModel)]="tableData.selected" />
+        </td>
+        <td *ngIf="showSerialNumber">{{ i + 1 }}</td>
+        <td *ngFor="let column of columns">
+          <ng-container [ngSwitch]="column.field">
+            <ng-container *ngSwitchCase="'name'">
+              <div class="dataflex">
+                <img
+                  [src]="tableData.image"
+                  alt="worker image"
+                  class="generic-image"
+                />
+                <div>
+                  <span
+                    style="color: #101828; font-size: 16px; font-weight: 400"
+                    >{{ tableData.name }}</span
+                  >
+                  <span
+                    style="color: #667085; font-size: 14px; font-weight: 400"
+                    >{{ tableData.email }}</span
+                  >
+                </div>
+              </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'category'">{{
+              tableData.category
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'carType'">{{
+              tableData.carType
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'plateNumber'">{{
+              tableData.plateNumber
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'address'">{{
+              tableData.address
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'carPark'">{{
+              tableData.carPark
+            }}</ng-container
+            ><ng-container *ngSwitchCase="'time'">{{
+              tableData.time
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'username'">{{
+              tableData.username
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'session_id'">{{
+              tableData.session_id
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'role'">{{
+              tableData.role
+            }}</ng-container
+            ><ng-container *ngSwitchCase="'activityType'">{{
+              tableData.activityType
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'details'">{{
+              tableData.details
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'ip_address'">{{
+              tableData.ip_address
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'durations'">{{
+              tableData.durations
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'actions'">
+              <button
+                mat-button
+                (click)="openDetails(tableData)"
+                class="shadow-sm"
+              >
+                View Details
+              </button>
+              <!-- <app-button
+                label="View Details"
+                class="btn-primary"
+                mat-button
+                (click)="openDetails(tableData)"
+              ></app-button> -->
+            </ng-container>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination-controls">
+    <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <span>Page {{ currentPage }}</span>
+    <button (click)="goToNextPage()" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+</div>

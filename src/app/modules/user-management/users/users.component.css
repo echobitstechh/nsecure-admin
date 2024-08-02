@@ -1,51 +1,35 @@
-.user-comp-label {
-  flex: 0 0 150px;
-  text-align: right;
-  color: #7a7a7a;
-  font-size: 18px;
+.admin-adder-div {
+  display: flex;
+  justify-content: space-between;
 }
-.user-inputs {
-  padding: 8px 12px;
-  border-radius: 6px;
-  outline: none;
-  border: 0px;
-  width: 280px;
+.modal-tw-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 16px;
+  padding: 12px 30px;
 }
-.inputs-cont {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+
+.modal-tw-details div {
+  display: flex;
   justify-content: center;
 }
-/* Chrome, Safari, and Opera */
-input::placeholder {
-  color: #c4c4c4;
-  opacity: 1;
-}
-/* Firefox 19+ */
-input::-moz-placeholder {
-  color: #c4c4c4;
-}
-/* Internet Explorer 10+ */
-input:-ms-input-placeholder {
-  color: #c4c4c4;
-}
-/* Microsoft Edge */
-input::-ms-input-placeholder {
-  color: #c4c4c4;
+
+.modal-tw-details div button {
+  padding: 8px 18px;
+  border: none;
+  background-color: #f0f3fa;
+  color: #0644aa;
+  font-weight: 500;
+  border-radius: 14px;
+  cursor: pointer;
 }
 @media (max-width: 820px) {
-  .inputs-cont {
-    grid-template-columns: repeat(1, 1fr);
-    /* justify-content: center; */
-  }
-  /* .input-cont-div {
-    flex-direction: column;
-  } */
-  .user-comp-label {
-    text-align: right;
-  }
-  .user-inputs {
-    width: 100%;
+  .admin-adder-div {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
   }
 }

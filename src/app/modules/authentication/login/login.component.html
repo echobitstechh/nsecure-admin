@@ -12,10 +12,15 @@
     class="login-form shadow-lg"
   >
     <h2 style="text-align: center">Login here</h2>
+    <div
+      *ngIf="loginMessage"
+      class="mt-2 alert alert-{{ loginMessageType }}"
+      role="alert"
+    >
+      {{ loginMessage }}
+    </div>
     <div class="form-group">
-      <label for="email" class="d-block login-labels"
-        >Username/Email</label
-      >
+      <label for="email" class="d-block login-labels">Username/Email</label>
       <input
         type="text"
         id="email"
@@ -30,17 +35,15 @@
           loginForm.get('email')!.touched
         "
       >
-        Username or Email is required.
+        Email is required.
       </div>
       <div
         *ngIf="
-          loginForm
-            .get('email')!
-            .hasError('invalidUsernameOrEmail') &&
+          loginForm.get('email')!.hasError('email') &&
           loginForm.get('email')!.touched
         "
       >
-        Please enter a valid username or email.
+        Please enter a valid email.
       </div>
     </div>
 
@@ -82,18 +85,31 @@
         <label for="rememberMe">Remember Me</label>
       </div>
       <span
-        >Forgot Password?
+        >Forgot Password?....
         <a aria-current="page" routerLink="/forgot-password"> Reset </a></span
       >
     </div>
 
-    <div class="d-flex justify-content-center mt-3">
-      <app-button
-        type="submit"
-        label="Login"
-        class="btn-primary"
-        [disabled]="loginForm.invalid"
-      ></app-button>
+    <div class="d-grid">
+      <app-button-with-loader
+        [buttonType]="'submit'"
+        [classText]="'btn btn-custom d-block w-100 '"
+        [idleStateText]="'Login'"
+        [isProcessing]="loading"
+        [workingStateText]="'Logging in...'"
+        (buttonClick)="onSubmit()"
+      >
+      </app-button-with-loader>
+      <!--          <button type="submit" class="btn btn-custom" >Login</button>-->
     </div>
+
+    <!--    <div class="d-flex justify-content-center mt-3">-->
+    <!--      <app-button-->
+    <!--        type="submit"-->
+    <!--        label="Login"-->
+    <!--        class="btn-primary"-->
+    <!--        [disabled]="loginForm.invalid"-->
+    <!--      ></app-button>-->
+    <!--    </div>-->
   </form>
 </div>
