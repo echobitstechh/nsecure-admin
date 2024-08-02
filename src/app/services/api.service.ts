@@ -1,29 +1,37 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpErrorResponse,
+} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { AuthService } from "./auth.service";
+import { AuthService } from './auth.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-  // private baseUrl: string = 'https://nsecure-backend.onrender.com/api/v1/admin';
-  private baseUrl: string = 'http://localhost:3000/api/v1/admin';
+  private baseUrl: string = 'https://nsecure-backend.onrender.com/api/v1/admin';
+  // private baseUrl: string = 'http://localhost:3000/api/v1/admin';
 
   //test admin credentials: email = superadmin@nsecure.com  || password = @nsecureSuperAdmin1234!
 
-  constructor(private http: HttpClient, private router: Router, private authService: AuthService) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   login(email: string, password: string): Observable<any> {
     const url = `${this.baseUrl}/signin`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { email, password };
 
-    return this.http.post<any>(url, body, { headers }).pipe(
-      catchError(this.handleError<any>('login'))
-    );
+    return this.http
+      .post<any>(url, body, { headers })
+      .pipe(catchError(this.handleError<any>('login')));
   }
 
   refreshToken(): Observable<any> {
@@ -31,11 +39,33 @@ export class ApiService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { token: this.authService.getRefreshToken() };
 
-    return this.http.post<any>(url, body, { headers }).pipe(
-      catchError(this.handleError<any>('refreshToken'))
-    );
+    return this.http
+      .post<any>(url, body, { headers })
+      .pipe(catchError(this.handleError<any>('refreshToken')));
   }
 
+  getAdmins(): Observable<any> {
+    const url = `${this.baseUrl}/admins`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .get<any>(url, { headers })
+      .pipe(catchError(this.handleError('getAdmins')));
+  }
+  getTransportWorker(): Observable<any> {
+    const url = `${this.baseUrl}/getalldrivers`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .get<any>(url, { headers })
+      .pipe(catchError(this.handleError('getAdmins')));
+  }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: HttpErrorResponse): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
