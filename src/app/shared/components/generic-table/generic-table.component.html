@@ -27,7 +27,7 @@
         <td *ngIf="showSerialNumber">{{ i + 1 }}</td>
         <td *ngFor="let column of columns">
           <ng-container [ngSwitch]="column.field">
-            <ng-container *ngSwitchCase="'name'">
+            <ng-container *ngSwitchCase="'firstName'">
               <div class="dataflex">
                 <img
                   [src]="tableData.image"
@@ -35,10 +35,15 @@
                   class="generic-image"
                 />
                 <div>
-                  <span
+                  <!-- <span
                     style="color: #101828; font-size: 16px; font-weight: 400"
                     >{{ tableData.name }}</span
+                  > --><span
+                    style="color: #101828; font-size: 16px; font-weight: 400"
                   >
+                    {{ tableData.firstName + " " + tableData.lastName }}
+                  </span>
+
                   <span
                     style="color: #667085; font-size: 14px; font-weight: 400"
                     >{{ tableData.email }}</span
@@ -48,6 +53,9 @@
             </ng-container>
             <ng-container *ngSwitchCase="'category'">{{
               tableData.category
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'adminId'">{{
+              tableData.adminId
             }}</ng-container>
             <ng-container *ngSwitchCase="'carType'">{{
               tableData.carType
@@ -84,6 +92,24 @@
             }}</ng-container>
             <ng-container *ngSwitchCase="'durations'">{{
               tableData.durations
+            }}</ng-container
+            ><ng-container *ngSwitchCase="'isActive'">{{
+              tableData.isActive
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'createdAt'">{{
+              tableData.createdAt
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'updatedAt'">{{
+              tableData.updatedAt
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'phoneNumber'">{{
+              tableData.phoneNumber
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'vehicleYear'">{{
+              tableData.vehicleYear
+            }}</ng-container
+            ><ng-container *ngSwitchCase="'gender'">{{
+              tableData.gender
             }}</ng-container>
             <ng-container *ngSwitchCase="'actions'">
               <button

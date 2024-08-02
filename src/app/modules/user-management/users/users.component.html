@@ -12,12 +12,10 @@
 <app-generic-table
   [tableDatas]="admins"
   [columns]="[
+    { field: 'firstName', label: 'Admin Details' },
     { field: 'adminId', label: 'Admin ID' },
-    { field: 'firstName', label: 'First Name' },
-    { field: 'lastName', label: 'Last Name' },
-    { field: 'image', label: 'Image' },
     { field: 'role', label: 'Role' },
-    { field: 'email', label: 'Email' },
+    { field: 'isActive', label: 'Active Status' },
     { field: 'actions', label: '' }
   ]"
   [modalTemplate]="customModal"

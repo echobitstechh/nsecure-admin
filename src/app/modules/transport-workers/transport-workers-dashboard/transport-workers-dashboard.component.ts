@@ -14,23 +14,25 @@ export class TransportWorkersDashboardComponent implements OnInit {
   error = '';
 
   ngOnInit(): void {
-    this.loadAdmins();
+    this.loadTransortWorkers();
   }
 
-  loadAdmins(): void {
+  loadTransortWorkers(): void {
     this.loading = true;
-    this.apiService.getAdmins().subscribe(
+    this.apiService.getTransportWorker().subscribe(
       (response) => {
         this.loading = false;
         this.workers = response.drivers;
+        console.log('workers:', this.workers);
       },
       (error) => {
         this.loading = false;
-        this.error = 'Error fetching admins';
-        console.error('Error fetching admins', error);
+        this.error = 'Error fetching transport workers';
+        console.error('Error fetching transport workers', error);
       }
     );
   }
+
   closeModal() {
     this.dialog.closeAll();
   }

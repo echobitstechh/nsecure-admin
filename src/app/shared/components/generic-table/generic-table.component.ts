@@ -8,7 +8,6 @@ import {
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 interface TableData {
-  name?: string;
   email?: string;
   category?: string;
   carType?: string;
@@ -32,6 +31,38 @@ interface TableData {
   isActive?: boolean;
   createdAt?: string | number;
   updatedAt?: string | number;
+  phoneNumber?: string;
+  vehicleYear?: string;
+  gender?: string;
+  // driverId: '3fa85f64-5717-4562-b3fc-2c963f66afa6';
+  // categoryId: '3fa85f64-5717-4562-b3fc-2c963f66afa6';
+  // countryId: '3fa85f64-5717-4562-b3fc-2c963f66afa6';
+  // country: 'string';
+  //
+  // referralCode: 'string';
+  // vehicleManufacturer: 'string';
+  // vehicleColor: 'string';
+  // licensePlate: 'string';
+  // driverLicense: 'string';
+  // vehicleLogBook: 'string';
+  // privateHireLicenseBadge: 'string';
+  // insuranceCertificate: 'string';
+  // motTestCertificate: 'string';
+  // isAvailable: true;
+  // latitude: 'string';
+  // longitude: 'string';
+  // driverRating: 0;
+  // numberOfRatings: 0;
+  // status: 'Active';
+  // dateOfBirth: 'string';
+  // verificationCode: 'string';
+  // residenceAddress: 'string';
+  // profileImage: 'string';
+  // driverLicenseVerified: true;
+  // vehicleLogBookVerified: true;
+  // privateHireLicenseBadgeVerified: true;
+  // insuranceCertificateVerified: true;
+  // motTestCertificateVerified: true;
 }
 
 interface TableColumn {
@@ -57,7 +88,6 @@ export class GenericTableComponent implements OnInit {
   totalPages = Math.ceil(this.tableDatas.length / this.pageSize);
 
   constructor(public dialog: MatDialog) {}
-
   openDetails(data: TableData) {
     this.dialog.open(this.modalTemplate || this.detailsModal, {
       data,
