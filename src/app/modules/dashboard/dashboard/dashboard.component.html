@@ -2,12 +2,12 @@
   <p class="" style="color: #202224; font-weight: 700; font-size: 32px">
     Dashboard
   </p>
-
+  <!-- value="40,689" -->
   <div class="dashboard-first-div">
     <app-dashboard-card
       class="dashboard-first-div-card"
       title="Public Transport Workers"
-      value="40,689"
+      [value]="workers.length"
       trend="8.5%"
       trendText="Up from yesterday"
       iconUrl="assets/icons/ptw.svg"
