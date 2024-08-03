@@ -27,7 +27,6 @@ interface TableData {
   adminId?: string;
   firstName?: string;
   lastName?: string;
-  password?: string;
   isActive?: boolean;
   createdAt?: string | number;
   updatedAt?: string | number;
