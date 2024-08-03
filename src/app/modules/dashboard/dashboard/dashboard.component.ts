@@ -25,9 +25,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { day: 'T', value1: 90, value2: 110 },
     { day: 'F', value1: 50, value2: 130 },
     { day: 'S', value1: 70, value2: 90 },
-    { day: 'M', value1: 70, value2: 80 },
-    { day: 'T', value1: 50, value2: 100 },
-    { day: 'W', value1: 60, value2: 120 },
+    // { day: 'M', value1: 70, value2: 80 },
+    // { day: 'T', value1: 50, value2: 100 },
+    // { day: 'W', value1: 60, value2: 120 },
   ];
 
   transportWorkersChartData = [
