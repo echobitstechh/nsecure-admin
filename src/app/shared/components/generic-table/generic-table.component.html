@@ -35,10 +35,7 @@
                   class="generic-image"
                 />
                 <div>
-                  <!-- <span
-                    style="color: #101828; font-size: 16px; font-weight: 400"
-                    >{{ tableData.name }}</span
-                  > --><span
+                  <span
                     style="color: #101828; font-size: 16px; font-weight: 400"
                   >
                     {{ tableData.firstName + " " + tableData.lastName }}
@@ -60,11 +57,11 @@
             <ng-container *ngSwitchCase="'carType'">{{
               tableData.carType
             }}</ng-container>
-            <ng-container *ngSwitchCase="'plateNumber'">{{
-              tableData.plateNumber
+            <ng-container *ngSwitchCase="'licensePlate'">{{
+              tableData.licensePlate
             }}</ng-container>
-            <ng-container *ngSwitchCase="'address'">{{
-              tableData.address
+            <ng-container *ngSwitchCase="'residenceAddress'">{{
+              tableData.residenceAddress
             }}</ng-container>
             <ng-container *ngSwitchCase="'carPark'">{{
               tableData.carPark
@@ -93,6 +90,9 @@
             <ng-container *ngSwitchCase="'durations'">{{
               tableData.durations
             }}</ng-container
+            ><ng-container *ngSwitchCase="'country'">{{
+              tableData.country
+            }}</ng-container
             ><ng-container *ngSwitchCase="'isActive'">{{
               tableData.isActive
             }}</ng-container>
@@ -107,6 +107,9 @@
             }}</ng-container>
             <ng-container *ngSwitchCase="'vehicleYear'">{{
               tableData.vehicleYear
+            }}</ng-container
+            ><ng-container *ngSwitchCase="'vehicleManufacturer'">{{
+              tableData.vehicleManufacturer
             }}</ng-container
             ><ng-container *ngSwitchCase="'gender'">{{
               tableData.gender

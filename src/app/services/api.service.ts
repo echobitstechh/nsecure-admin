@@ -13,7 +13,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class ApiService {
-  private baseUrl: string = 'https://nsecure-backend.onrender.com/api/v1/admin';
+  private baseUrl: string = 'https://nsecure-backend.onrender.com/api/v1';
   // private baseUrl: string = 'http://localhost:3000/api/v1/admin';
 
   //test admin credentials: email = superadmin@nsecure.com  || password = @nsecureSuperAdmin1234!
@@ -25,7 +25,7 @@ export class ApiService {
   ) {}
 
   login(email: string, password: string): Observable<any> {
-    const url = `${this.baseUrl}/signin`;
+    const url = `${this.baseUrl}/admin/signin`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { email, password };
 
@@ -35,7 +35,7 @@ export class ApiService {
   }
 
   refreshToken(): Observable<any> {
-    const url = `${this.baseUrl}/refresh-token`;
+    const url = `${this.baseUrl}/admin/refresh-token`;
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { token: this.authService.getRefreshToken() };
 
@@ -45,7 +45,7 @@ export class ApiService {
   }
 
   getAdmins(): Observable<any> {
-    const url = `${this.baseUrl}/admins`;
+    const url = `${this.baseUrl}/admin/admins`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.authService.getJwtToken()}`,
@@ -55,8 +55,8 @@ export class ApiService {
       .get<any>(url, { headers })
       .pipe(catchError(this.handleError('getAdmins')));
   }
-  getTransportWorker(): Observable<any> {
-    const url = `${this.baseUrl}/getalldrivers`;
+  getTransportWorkers(): Observable<any> {
+    const url = `${this.baseUrl}/admin/getalldrivers`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.authService.getJwtToken()}`,
@@ -64,7 +64,17 @@ export class ApiService {
 
     return this.http
       .get<any>(url, { headers })
-      .pipe(catchError(this.handleError('getAdmins')));
+      .pipe(catchError(this.handleError('getTransportWorkers')));
+  }
+  getEnumerators(): Observable<any> {
+    const url = `${this.baseUrl}/enumerator/getallenumerators`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+    return this.http
+      .get<any>(url, { headers })
+      .pipe(catchError(this.handleError('getEnumerators')));
   }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: HttpErrorResponse): Observable<T> => {

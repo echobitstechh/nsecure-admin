@@ -24,11 +24,11 @@
     [tableDatas]="workers"
     [columns]="[
       { field: 'firstName', label: 'Transport Workers' },
-      { field: 'category', label: 'Category' },
-      { field: 'carType', label: 'Car Type' },
-      { field: 'plateNumber', label: 'Plate Number' },
-      { field: 'address', label: 'Address' },
-      { field: 'carPark', label: 'Car Park' },
+      { field: 'gender', label: 'Gender' },
+      { field: 'country', label: 'Country' },
+      { field: 'licensePlate', label: 'Plate Number' },
+      { field: 'residenceAddress', label: 'Address' },
+      { field: 'vehicleYear', label: 'Vehicle Year' },
       { field: 'actions', label: '' }
     ]"
     [showCheckboxColumn]="true"
@@ -37,13 +37,33 @@
   ></app-generic-table>
   <ng-template #customModal let-data>
     <div class="modal-tw-details">
-      <h4>{{ data.name }}</h4>
+      <h4>{{ data.driverId }}</h4>
+      <p>Enumerator ID: {{ data.enumeratorId }}</p>
+      <p>First Name: {{ data.firstName }}</p>
+      <p>Last Name: {{ data.lastName }}</p>
       <p>Email: {{ data.email }}</p>
-      <p>Category: {{ data.category }}</p>
-      <p>Car Type: {{ data.carType }}</p>
-      <p>Plate Number: {{ data.plateNumber }}</p>
-      <p>Address: {{ data?.address }}</p>
-      <p>Car Park: {{ data.carPark }}</p>
+      <p>Gender: {{ data.gender }}</p>
+      <p>Date of Birth: {{ data.dateOfBirth }}</p>
+      <p>Address: {{ data.residenceAddress }}</p>
+      <p>Phone Number: {{ data.phoneNumber }}</p>
+      <p>Serial Number: {{ data.serialNumber }}</p>
+      <p>Country: {{ data.country }}</p>
+      <p>Vehicle Type: {{ data.vehicleManufacturer }}</p>
+      <p>Vehicle Year: {{ data.vehicleYear }}</p>
+      <p>Vehicle Color: {{ data.vehicleColor }}</p>
+      <p>Plate Number: {{ data.licensePlate }}</p>
+      <p>Driver's License: {{ data.driverLicense }}</p>
+      <p>Driver Rating: {{ data.driverRating }}</p>
+      <p>Number of Rating: {{ data.numberOfRatings }}</p>
+      <p>Verification Code: {{ data.verificationCode }}</p>
+      <p>Driver's License Verification: {{ data.driverLicenseVerified }}</p>
+      <p>Driver's Plate Verification: {{ data.licensePlateVerified }}</p>
+      <p>License Class: {{ data.licenseClass }}</p>
+      <p>Status: {{ data.status }}</p>
+      <p>Vehicle Category: {{ data.vehicleCategory }}</p>
+      <p>Country ID: {{ data.countryId }}</p>
+      <p>Date Created: {{ data.createdAt }}</p>
+      <p>Last Updated: {{ data.updatedAt }}</p>
       <div><button mat-button (click)="closeModal()">Close</button></div>
     </div>
   </ng-template>

@@ -14,12 +14,12 @@ export class TransportWorkersDashboardComponent implements OnInit {
   error = '';
 
   ngOnInit(): void {
-    this.loadTransortWorkers();
+    this.loadTransportWorkers();
   }
 
-  loadTransortWorkers(): void {
+  loadTransportWorkers(): void {
     this.loading = true;
-    this.apiService.getTransportWorker().subscribe(
+    this.apiService.getTransportWorkers().subscribe(
       (response) => {
         this.loading = false;
         this.workers = response.drivers;

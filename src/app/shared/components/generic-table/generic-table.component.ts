@@ -11,8 +11,8 @@ interface TableData {
   email?: string;
   category?: string;
   carType?: string;
-  plateNumber?: string;
-  address?: string;
+  licensePlate?: string;
+  residenceAddress?: string;
   carPark?: string;
   image?: string;
   selected?: boolean;
@@ -34,35 +34,8 @@ interface TableData {
   phoneNumber?: string;
   vehicleYear?: string;
   gender?: string;
-  // driverId: '3fa85f64-5717-4562-b3fc-2c963f66afa6';
-  // categoryId: '3fa85f64-5717-4562-b3fc-2c963f66afa6';
-  // countryId: '3fa85f64-5717-4562-b3fc-2c963f66afa6';
-  // country: 'string';
-  //
-  // referralCode: 'string';
-  // vehicleManufacturer: 'string';
-  // vehicleColor: 'string';
-  // licensePlate: 'string';
-  // driverLicense: 'string';
-  // vehicleLogBook: 'string';
-  // privateHireLicenseBadge: 'string';
-  // insuranceCertificate: 'string';
-  // motTestCertificate: 'string';
-  // isAvailable: true;
-  // latitude: 'string';
-  // longitude: 'string';
-  // driverRating: 0;
-  // numberOfRatings: 0;
-  // status: 'Active';
-  // dateOfBirth: 'string';
-  // verificationCode: 'string';
-  // residenceAddress: 'string';
-  // profileImage: 'string';
-  // driverLicenseVerified: true;
-  // vehicleLogBookVerified: true;
-  // privateHireLicenseBadgeVerified: true;
-  // insuranceCertificateVerified: true;
-  // motTestCertificateVerified: true;
+  vehicleManufacturer?: string;
+  country?: string;
 }
 
 interface TableColumn {
