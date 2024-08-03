@@ -5,14 +5,17 @@
   </div>
   <div class="card-body">
     <div class="enumerator shadow-sm" *ngFor="let enumerator of enumerators">
-      <img
+      <!-- <img
         class="enumerator-image"
         [src]="enumerator.imageUrl"
         alt="{{ enumerator.name }}"
-      />
+      /> -->
       <div class="enumerator-info">
-        <div class="enumerator-name">{{ enumerator.name }}</div>
+        <div class="enumerator-name">
+          {{ enumerator.firstName + " " + enumerator.lastName }}
+        </div>
         <div class="enumerator-park">{{ enumerator.park }}</div>
+        <div class="enumerator-park">{{ enumerator.enumeratorId }}</div>
       </div>
       <button class="more-button">⋮</button>
     </div>

@@ -12,25 +12,25 @@
 <app-generic-table
   [tableDatas]="admins"
   [columns]="[
-    { field: 'name', label: 'Transport Workers' },
-    { field: 'category', label: 'Category' },
-    { field: 'carType', label: 'Car Type' },
-    { field: 'plateNumber', label: 'Plate Number' },
-    { field: 'address', label: 'Address' },
-    { field: 'carPark', label: 'Car Park' },
+    { field: 'firstName', label: 'Admin Details' },
+    { field: 'adminId', label: 'Admin ID' },
+    { field: 'role', label: 'Role' },
+    { field: 'isActive', label: 'Active Status' },
     { field: 'actions', label: '' }
   ]"
   [modalTemplate]="customModal"
 ></app-generic-table>
 <ng-template #customModal let-data>
   <div class="modal-tw-details">
-    <h4>{{ data.name }}</h4>
+    <h4>{{ data.adminId }}</h4>
+    <p>First Name: {{ data.firstName }}</p>
+    <p>Last Name: {{ data.lastName }}</p>
     <p>Email: {{ data.email }}</p>
-    <p>Category: {{ data.category }}</p>
-    <p>Car Type: {{ data.carType }}</p>
-    <p>Plate Number: {{ data.plateNumber }}</p>
-    <p>Address: {{ data?.address }}</p>
-    <p>Car Park: {{ data.carPark }}</p>
+    <p>Role: {{ data.role }}</p>
+    <p>Password: {{ data.password }}</p>
+    <p>Active: {{ data.isActive }}</p>
+    <p>Created Date: {{ data.createdAt }}</p>
+    <p>Last Updated Date: {{ data.updatedAt }}</p>
     <div><button mat-button (click)="closeModal()">Close</button></div>
   </div>
 </ng-template>
