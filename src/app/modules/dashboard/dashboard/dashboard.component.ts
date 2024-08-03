@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BarChartData } from '../bar-chart/bar-chart.component';
+import { ApiService } from '../../../services/api.service';
 interface ChartData {
   day: string;
   value1: number;
@@ -55,9 +56,25 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { label: '16', value: 60 },
     { label: '18', value: 10 },
   ];
-  ngOnInit(): void {}
+  enumerators = []
+  error = '';
+  constructor(private apiService: ApiService) {}
+  ngOnInit(): void {
+    this.loadEnumerators();
+  }
 
-  constructor() {}
+  loadEnumerators(): void {
+    this.apiService.getEnumerators().subscribe(
+      (response) => {
+        this.enumerators = response.data.enumerators;
+        console.log('workers:', this.enumerators);
+      },
+      (error) => {
+        this.error = 'Error fetching enumerators';
+        console.error('Error fetching enumerators', error);
+      }
+    );
+  }
 
   ngOnDestroy() {}
 }

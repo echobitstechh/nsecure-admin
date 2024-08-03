@@ -5,7 +5,7 @@ interface Enumerator {
   firstName: string;
   lastName: string;
   park: string;
-  enumeratorID: number;
+  enumeratorId: number;
 }
 
 @Component({
@@ -32,22 +32,6 @@ export class EnumeratorListCardComponent implements OnInit {
     //   imageUrl: 'assets/images/jason.svg',
     // },
   ];
-  error = '';
-  constructor(private apiService: ApiService) {}
-  ngOnInit(): void {
-    this.loadEnumerators();
-  }
-
-  loadEnumerators(): void {
-    this.apiService.getEnumerators().subscribe(
-      (response) => {
-        this.enumerators = response.data.enumerators;
-        console.log('workers:', this.enumerators);
-      },
-      (error) => {
-        this.error = 'Error fetching enumerators';
-        console.error('Error fetching enumerators', error);
-      }
-    );
-  }
+  constructor() {}
+  ngOnInit(): void {}
 }

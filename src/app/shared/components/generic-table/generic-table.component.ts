@@ -65,6 +65,9 @@ export class GenericTableComponent implements OnInit {
     this.dialog.open(this.modalTemplate || this.detailsModal, {
       data,
       disableClose: true,
+      maxWidth: '700px',
+      maxHeight: '80vh',
+      autoFocus: false,
     });
   }
 
