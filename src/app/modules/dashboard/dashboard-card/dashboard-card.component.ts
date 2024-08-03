@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class DashboardCardComponent {
   @Input() title: string = '';
-  @Input() value: string = '';
+  @Input() value: string | number = '';
   @Input() trend: string = '';
   @Input() trendText: string = '';
   @Input() iconUrl: string = '';

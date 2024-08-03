@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-users',
@@ -7,166 +8,31 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './users.component.css',
 })
 export class UsersComponent implements OnInit {
-  constructor(private dialog: MatDialog) {}
-
-  ngOnInit(): void {}
   closeModal() {
     this.dialog.closeAll();
   }
-  admins = [
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/adela.svg',
-      selected: false,
-    },
-    {
-      name: 'Dapious Kodewarlock',
-      email: 'kodewarlock@gmail.com',
-      category: 'Car',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/jason.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Napep',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/christian.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/adela.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/adela.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/jason.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/jason.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/christian.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/christian.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/christian.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/christian.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/christian.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/christian.svg',
-      selected: false,
-    },
-    {
-      name: 'Mavin Dee',
-      email: 'mavindee@gmail.com',
-      category: 'Bus',
-      carType: 'Toyota',
-      plateNumber: 'DKA-234-uy',
-      address: 'NO 12 teen street Abuja, Nigeria',
-      carPark: 'Peace Park',
-      image: 'assets/images/christian.svg',
-      selected: false,
-    },
-  ];
+  admins = [];
+  loading = false;
+  error = '';
+
+  constructor(private apiService: ApiService, private dialog: MatDialog) {}
+
+  ngOnInit(): void {
+    this.loadAdmins();
+  }
+
+  loadAdmins(): void {
+    this.loading = true;
+    this.apiService.getAdmins().subscribe(
+      (response) => {
+        this.loading = false;
+        this.admins = response.data;
+      },
+      (error) => {
+        this.loading = false;
+        this.error = 'Error fetching admins';
+        console.error('Error fetching admins', error);
+      }
+    );
+  }
 }
