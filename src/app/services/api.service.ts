@@ -9,8 +9,8 @@ import { AuthService } from "./auth.service";
   providedIn: 'root'
 })
 export class ApiService {
-  // private baseUrl: string = 'https://nsecure-backend.onrender.com/api/v1/admin';
-  private baseUrl: string = 'http://localhost:3000/api/v1/admin';
+  private baseUrl: string = 'https://nsecure-backend.onrender.com/api/v1/admin';
+  // private baseUrl: string = 'http://localhost:3000/api/v1/admin';
 
   //test admin credentials: email = superadmin@nsecure.com  || password = @nsecureSuperAdmin1234!
 
