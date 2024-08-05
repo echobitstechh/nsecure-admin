@@ -3,8 +3,7 @@ import * as d3 from 'd3';
 
 export interface BarChartData {
   day: string;
-  lowValue: number;
-  highValue: number;
+  value: number;
 }
 
 @Component({
@@ -53,8 +52,8 @@ export class BarChartComponent implements OnInit {
   }
 
   private updateChart(): void {
-    const barWidth = 12;
-    const paddingLeft = 18;
+    const barWidth = 10;
+    const paddingLeft = 28;
 
     this.x
       .domain(this.data.map((d: BarChartData, i: number) => `${d.day}-${i}`))
@@ -82,21 +81,29 @@ export class BarChartComponent implements OnInit {
           `translate(${(this.x(`${d.day}-${i}`) as number) + paddingLeft},0)`
       );
 
+    const orangeHeight = 0.4;
+
     barEnter
       .append('rect')
       .attr('class', 'low')
       .attr('width', this.x.bandwidth())
-      .attr('y', (d: BarChartData) => this.y(d.lowValue))
-      .attr('height', (d: BarChartData) => this.height - this.y(d.lowValue))
-      .attr('fill', '#0644AA');
+      .attr('y', (d: BarChartData) => this.y(d.value))
+      .attr(
+        'height',
+        (d: BarChartData) => this.height - this.y(d.value * (1 - orangeHeight))
+      )
+      .attr('fill', '#FF9066');
 
     barEnter
       .append('rect')
       .attr('class', 'high')
       .attr('width', this.x.bandwidth())
-      .attr('y', (d: BarChartData) => this.y(d.lowValue + d.highValue))
-      .attr('height', (d: BarChartData) => this.height - this.y(d.highValue))
-      .attr('fill', '#FF9066');
+      .attr('y', (d: BarChartData) => this.y(d.value * (1 - orangeHeight)))
+      .attr(
+        'height',
+        (d: BarChartData) => this.height - this.y(d.value * orangeHeight)
+      )
+      .attr('fill', '#0644AA');
 
     bars.attr(
       'transform',
@@ -107,16 +114,22 @@ export class BarChartComponent implements OnInit {
     bars
       .select('.low')
       .attr('width', this.x.bandwidth())
-      .attr('y', (d: BarChartData) => this.y(d.lowValue))
-      .attr('height', (d: BarChartData) => this.height - this.y(d.lowValue))
-      .attr('fill', '#0644AA');
+      .attr('y', (d: BarChartData) => this.y(d.value))
+      .attr(
+        'height',
+        (d: BarChartData) => this.height - this.y(d.value * (1 - orangeHeight))
+      )
+      .attr('fill', '#FF9066');
 
     bars
       .select('.high')
       .attr('width', this.x.bandwidth())
-      .attr('y', (d: BarChartData) => this.y(d.lowValue + d.highValue))
-      .attr('height', (d: BarChartData) => this.height - this.y(d.highValue))
-      .attr('fill', '#FF9066');
+      .attr('y', (d: BarChartData) => this.y(d.value * (1 - orangeHeight)))
+      .attr(
+        'height',
+        (d: BarChartData) => this.height - this.y(d.value * orangeHeight)
+      )
+      .attr('fill', '#0644AA');
 
     this.svg.selectAll('.domain').attr('stroke', 'none');
     this.svg.selectAll('.tick line').attr('stroke', 'none');
