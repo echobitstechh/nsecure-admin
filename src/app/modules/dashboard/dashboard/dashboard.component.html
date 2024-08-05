@@ -14,10 +14,11 @@
       iconUrlTwo="assets/icons/slopeup.svg"
     >
     </app-dashboard-card>
+    <!-- value="2040" -->
     <app-dashboard-card
       class="dashboard-first-div-card"
       title="Active Enumerators"
-      value="2040"
+      [value]="enumerators.length"
       trend="1.3%"
       trendText="Up from past week"
       iconUrl="assets/icons/actenu.svg"
@@ -80,6 +81,7 @@
     </app-dashboard-card-two>
     <app-enumerator-list-card
       class="dashboard-third-div-card"
+      [enumerators]="enumerators"
     ></app-enumerator-list-card>
   </div>
 </div>
