@@ -5,72 +5,47 @@
         <div class="absolute"></div>
       </div>
     </div>
-    <div class="profile-inputs-cont w-100">
-      <div class="">
-        <label for="name" class="d-block profile-labels">Full Name</label>
-        <input type="text" placeholder="John Doe" class="profile-inputs" />
+    <form [formGroup]="userProfileFrom" (ngSubmit)="onSubmit()" >
+      <div class="profile-inputs-cont w-100">
+        <div class="">
+          <label for="firstName" class="d-block profile-labels">First Name</label>
+          <input formControlName ="firstName" id="firstName" type="text" placeholder="John " class="profile-inputs" />
+        </div>
+        <div class="">
+          <label for="LastName" class="d-block profile-labels">Last Name</label>
+          <input formControlName ="lastName" id="lastName" type="text" placeholder="Doe" class="profile-inputs" />
+        </div>
+        <div class="">
+          <label for="email" class="d-block profile-labels">Email</label>
+          <input
+            type="email"
+            placeholder="johndoe@gmail.com"
+            id="email"
+            class="profile-inputs"
+            formControlName="email"
+          />
+        </div>
+        <div class="">
+          <label for="password" class="d-block profile-labels">Password</label>
+          <input
+            type="password"
+            placeholder="**********"
+            class="profile-inputs"
+            id="password"
+            formControlName="password"
+          />
+        </div>
+        <div class="">
+          <label for="image" class="d-block profile-labels">Image</label>
+          <input type="file"  class="profile-inputs" id="image"
+          formControlName="image"
+          />
+        </div>
       </div>
-      <div class="">
-        <label for="username" class="d-block profile-labels">Username</label>
-        <input type="text" placeholder="JohnDoe" class="profile-inputs" />
-      </div>
-      <div class="">
-        <label for="email" class="d-block profile-labels">Email</label>
-        <input
-          type="email"
-          placeholder="johndoe@gmail.com"
-          class="profile-inputs"
-        />
-      </div>
-      <div class="">
-        <label for="email" class="d-block profile-labels">Password</label>
-        <input
-          type="password"
-          placeholder="**********"
-          class="profile-inputs"
-        />
-      </div>
-      <div class="">
-        <label for="date" class="d-block profile-labels">Date of Birth</label>
-        <input type="date" placeholder="" class="profile-inputs" />
-      </div>
-      <div class="">
-        <label for="present-address" class="d-block profile-labels"
-          >Present Address</label
-        >
-        <input
-          type="text"
-          placeholder="Maryland crescent, Ikeja, Lagos."
-          class="profile-inputs"
-        />
-      </div>
-      <div class="">
-        <label for="permanent-address" class="d-block profile-labels"
-          >Permanent Address</label
-        >
-        <input
-          type="text"
-          placeholder="Gwagwalada, Abuja"
-          class="profile-inputs"
-        />
-      </div>
-      <div class="">
-        <label for="city" class="d-block profile-labels">City</label>
-        <input type="text" placeholder="Abuja" class="profile-inputs" />
-      </div>
-      <div class="">
-        <label for="postal-code" class="d-block profile-labels"
-          >Postal Code</label
-        >
-        <input type="text" placeholder="11011" class="profile-inputs" />
-      </div>
-      <div class="">
-        <label for="postal-code" class="d-block profile-labels">Country</label>
-        <input type="text" placeholder="Sri Lanka" class="profile-inputs" />
-      </div>
-    </div>
+    </form>
   </div>
-  <div class="d-flex justify-content-end mt-5 prof-btn-con">
-    <app-button label="Save" class="btn-primary"></app-button>
+  <div class="d-flex justify-content-end gap-8 mt-5 prof-btn-con">
+    <button type="button" (click)="toggleEdit()" class="btn-primary edit-btn">{{ isEditing ? 'Cancel' : 'Edit' }}</button>
+    <app-button type="submit" label="Save" class="btn-primary mr-8" [disabled]="!isEditing" (click)="onSubmit()" ></app-button>
   </div>
 </div>

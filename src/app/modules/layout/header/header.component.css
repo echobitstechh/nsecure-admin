@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .header {
   padding: 10px !important;
   background-color: #ffffff;
@@ -5,9 +10,10 @@
 }
 
 .cont-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /*width: 100%;*/
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
 }
 
 .header-search {
@@ -60,4 +66,34 @@
 .lang-div-inner div img {
   width: 44px;
   height: 44px;
+
+}
+@media screen and (max-width:768px) {
+  .header{
+    /*width: 450px;*/
+  }
+  .header-search{
+    display: none;
+    /*background: #05cd99;*/
+    width: 100px;
+    height: 30px;
+  }
+  .header-search-input{
+    width: 60px;
+    height: 30px;
+  }
+
+  .admin-name {
+    font-size: 15px;
+  }
+
+  .admin-datail img{
+    /*margin-left: 5px;*/
+    width: 40px;
+  }
+
+.lang-cont{
+  margin-left: -15px;
+}
+
 }

@@ -6,9 +6,10 @@ import { SharedModule } from '../../shared/shared.module';
 import { SecurityComponent } from './security/security.component';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { ProfileComponent } from './profile/profile.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [SecurityComponent, PreferencesComponent, ProfileComponent],
-  imports: [CommonModule, SettingsRoutingModule, SharedModule],
+    imports: [CommonModule, SettingsRoutingModule, SharedModule, ReactiveFormsModule],
 })
 export class SettingsModule {}

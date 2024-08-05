@@ -9,8 +9,8 @@ import { AuthService } from "./auth.service";
   providedIn: 'root'
 })
 export class ApiService {
-  // private baseUrl: string = 'https://nsecure-backend.onrender.com/api/v1/admin';
-  private baseUrl: string = 'http://localhost:3000/api/v1/admin';
+  private baseUrl: string = 'https://nsecure-backend.onrender.com/api/v1/admin';
+  // private baseUrl: string = 'http://localhost:3000/api/v1/admin';
 
   //test admin credentials: email = superadmin@nsecure.com  || password = @nsecureSuperAdmin1234!
 
@@ -24,6 +24,20 @@ export class ApiService {
     return this.http.post<any>(url, body, { headers }).pipe(
       catchError(this.handleError<any>('login'))
     );
+  }
+
+  getProfile(adminId: string,): Observable<any> {
+    const url = `${this.baseUrl}/me/${adminId}`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = { adminId };
+
+    return this.http.get<any>(url, { headers }).pipe(
+      catchError(this.handleError<any>('login'))
+    );
+  }
+
+  updateUserProfile(adminId: any, profileData: any): Observable<any> {
+    return this.http.patch<any>(`${this.baseUrl}/updateuser/${adminId}`, profileData);
   }
 
   refreshToken(): Observable<any> {

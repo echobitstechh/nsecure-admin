@@ -55,3 +55,20 @@
     justify-content: center;
   }
 }
+
+.edit-btn {
+  width: 100px;
+  border: none;
+  margin-right: 20px;
+  border-radius: 10px;
+  background: black;
+  color: white;
+}
+.edit-btn:hover {
+  background: #1e1e1e;
+  transition: all;
+  transition-duration: revert;
+}
+.edit-btn:focus{
+  background: #1e1e1e;
+}

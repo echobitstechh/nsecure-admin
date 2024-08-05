@@ -15,6 +15,7 @@ import { LottieModule } from 'ngx-lottie';
 import { ToggleSidebarDirective } from './toggle-sidebar.directive';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {httpInterceptorProviders} from "./auth.interceptor";
+import {ProfileComponent} from "./modules/settings/profile/profile.component";
 
 export function lottiePlayerFactory(): any {
   return import('lottie-web/build/player/lottie_svg');

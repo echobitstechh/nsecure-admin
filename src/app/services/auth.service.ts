@@ -35,7 +35,7 @@ export class AuthService {
 
   getUserId() {
     const userId = localStorage.getItem(this.USER_ID);
-    return userId ? parseInt(userId, 10) : null;
+    return userId ;
   }
 
   storeJwtToken(jwt: string) {
