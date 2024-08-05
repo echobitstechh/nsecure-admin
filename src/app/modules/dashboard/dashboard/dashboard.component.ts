@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BarChartData } from '../bar-chart/bar-chart.component';
+import { ApiService } from '../../../services/api.service';
 interface ChartData {
   day: string;
   value1: number;
@@ -25,9 +26,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { day: 'T', value1: 90, value2: 110 },
     { day: 'F', value1: 50, value2: 130 },
     { day: 'S', value1: 70, value2: 90 },
-    { day: 'M', value1: 70, value2: 80 },
-    { day: 'T', value1: 50, value2: 100 },
-    { day: 'W', value1: 60, value2: 120 },
+    // { day: 'M', value1: 70, value2: 80 },
+    // { day: 'T', value1: 50, value2: 100 },
+    // { day: 'W', value1: 60, value2: 120 },
   ];
 
   transportWorkersChartData = [
@@ -55,9 +56,25 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { label: '16', value: 60 },
     { label: '18', value: 10 },
   ];
-  ngOnInit(): void {}
+  enumerators = []
+  error = '';
+  constructor(private apiService: ApiService) {}
+  ngOnInit(): void {
+    this.loadEnumerators();
+  }
 
-  constructor() {}
+  loadEnumerators(): void {
+    this.apiService.getEnumerators().subscribe(
+      (response) => {
+        this.enumerators = response.data.enumerators;
+        console.log('workers:', this.enumerators);
+      },
+      (error) => {
+        this.error = 'Error fetching enumerators';
+        console.error('Error fetching enumerators', error);
+      }
+    );
+  }
 
   ngOnDestroy() {}
 }
