@@ -1,101 +1,3 @@
-// import { Component, OnDestroy, OnInit } from '@angular/core';
-// import { BarChartData } from '../bar-chart/bar-chart.component';
-// import { ApiService } from '../../../services/api.service';
-
-// interface DashboardData {
-//   newRegisteredUsersPerDayOftheMonth: {
-//     usersByDay: {
-//       driverUsersByDayOfMonth: any[];
-//       enumeratorUsersByDayOfMonth: any[];
-//     };
-//   };
-//   newRegisteredWorkersThisWeek: number;
-//   totalTransportWorkers: {
-//     noOfRiders: number;
-//     totalDrivers: number;
-//     totalEnumerators: number;
-//     totalTransportWorkers: number;
-//   };
-// }
-
-// @Component({
-//   selector: 'app-dashboard',
-//   templateUrl: './dashboard.component.html',
-//   styleUrls: ['./dashboard.component.css'],
-// })
-// export class DashboardComponent implements OnInit, OnDestroy {
-//   pieChartData = [
-//     { name: 'Your files', value: 63 },
-//     { name: 'System', value: 25 },
-//     { name: 'Other', value: 12 },
-//   ];
-
-//   transportWorkersChartData = [
-//     { value: 60, color: '#053688', label: 'Drivers', valueLabel: '2K' },
-//     { value: 40, color: '#FF9066', label: 'Enumerators', valueLabel: '1.3K' },
-//   ];
-
-//   barChartData: BarChartData[] = [
-//     { day: 'M', value: 30 },
-//     { day: 'T', value: 40 },
-//     { day: 'W', value: 50 },
-//     { day: 'T', value: 60 },
-//     { day: 'F', value: 70 },
-//     { day: 'S', value: 40 },
-//     { day: 'S', value: 20 },
-//   ];
-
-//   registerChartData = [
-//     { label: '00', value: 35 },
-//     { label: '04', value: 20 },
-//     { label: '08', value: 45 },
-//     { label: '12', value: 40 },
-//     { label: '14', value: 47 },
-//     { label: '16', value: 60 },
-//     { label: '18', value: 10 },
-//   ];
-
-//   enumerators = [];
-//   dashboardData: DashboardData | null = null; // Change this to a single object
-
-//   error = '';
-
-//   constructor(private apiService: ApiService) {}
-
-//   ngOnInit(): void {
-//     this.loadEnumerators();
-//     this.loadDashboardData();
-//   }
-
-//   loadDashboardData(): void {
-//     this.apiService.getDataforDashboard().subscribe(
-//       (response) => {
-//         this.dashboardData = response.data;
-//         console.log('dashboardData:', this.dashboardData);
-//       },
-//       (error) => {
-//         this.error = 'Error fetching Dashboard Data';
-//         console.error('Error fetching Dashboard Data', error);
-//       }
-//     );
-//   }
-
-//   loadEnumerators(): void {
-//     this.apiService.getEnumerators().subscribe(
-//       (response) => {
-//         this.enumerators = response.data.enumerators;
-//         console.log('workers:', this.enumerators);
-//       },
-//       (error) => {
-//         this.error = 'Error fetching enumerators';
-//         console.error('Error fetching enumerators', error);
-//       }
-//     );
-//   }
-
-//   ngOnDestroy() {}
-// }
-
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BarChartData } from '../bar-chart/bar-chart.component';
 import { ApiService } from '../../../services/api.service';
@@ -115,7 +17,26 @@ interface DashboardData {
     totalTransportWorkers: number;
   };
 }
-
+interface DashboardTaxData {
+  listOfAllTaxes: {
+    taxes: any[];
+  };
+  totalTaxesPaid: number;
+  totalTaxesPaidThisWeek: {
+    totalTaxesForThisWeek: number;
+  };
+  totalTaxesPerDayOfTheWeek: {
+    taxesByDayofTheWeek: {
+      Monday: number;
+      Tuesday: number;
+      Wednesday: number;
+      Thursday: number;
+      Friday: number;
+      Saturday: number;
+      Sunday: number;
+    };
+  };
+}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -129,8 +50,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ];
 
   transportWorkersChartData = [
-    { value: 0, color: '#053688', label: 'Drivers', valueLabel: '0' },
-    { value: 0, color: '#FF9066', label: 'Enumerators', valueLabel: '0' },
+    { value: 0, color: '#053688', label: 'Drivers', valueLabel: 0 },
+    { value: 0, color: '#FF9066', label: 'Enumerators', valueLabel: 0 },
   ];
 
   barChartData: BarChartData[] = [
@@ -155,6 +76,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   enumerators = [];
   dashboardData: DashboardData | null = null;
+  dashboardTaxData: DashboardTaxData | null = null;
   error = '';
 
   constructor(private apiService: ApiService) {}
@@ -162,6 +84,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.loadEnumerators();
     this.loadDashboardData();
+    this.loadDashboardTaxData();
   }
 
   loadDashboardData(): void {
@@ -178,27 +101,27 @@ export class DashboardComponent implements OnInit, OnDestroy {
             this.dashboardData.newRegisteredUsersPerDayOftheMonth.usersByDay
               .enumeratorUsersByDayOfMonth;
 
-          const totalDrivers = driversData.reduce(
-            (acc, cur) => acc + cur.value,
-            0
-          );
-          const totalEnumerators = enumeratorsData.reduce(
-            (acc, cur) => acc + cur.value,
-            0
-          );
+          // const totalDrivers = driversData.reduce(
+          //   (acc, cur) => acc + cur.value,
+          //   0
+          // );
+          // const totalEnumerators = enumeratorsData.reduce(
+          //   (acc, cur) => acc + cur.value,
+          //   0
+          // );
 
           this.transportWorkersChartData = [
             {
-              value: totalDrivers,
+              value: driversData.length,
               color: '#053688',
               label: 'Drivers',
-              valueLabel: totalDrivers,
+              valueLabel: driversData.length,
             },
             {
-              value: totalEnumerators,
+              value: enumeratorsData.length,
               color: '#FF9066',
               label: 'Enumerators',
-              valueLabel: totalEnumerators,
+              valueLabel: enumeratorsData.length,
             },
           ];
         }
@@ -223,5 +146,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
     );
   }
 
+  loadDashboardTaxData(): void {
+    this.apiService.getTaxDashboardData().subscribe(
+      (response) => {
+        this.dashboardTaxData = response.data;
+        console.log('tax data:', this.dashboardTaxData);
+      },
+      (error) => {
+        this.error = 'Error fetching Tax data';
+        console.error('Error fetching Tax data', error);
+      }
+    );
+  }
   ngOnDestroy() {}
 }

@@ -4,7 +4,7 @@ export interface ChartData {
   value: number;
   color: string;
   label: string;
-  valueLabel: string;
+  valueLabel: number;
 }
 
 @Component({
