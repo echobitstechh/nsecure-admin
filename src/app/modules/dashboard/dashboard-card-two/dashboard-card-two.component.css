@@ -29,6 +29,7 @@
   margin-top: 16px;
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 select.card-timeframe {
@@ -40,4 +41,6 @@ select.card-timeframe {
 
 select.card-timeframe:focus {
   outline: none;
+}
+@media (max-width: 820px) {
 }
