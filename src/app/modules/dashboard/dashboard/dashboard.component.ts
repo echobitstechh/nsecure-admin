@@ -53,16 +53,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { value: 0, color: '#053688', label: 'Drivers', valueLabel: 0 },
     { value: 0, color: '#FF9066', label: 'Enumerators', valueLabel: 0 },
   ];
-
-  barChartData: BarChartData[] = [
-    { day: 'M', value: 30 },
-    { day: 'T', value: 40 },
-    { day: 'W', value: 50 },
-    { day: 'T', value: 60 },
-    { day: 'F', value: 70 },
-    { day: 'S', value: 40 },
-    { day: 'S', value: 20 },
-  ];
+  barChartData!: BarChartData[];
+  // barChartData: BarChartData[] = [
+  //   { day: 'M', value: 30 },
+  //   { day: 'T', value: 40 },
+  //   { day: 'W', value: 50 },
+  //   { day: 'T', value: 60 },
+  //   { day: 'F', value: 70 },
+  //   { day: 'S', value: 40 },
+  //   { day: 'S', value: 20 },
+  // ];
 
   registerChartData = [
     { label: '00', value: 35 },
@@ -146,11 +146,37 @@ export class DashboardComponent implements OnInit, OnDestroy {
     );
   }
 
+  // loadDashboardTaxData(): void {
+  //   this.apiService.getTaxDashboardData().subscribe(
+  //     (response) => {
+  //       this.dashboardTaxData = response.data;
+  //       console.log('tax data:', this.dashboardTaxData);
+  //     },
+
+  //     (error) => {
+  //       this.error = 'Error fetching Tax data';
+  //       console.error('Error fetching Tax data', error);
+  //     }
+  //   );
+  // }
   loadDashboardTaxData(): void {
     this.apiService.getTaxDashboardData().subscribe(
       (response) => {
         this.dashboardTaxData = response.data;
         console.log('tax data:', this.dashboardTaxData);
+
+        // Transform the data for bar chart
+        const taxesByDay =
+          this.dashboardTaxData?.totalTaxesPerDayOfTheWeek.taxesByDayofTheWeek;
+        this.barChartData = [
+          { day: 'M', value: taxesByDay?.Monday ?? 0 },
+          { day: 'T', value: taxesByDay?.Tuesday ?? 0 },
+          { day: 'W', value: taxesByDay?.Wednesday ?? 0 },
+          { day: 'T', value: taxesByDay?.Thursday ?? 0 },
+          { day: 'F', value: taxesByDay?.Friday ?? 0 },
+          { day: 'S', value: taxesByDay?.Saturday ?? 0 },
+          { day: 'S', value: taxesByDay?.Sunday ?? 0 },
+        ];
       },
       (error) => {
         this.error = 'Error fetching Tax data';
@@ -158,5 +184,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
       }
     );
   }
+
   ngOnDestroy() {}
 }
