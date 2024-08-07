@@ -2,7 +2,6 @@
   <p class="" style="color: #202224; font-weight: 700; font-size: 32px">
     Dashboard
   </p>
-  <!-- [value]="workers.length" -->
   <div class="dashboard-first-div">
     <app-dashboard-card
       class="dashboard-first-div-card"
@@ -14,7 +13,6 @@
       iconUrlTwo="assets/icons/slopeup.svg"
     >
     </app-dashboard-card>
-    <!-- value="2040" -->
     <app-dashboard-card
       class="dashboard-first-div-card"
       title="Active Enumerators"
@@ -39,7 +37,7 @@
       class="dashboard-first-div-card"
       title="Total Tax generated"
       value="#30,244.00"
-            [value]="0"
+      [value]="0"
       trend="4.3%"
       trendText="Down from yesterday"
       trendColor="red"
