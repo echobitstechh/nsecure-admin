@@ -1,16 +1,46 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BarChartData } from '../bar-chart/bar-chart.component';
 import { ApiService } from '../../../services/api.service';
-interface ChartData {
-  day: string;
-  value1: number;
-  value2: number;
-}
 
+interface DashboardData {
+  newRegisteredUsersPerDayOftheMonth: {
+    usersByDay: {
+      driverUsersByDayOfMonth: any[];
+      enumeratorUsersByDayOfMonth: any[];
+    };
+  };
+  newRegisteredWorkersThisWeek: number;
+  totalTransportWorkers: {
+    noOfRiders: number;
+    totalDrivers: number;
+    totalEnumerators: number;
+    totalTransportWorkers: number;
+  };
+}
+interface DashboardTaxData {
+  listOfAllTaxes: {
+    taxes: any[];
+  };
+  totalTaxesPaid: number;
+  totalTaxesPaidThisWeek: {
+    totalTaxesForThisWeek: number;
+  };
+  totalTaxesPerDayOfTheWeek: {
+    taxesByDayofTheWeek: {
+      Monday: number;
+      Tuesday: number;
+      Wednesday: number;
+      Thursday: number;
+      Friday: number;
+      Saturday: number;
+      Sunday: number;
+    };
+  };
+}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css',
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   pieChartData = [
@@ -18,35 +48,22 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { name: 'System', value: 25 },
     { name: 'Other', value: 12 },
   ];
-  taxChartData: ChartData[] = [
-    { day: 'S', value1: 30, value2: 50 },
-    { day: 'M', value1: 70, value2: 80 },
-    { day: 'T', value1: 50, value2: 100 },
-    { day: 'W', value1: 60, value2: 120 },
-    { day: 'T', value1: 90, value2: 110 },
-    { day: 'F', value1: 50, value2: 130 },
-    { day: 'S', value1: 70, value2: 90 },
-    // { day: 'M', value1: 70, value2: 80 },
-    // { day: 'T', value1: 50, value2: 100 },
-    // { day: 'W', value1: 60, value2: 120 },
-  ];
 
   transportWorkersChartData = [
-    { value: 60, color: '#053688', label: 'Driver', valueLabel: '2K' },
-    { value: 40, color: '#FF9066', label: 'Riders', valueLabel: '1.3K' },
+    { value: 0, color: '#053688', label: 'Drivers', valueLabel: 0 },
+    { value: 0, color: '#FF9066', label: 'Enumerators', valueLabel: 0 },
   ];
+  // barChartData!: BarChartData[];
   barChartData: BarChartData[] = [
-    { day: 'S', lowValue: 20, highValue: 30 },
-    { day: 'M', lowValue: 30, highValue: 30 },
-    { day: 'T', lowValue: 40, highValue: 30 },
-    { day: 'W', lowValue: 50, highValue: 30 },
-    { day: 'T', lowValue: 60, highValue: 30 },
-    { day: 'F', lowValue: 70, highValue: 50 },
-    { day: 'S', lowValue: 40, highValue: 30 },
-    { day: 'M', lowValue: 30, highValue: 30 },
-    { day: 'T', lowValue: 40, highValue: 30 },
-    { day: 'W', lowValue: 50, highValue: 30 },
+    { day: 'M', value: 30 },
+    { day: 'T', value: 40 },
+    { day: 'W', value: 50 },
+    { day: 'T', value: 60 },
+    { day: 'F', value: 70 },
+    { day: 'S', value: 40 },
+    { day: 'S', value: 20 },
   ];
+
   registerChartData = [
     { label: '00', value: 35 },
     { label: '04', value: 20 },
@@ -56,11 +73,52 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { label: '16', value: 60 },
     { label: '18', value: 10 },
   ];
-  enumerators = []
+
+  enumerators = [];
+  dashboardData: DashboardData | null = null;
+  dashboardTaxData: DashboardTaxData | null = null;
   error = '';
+
   constructor(private apiService: ApiService) {}
+
   ngOnInit(): void {
     this.loadEnumerators();
+    this.loadDashboardData();
+    this.loadDashboardTaxData();
+  }
+
+  loadDashboardData(): void {
+    this.apiService.getDataforDashboard().subscribe(
+      (response) => {
+        this.dashboardData = response.data;
+        console.log('dashboardData:', this.dashboardData);
+
+        if (this.dashboardData) {
+          const driversData =
+            this.dashboardData.totalTransportWorkers.totalDrivers;
+          const enumeratorsData =
+            this.dashboardData.totalTransportWorkers.totalEnumerators;
+          this.transportWorkersChartData = [
+            {
+              value: driversData,
+              color: '#053688',
+              label: 'Drivers',
+              valueLabel: driversData,
+            },
+            {
+              value: enumeratorsData,
+              color: '#FF9066',
+              label: 'Enumerators',
+              valueLabel: enumeratorsData,
+            },
+          ];
+        }
+      },
+      (error) => {
+        this.error = 'Error fetching Dashboard Data';
+        console.error('Error fetching Dashboard Data', error);
+      }
+    );
   }
 
   loadEnumerators(): void {
@@ -72,6 +130,45 @@ export class DashboardComponent implements OnInit, OnDestroy {
       (error) => {
         this.error = 'Error fetching enumerators';
         console.error('Error fetching enumerators', error);
+      }
+    );
+  }
+
+  // loadDashboardTaxData(): void {
+  //   this.apiService.getTaxDashboardData().subscribe(
+  //     (response) => {
+  //       this.dashboardTaxData = response.data;
+  //       console.log('tax data:', this.dashboardTaxData);
+  //     },
+
+  //     (error) => {
+  //       this.error = 'Error fetching Tax data';
+  //       console.error('Error fetching Tax data', error);
+  //     }
+  //   );
+  // }
+  loadDashboardTaxData(): void {
+    this.apiService.getTaxDashboardData().subscribe(
+      (response) => {
+        this.dashboardTaxData = response.data;
+        console.log('tax data:', this.dashboardTaxData);
+
+        // Transform the data for bar chart
+        const taxesByDay =
+          this.dashboardTaxData?.totalTaxesPerDayOfTheWeek.taxesByDayofTheWeek;
+        this.barChartData = [
+          { day: 'M', value: taxesByDay?.Monday ?? 0 },
+          { day: 'T', value: taxesByDay?.Tuesday ?? 0 },
+          { day: 'W', value: taxesByDay?.Wednesday ?? 0 },
+          { day: 'T', value: taxesByDay?.Thursday ?? 0 },
+          { day: 'F', value: taxesByDay?.Friday ?? 0 },
+          { day: 'S', value: taxesByDay?.Saturday ?? 0 },
+          { day: 'S', value: taxesByDay?.Sunday ?? 0 },
+        ];
+      },
+      (error) => {
+        this.error = 'Error fetching Tax data';
+        console.error('Error fetching Tax data', error);
       }
     );
   }

@@ -1,5 +1,6 @@
 import {
   Component,
+  HostListener,
   Input,
   OnInit,
   TemplateRef,
@@ -27,7 +28,6 @@ interface TableData {
   adminId?: string;
   firstName?: string;
   lastName?: string;
-  password?: string;
   isActive?: boolean;
   createdAt?: string | number;
   updatedAt?: string | number;
@@ -55,11 +55,21 @@ export class GenericTableComponent implements OnInit {
   @Input() showCheckboxColumn = false;
   @Input() showSerialNumber = true;
   @Input() modalTemplate: TemplateRef<any> | null = null;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.checkScreenSize();
+  }
   pageSize = 10;
   currentPage = 1;
   totalPages = Math.ceil(this.tableDatas.length / this.pageSize);
+  isLargeScreen = true;
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenSize();
+  }
 
+  checkScreenSize() {
+    this.isLargeScreen = window.innerWidth > 820;
+  }
   constructor(public dialog: MatDialog) {}
   openDetails(data: TableData) {
     this.dialog.open(this.modalTemplate || this.detailsModal, {
@@ -73,6 +83,9 @@ export class GenericTableComponent implements OnInit {
 
   closeModal() {
     this.dialog.closeAll();
+  }
+  hasActionsColumn(): boolean {
+    return this.columns.some((col) => col.field === 'actions');
   }
 
   toggleAll(event: any) {

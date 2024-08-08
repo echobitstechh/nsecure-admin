@@ -1,4 +1,9 @@
-<button [type]="type" [disabled]="disabled" [ngClass]="class">
+<button
+  [type]="type"
+  [disabled]="disabled"
+  [ngClass]="class"
+  (click)="navigate()"
+>
   <ng-container *ngIf="icon">
     <img [src]="icon" alt="" class="btn-img" />
   </ng-container>

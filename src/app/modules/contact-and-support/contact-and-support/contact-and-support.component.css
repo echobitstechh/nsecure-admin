@@ -36,6 +36,7 @@
   .container {
     position: relative;
     gap: 6px;
+    /* padding: 6px 0px; */
   }
 
   .contact-list {
@@ -46,6 +47,7 @@
   .chat-window {
     padding: 6px;
     margin-left: 16px;
+    width: 100%;
   }
   .contact-list.hidden {
     display: none;
