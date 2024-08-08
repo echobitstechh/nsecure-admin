@@ -99,6 +99,30 @@
 .btn-primary {
   background: #f0f3fa;
 }
+
+.table-responsive {
+  display: block;
+}
+
+.card-view {
+  display: none;
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.card button {
+  padding: 6px 10px;
+  border: none;
+  background-color: #f0f3fa;
+  color: #0644aa;
+  font-weight: 500;
+  border-radius: 14px;
+  cursor: pointer;
+  margin: auto;
+}
 @media (max-width: 820px) {
   .generic-table th,
   .generic-table td {
@@ -118,5 +142,12 @@
     padding: 4px 8px;
     font-size: 12px;
     text-wrap: nowrap;
+  }
+  .table-responsive {
+    display: none;
+  }
+
+  .card-view {
+    display: block;
   }
 }

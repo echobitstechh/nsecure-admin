@@ -1,4 +1,4 @@
-<div class="table-cont table-responsive">
+<div class="table-cont table-responsive" *ngIf="isLargeScreen">
   <table class="generic-table table table-striped">
     <thead>
       <tr>
@@ -141,6 +141,27 @@
     <span>Page {{ currentPage }}</span>
     <button (click)="goToNextPage()" [disabled]="currentPage === totalPages">
       Next
+    </button>
+  </div>
+</div>
+
+<div class="card-view" *ngIf="!isLargeScreen">
+  <div *ngFor="let tableData of paginatedtableDatas" class="card">
+    <div *ngFor="let column of columns">
+      <h5 *ngIf="column.field === 'firstName'">
+        {{ tableData.firstName + " " + tableData.lastName }}
+      </h5>
+      <p *ngIf="column.field !== 'actions'">
+        {{ column.label }}: {{ tableData[column.field] }}
+      </p>
+    </div>
+    <button
+      mat-button
+      (click)="openDetails(tableData)"
+      class="shadow-sm"
+      *ngIf="hasActionsColumn()"
+    >
+      View Details
     </button>
   </div>
 </div>
