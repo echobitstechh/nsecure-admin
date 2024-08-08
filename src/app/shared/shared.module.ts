@@ -11,6 +11,7 @@ import { NotificationToggleComponent } from './components/notification-toggle/no
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { GenericTableComponent } from './components/generic-table/generic-table.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -35,6 +36,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     ProgressbarModule,
     FormsModule,
+    RouterModule,
     LottieModule.forRoot({ player: lottiePlayerFactory }),
   ],
 })

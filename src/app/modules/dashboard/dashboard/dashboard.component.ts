@@ -53,16 +53,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
     { value: 0, color: '#053688', label: 'Drivers', valueLabel: 0 },
     { value: 0, color: '#FF9066', label: 'Enumerators', valueLabel: 0 },
   ];
-  barChartData!: BarChartData[];
-  // barChartData: BarChartData[] = [
-  //   { day: 'M', value: 30 },
-  //   { day: 'T', value: 40 },
-  //   { day: 'W', value: 50 },
-  //   { day: 'T', value: 60 },
-  //   { day: 'F', value: 70 },
-  //   { day: 'S', value: 40 },
-  //   { day: 'S', value: 20 },
-  // ];
+  // barChartData!: BarChartData[];
+  barChartData: BarChartData[] = [
+    { day: 'M', value: 30 },
+    { day: 'T', value: 40 },
+    { day: 'W', value: 50 },
+    { day: 'T', value: 60 },
+    { day: 'F', value: 70 },
+    { day: 'S', value: 40 },
+    { day: 'S', value: 20 },
+  ];
 
   registerChartData = [
     { label: '00', value: 35 },
@@ -95,33 +95,21 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
         if (this.dashboardData) {
           const driversData =
-            this.dashboardData.newRegisteredUsersPerDayOftheMonth.usersByDay
-              .driverUsersByDayOfMonth;
+            this.dashboardData.totalTransportWorkers.totalDrivers;
           const enumeratorsData =
-            this.dashboardData.newRegisteredUsersPerDayOftheMonth.usersByDay
-              .enumeratorUsersByDayOfMonth;
-
-          // const totalDrivers = driversData.reduce(
-          //   (acc, cur) => acc + cur.value,
-          //   0
-          // );
-          // const totalEnumerators = enumeratorsData.reduce(
-          //   (acc, cur) => acc + cur.value,
-          //   0
-          // );
-
+            this.dashboardData.totalTransportWorkers.totalEnumerators;
           this.transportWorkersChartData = [
             {
-              value: driversData.length,
+              value: driversData,
               color: '#053688',
               label: 'Drivers',
-              valueLabel: driversData.length,
+              valueLabel: driversData,
             },
             {
-              value: enumeratorsData.length,
+              value: enumeratorsData,
               color: '#FF9066',
               label: 'Enumerators',
-              valueLabel: enumeratorsData.length,
+              valueLabel: enumeratorsData,
             },
           ];
         }
