@@ -30,3 +30,8 @@
 .legend-label {
   margin-right: 5px;
 }
+@media (max-width: 820px) {
+  .circular-progress-chart {
+    gap: 35px;
+  }
+}
