@@ -28,7 +28,7 @@
 .card-chart {
   margin-top: 16px;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   padding: 10px;
 }
 

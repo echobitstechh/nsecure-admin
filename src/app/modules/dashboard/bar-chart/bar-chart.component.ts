@@ -16,7 +16,7 @@ export class BarChartComponent implements OnInit {
   @Input() data: BarChartData[] = [];
 
   private margin = { top: 20, right: 10, bottom: 30, left: 20 };
-  private width = 500 - this.margin.left - this.margin.right;
+  private width = 400 - this.margin.left - this.margin.right;
   private height = 217 - this.margin.top - this.margin.bottom;
   private svg: any;
   private x: any;
@@ -53,7 +53,7 @@ export class BarChartComponent implements OnInit {
 
   private updateChart(): void {
     const barWidth = 8;
-    const paddingLeft = 25;
+    const paddingLeft = 20;
 
     this.x
       .domain(this.data.map((d: BarChartData, i: number) => `${d.day}-${i}`))
