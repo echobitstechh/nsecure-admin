@@ -15,8 +15,8 @@ export class BarChartComponent implements OnInit {
   @ViewChild('chart', { static: true }) private chartContainer!: ElementRef;
   @Input() data: BarChartData[] = [];
 
-  private margin = { top: 20, right: 20, bottom: 30, left: 40 };
-  private width = 600 - this.margin.left - this.margin.right;
+  private margin = { top: 20, right: 10, bottom: 30, left: 20 };
+  private width = 500 - this.margin.left - this.margin.right;
   private height = 217 - this.margin.top - this.margin.bottom;
   private svg: any;
   private x: any;
@@ -39,7 +39,7 @@ export class BarChartComponent implements OnInit {
       .append('g')
       .attr('transform', `translate(${this.margin.left},${this.margin.top})`);
 
-    this.x = d3.scaleBand().range([0, this.width]).padding(0.1);
+    this.x = d3.scaleBand().range([0, this.width]).padding(0.05);
 
     this.y = d3.scaleLinear().range([this.height, 0]);
 
@@ -52,8 +52,8 @@ export class BarChartComponent implements OnInit {
   }
 
   private updateChart(): void {
-    const barWidth = 10;
-    const paddingLeft = 28;
+    const barWidth = 8;
+    const paddingLeft = 25;
 
     this.x
       .domain(this.data.map((d: BarChartData, i: number) => `${d.day}-${i}`))
