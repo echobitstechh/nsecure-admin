@@ -32,6 +32,6 @@
 }
 @media (max-width: 820px) {
   .circular-progress-chart {
-    gap: 35px;
+    gap: 25px;
   }
 }
