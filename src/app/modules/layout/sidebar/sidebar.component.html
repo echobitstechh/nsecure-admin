@@ -1,4 +1,4 @@
-<div class=" d-flex">
+<div class="d-flex">
   <div
     *ngIf="showSidebarAndHeader"
     id="bdSidebar"
@@ -72,6 +72,56 @@
           />
           Management
         </a>
+        <ul style="list-style: none">
+          <li class="nav-item mb-">
+            <a
+              data-bs-dismiss="bdSidebar"
+              class="nav-link"
+              aria-current="page"
+              routerLink="admin"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Admin
+            </a>
+          </li>
+          <li class="nav-item mb-">
+            <a
+              data-bs-dismiss="bdSidebar"
+              class="nav-link"
+              aria-current="page"
+              routerLink="super-agent"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Super Agent
+            </a>
+          </li>
+          <li class="nav-item mb-">
+            <a
+              data-bs-dismiss="bdSidebar"
+              class="nav-link"
+              aria-current="page"
+              routerLink="super-agent"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Field Agent
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              data-bs-dismiss="bdSidebar"
+              class="nav-link"
+              aria-current="page"
+              routerLink="super-agent"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Transport Worker
+            </a>
+          </li>
+        </ul>
       </li>
       <li class="nav-item mb-3">
         <a

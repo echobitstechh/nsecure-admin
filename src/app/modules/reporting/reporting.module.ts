@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReportingRoutingModule } from './reporting-routing.module';
-import { PaymentReportComponent } from './payment-report/payment-report.component';
 import { CollectionReportComponent } from './collection-report/collection-report.component';
+import { InvoiceReportComponent } from './invoice-report/invoice-report.component';
 
 @NgModule({
-  declarations: [PaymentReportComponent, CollectionReportComponent],
+  declarations: [InvoiceReportComponent, CollectionReportComponent],
   imports: [CommonModule, ReportingRoutingModule],
 })
 export class ReportingModule {}
