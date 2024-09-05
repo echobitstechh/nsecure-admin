@@ -30,6 +30,7 @@
             <ng-container *ngSwitchCase="'firstName'">
               <div class="dataflex">
                 <img
+                  *ngIf="tableData.image"
                   [src]="tableData.image"
                   alt="worker image"
                   class="generic-image"
@@ -40,16 +41,18 @@
                   >
                     {{ tableData.firstName + " " + tableData.lastName }}
                   </span>
-
-                  <span
+                  <!-- <span
                     style="color: #667085; font-size: 14px; font-weight: 400"
                     >{{ tableData.email }}</span
-                  >
+                  > -->
                 </div>
               </div>
             </ng-container>
             <ng-container *ngSwitchCase="'category'">{{
               tableData.category
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'email'">{{
+              tableData.email
             }}</ng-container>
             <ng-container *ngSwitchCase="'adminId'">{{
               tableData.adminId

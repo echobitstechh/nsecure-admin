@@ -15,11 +15,10 @@
     { field: 'firstName', label: 'Name of Admin' },
     { field: 'email', label: 'Email' },
     { field: 'role', label: 'Role' },
-    { field: 'isActive', label: 'Active Status' },
     { field: 'actions', label: '' }
   ]"
   [showCheckboxColumn]="true"
-  [routeLink]="'/details'"
+  [routeLink]="'/management/admin/admin-detail'"
   [showSerialNumber]="false"
 ></app-generic-table>
 <ng-template #customModal let-data>

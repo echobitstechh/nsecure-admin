@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../../../../services/api.service';
 
+interface ListAdmin {
+  firstName: string;
+  lastName: string;
+  email: string;
+  role: string;
+}
 @Component({
   selector: 'app-users',
   templateUrl: './admins.component.html',
@@ -11,7 +17,14 @@ export class AdminsComponent implements OnInit {
   closeModal() {
     this.dialog.closeAll();
   }
-  admins = [];
+  admins: ListAdmin[] = [
+    {
+      firstName: 'Silifah',
+      lastName: 'Admin',
+      email: 'Email@email.com',
+      role: 'super admin',
+    },
+  ];
   loading = false;
   error = '';
 
