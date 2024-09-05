@@ -48,7 +48,7 @@ const routes: Routes = [
       import('./modules/user-management/management.module').then(
         (m) => m.ManagementModule
       ),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'authentication',

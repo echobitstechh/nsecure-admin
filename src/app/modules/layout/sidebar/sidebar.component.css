@@ -56,6 +56,11 @@
 #bdSidebar.offcanvas-start {
   width: 240px;
 }
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
 @media (max-width: 820px) {
   #bdSidebar.offcanvas-start {
     max-width: 220px;

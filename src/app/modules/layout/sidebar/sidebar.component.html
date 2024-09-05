@@ -61,9 +61,8 @@
           data-bs-dismiss="bdSidebar"
           class="nav-link"
           aria-current="page"
-          routerLink="/management"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="toggleManagement()"
+          style="cursor: pointer"
         >
           <img
             src="assets/icons/management.svg"
@@ -71,14 +70,18 @@
             class="icon"
           />
           Management
+          <i
+            class="fa fa-chevron-down ms-2"
+            [ngClass]="{ 'rotate-180': isManagementOpen }"
+          ></i>
         </a>
-        <ul style="list-style: none">
+        <ul *ngIf="isManagementOpen" style="list-style: none">
           <li class="nav-item mb-">
             <a
               data-bs-dismiss="bdSidebar"
               class="nav-link"
               aria-current="page"
-              routerLink="admin"
+              routerLink="/management/admin"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >
@@ -90,7 +93,7 @@
               data-bs-dismiss="bdSidebar"
               class="nav-link"
               aria-current="page"
-              routerLink="super-agent"
+              routerLink="/management/super-agent"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >
@@ -102,7 +105,7 @@
               data-bs-dismiss="bdSidebar"
               class="nav-link"
               aria-current="page"
-              routerLink="super-agent"
+              routerLink="/management/field-agent"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >
@@ -114,7 +117,7 @@
               data-bs-dismiss="bdSidebar"
               class="nav-link"
               aria-current="page"
-              routerLink="super-agent"
+              routerLink="/management/transport-workers"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
             >

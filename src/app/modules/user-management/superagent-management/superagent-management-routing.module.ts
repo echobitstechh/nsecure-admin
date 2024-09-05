@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SuperagentPageComponent } from './superagent-page/superagent-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./layout/layout.module').then((m) => m.LayoutModule),
+    component: SuperagentPageComponent,
+    pathMatch: 'full',
+    data: {
+      isExtranet: false,
+    },
   },
 ];
 
@@ -13,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ManagementRoutingModule {}
+export class SuperagentRoutingModule {}

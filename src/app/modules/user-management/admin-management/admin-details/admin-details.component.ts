@@ -3,10 +3,10 @@ import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-management-details',
-  templateUrl: './management-details.component.html',
-  styleUrls: ['./management-details.component.css'],
+  templateUrl: './admin-details.component.html',
+  styleUrls: ['./admin-details.component.css'],
 })
-export class ManagementDetailsComponent {
+export class AdminDetailsComponent {
   @Input() activityLogData: { date: string; description: string }[] = [
     { date: '14/02/2023, 1:50PM', description: 'Logged out' },
     { date: '14/02/2023, 2:50PM', description: 'Created revenue head' },

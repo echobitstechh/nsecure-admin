@@ -12,13 +12,15 @@
 <app-generic-table
   [tableDatas]="admins"
   [columns]="[
-    { field: 'firstName', label: 'Admin Details' },
-    { field: 'adminId', label: 'Admin ID' },
+    { field: 'firstName', label: 'Name of Admin' },
+    { field: 'email', label: 'Email' },
     { field: 'role', label: 'Role' },
     { field: 'isActive', label: 'Active Status' },
     { field: 'actions', label: '' }
   ]"
-  [modalTemplate]="customModal"
+  [showCheckboxColumn]="true"
+  [routeLink]="'/details'"
+  [showSerialNumber]="false"
 ></app-generic-table>
 <ng-template #customModal let-data>
   <div class="modal-tw-details">
