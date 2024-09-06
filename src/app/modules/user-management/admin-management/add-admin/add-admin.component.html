@@ -119,7 +119,12 @@
       </div>
     </div>
     <div class="d-flex justify-content-center mt-5 sec-btn-con">
-      <app-button type="submit" label="Create" class="btn-primary"></app-button>
+      <app-button-with-loader
+        [classText]="'btn btn-custom'"
+        [buttonType]="'submit'"
+        [idleStateText]="'Create Admin'"
+        [workingStateText]="'Creating Admin...'"
+      ></app-button-with-loader>
     </div>
   </form>
 </div>

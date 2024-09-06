@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminManagementComponent } from './admin-management/admin-management.component';
 import { AdminsComponent } from './admins/admins.component';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
+import { AddAdminComponent } from './add-admin/add-admin.component';
 
 const routes: Routes = [
   // {
@@ -23,6 +24,7 @@ const routes: Routes = [
         component: AdminDetailsComponent,
         pathMatch: 'full',
       },
+      { path: 'create-admin', component: AddAdminComponent, pathMatch: 'full' },
       { path: '', redirectTo: 'admins-list', pathMatch: 'full' },
     ],
   },

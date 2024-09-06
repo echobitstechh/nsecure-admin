@@ -6,12 +6,14 @@ import { AdminsComponent } from './admins/admins.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddAdminComponent } from './add-admin/add-admin.component';
 
 @NgModule({
   declarations: [
     AdminManagementComponent,
     AdminsComponent,
     AdminDetailsComponent,
+    AddAdminComponent,
   ],
   imports: [
     CommonModule,

@@ -13,16 +13,17 @@
   </div>
   <div class="d-flex gap-3">
     <app-button-with-loader
-      [classText]="'btn btn-custom bg-light'"
+      [classText]="'btn btn-primary'"
       [svgIcon]="'assets/icons/download.svg'"
       [buttonType]="'button'"
-      [idleStateText]="'Download'"
+      [idleStateText]="'Export'"
     ></app-button-with-loader>
     <app-button-with-loader
       [classText]="'btn btn-custom'"
       [svgIcon]="'assets/icons/add.svg'"
       [buttonType]="'button'"
-      [idleStateText]="'Add Workers'"
+      [idleStateText]="'Add Admin'"
+      [routeLink]="'/management/admin/create-admin'"
     ></app-button-with-loader>
   </div>
 </div>
@@ -38,16 +39,3 @@
   [routeLink]="'/management/admin/admin-detail'"
   [showSerialNumber]="false"
 ></app-generic-table>
-<ng-template #customModal let-data>
-  <div class="modal-tw-details">
-    <h4>{{ data.adminId }}</h4>
-    <p>First Name: {{ data.firstName }}</p>
-    <p>Last Name: {{ data.lastName }}</p>
-    <p>Email: {{ data.email }}</p>
-    <p>Role: {{ data.role }}</p>
-    <p>Active: {{ data.isActive }}</p>
-    <p>Created Date: {{ data.createdAt }}</p>
-    <p>Last Updated Date: {{ data.updatedAt }}</p>
-    <div><button mat-button (click)="closeModal()">Close</button></div>
-  </div>
-</ng-template>
