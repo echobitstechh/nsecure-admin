@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 /**
@@ -51,6 +52,8 @@ export class ButtonWithLoaderComponent<T> {
    * @author George David
    * georgequin19@gmail.com
    */
+
+constructor(private router: Router){}
 
   @Input()
   isProcessing = false;
@@ -106,5 +109,10 @@ export class ButtonWithLoaderComponent<T> {
           this.isProcessing = false;
         });
     }
+     if (this.routeLink) {
+       this.router.navigate([this.routeLink]);
+     }
   }
+
+  
 }

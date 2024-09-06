@@ -1,0 +1,59 @@
+.big-admin-form-cont {
+  padding: 0.5rem 2rem;
+}
+.first-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: 1.5rem;
+}
+.form-group {
+  /* margin-bottom: 20px; */
+  outline: none;
+}
+label {
+  color: #344054;
+  font-weight: 500;
+  font-size: 14px;
+}
+.image-cont {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.form-control {
+  width: 100%;
+  padding: 10px, 14px, 10px, 14px;
+  font-size: 1rem;
+  border: 1px solid #d0d5dd;
+  border-radius: 0.5rem;
+  margin-top: 6px;
+  cursor: pointer;
+}
+.form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.text-center {
+  text-align: center;
+}
+.accessLevels-div {
+  margin-top: 1.5rem;
+}
+.accessLevels-div p {
+  color: #151515;
+  font-weight: 500;
+  font-size: 18px;
+}
+.accessLevels-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
+  column-gap: 1.5rem;
+}
+.accessLevels-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
