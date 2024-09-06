@@ -4,4 +4,25 @@
   border-radius: 0.3rem; /* Rounded corners */
   background-color: #053688; /* Primary color */
   color: white; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.svgIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.btn-primary {
+  color: #053688; /* Text color */
+  border: #053688 1px solid; /* Border color */
+  padding: 0.75rem 1.25rem; /* Bigger button padding */
+  font-size: 1.25rem; /* Bigger font size */
+  border-radius: 0.3rem; /* Rounded corners */
+  background-color: #053688; /* Primary color */
+  color: white; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }

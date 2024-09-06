@@ -1,13 +1,30 @@
-<div class="admin-adder-div">
-  <p style="color: #202224; font-weight: 500; font-size: 24px" class="">
-    Admins
-  </p>
-  <app-button
-    label="Add Admin"
-    class="btn-primary"
-    icon="assets/icons/add.svg"
-    routerLink="/add-user"
-  ></app-button>
+<div class="admin-first-div">
+  <div class="d-flex gap-3 filtandseardiv">
+    <app-button-with-loader
+      [classText]="'btn btn-custom bg-light text-black shadow-sm'"
+      [idleStateText]="'Filters'"
+      [svgIcon]="'assets/icons/filterlines.svg'"
+      [buttonType]="'button'"
+    ></app-button-with-loader>
+    <div class="d-flex align-items-center shadow-sm search-div">
+      <img src="assets/icons/search.svg" alt="" />
+      <input type="text" placeholder="Search" class="py-2 search-input" />
+    </div>
+  </div>
+  <div class="d-flex gap-3">
+    <app-button-with-loader
+      [classText]="'btn btn-custom bg-light'"
+      [svgIcon]="'assets/icons/download.svg'"
+      [buttonType]="'button'"
+      [idleStateText]="'Download'"
+    ></app-button-with-loader>
+    <app-button-with-loader
+      [classText]="'btn btn-custom'"
+      [svgIcon]="'assets/icons/add.svg'"
+      [buttonType]="'button'"
+      [idleStateText]="'Add Workers'"
+    ></app-button-with-loader>
+  </div>
 </div>
 <app-generic-table
   [tableDatas]="admins"
