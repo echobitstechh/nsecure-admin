@@ -19,6 +19,6 @@ export class ButtonComponent {
   navigate() {
     if (this.routerLink) {
       this.router.navigate([this.routerLink]);
-    }
+    } else {}
   }
 }

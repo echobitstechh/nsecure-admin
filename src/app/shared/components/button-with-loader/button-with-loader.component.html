@@ -4,8 +4,10 @@
   [ngClass]="classText"
   [disabled]="isProcessing"
   (click)="emitOnClickEvent()"
+  [routerLink]="routeLink"
 >
   <div [innerHTML]="icon"></div>
+  <img src="{{ svgIcon }}" alt="" class="svgIcon" *ngIf="svgIcon" />
   {{ isProcessing ? workingStateText : idleStateText }}
   <ng-container *ngIf="isProcessing">
     <div class="spinner-border spinner-border-sm" role="status">
@@ -13,3 +15,4 @@
     </div>
   </ng-container>
 </button>
+<!-- added routeLink to handle navigation between pages -->

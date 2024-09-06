@@ -7,6 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 interface TableData {
   email?: string;
@@ -55,6 +56,8 @@ export class GenericTableComponent implements OnInit {
   @Input() showCheckboxColumn = false;
   @Input() showSerialNumber = true;
   @Input() modalTemplate: TemplateRef<any> | null = null;
+  @Input() routeLink: string | null = null;
+
   ngOnInit(): void {
     this.checkScreenSize();
   }
@@ -70,15 +73,20 @@ export class GenericTableComponent implements OnInit {
   checkScreenSize() {
     this.isLargeScreen = window.innerWidth > 820;
   }
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private router: Router) {}
+
   openDetails(data: TableData) {
-    this.dialog.open(this.modalTemplate || this.detailsModal, {
-      data,
-      disableClose: true,
-      maxWidth: '700px',
-      maxHeight: '80vh',
-      autoFocus: false,
-    });
+    if (this.routeLink) {
+      this.router.navigate([this.routeLink]);
+    } else {
+      this.dialog.open(this.modalTemplate || this.detailsModal, {
+        data,
+        disableClose: true,
+        maxWidth: '700px',
+        maxHeight: '80vh',
+        autoFocus: false,
+      });
+    }
   }
 
   closeModal() {

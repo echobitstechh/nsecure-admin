@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersComponent } from '../users/users.component';
-import { AddUserComponent } from '../add-user/add-user.component';
-import { ManagementDetailsComponent } from '../management-details/management-details.component';
 import { ManagementHomeComponent } from './managementhome/managementhome.component';
 
 const routes: Routes = [
@@ -10,10 +7,35 @@ const routes: Routes = [
     path: '',
     component: ManagementHomeComponent,
     children: [
-      { path: 'admins', component: UsersComponent },
-      { path: 'add-user', component: AddUserComponent },
-      { path: 'admin-details', component: ManagementDetailsComponent },
-      { path: '', redirectTo: 'admins', pathMatch: 'full' },
+      {
+        path: 'admin',
+        loadChildren: () =>
+          import('../admin-management/admin-management.module').then(
+            (m) => m.AdminManagementModule
+          ),
+      },
+      {
+        path: 'field-agent',
+        loadChildren: () =>
+          import('../fieldagent-management/fieldagent-management.module').then(
+            (m) => m.FieldagentManagementModule
+          ),
+      },
+      {
+        path: 'super-agent',
+        loadChildren: () =>
+          import('../superagent-management/superagent-management.module').then(
+            (m) => m.SuperagentManagementModule
+          ),
+      },
+      {
+        path: 'transport-workers',
+        loadChildren: () =>
+          import('../tworker-management/tworker-management.module').then(
+            (m) => m.TworkerManagementModule
+          ),
+      },
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
     ],
   },
 ];
