@@ -12,6 +12,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { GenericTableComponent } from './components/generic-table/generic-table.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AccountActionModalComponent } from './components/account-action-modal/account-action-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -23,6 +25,7 @@ import { RouterModule } from '@angular/router';
     NotificationToggleComponent,
     ConfirmDialogComponent,
     GenericTableComponent,
+    AccountActionModalComponent,
   ],
   exports: [
     ButtonWithLoaderComponent,
@@ -31,12 +34,14 @@ import { RouterModule } from '@angular/router';
     NotificationToggleComponent,
     ConfirmDialogComponent,
     GenericTableComponent,
+    AccountActionModalComponent,
   ],
   imports: [
     CommonModule,
     ProgressbarModule,
     FormsModule,
     RouterModule,
+    MatDialogModule,
     LottieModule.forRoot({ player: lottiePlayerFactory }),
   ],
 })

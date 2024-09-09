@@ -1,0 +1,47 @@
+<div>
+  <div>
+    <h1 mat-dialog-title>{{ data.title }}</h1>
+    <button (click)="onNoClick()"></button>
+  </div>
+  <div mat-dialog-content>
+    <p>{{ data.message }}</p>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Enter your password"
+        [(ngModel)]="password"
+        type="password"
+      />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <app-button-with-loader
+      [classText]="'btn btn-custom'"
+      [buttonType]="'submit'"
+      [idleStateText]="'Cancel'"
+      (buttonClick)="onNoClick()"
+      mat-button
+    ></app-button-with-loader>
+    <app-button-with-loader
+      [classText]="'btn btn-custom'"
+      [buttonType]="'submit'"
+      [idleStateText]="
+        data.actionType === 'delete' ? 'Delete {{deleteText}}' : 'Deactivate'
+      "
+      [workingStateText]="
+        data.actionType === 'delete'
+          ? 'Deleting {{deleteText}}...'
+          : 'Deactivating...'
+      "
+      \
+      (buttonClick)="onConfirmClick()"
+      mat-button
+      [mat-dialog-close]="password"
+      cdkFocusInitial
+    ></app-button-with-loader>
+    <!-- <button mat-button (click)="">
+      {{ data.actionType === "delete" ? "Delete {{deleteText}}" : "Deactivate"
+      }}
+    </button> -->
+  </div>
+</div>

@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AccountActionModalComponent } from '../../../../shared/components/account-action-modal/account-action-modal.component';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
   selector: 'app-management-details',
@@ -7,33 +10,49 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./admin-details.component.css'],
 })
 export class AdminDetailsComponent {
-  @Input() activityLogData: { date: string; description: string }[] = [
-    { date: '14/02/2023, 1:50PM', description: 'Logged out' },
-    { date: '14/02/2023, 2:50PM', description: 'Created revenue head' },
-    {
-      date: '14/02/2023, 2:50PM',
-      description: 'Created a user with access to CMS',
-    },
-    { date: '14/02/2023, 2:50PM', description: 'Logged in' },
-    { date: '14/02/2023, 2:50PM', description: 'Changed password' },
-  ];
+  constructor(public dialog: MatDialog, private apiService: ApiService) {}
 
-  passwordControl = new FormControl('4re124567');
-  isCopied = false;
-
-  copyPassword() {
-    navigator.clipboard.writeText(this.passwordControl.value ?? '').then(
-      () => {
-        this.isCopied = true;
-        console.log('Password copied to clipboard!');
-
-        setTimeout(() => {
-          this.isCopied = false;
-        }, 2000);
+  openDialog(actionType: string, user: any): void {
+    const dialogRef = this.dialog.open(AccountActionModalComponent, {
+      width: '400px',
+      data: {
+        title:
+          actionType === 'delete'
+            ? `Delete ${user.name}'s account`
+            : `Deactivate ${user.name}'s account`,
+        message:
+          actionType === 'delete'
+            ? `Are you sure you want to delete ${user.name}'s account? This action cannot be undone.`
+            : `Are you sure you want to deactivate ${user.name}'s account?`,
+        actionType: actionType,
       },
-      (err) => {
-        console.error('Could not copy text: ', err);
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.processAction(actionType, user, result);
       }
-    );
+    });
+  }
+  processAction(actionType: string, user: any, password: string): void {
+    if (actionType === 'delete') {
+      this.apiService.deleteUser(user.id, password).subscribe(
+        (response) => {
+          console.log('User deleted successfully');
+        },
+        (error) => {
+          console.error('Error deleting user');
+        }
+      );
+    } else if (actionType === 'deactivate') {
+      this.apiService.deactivateUser(user.id, password).subscribe(
+        (response) => {
+          console.log('User deactivated successfully');
+        },
+        (error) => {
+          console.error('Error deactivating user');
+        }
+      );
+    }
   }
 }
