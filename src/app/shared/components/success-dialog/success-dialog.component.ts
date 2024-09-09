@@ -7,7 +7,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrl: './success-dialog.component.css',
 })
 export class SuccessDialogComponent {
-  @Input() title = 'Success';
+  @Input() title = '';
   @Input() message = 'Action was successful';
   @Input() reload = false;
   /**

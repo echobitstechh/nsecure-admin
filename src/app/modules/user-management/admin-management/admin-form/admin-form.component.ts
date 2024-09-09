@@ -9,7 +9,6 @@ import { ApiService } from '../../../../services/api.service';
 })
 export class AdminFormComponent implements OnInit {
   @Input() isUpdate: boolean = false;
-  @Input() adminId: number | null = null;
 
   adminForm!: FormGroup;
 
@@ -18,8 +17,8 @@ export class AdminFormComponent implements OnInit {
   ngOnInit(): void {
     this.initializeForm();
 
-    // if (this.isUpdate && this.adminId) {
-    //   this.fetchAdminDetails(this.adminId); // Fetch details if in update mode
+    // if (this.isUpdate) {
+    //   this.fetchAdminDetails(); // Fetch details if in update mode
     // }
   }
 
