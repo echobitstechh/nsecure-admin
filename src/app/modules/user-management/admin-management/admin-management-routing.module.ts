@@ -4,6 +4,7 @@ import { AdminManagementComponent } from './admin-management/admin-management.co
 import { AdminsComponent } from './admins/admins.component';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
+import { UpdateAdminComponent } from './update-admin/update-admin.component';
 
 const routes: Routes = [
   // {
@@ -25,6 +26,11 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       { path: 'create-admin', component: AddAdminComponent, pathMatch: 'full' },
+      {
+        path: 'update-admin',
+        component: UpdateAdminComponent,
+        pathMatch: 'full',
+      },
       { path: '', redirectTo: 'admins-list', pathMatch: 'full' },
     ],
   },

@@ -7,6 +7,8 @@ import { SharedModule } from '../../../shared/shared.module';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddAdminComponent } from './add-admin/add-admin.component';
+import { AdminFormComponent } from './admin-form/admin-form.component';
+import { UpdateAdminComponent } from './update-admin/update-admin.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { AddAdminComponent } from './add-admin/add-admin.component';
     AdminsComponent,
     AdminDetailsComponent,
     AddAdminComponent,
+    AdminFormComponent,
+    UpdateAdminComponent,
   ],
   imports: [
     CommonModule,

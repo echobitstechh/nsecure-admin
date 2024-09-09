@@ -1,185 +1,87 @@
-<!-- <a aria-current="page" routerLink="/management"> Back </a> -->
-<a
-  aria-current="page"
-  routerLink="/management"
-  routerLinkActive="active"
-  style="text-decoration: none"
->
-  Back
-</a>
-<div>
-  <form action="">
-    <div class="mngd-inputs-cont w-100">
-      <div class="">
-        <label for="name" class="d-block mngd-labels">Title</label>
-        <input type="text" placeholder="Admin" class="mngd-inputs" readonly />
-      </div>
-      <div class="">
-        <label for="username" class="d-block mngd-labels">Name of Admin</label>
-        <input
-          type="text"
-          placeholder="Mavin Dee"
-          class="mngd-inputs"
-          readonly
-        />
-      </div>
-      <div class="">
-        <label for="email" class="d-block mngd-labels">Email</label>
-        <input
-          type="email"
-          placeholder="kodewarlock@gmail.com"
-          class="mngd-inputs"
-          readonly
-        />
-      </div>
-      <div class="">
-        <label for="email" class="d-block mngd-labels">Phone number</label>
-        <input
-          type="password"
-          placeholder="+234 81 233 48 723"
-          class="mngd-inputs"
-          readonly
-        />
-      </div>
-      <div class="">
-        <label for="email" class="d-block mngd-labels">Role</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select role</option>
-          <option value="">Auditor</option>
-          <option value="">Customer Care</option>
-        </select>
-      </div>
-    </div>
-    <p class="mt-4" style="color: #151515; font-size: 18px; font-weight: 500">
-      Access level
-    </p>
-    <div class="access-level-div">
-      <div class="">
-        <label for="dashboard" class="d-block mngd-labels">Dashboard</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select level</option>
-          <option value="">Level one</option>
-          <option value="">Level two</option>
-        </select>
-      </div>
-      <div class="">
-        <label for="analytics" class="d-block mngd-labels">Analytics</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select level</option>
-          <option value="">Level one</option>
-          <option value="">Level two</option>
-        </select>
-      </div>
-      <div class="">
-        <label for="enumerator" class="d-block mngd-labels">Enumerator</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select level</option>
-          <option value="">Level one</option>
-          <option value="">Level two</option>
-        </select>
-      </div>
-      <div class="">
-        <label for="report" class="d-block mngd-labels">Report</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select level</option>
-          <option value="">Level one</option>
-          <option value="">Level two</option>
-        </select>
-      </div>
-      <div class="">
-        <label for="taxpayers" class="d-block mngd-labels">Taxpayers</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select level</option>
-          <option value="">Level one</option>
-          <option value="">Level two</option>
-        </select>
-      </div>
-      <div class="">
-        <label for="admin_user" class="d-block mngd-labels">Admin User</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select level</option>
-          <option value="">Level one</option>
-          <option value="">Level two</option>
-        </select>
-      </div>
-      <div class="">
-        <label for="audit_logs" class="d-block mngd-labels">Audit Logs</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select level</option>
-          <option value="">Level one</option>
-          <option value="">Level two</option>
-        </select>
-      </div>
-      <div class="">
-        <label for="e_service" class="d-block mngd-labels">E-service</label>
-        <select name="" id="" class="mngd-select">
-          <option value="">Select level</option>
-          <option value="">Level one</option>
-          <option value="">Level two</option>
-        </select>
-      </div>
-    </div>
-    <div class="d-flex justify-content-center mt-5 sec-btn-con">
-      <app-button type="submit" label="Save" class="btn-primary"></app-button>
-    </div>
-  </form>
-  <div class="mt-4">
-    <div class="account-credentials">
-      <p style="color: #101828; font-size: 20px; font-weight: 500">
-        Account Credentials
-      </p>
-      <label
-        for="password"
-        style="color: #344054; font-size: 14px; font-weight: 500"
-        >Password</label
+<div class="px-4 d-flex flex-column gap-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <a
+      class="back"
+      aria-current="page"
+      [routerLink]="'/management/admin/admins-list'"
+      routerLinkActive="active"
+    >
+      Back
+    </a>
+    <app-button-with-loader
+      [classText]="'btn btn-custom'"
+      [buttonType]="'submit'"
+      [idleStateText]="'Print'"
+      [svgIcon]="'assets/icons/print.svg'"
+    ></app-button-with-loader>
+  </div>
+  <div class="d-flex justify-content-between align-items-center">
+    admin image
+    <div class="d-flex align-items-center gap-3">
+      <a
+        style="
+          color: #000000cc;
+          font-size: 14px;
+          display: inline-flex;
+          gap: 5px;
+          text-decoration: none;
+          flex-direction: column;
+          align-items: center;
+        "
+        aria-current="page"
+        routerLink=""
+        routerLinkActive="active"
       >
-      <div class="password-input-container">
-        <input
-          id="password"
-          type="text"
-          [formControl]="passwordControl"
-          class=""
-          value=""
-          readonly
+        <img
+          src="assets/icons/deactivate.svg"
+          alt="Deactivation"
+          style="width: 30px; height: 30px"
         />
-        <button
-          type="button"
-          (click)="copyPassword()"
-          class="copy-button"
-          aria-label="Copy password"
-        >
-          <img src="assets/icons/clipboard.svg" alt="clipboard icon" />
-        </button>
-      </div>
-      <div *ngIf="isCopied" class="text-success">
-        Password copied successfully!
-      </div>
-    </div>
-    <div class="activity-log mt-5">
-      <p style="color: #101828; font-weight: 700; font-size: 24px">
-        Activity log
-      </p>
-      <div class="activity-log-table table-responsive">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Date and Time</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let log of activityLogData">
-              <td>{{ log.date }}</td>
-              <td>{{ log.description }}</td>
-            </tr>
-          </tbody>
-          <div class="md-pagination">
-            <button class="btn btn-secondary">Previous</button>
-            <button class="btn btn-secondary">Next</button>
-            <span>Page 1</span>
-          </div>
-        </table>
-      </div>
+        Deactivate
+      </a>
+      <a
+        style="
+          color: #000000cc;
+          font-size: 14px;
+          display: inline-flex;
+          gap: 5px;
+          text-decoration: none;
+          flex-direction: column;
+          align-items: center;
+        "
+        aria-current="page"
+        routerLink="/management/admin/update-admin"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <img
+          src="assets/icons/editmang.svg"
+          alt="Deactivation"
+          style="width: 30px; height: 30px"
+        />
+        Edit
+      </a>
+      <a
+        style="
+          color: #000000cc;
+          font-size: 14px;
+          display: inline-flex;
+          gap: 5px;
+          text-decoration: none;
+          flex-direction: column;
+          align-items: center;
+        "
+        aria-current="page"
+        routerLink=""
+        routerLinkActive="active"
+      >
+        <img
+          src="assets/icons/delete.svg"
+          alt="Deactivation"
+          style="width: 30px; height: 30px"
+        />
+        Delete
+      </a>
     </div>
   </div>
 </div>

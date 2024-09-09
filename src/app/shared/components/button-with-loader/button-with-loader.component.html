@@ -4,7 +4,7 @@
   [ngClass]="classText"
   [disabled]="isProcessing"
   (click)="emitOnClickEvent()"
-  [routerLink]="routeLink ? routeLink : null"
+  [routerLink]="routeLink"
 >
   <div [innerHTML]="icon"></div>
   <img src="{{ svgIcon }}" alt="" class="svgIcon" *ngIf="svgIcon" />
