@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AccountActionModalComponent } from '../../../../shared/components/account-action-modal/account-action-modal.component';
 import { ApiService } from '../../../../services/api.service';
 
 @Component({
@@ -12,10 +13,9 @@ export class AdminDetailsComponent implements OnInit {
   error = '';
 
   ngOnInit(): void {}
+  constructor(public dialog: MatDialog, private apiService: ApiService) {}
 
-  constructor(private apiService: ApiService) {}
-
-  loadOneProduct(): void {
+  loadOneAdmin(): void {
     this.apiService.getAnAdmin().subscribe(
       (response) => {
         this.admin = response;
@@ -26,5 +26,50 @@ export class AdminDetailsComponent implements OnInit {
         console.error('Error fetching product', error);
       }
     );
+  }
+
+  openDialog(actionType: string, user: any): void {
+    const dialogRef = this.dialog.open(AccountActionModalComponent, {
+      width: '400px',
+      data: {
+        title:
+          actionType === 'delete'
+            ? `Delete ${user.name}'s account`
+            : `Deactivate ${user.name}'s account`,
+        message:
+          actionType === 'delete'
+            ? `Are you sure you want to delete ${user.name}'s account? This action cannot be undone.`
+            : `Are you sure you want to deactivate ${user.name}'s account?`,
+        actionType: actionType,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.processAction(actionType, user, result);
+      }
+    });
+  }
+
+  processAction(actionType: string, user: any, password: string): void {
+    // if (actionType === 'delete') {
+    //   this.apiService.deleteUser(user.id, password).subscribe(
+    //     (response) => {
+    //       console.log('User deleted successfully');
+    //     },
+    //     (error) => {
+    //       console.error('Error deleting user');
+    //     }
+    //   );
+    // } else if (actionType === 'deactivate') {
+    //   this.v.deactivateUser(user.id, password).subscribe(
+    //     (response) => {
+    //       console.log('User deactivated successfully');
+    //     },
+    //     (error) => {
+    //       console.error('Error deactivating user');
+    //     }
+    //   );
+    // }
   }
 }
