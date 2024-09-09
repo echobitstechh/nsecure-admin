@@ -35,8 +35,8 @@ export class AdminDetailsComponent implements OnInit {
       data: {
         title:
           actionType === 'delete'
-            ? `Delete ${this.admin.name}'s account`
-            : `Deactivate ${this.admin.name}'s account`,
+            ? `Delete Admin's account`
+            : `Deactivate Admin's account`,
         message:
           actionType === 'delete'
             ? `Are you sure you want to delete ${this.admin.name}'s account? This action cannot be undone.`
