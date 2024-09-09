@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { AdminFormComponent } from './admin-form/admin-form.component';
 import { UpdateAdminComponent } from './update-admin/update-admin.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { UpdateAdminComponent } from './update-admin/update-admin.component';
     CommonModule,
     AdminManagementComponentRoutingModule,
     SharedModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, MatDialogModule
   ],
 })
 export class AdminManagementModule {}

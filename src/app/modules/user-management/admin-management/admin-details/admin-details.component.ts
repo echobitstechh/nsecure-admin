@@ -28,25 +28,28 @@ export class AdminDetailsComponent implements OnInit {
     );
   }
 
-  openDialog(actionType: string, user: any): void {
+  openDialog(actionType: string): void {
+    console.log('Opening dialog...');
     const dialogRef = this.dialog.open(AccountActionModalComponent, {
       width: '400px',
       data: {
         title:
           actionType === 'delete'
-            ? `Delete ${user.name}'s account`
-            : `Deactivate ${user.name}'s account`,
+            ? `Delete ${this.admin.name}'s account`
+            : `Deactivate ${this.admin.name}'s account`,
         message:
           actionType === 'delete'
-            ? `Are you sure you want to delete ${user.name}'s account? This action cannot be undone.`
-            : `Are you sure you want to deactivate ${user.name}'s account?`,
+            ? `Are you sure you want to delete ${this.admin.name}'s account? This action cannot be undone.`
+            : `Are you sure you want to deactivate ${this.admin.name}'s account?`,
         actionType: actionType,
+        deleteText: 'Admin',
       },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
+      console.log('Dialog closed', result);
       if (result) {
-        this.processAction(actionType, user, result);
+        this.processAction(actionType, this.admin, result);
       }
     });
   }

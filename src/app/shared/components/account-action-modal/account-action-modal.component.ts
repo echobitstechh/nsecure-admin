@@ -8,14 +8,14 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class AccountActionModalComponent {
   password: string = '';
-  deleteText: string = '';
+  // deleteText: string = '';
 
   constructor(
     public dialogRef: MatDialogRef<AccountActionModalComponent>,
     @Inject(MAT_DIALOG_DATA)
-    public data: { title: string; message: string; actionType: string }
+    public data: any
   ) {}
-
+// { title: string; message: string; actionType: string }
   onNoClick(): void {
     this.dialogRef.close();
   }

@@ -1,7 +1,9 @@
 <div>
-  <div>
+  <div class="d-flex justify-content-between">
     <h1 mat-dialog-title>{{ data.title }}</h1>
-    <button (click)="onNoClick()"></button>
+    <button (click)="onNoClick()" class="material-icons close-btn">
+      close
+    </button>
   </div>
   <div mat-dialog-content>
     <p>{{ data.message }}</p>
@@ -26,22 +28,19 @@
       [classText]="'btn btn-custom'"
       [buttonType]="'submit'"
       [idleStateText]="
-        data.actionType === 'delete' ? 'Delete {{deleteText}}' : 'Deactivate'
+        data.actionType === 'delete'
+          ? 'Delete ' + data.deleteText
+          : 'Deactivate'
       "
       [workingStateText]="
         data.actionType === 'delete'
-          ? 'Deleting {{deleteText}}...'
+          ? 'Deleting ' + data.deleteText + '...'
           : 'Deactivating...'
       "
-      \
       (buttonClick)="onConfirmClick()"
       mat-button
       [mat-dialog-close]="password"
       cdkFocusInitial
     ></app-button-with-loader>
-    <!-- <button mat-button (click)="">
-      {{ data.actionType === "delete" ? "Delete {{deleteText}}" : "Deactivate"
-      }}
-    </button> -->
   </div>
 </div>
