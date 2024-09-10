@@ -1,31 +1,60 @@
-<div>
-  <div class="d-flex justify-content-between">
-    <h1 mat-dialog-title>{{ data.title }}</h1>
-    <button (click)="onNoClick()" class="material-icons close-btn">
+<div class="" mat-dialog-content>
+  <!-- <div *ngIf="data.actionType === 'deactivate'">
+    <img src="assets/icons/deactivatebg.svg" alt="" />
+  </div> -->
+  <div class="title-and-close-div mb-3">
+    <h1 class="account-title">
+      {{ data.title }}
+    </h1>
+    <button (click)="onNoClick()" class="material-icons close-btn mb-2">
       close
     </button>
   </div>
-  <div mat-dialog-content>
-    <p>{{ data.message }}</p>
+  <div *ngIf="data.actionType === 'delete'">
+    <p class="delete-message">
+      {{ data.deleteMessage }}
+    </p>
+    <div class="d-flex gap-3">
+      <img [src]="data.adminImage" alt="" />
+      <p>{{ data.adminName }}</p>
+    </div>
+  </div>
+  <div class="my-3">
+    <div>
+      <p class="message">{{ data.message }}</p>
+      <div *ngIf="data.actionType === 'delete'" class="warning mb-3">
+        <img src="assets/icons/warning.svg" alt="" />
+        <p>
+          This action cannot be undone. Consider keeping this account
+          deactivated instead.
+        </p>
+      </div>
+    </div>
     <mat-form-field>
+      <label for="password" class=""
+        >Input Password to {{ data.confirmText }}</label
+      >
       <input
         matInput
-        placeholder="Enter your password"
+        placeholder=""
         [(ngModel)]="password"
         type="password"
+        class="w-100 password-input"
       />
     </mat-form-field>
   </div>
-  <div mat-dialog-actions>
+  <div mat-dialog-actions class="d-flex justify-content-end">
     <app-button-with-loader
-      [classText]="'btn btn-custom'"
+      [classText]="''"
       [buttonType]="'submit'"
       [idleStateText]="'Cancel'"
       (buttonClick)="onNoClick()"
       mat-button
     ></app-button-with-loader>
     <app-button-with-loader
-      [classText]="'btn btn-custom'"
+      [classText]="
+        data.actionType === 'delete' ? 'btn btn-danger' : 'btn btn-custom'
+      "
       [buttonType]="'submit'"
       [idleStateText]="
         data.actionType === 'delete'

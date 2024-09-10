@@ -1,7 +1,7 @@
 <div id="saveSuccess" tabindex="-1" aria-hidden="true" class="modal-sm">
   <div>
     <div class="modal-content rounded rounded-3">
-      <div class="modal-header text-center">
+      <div class="modal-header text-center" *ngIf="title">
         <span
           class="modal-title text-center w-100 py-1"
           style="font-size: 2rem; font-weight: bold; color: #2c3e50"
@@ -18,12 +18,14 @@
           width="250px"
           height="250px"
         ></ng-lottie>
-        <div class="my-4">{{ message }}</div>
+        <div class="my-4 message">
+          {{ message }}
+        </div>
         <div class="text-center mt-5 mb-2">
           <button
             (click)="close()"
-            class="btn btn-sm btn-primary mx-2"
-            style="background-color: #3498db; border-color: #3498db"
+            class="btn btn-lg btn-primary mx-2 w-100"
+            style="background-color: #0644aa; border-color: #0644aa"
           >
             Continue
           </button>

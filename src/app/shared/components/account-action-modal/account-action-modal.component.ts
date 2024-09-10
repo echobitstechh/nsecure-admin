@@ -8,7 +8,6 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class AccountActionModalComponent {
   password: string = '';
-  // deleteText: string = '';
 
   constructor(
     public dialogRef: MatDialogRef<AccountActionModalComponent>,
