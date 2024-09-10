@@ -67,19 +67,15 @@ export class AdminDetailsComponent implements OnInit {
 
   processAction(actionType: string, user: any, password: string): void {
     if (actionType === 'delete') {
-      // this.apiService.deleteUser(user.id, password).subscribe(
-      //   (response) => {
-      //     console.log('User deleted successfully');
+      //api call for deletion
       this.showSuccessModal('Account Deleted successfully.');
       //   },
       //   (error) => {
-      //     console.error('Error deleting user');
+      //     console.error('');
       //   }
       // );
     } else if (actionType === 'deactivate') {
-      // this.deactivateUser(user.id, password).subscribe(
-      //   (response) => {
-      //     console.log('User deactivated successfully');
+      //api call for deactivation
       this.showSuccessModal('Account Deactivated successfully.');
       //   },
       //   (error) => {

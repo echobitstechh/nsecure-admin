@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../../../services/api.service';
+import { SuccessDialogComponent } from '../../../../shared/components/success-dialog/success-dialog.component';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-admin-form',
@@ -11,8 +13,13 @@ export class AdminFormComponent implements OnInit {
   @Input() isUpdate: boolean = false;
 
   adminForm!: FormGroup;
+  bsModalRef: BsModalRef | undefined;
 
-  constructor(private fb: FormBuilder, private apiService: ApiService) {}
+  constructor(
+    private fb: FormBuilder,
+    private apiService: ApiService,
+    private modalService: BsModalService
+  ) {}
 
   ngOnInit(): void {
     this.initializeForm();
@@ -56,20 +63,27 @@ export class AdminFormComponent implements OnInit {
   // }
 
   onSubmit(): void {
-    // if (this.isUpdate && this.adminId) {
-    //   // Update admin
-    //   this.adminService
-    //     .updateAdmin(this.adminId, this.adminForm.value)
-    //     .subscribe((response) => {
-    //       console.log('Admin updated', response);
-    //     });
-    // } else {
-    //   // Create admin
-    //   this.adminService
-    //     .createAdmin(this.adminForm.value)
-    //     .subscribe((response) => {
-    //       console.log('Admin created', response);
-    //     });
-    // }
+    if (this.isUpdate) {
+      // Update admin api call
+      this.showSuccessModal('Admin Updated successfully.', '');
+    } else {
+      // Create admin api call
+      this.showSuccessModal(
+        'Admin Created successfully.',
+        "A verification email has been sent to the new admin's address"
+      );
+    }
+  }
+
+  showSuccessModal(message: string, subMessage: string): void {
+    const initialState = {
+      // title: title,
+      message: message,
+      reload: true,
+      subMessage: subMessage,
+    };
+    this.bsModalRef = this.modalService.show(SuccessDialogComponent, {
+      initialState,
+    });
   }
 }

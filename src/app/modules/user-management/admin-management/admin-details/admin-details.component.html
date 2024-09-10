@@ -98,12 +98,43 @@
       <input [type]="admin.name" readonly />
     </div>
     <div>
-      <label for="email">Title</label>
+      <label for="email">Email</label>
       <input [type]="admin.email" readonly />
     </div>
     <div>
-      <label for="phoneNumber">Title</label>
+      <label for="phoneNumber">Phone Number</label>
       <input [type]="admin.phoneNumber" readonly />
+    </div>
+  </div>
+  <div class="access-display">
+    <p>Access Levels</p>
+    <div class="p-2">
+      <div class="table-responsive">
+        <table class="table table-bordered access-table">
+          <thead>
+            <tr>
+              <th>Dashboard</th>
+              <th>Analytics</th>
+              <th>Field Agent</th>
+              <th>Audit Logs</th>
+              <th>Report</th>
+              <th>Admin Users</th>
+              <th>E-services</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ admin.accessLevels.dashboard }}</td>
+              <td>{{ admin.accessLevels.analytics }}</td>
+              <td>{{ admin.accessLevels.fieldAgent }}</td>
+              <td>{{ admin.accessLevels.auditLogs }}</td>
+              <td>{{ admin.accessLevels.report }}</td>
+              <td>{{ admin.accessLevels.adminUsers }}</td>
+              <td>{{ admin.accessLevels.eServices }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
