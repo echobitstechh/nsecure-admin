@@ -56,6 +56,19 @@ export class ApiService {
       .get<any>(url, { headers })
       .pipe(catchError(this.handleError('getAdmins')));
   }
+
+  getAnAdmin(): Observable<any> {
+    const adminId = this.authService.getUserId();
+    const url = `${this.baseUrl}/admin/${adminId}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .get<any>(url, { headers })
+      .pipe(catchError(this.handleError('getAdmins')));
+  }
   getTaxDashboardData(): Observable<any> {
     const url = `${this.baseUrl}/tax/gettaxdatafordashboard`;
     const headers = new HttpHeaders({

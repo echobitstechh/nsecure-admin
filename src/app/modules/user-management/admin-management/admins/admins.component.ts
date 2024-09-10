@@ -24,6 +24,12 @@ export class AdminsComponent implements OnInit {
       email: 'Email@email.com',
       role: 'super admin',
     },
+    {
+      firstName: 'Super',
+      lastName: 'Admin',
+      email: 'email02@email.com',
+      role: 'super admin',
+    },
   ];
   loading = false;
   error = '';

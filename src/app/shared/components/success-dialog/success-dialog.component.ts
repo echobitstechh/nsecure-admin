@@ -7,14 +7,15 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrl: './success-dialog.component.css',
 })
 export class SuccessDialogComponent {
-  @Input() title = 'Success';
-  @Input() message = 'Action was successful';
+  @Input() title = '';
+  @Input() message = 'Action Deleted successfully';
   @Input() reload = false;
+  @Input() subMessage = '';
   /**
    * @deprecated use close event instead
    */
   @Input() onClose: (() => void) | undefined;
-  lottieIconPath = 'assets/lottie/success.json';
+  lottieIconPath = 'assets/lottie/success_two.json';
   @Output() closeEvent = new EventEmitter<void>();
 
   constructor(private modalRef: BsModalRef) {}
