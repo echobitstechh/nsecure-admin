@@ -14,7 +14,7 @@ interface Enumerator {
   styleUrls: ['./enumerator-list-card.component.css'],
 })
 export class EnumeratorListCardComponent implements OnInit {
-  @Input() title: string = 'Enumerators';
+  @Input() title: string = 'Field Agents';
   @Input() enumerators: Enumerator[] = [
     // {
     //   name: 'Adela Parkson',

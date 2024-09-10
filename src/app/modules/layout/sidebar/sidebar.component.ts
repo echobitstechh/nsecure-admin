@@ -10,6 +10,7 @@ import { ConfirmDialogComponent } from '../../../shared/components/confirm-dialo
 })
 export class SidebarComponent {
   @Input() showSidebarAndHeader: boolean = false;
+  isManagementOpen = false;
 
   ngOnInit(): void {}
   bsModalRef?: BsModalRef;
@@ -19,6 +20,9 @@ export class SidebarComponent {
     private authService: AuthService
   ) {}
 
+  toggleManagement() {
+    this.isManagementOpen = !this.isManagementOpen;
+  }
   openConfirmDialog() {
     this.bsModalRef = this.modalService.show(ConfirmDialogComponent);
     const modalComponent = this.bsModalRef.content as ConfirmDialogComponent;

@@ -1,4 +1,4 @@
-lottie-player{
+lottie-player {
   width: 100%;
   max-width: 250px;
   height: auto;
@@ -7,4 +7,16 @@ lottie-player{
   background-color: #2980b9 !important;
   border-color: #2980b9 !important;
 }
-
+.message {
+  color: #000000;
+  font-weight: 700;
+  font-size: 40px;
+}
+.sub-meesage {
+  font-size: 12px;
+}
+@media (max-width: 820px) {
+  .message {
+    font-size: 24px;
+  }
+}

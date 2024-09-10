@@ -15,7 +15,7 @@
     </app-dashboard-card>
     <app-dashboard-card
       class="dashboard-first-div-card"
-      title="Active Enumerators"
+      title="Active Field Agents"
       [value]="enumerators.length"
       trend="1.3%"
       trendText="Up from past week"
@@ -72,7 +72,8 @@
     ></app-register-card>
     <app-dashboard-card-two
       class="dashboard-third-div-card"
-      title="Your Pie Chart"
+      style="color: #7265e340"
+      title="Number of transport workers"
       [timeFrames]="['Monthly', 'Weekly', 'Daily']"
     >
       <app-pie-chart [data]="pieChartData"></app-pie-chart>

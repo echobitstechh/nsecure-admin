@@ -1,0 +1,61 @@
+.close-btn {
+  border: none;
+  background: transparent;
+}
+.account-title {
+  color: #000000;
+  font-weight: 700;
+  font-size: 40px;
+}
+.delete-message {
+  color: #000000;
+  font-size: 18px;
+}
+.title-and-close-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+}
+.message {
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+}
+.warning {
+  background: #f4c3cb;
+  border-radius: 10px;
+  padding: 0px 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center !important;
+}
+.warning p {
+  vertical-align: middle;
+  padding-top: 16px;
+}
+label {
+  font-size: 18px;
+  color: #000000;
+}
+.password-input {
+  outline: none !important;
+}
+@media (max-width: 820px) {
+  .account-title {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .delete-message {
+    font-size: 8px;
+  }
+  .message {
+    font-size: 8px;
+  }
+  .warning p {
+    font-size: 4px;
+    font-weight: 300;
+  }
+  label {
+    font-size: 14px;
+  }
+}

@@ -1,7 +1,27 @@
 .btn-custom {
-  padding: 0.75rem 1.25rem; /* Bigger button padding */
+  padding: 0.5rem 1.25rem; /* Bigger button padding */
   font-size: 1.25rem; /* Bigger font size */
   border-radius: 0.3rem; /* Rounded corners */
   background-color: #053688; /* Primary color */
   color: white; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.svgIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.btn-primary {
+  color: #053688;
+  border: #053688 1px solid;
+  padding: 0.5rem 1.25rem; /* Bigger button padding */
+  font-size: 1.25rem; /* Bigger font size */
+  border-radius: 0.3rem; /* Rounded corners */
+  background-color: transparent; /* Primary color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
