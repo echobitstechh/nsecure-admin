@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { ForgotPasswordComponent } from './modules/authentication/forgot-password/forgot-password.component';
 import { AuthGuard } from './services/authGuard.service';
+import { AdminCreatePasswordComponent } from './modules/authentication/admin-create-password/admin-create-password.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent,
+  },
+  {
+    path: 'create-password',
+    component: AdminCreatePasswordComponent,
   },
   {
     path: 'login',

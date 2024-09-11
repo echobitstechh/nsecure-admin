@@ -53,7 +53,8 @@ export class AppComponent implements OnInit, OnDestroy {
         this.showSidebarAndHeader = !(
           event.urlAfterRedirects === '/login' ||
           event.urlAfterRedirects === '/' ||
-          event.urlAfterRedirects === '/forgot-password'
+          event.urlAfterRedirects === '/forgot-password' ||
+          event.urlAfterRedirects === '/create-password'
         );
       });
   }

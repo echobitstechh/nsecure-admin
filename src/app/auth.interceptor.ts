@@ -1,18 +1,33 @@
 import { Injectable } from '@angular/core';
 import {
-  HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse, HTTP_INTERCEPTORS
+  HttpEvent,
+  HttpInterceptor,
+  HttpHandler,
+  HttpRequest,
+  HttpErrorResponse,
+  HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { catchError, switchMap, throwError, Observable } from 'rxjs';
-import {AuthService} from "./services/auth.service";
-import {ApiService} from "./services/api.service";
+import { AuthService } from './services/auth.service';
+import { ApiService } from './services/api.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService, private apiService: ApiService) {}
+  constructor(
+    private authService: AuthService,
+    private apiService: ApiService
+  ) {}
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (!req.url.endsWith('/auth/login') && !req.url.endsWith('/auth/resetpassword') && !req.url.endsWith('/auth/verifycode')
-      && !req.url.endsWith('/refresh-token')) {
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    if (
+      !req.url.endsWith('/login') &&
+      !req.url.endsWith('/forget-password') &&
+      !req.url.endsWith('/create-password') &&
+      !req.url.endsWith('/refresh-token')
+    ) {
       const auth = this.authService.getJwtToken();
       if (auth) {
         req = req.clone({
@@ -33,7 +48,10 @@ export class AuthInterceptor implements HttpInterceptor {
             switchMap((response) => {
               this.authService.storeJwtToken(response.accessToken);
               req = req.clone({
-                headers: req.headers.set('Authorization', `Bearer ${response.accessToken}`),
+                headers: req.headers.set(
+                  'Authorization',
+                  `Bearer ${response.accessToken}`
+                ),
               });
               return next.handle(req);
             }),
