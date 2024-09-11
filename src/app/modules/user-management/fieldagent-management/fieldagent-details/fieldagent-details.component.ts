@@ -7,11 +7,11 @@ import { SuccessDialogComponent } from '../../../../shared/components/success-di
 
 @Component({
   selector: 'app-management-details',
-  templateUrl: './admin-details.component.html',
-  styleUrls: ['./admin-details.component.css'],
+  templateUrl: './fieldagent-details.component.html',
+  styleUrls: ['./fieldagent-details.component.css'],
 })
-export class AdminDetailsComponent implements OnInit {
-  admin: any = {};
+export class FieldagentDetailsComponent implements OnInit {
+  fieldagent: any = {};
   error = '';
   bsModalRef: BsModalRef | undefined;
   ngOnInit(): void {}
@@ -24,12 +24,12 @@ export class AdminDetailsComponent implements OnInit {
   loadOneAdmin(): void {
     this.apiService.getAnAdmin().subscribe(
       (response) => {
-        this.admin = response;
-        console.log('admin:', this.admin);
+        this.fieldagent = response;
+        console.log('admin:', this.fieldagent);
       },
       (error) => {
-        this.error = 'Error fetching admin';
-        console.error('Error fetching admin', error);
+        this.error = 'Error fetching fieldagent';
+        console.error('Error fetching fieldagent', error);
       }
     );
   }
@@ -41,18 +41,18 @@ export class AdminDetailsComponent implements OnInit {
       data: {
         title:
           actionType === 'delete'
-            ? `Delete Admin's Details`
-            : `Deactivate ${this.admin.name}'s account`,
+            ? `Delete Field Agent Details`
+            : `Deactivate ${this.fieldagent.name}'s account`,
         message:
           actionType === 'delete'
             ? `Do you still want to proceed?`
-            : `Deactivating this admin user revokes their login credentials.`,
+            : `Deactivating this field agent revokes their login credentials.`,
         actionType: actionType,
-        deleteText: 'Admin',
+        deleteText: 'Field Agent',
         deleteMessage:
           'All the  personal data will be deleted for the following user.',
-        adminImage: this.admin.image,
-        adminName: this.admin.name,
+        adminImage: this.fieldagent.image,
+        adminName: this.fieldagent.name,
         confirmText: actionType === 'delete' ? 'Confirm Delete' : 'Deactivate',
       },
     });
@@ -60,7 +60,7 @@ export class AdminDetailsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log('Dialog closed', result);
       if (result) {
-        this.processAction(actionType, this.admin, result);
+        this.processAction(actionType, this.fieldagent, result);
       }
     });
   }

@@ -1,0 +1,56 @@
+.admin-input-dis {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.5rem;
+  column-gap: 1rem;
+}
+.admin-input-dis div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.admin-input-dis div input {
+  padding: 10px, 20px;
+  border-radius: 0.5rem;
+  border: #d0d5dd 1px solid;
+  outline: none;
+}
+.popup-btns {
+  border: none;
+  background: transparent;
+}
+.access-display p {
+  color: #151515;
+  font-size: 18px;
+  font-weight: 500;
+}
+.access-display div {
+  border: #eaecf0 1px solid;
+  border-radius: 0.5rem;
+}
+.access-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.access-table th,
+.access-table td {
+  text-align: center;
+  padding: 10px;
+}
+
+.access-table th {
+  background-color: #eaecf0;
+}
+
+.access-table td {
+  background-color: transparent;
+  height: 100%;
+}
+@media (max-width: 820px) {
+  .admin-input-dis {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1.5rem;
+  }
+}

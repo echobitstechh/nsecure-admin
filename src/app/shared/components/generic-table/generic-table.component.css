@@ -68,8 +68,11 @@
 .generic-table td {
   color: #202224;
   background-color: #ffffff;
-  text-align: left;
+  text-align: start;
   font-size: 12px;
+}
+.taxp-col {
+  text-align: center;
 }
 .pagination-controls {
   display: flex;
