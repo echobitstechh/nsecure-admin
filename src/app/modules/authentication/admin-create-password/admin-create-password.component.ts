@@ -6,6 +6,9 @@ import {
   AbstractControl,
   ValidationErrors,
 } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { SuccessDialogComponent } from '../../../shared/components/success-dialog/success-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-create-password',
@@ -15,8 +18,13 @@ import {
 export class AdminCreatePasswordComponent implements OnInit {
   passwordForm!: FormGroup;
   submitted = false;
+  bsModalRef: BsModalRef | undefined;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private modalService: BsModalService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.passwordForm = this.formBuilder.group(
@@ -86,15 +94,28 @@ export class AdminCreatePasswordComponent implements OnInit {
     };
   }
 
-  // Submit method
   onSubmit(): void {
     this.submitted = true;
 
     if (this.passwordForm.invalid) {
+      this.submitted = false;
       return;
     }
-
-    // Perform further actions like sending data to the server
+    this.showSuccessModal();
+    this.submitted = false;
+    this.router.navigate(['/login']);
     console.log('Password form submitted', this.passwordForm.value);
+  }
+
+  showSuccessModal(): void {
+    const initialState = {
+      message: 'Password Successfully Set.',
+      subMessage:
+        'Your password has been successfully set. You can now login with your new credentials.',
+      buttonMessage: 'Login',
+    };
+    this.bsModalRef = this.modalService.show(SuccessDialogComponent, {
+      initialState,
+    });
   }
 }

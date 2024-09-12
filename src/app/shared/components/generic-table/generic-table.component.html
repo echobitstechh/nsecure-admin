@@ -41,10 +41,11 @@
                   >
                     {{ tableData.firstName + " " + tableData.lastName }}
                   </span>
-                  <!-- <span
+                  <span
+                    *ngIf="tableData.image"
                     style="color: #667085; font-size: 14px; font-weight: 400"
                     >{{ tableData.email }}</span
-                  > -->
+                  >
                 </div>
               </div>
             </ng-container>

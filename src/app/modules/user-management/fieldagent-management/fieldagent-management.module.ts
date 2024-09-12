@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FieldagentDetailsComponent } from './fieldagent-details/fieldagent-details.component';
 import { FieldagentHomeComponent } from './fieldagent-home/fieldagent-home.component';
 import { AddFieldagentComponent } from './add-fieldagent/add-fieldagent.component';
+import { UpdateFieldagentComponent } from './update-fieldagent/update-fieldagent.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AddFieldagentComponent } from './add-fieldagent/add-fieldagent.componen
     FieldagentDetailsComponent,
     FieldagentHomeComponent,
     AddFieldagentComponent,
+    UpdateFieldagentComponent,
   ],
   imports: [
     CommonModule,

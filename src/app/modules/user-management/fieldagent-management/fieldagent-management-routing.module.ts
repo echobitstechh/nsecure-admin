@@ -4,6 +4,7 @@ import { FieldagentPageComponent } from './fieldagent-page/fieldagent-page.compo
 import { FieldagentDetailsComponent } from './fieldagent-details/fieldagent-details.component';
 import { FieldagentHomeComponent } from './fieldagent-home/fieldagent-home.component';
 import { AddFieldagentComponent } from './add-fieldagent/add-fieldagent.component';
+import { UpdateFieldagentComponent } from './update-fieldagent/update-fieldagent.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
       {
         path: 'add-fieldagent',
         component: AddFieldagentComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'update_field_agent',
+        component: UpdateFieldagentComponent,
         pathMatch: 'full',
       },
       { path: '', redirectTo: 'list_of_field-agents', pathMatch: 'full' },

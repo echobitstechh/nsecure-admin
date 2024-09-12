@@ -56,22 +56,17 @@ export class FieldagentFormComponent implements OnInit {
   onSubmit(): void {
     if (this.isUpdate) {
       // Update admin api call
-      this.showSuccessModal('Admin Updated successfully.', '');
+      this.showSuccessModal('Field Agent Updated successfully.');
     } else {
       // Create admin api call
-      this.showSuccessModal(
-        'Admin Created successfully.',
-        "A verification email has been sent to the new admin's address"
-      );
+      this.showSuccessModal('Field Agent Created successfully.');
     }
   }
 
-  showSuccessModal(message: string, subMessage: string): void {
+  showSuccessModal(message: string): void {
     const initialState = {
-      // title: title,
       message: message,
       reload: true,
-      subMessage: subMessage,
     };
     this.bsModalRef = this.modalService.show(SuccessDialogComponent, {
       initialState,

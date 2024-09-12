@@ -6,10 +6,14 @@ const routes: Routes = [
   {
     path: '',
     component: SuperagentPageComponent,
-    pathMatch: 'full',
-    data: {
-      isExtranet: false,
-    },
+    children: [
+      {
+        path: 'list_of_super-agents',
+        // component: '',
+        pathMatch: 'full',
+      },
+      { path: '', redirectTo: 'list_of_super-agents', pathMatch: 'full' },
+    ],
   },
 ];
 

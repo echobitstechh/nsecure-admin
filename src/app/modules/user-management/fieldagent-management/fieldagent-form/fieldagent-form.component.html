@@ -3,7 +3,11 @@
     <a
       class="back"
       aria-current="page"
-      [routerLink]="isUpdate ? '' : ''"
+      [routerLink]="
+        isUpdate
+          ? '/management/field-agent/fieldagent-details'
+          : '/management/field-agent'
+      "
       routerLinkActive="active"
     >
       Back
@@ -96,8 +100,8 @@
           [idleStateText]="isUpdate ? 'Update' : 'Create Field Agent'"
           [routeLink]="
             isUpdate
-              ? '/management/admin/update-admin'
-              : '/management/admin/create-admin'
+              ? '/management/field-agent/update_field_agent'
+              : '/management/field-agent/add-fieldagent'
           "
         ></app-button-with-loader>
       </div>
