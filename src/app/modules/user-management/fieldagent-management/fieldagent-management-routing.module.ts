@@ -11,7 +11,7 @@ const routes: Routes = [
     component: FieldagentHomeComponent,
     children: [
       {
-        path: 'list_of_agents',
+        path: 'list_of_field-agents',
         component: FieldagentPageComponent,
         pathMatch: 'full',
       },
@@ -25,7 +25,7 @@ const routes: Routes = [
         component: AddFieldagentComponent,
         pathMatch: 'full',
       },
-      { path: '', redirectTo: 'list_of_agents', pathMatch: 'full' },
+      { path: '', redirectTo: 'list_of_field-agents', pathMatch: 'full' },
     ],
   },
 ];
