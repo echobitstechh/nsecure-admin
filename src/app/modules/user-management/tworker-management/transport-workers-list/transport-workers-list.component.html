@@ -1,0 +1,77 @@
+<div class="tw-first-div">
+  <div class="d-flex gap-3 filtandseardiv">
+    <app-button-with-loader
+      [classText]="'btn btn-custom bg-light text-black shadow-sm'"
+      [idleStateText]="'Filters'"
+      [svgIcon]="'assets/icons/filterlines.svg'"
+      [buttonType]="'button'"
+    ></app-button-with-loader>
+    <div class="d-flex align-items-center shadow-sm search-div">
+      <img src="assets/icons/search.svg" alt="" />
+      <input type="text" placeholder="Search" class="py-2 search-input" />
+    </div>
+  </div>
+  <div class="d-flex gap-3">
+    <app-button-with-loader
+      [classText]="'btn btn-primary'"
+      [svgIcon]="'assets/icons/download.svg'"
+      [buttonType]="'button'"
+      [idleStateText]="'Export'"
+    ></app-button-with-loader>
+    <app-button-with-loader
+      [classText]="'btn btn-custom'"
+      [svgIcon]="'assets/icons/add.svg'"
+      [buttonType]="'button'"
+      [idleStateText]="'Add Worker'"
+      [routeLink]="'/management/transport-workers/add-worker'"
+    ></app-button-with-loader>
+  </div>
+</div>
+<app-generic-table
+  [tableDatas]="workers"
+  [columns]="[
+    { field: 'firstName', label: 'Transport Workers' },
+    { field: 'category', label: 'Category' },
+    { field: 'carType', label: 'Car Type' },
+    { field: 'licensePlate', label: 'Plate No' },
+    { field: 'phoneNumber', label: 'Phone No' },
+    { field: 'carPark', label: 'Car Park' },
+    { field: 'actions', label: '' }
+  ]"
+  [showCheckboxColumn]="true"
+  [showSerialNumber]="false"
+  [routeLink]="'/management/transport-workers/worker-details'"
+></app-generic-table>
+<!-- <ng-template #customModal let-data>
+    <div class="modal-tw-details">
+      <h4>{{ data.driverId }}</h4>
+      <p>Enumerator ID: {{ data.enumeratorId }}</p>
+      <p>First Name: {{ data.firstName }}</p>
+      <p>Last Name: {{ data.lastName }}</p>
+      <p>Email: {{ data.email }}</p>
+      <p>Gender: {{ data.gender }}</p>    [modalTemplate]="customModal"
+
+      <p>Date of Birth: {{ data.dateOfBirth }}</p>
+      <p>Address: {{ data.residenceAddress }}</p>
+      <p>Phone Number: {{ data.phoneNumber }}</p>
+      <p>Serial Number: {{ data.serialNumber }}</p>
+      <p>Country: {{ data.country }}</p>
+      <p>Vehicle Type: {{ data.vehicleManufacturer }}</p>
+      <p>Vehicle Year: {{ data.vehicleYear }}</p>
+      <p>Vehicle Color: {{ data.vehicleColor }}</p>
+      <p>Plate Number: {{ data.licensePlate }}</p>
+      <p>Driver's License: {{ data.driverLicense }}</p>
+      <p>Driver Rating: {{ data.driverRating }}</p>
+      <p>Number of Rating: {{ data.numberOfRatings }}</p>
+      <p>Verification Code: {{ data.verificationCode }}</p>
+      <p>Driver's License Verification: {{ data.driverLicenseVerified }}</p>
+      <p>Driver's Plate Verification: {{ data.licensePlateVerified }}</p>
+      <p>License Class: {{ data.licenseClass }}</p>
+      <p>Status: {{ data.status }}</p>
+      <p>Vehicle Category: {{ data.vehicleCategory }}</p>
+      <p>Country ID: {{ data.countryId }}</p>
+      <p>Date Created: {{ data.createdAt }}</p>
+      <p>Last Updated: {{ data.updatedAt }}</p>
+      <div><button mat-button (click)="closeModal()">Close</button></div>
+    </div>
+  </ng-template> -->

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TransportWorkersDashboardComponent } from './transport-workers-dashboard/transport-workers-dashboard.component';
+import { ParkmanagementPageComponent } from './parkmanagement-page/parkmanagement-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: TransportWorkersDashboardComponent,
+    component: ParkmanagementPageComponent,
     pathMatch: 'full',
     data: {
       isExtranet: false,
@@ -17,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TransportWorkersRoutingModule {}
+export class ParkManagementRoutingModule {}

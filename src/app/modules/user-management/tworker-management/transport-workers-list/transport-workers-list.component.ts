@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ApiService } from '../../../services/api.service';
+import { ApiService } from '../../../../services/api.service';
 
 @Component({
-  selector: 'app-transport-workers-dashboard',
-  templateUrl: './transport-workers-dashboard.component.html',
-  styleUrl: './transport-workers-dashboard.component.css',
+  selector: 'app-transport-workers-list',
+  templateUrl: './transport-workers-list.component.html',
+  styleUrl: './transport-workers-list.component.css',
 })
-export class TransportWorkersDashboardComponent implements OnInit {
+export class TransportWorkersListComponent implements OnInit {
   constructor(public dialog: MatDialog, private apiService: ApiService) {}
   workers = [];
   loading = false;

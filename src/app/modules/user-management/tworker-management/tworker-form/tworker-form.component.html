@@ -1,0 +1,147 @@
+<div class="big-admin-form-cont d-flex flex-column gap-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <a
+      class="back"
+      aria-current="page"
+      [routerLink]="
+        isUpdate
+          ? '/management/transport-workers/worker-details'
+          : '/management/transport-workers/list-of-workers'
+      "
+      routerLinkActive="active"
+    >
+      Back
+    </a>
+    <app-button-with-loader
+      [classText]="'btn btn-custom'"
+      [buttonType]="'submit'"
+      [idleStateText]="'Print'"
+      [svgIcon]="'assets/icons/print.svg'"
+    ></app-button-with-loader>
+  </div>
+  <div style="border: 4px #e6ebf2; position: relative">
+    <img src="" alt="" class="image-cont" />
+    <img
+      src="assets/icons/edit.svg"
+      alt=""
+      class=""
+      style="position: absolute"
+    />
+  </div>
+
+  <div class="admin-form-container">
+    <form [formGroup]="tworkerForm" (ngSubmit)="onSubmit()">
+      <div class="first-div">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <select formControlName="title" id="title" class="form-control">
+            <option value="Mr">Mr</option>
+            <option value="Ms">Ms</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Dr">Dr</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name of User</label>
+          <input
+            type="text"
+            formControlName="name"
+            id="name"
+            class="form-control"
+            placeholder="Name is name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            id="email"
+            class="form-control"
+            placeholder="example@example.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            type="text"
+            formControlName="phoneNumber"
+            id="phoneNumber"
+            class="form-control"
+            placeholder="2348199999003"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select formControlName="role" id="role" class="form-control">
+            <option value="field agent">Transport Worker</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            formControlName="address"
+            id="address"
+            class="form-control"
+            placeholder="Field NO 12 teen street Abuja,Nigeria"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="plateNumber">Plate Number</label>
+          <input
+            type="text"
+            formControlName="address"
+            id="address"
+            class="form-control"
+            placeholder="DKA-234-uy"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input
+            type="text"
+            formControlName="address"
+            id="address"
+            class="form-control"
+            placeholder="Bus Driver"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="carType">Car Type</label>
+          <select formControlName="carType" id="carType" class="form-control">
+            <option value="toyota">Toyota</option>
+            <option value="honda">Honda</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="park">Park</label>
+          <select formControlName="park" id="park" class="form-control">
+            <option value="mangu park">Mangu Park</option>
+            <option value="mararaba park">Mararaba Park</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group d-flex justify-content-center mt-5">
+        <app-button-with-loader
+          [classText]="'btn btn-custom px-5 block'"
+          [buttonType]="'submit'"
+          [workingStateText]="
+            isUpdate ? 'Updating...' : 'Creating Transport Worker...'
+          "
+          [idleStateText]="isUpdate ? 'Update' : 'Create Transport Worker'"
+        ></app-button-with-loader>
+      </div>
+    </form>
+  </div>
+</div>

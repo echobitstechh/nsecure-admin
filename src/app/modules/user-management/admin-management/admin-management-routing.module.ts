@@ -7,14 +7,6 @@ import { AddAdminComponent } from './add-admin/add-admin.component';
 import { UpdateAdminComponent } from './update-admin/update-admin.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: AdminManagementComponent,
-  //   pathMatch: 'full',
-  //   data: {
-  //     isExtranet: false,
-  //   },
-  // },
   {
     path: '',
     component: AdminManagementComponent,

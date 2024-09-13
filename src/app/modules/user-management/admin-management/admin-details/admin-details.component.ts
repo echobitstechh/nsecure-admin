@@ -28,8 +28,8 @@ export class AdminDetailsComponent implements OnInit {
         console.log('admin:', this.admin);
       },
       (error) => {
-        this.error = 'Error fetching product';
-        console.error('Error fetching product', error);
+        this.error = 'Error fetching admin';
+        console.error('Error fetching admin', error);
       }
     );
   }
