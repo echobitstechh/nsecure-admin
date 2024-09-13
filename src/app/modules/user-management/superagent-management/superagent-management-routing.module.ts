@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SuperagentPageComponent } from './superagent-page/superagent-page.component';
+import { SuperagentListsComponent } from './superagent-lists/superagent-lists.component';
 
 const routes: Routes = [
   {
@@ -9,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: 'list_of_super-agents',
-        // component: '',
+        component: SuperagentListsComponent,
         pathMatch: 'full',
       },
       { path: '', redirectTo: 'list_of_super-agents', pathMatch: 'full' },
