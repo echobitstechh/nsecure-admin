@@ -103,7 +103,6 @@ export class AdminCreatePasswordComponent implements OnInit {
     }
     this.showSuccessModal();
     this.submitted = false;
-    this.router.navigate(['/login']);
     console.log('Password form submitted', this.passwordForm.value);
   }
 
@@ -117,5 +116,6 @@ export class AdminCreatePasswordComponent implements OnInit {
     this.bsModalRef = this.modalService.show(SuccessDialogComponent, {
       initialState,
     });
+        this.router.navigate(['/login']);
   }
 }

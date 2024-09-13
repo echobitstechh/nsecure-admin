@@ -64,14 +64,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'transport_workers',
-    loadChildren: () =>
-      import('./modules/transport-workers/transport-workers.module').then(
-        (m) => m.TransportWorkersModule
-      ),
-    canActivate: [AuthGuard],
-  },
-  {
     path: 'audit_log',
     loadChildren: () =>
       import('./modules/audit-log/audit-log.module').then(
