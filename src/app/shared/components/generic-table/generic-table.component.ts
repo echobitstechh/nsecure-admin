@@ -26,7 +26,7 @@ interface TableData {
   details?: string;
   ip_address?: number | string;
   durations?: number | string;
-  adminId?: string;
+  userId?: string;
   firstName?: string;
   lastName?: string;
   isActive?: boolean;
@@ -37,6 +37,8 @@ interface TableData {
   gender?: string;
   vehicleManufacturer?: string;
   country?: string;
+  taxPayers?: number;
+  status?: string;
 }
 
 interface TableColumn {

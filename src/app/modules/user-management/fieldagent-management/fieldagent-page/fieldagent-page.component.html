@@ -1,1 +1,45 @@
-<p>fieldagent-page works!</p>
+<div class="field-first-div">
+  <div class="d-flex gap-3 filtandseardiv">
+    <app-button-with-loader
+      [classText]="'btn btn-custom bg-light text-black shadow-sm'"
+      [idleStateText]="'Filters'"
+      [svgIcon]="'assets/icons/filterlines.svg'"
+      [buttonType]="'button'"
+    ></app-button-with-loader>
+    <div class="d-flex align-items-center shadow-sm search-div">
+      <img src="assets/icons/search.svg" alt="" />
+      <input type="text" placeholder="Search" class="py-2 search-input" />
+    </div>
+  </div>
+  <div class="d-flex gap-3">
+    <app-button-with-loader
+      [classText]="'btn btn-primary'"
+      [svgIcon]="'assets/icons/download.svg'"
+      [buttonType]="'button'"
+      [idleStateText]="'Export'"
+    ></app-button-with-loader>
+    <app-button-with-loader
+      [classText]="'btn btn-custom'"
+      [svgIcon]="'assets/icons/add.svg'"
+      [buttonType]="'button'"
+      [idleStateText]="'Add Field Agent'"
+      [routeLink]="'/management/field-agent/add-fieldagent'"
+    ></app-button-with-loader>
+  </div>
+</div>
+<app-generic-table
+  [tableDatas]="fieldAgents"
+  [columns]="[
+    { field: 'userId', label: 'Field Agent ID' },
+    { field: 'firstName', label: 'Name' },
+    { field: 'phoneNumber', label: 'Contact Number' },
+    { field: 'carPark', label: 'Park' },
+    { field: 'taxPayers', label: 'Tax Payers' },
+    { field: 'email', label: 'Email' },
+    { field: 'status', label: 'Status' },
+    { field: 'actions', label: '' }
+  ]"
+  [showCheckboxColumn]="true"
+  [routeLink]="'/management/field-agent/fieldagent-details'"
+  [showSerialNumber]="false"
+></app-generic-table>

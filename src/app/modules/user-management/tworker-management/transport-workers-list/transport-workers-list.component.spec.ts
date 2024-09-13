@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TransportWorkersDashboardComponent } from './transport-workers-dashboard.component';
+import { TransportWorkersListComponent } from './transport-workers-list.component';
 
 describe('ServicesComponent', () => {
-  let component: TransportWorkersDashboardComponent;
-  let fixture: ComponentFixture<TransportWorkersDashboardComponent>;
+  let component: TransportWorkersListComponent;
+  let fixture: ComponentFixture<TransportWorkersListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TransportWorkersDashboardComponent],
+      imports: [TransportWorkersListComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TransportWorkersDashboardComponent);
+    fixture = TestBed.createComponent(TransportWorkersListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

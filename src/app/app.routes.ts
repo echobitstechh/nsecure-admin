@@ -33,13 +33,6 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'transport_workers',
-    loadChildren: () =>
-      import('./modules/transport-workers/transport-workers.module').then(
-        (m) => m.TransportWorkersModule
-      ),
-  },
-  {
     path: 'settings',
     loadChildren: () =>
       import('./modules/settings/settings.module').then(

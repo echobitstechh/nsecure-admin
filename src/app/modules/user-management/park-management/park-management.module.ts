@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ParkManagementRoutingModule } from './park-management-routing.module';
+import { ParkmanagementPageComponent } from './parkmanagement-page/parkmanagement-page.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ParkmanagementPageComponent],
   imports: [
-    CommonModule
+    CommonModule, ParkManagementRoutingModule
   ]
 })
 export class ParkManagementModule { }

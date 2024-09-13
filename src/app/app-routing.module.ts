@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { LoginComponent } from './modules/authentication/login/login.component';
 import { ForgotPasswordComponent } from './modules/authentication/forgot-password/forgot-password.component';
 import { AuthGuard } from './services/authGuard.service';
+import { AdminCreatePasswordComponent } from './modules/authentication/admin-create-password/admin-create-password.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
     component: ForgotPasswordComponent,
   },
   {
+    path: 'create-password',
+    component: AdminCreatePasswordComponent,
+  },
+  {
     path: 'login',
     component: LoginComponent,
   },
@@ -55,14 +60,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/authentication/authentication.module').then(
         (m) => m.AuthenticationModule
-      ),
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'transport_workers',
-    loadChildren: () =>
-      import('./modules/transport-workers/transport-workers.module').then(
-        (m) => m.TransportWorkersModule
       ),
     canActivate: [AuthGuard],
   },

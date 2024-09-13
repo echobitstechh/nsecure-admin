@@ -11,6 +11,7 @@ export class SuccessDialogComponent {
   @Input() message = 'Action Deleted successfully';
   @Input() reload = false;
   @Input() subMessage = '';
+  @Input() buttonMessage: string = 'Continue';
   /**
    * @deprecated use close event instead
    */
