@@ -4,7 +4,7 @@ import { AccountActionModalComponent } from '../../../../shared/components/accou
 import { ApiService } from '../../../../services/api.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SuccessDialogComponent } from '../../../../shared/components/success-dialog/success-dialog.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-management-details',
@@ -21,14 +21,20 @@ export class AdminDetailsComponent implements OnInit {
     public dialog: MatDialog,
     private apiService: ApiService,
     private modalService: BsModalService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.adminId = params['adminId'];
       this.loadOneAdmin(this.adminId);
-      // this.loadAdminDetails(this.adminId);
+    });
+  }
+
+  onEditClick(): void {
+    this.router.navigate(['/management/admin/update-admin'], {
+      queryParams: { adminId: this.admin.adminId },
     });
   }
 
@@ -71,20 +77,24 @@ export class AdminDetailsComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log('Dialog closed', result);
       if (result) {
-        this.processAction(actionType, this.admin, result);
+        this.processAction(actionType, this.adminId);
       }
     });
   }
-
-  processAction(actionType: string, user: any, password: string): void {
+  // user: any, password: string
+  processAction(actionType: string, adminId: string): void {
     if (actionType === 'delete') {
       //api call for deletion
-      this.showSuccessModal('Account Deleted successfully.');
-      //   },
-      //   (error) => {
-      //     console.error('');
-      //   }
-      // );
+      this.apiService.deleteAdmin(adminId).subscribe(
+        () => {
+          // If the API call is successful, show the success modal
+          this.showSuccessModal('Account Deleted successfully.');
+          this.router.navigate(['/management/admin/admins-list']);
+        }
+        //   (error) => {
+        //     console.error('');
+        //   }
+      );
     } else if (actionType === 'deactivate') {
       //api call for deactivation
       this.showSuccessModal('Account Deactivated successfully.');
@@ -100,7 +110,7 @@ export class AdminDetailsComponent implements OnInit {
     const initialState = {
       // title: title,
       message: message,
-      reload: true,
+      // reload: true,
     };
     this.bsModalRef = this.modalService.show(SuccessDialogComponent, {
       initialState,

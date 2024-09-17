@@ -132,6 +132,18 @@ export class ApiService {
       .pipe(catchError(this.handleError<any>('updateAdmin')));
   }
 
+  deleteAdmin(adminId: string): Observable<any> {
+    const url = `${this.baseUrl}/admin/admins/${adminId}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .delete<any>(url, { headers })
+      .pipe(catchError(this.handleError<any>('deleteAdmin')));
+  }
+
   getAdmins(): Observable<any> {
     const url = `${this.baseUrl}/admin/admins`;
     const headers = new HttpHeaders({
