@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from '../../../../services/api.service';
+import { Router } from '@angular/router';
 
 interface ListAdmin {
   firstName: string;
   lastName: string;
   email: string;
   role: string;
+  adminId?: string;
 }
 @Component({
   selector: 'app-users',
@@ -34,7 +36,11 @@ export class AdminsComponent implements OnInit {
   loading = false;
   error = '';
 
-  constructor(private apiService: ApiService, private dialog: MatDialog) {}
+  constructor(
+    private apiService: ApiService,
+    private dialog: MatDialog,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.loadAdmins();
@@ -54,4 +60,11 @@ export class AdminsComponent implements OnInit {
       }
     );
   }
+
+  onAdminClick(admin: ListAdmin): void {
+    this.router.navigate(['/management/admin/admin-detail'], {
+      queryParams: { adminId: admin.adminId },
+    });
+  }
 }
+// admin: ListAdmin;
