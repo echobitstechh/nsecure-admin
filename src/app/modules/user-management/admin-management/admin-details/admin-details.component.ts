@@ -4,6 +4,7 @@ import { AccountActionModalComponent } from '../../../../shared/components/accou
 import { ApiService } from '../../../../services/api.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SuccessDialogComponent } from '../../../../shared/components/success-dialog/success-dialog.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-management-details',
@@ -12,17 +13,27 @@ import { SuccessDialogComponent } from '../../../../shared/components/success-di
 })
 export class AdminDetailsComponent implements OnInit {
   admin: any = {};
+  adminId: string = '';
   error = '';
   bsModalRef: BsModalRef | undefined;
-  ngOnInit(): void {}
+
   constructor(
     public dialog: MatDialog,
     private apiService: ApiService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private route: ActivatedRoute
   ) {}
 
-  loadOneAdmin(): void {
-    this.apiService.getAnAdmin().subscribe(
+  ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      this.adminId = params['adminId'];
+      this.loadOneAdmin(this.adminId);
+      // this.loadAdminDetails(this.adminId);
+    });
+  }
+
+  loadOneAdmin(adminId: string): void {
+    this.apiService.getAnAdmin(adminId).subscribe(
       (response) => {
         this.admin = response;
         console.log('admin:', this.admin);

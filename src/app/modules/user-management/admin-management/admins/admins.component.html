@@ -37,5 +37,6 @@
   ]"
   [showCheckboxColumn]="true"
   [routeLink]="'/management/admin/admin-detail'"
+  (rowClick)="onAdminClick($event)"
   [showSerialNumber]="false"
 ></app-generic-table>

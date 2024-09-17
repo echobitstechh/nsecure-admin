@@ -19,6 +19,12 @@ export class ApiService {
 
   //test admin credentials: email = superadmin@nsecure.com  || password = @nsecureSuperAdmin1234!
 
+  //   "auditLogAccess": true,
+  //   "analyticsAccess": true,
+  //   "reportAccess": true,
+  //   "adminUsersAccess": true,
+  //   "eServicesAccess": true
+
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -45,6 +51,87 @@ export class ApiService {
       .pipe(catchError(this.handleError<any>('refreshToken')));
   }
 
+  createAdmin(
+    email: string,
+    firstName: string,
+    lastName: string,
+    role: string,
+    phoneNumber: string,
+    dashboardAccess: boolean,
+    enumeratorAccess: boolean,
+    taxpayersAccess: boolean,
+    auditLogAccess: boolean,
+    analyticsAccess: boolean,
+    reportAccess: boolean,
+    adminUsersAccess: boolean,
+    eServicesAccess: boolean,
+    image?: string
+  ): Observable<any> {
+    const url = `${this.baseUrl}/admin/create`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = {
+      email,
+      firstName,
+      lastName,
+      role,
+      phoneNumber,
+      dashboardAccess,
+      enumeratorAccess,
+      taxpayersAccess,
+      auditLogAccess,
+      analyticsAccess,
+      reportAccess,
+      adminUsersAccess,
+      eServicesAccess,
+      image,
+    };
+
+    return this.http
+      .post<any>(url, body, { headers })
+      .pipe(catchError(this.handleError<any>('createAdmin')));
+  }
+
+  updateAdmin(
+    email: string,
+    firstName: string,
+    lastName: string,
+    role: string,
+    phoneNumber: string,
+    dashboardAccess: boolean,
+    enumeratorAccess: boolean,
+    taxpayersAccess: boolean,
+    auditLogAccess: boolean,
+    analyticsAccess: boolean,
+    reportAccess: boolean,
+    adminUsersAccess: boolean,
+    eServicesAccess: boolean,
+    adminId: string,
+    image?: string
+  ): Observable<any> {
+    const url = `${this.baseUrl}/admin/admins/${adminId}`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = {
+      email,
+      firstName,
+      lastName,
+      role,
+      phoneNumber,
+      dashboardAccess,
+      enumeratorAccess,
+      taxpayersAccess,
+      auditLogAccess,
+      analyticsAccess,
+      reportAccess,
+      adminUsersAccess,
+      eServicesAccess,
+      image,
+    };
+
+    return this.http
+      .post<any>(url, body, { headers })
+      .pipe(catchError(this.handleError<any>('updateAdmin')));
+  }
+
   getAdmins(): Observable<any> {
     const url = `${this.baseUrl}/admin/admins`;
     const headers = new HttpHeaders({
@@ -57,8 +144,7 @@ export class ApiService {
       .pipe(catchError(this.handleError('getAdmins')));
   }
 
-  getAnAdmin(): Observable<any> {
-    const adminId = this.authService.getUserId();
+  getAnAdmin(adminId: string): Observable<any> {
     const url = `${this.baseUrl}/admin/${adminId}`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

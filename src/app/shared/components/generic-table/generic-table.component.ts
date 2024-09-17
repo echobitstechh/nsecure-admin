@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   HostListener,
   Input,
   OnInit,
+  Output,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -59,6 +61,11 @@ export class GenericTableComponent implements OnInit {
   @Input() showSerialNumber = true;
   @Input() modalTemplate: TemplateRef<any> | null = null;
   @Input() routeLink: string | null = null;
+  @Output() rowClick = new EventEmitter<any>();
+
+  onRowClick(row: any): void {
+    this.rowClick.emit(row);
+  }
 
   ngOnInit(): void {
     this.checkScreenSize();
