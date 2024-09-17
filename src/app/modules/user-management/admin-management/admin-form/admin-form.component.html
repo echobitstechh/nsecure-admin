@@ -3,53 +3,63 @@
     <a
       class="back"
       aria-current="page"
-      [routerLink]="
-        isUpdate
-          ? '/management/admin/admin-detail'
-          : '/management/admin/admins-list'
-      "
+      [routerLink]="'/management/admin/admins-list'"
       routerLinkActive="active"
     >
       Back
     </a>
-    <app-button-with-loader
-      [classText]="'btn btn-custom'"
-      [buttonType]="'submit'"
-      [idleStateText]="'Print'"
-      [svgIcon]="'assets/icons/print.svg'"
-    ></app-button-with-loader>
-  </div>
-  <div style="border: 4px #e6ebf2; position: relative">
-    <img src="" alt="" class="image-cont" />
-    <img
-      src="assets/icons/edit.svg"
-      alt=""
-      class=""
-      style="position: absolute"
-    />
   </div>
 
   <div class="admin-form-container">
     <form [formGroup]="adminForm" (ngSubmit)="onSubmit()">
       <div class="first-div">
+        <div style="position: relative">
+          <!-- Preview Image -->
+          <img
+            [src]="imagePreview"
+            *ngIf="imagePreview; else noImage"
+            alt="Admin Image"
+            class="admin-image-preview"
+          />
+          <ng-template #noImage>
+            <img
+              src="assets/icons/personprofile.svg"
+              style="height: 4rem; width: 4rem; border-radius: 50%"
+            />
+          </ng-template>
+
+          <button type="button" class="upload-btn" (click)="fileInput.click()">
+            <span class="material-icons" style="font-size: 16px">edit</span>
+          </button>
+
+          <!-- Hidden File Input -->
+          <input
+            type="file"
+            #fileInput
+            (change)="onFileSelected($event)"
+            accept="image/*"
+            style="display: none"
+          />
+        </div>
         <div class="form-group">
-          <label for="title">Title</label>
-          <select formControlName="title" id="title" class="form-control">
-            <option value="Mr">Mr</option>
-            <option value="Ms">Ms</option>
-            <option value="Mrs">Mrs</option>
-            <option value="Dr">Dr</option>
-          </select>
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            formControlName="firstName"
+            id="firstName"
+            class="form-control"
+            placeholder="First Name"
+          />
         </div>
 
         <div class="form-group">
-          <label for="name">Name of User</label>
+          <label for="lastName">Last Name</label>
           <input
             type="text"
-            formControlName="name"
-            id="name"
+            formControlName="lastName"
+            id="lastName"
             class="form-control"
-            placeholder="Name is name"
+            placeholder="Last Name"
           />
         </div>
 
@@ -87,88 +97,88 @@
         <p>Access Levels</p>
         <div formGroupName="accessLevels">
           <div class="accessLevels-form">
-            <div class="">
+            <div class="form-group">
               <label for="dashboard">Dashboard</label>
               <select
                 formControlName="dashboard"
                 id="dashboard"
                 class="form-control"
               >
-                <option value="Full access">Full access</option>
-                <option value="No access">No access</option>
+                <option [value]="true">True</option>
+                <option [value]="false">False</option>
               </select>
             </div>
-            <div class="">
+            <div class="form-group">
               <label for="analytics">Analytics</label>
               <select
                 formControlName="analytics"
                 id="analytics"
                 class="form-control"
               >
-                <option value="Full access">Full access</option>
-                <option value="No access">No access</option>
+                <option [value]="true">True</option>
+                <option [value]="false">False</option>
               </select>
             </div>
-            <div class="">
+            <div class="form-group">
               <label for="enumerator">Enumerator</label>
               <select
                 formControlName="enumerator"
                 id="enumerator"
                 class="form-control"
               >
-                <option value="Full access">Full access</option>
-                <option value="No access">No access</option>
+                <option [value]="true">True</option>
+                <option [value]="false">False</option>
               </select>
             </div>
-            <div class="">
+            <div class="form-group">
               <label for="report">Report</label>
               <select formControlName="report" id="report" class="form-control">
-                <option value="Full access">Full access</option>
-                <option value="No access">No access</option>
+                <option [value]="true">True</option>
+                <option [value]="false">False</option>
               </select>
             </div>
-            <div class="">
+            <div class="form-group">
               <label for="taxpayers">Taxpayers</label>
               <select
                 formControlName="taxpayers"
                 id="taxpayers"
                 class="form-control"
               >
-                <option value="Full access">Full access</option>
-                <option value="No access">No access</option>
+                <option [value]="true">True</option>
+                <option [value]="false">False</option>
               </select>
             </div>
-            <div class="">
+            <div class="form-group">
               <label for="adminLists">Admins List</label>
               <select
                 formControlName="adminLists"
                 id="adminLists"
                 class="form-control"
               >
-                <option value="Full access">Full access</option>
-                <option value="No access">No access</option>
+                <option [value]="true">True</option>
+                <option [value]="false">False</option>
               </select>
             </div>
-            <div class="">
+            <div class="form-group">
               <label for="auditLog">Audit Log</label>
               <select
                 formControlName="auditLog"
                 id="auditLog"
                 class="form-control"
               >
-                <option value="Full access">Full access</option>
-                <option value="No access">No access</option>
+                <option [value]="true">True</option>
+                <option [value]="false">False</option>
               </select>
             </div>
-            <div class="">
+            <div class="form-group">
               <label for="eServices">E-services</label>
               <select
                 formControlName="eServices"
                 id="eServices"
                 class="form-control"
               >
-                <option value="Full access">Full access</option>
-                <option value="No access">No access</option>
+                <option [value]="true">True</option>
+                <option [value]="false">False</option>
               </select>
             </div>
           </div>
@@ -179,15 +189,11 @@
         <app-button-with-loader
           [classText]="'btn btn-custom px-5 block'"
           [buttonType]="'submit'"
+          [isProcessing]="loading"
           [workingStateText]="
             isUpdate ? 'Updating Admin...' : 'Creating Admin...'
           "
           [idleStateText]="isUpdate ? 'Update Admin' : 'Create Admin'"
-          [routeLink]="
-            isUpdate
-              ? '/management/admin/update-admin'
-              : '/management/admin/create-admin'
-          "
         ></app-button-with-loader>
       </div>
     </form>

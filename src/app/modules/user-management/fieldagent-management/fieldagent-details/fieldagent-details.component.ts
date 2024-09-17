@@ -22,16 +22,16 @@ export class FieldagentDetailsComponent implements OnInit {
   ) {}
 
   loadOneAdmin(): void {
-    this.apiService.getAnAdmin().subscribe(
-      (response) => {
-        this.fieldagent = response;
-        console.log('admin:', this.fieldagent);
-      },
-      (error) => {
-        this.error = 'Error fetching fieldagent';
-        console.error('Error fetching fieldagent', error);
-      }
-    );
+    // this.apiService.getAnAdmin().subscribe(
+    //   (response) => {
+    //     this.fieldagent = response;
+    //     console.log('admin:', this.fieldagent);
+    //   },
+    //   (error) => {
+    //     this.error = 'Error fetching fieldagent';
+    //     console.error('Error fetching fieldagent', error);
+    //   }
+    // );
   }
 
   openDialog(actionType: string): void {
