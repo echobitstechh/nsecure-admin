@@ -67,3 +67,4 @@ export class AdminsComponent implements OnInit {
     });
   }
 }
+// admin: ListAdmin;

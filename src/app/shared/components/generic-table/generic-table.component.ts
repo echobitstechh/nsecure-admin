@@ -60,7 +60,7 @@ export class GenericTableComponent implements OnInit {
   @Input() showCheckboxColumn = false;
   @Input() showSerialNumber = true;
   @Input() modalTemplate: TemplateRef<any> | null = null;
-  @Input() routeLink: string | null = null;
+  // @Input() routeLink: string | null = null;
   @Output() rowClick = new EventEmitter<any>();
 
   onRowClick(row: any): void {
@@ -85,8 +85,8 @@ export class GenericTableComponent implements OnInit {
   constructor(public dialog: MatDialog, private router: Router) {}
 
   openDetails(data: TableData) {
-    if (this.routeLink) {
-      this.router.navigate([this.routeLink]);
+    if (this.rowClick.observers.length > 0) {
+      this.rowClick.emit(data);
     } else {
       this.dialog.open(this.modalTemplate || this.detailsModal, {
         data,

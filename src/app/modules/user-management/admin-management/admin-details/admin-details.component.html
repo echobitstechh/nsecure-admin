@@ -100,6 +100,7 @@
     <div>
       <label for="email">Email</label>
       <input [type]="admin.email" readonly />
+      <p>{{ admin.email }}</p>
     </div>
     <div>
       <label for="phoneNumber">Phone Number</label>
@@ -124,13 +125,13 @@
           </thead>
           <tbody>
             <tr>
-              <!-- <td>{{ admin.accessLevels.dashboard }}</td>
-              <td>{{ admin.accessLevels.analytics }}</td>
-              <td>{{ admin.accessLevels.fieldAgent }}</td>
-              <td>{{ admin.accessLevels.auditLogs }}</td>
-              <td>{{ admin.accessLevels.report }}</td>
-              <td>{{ admin.accessLevels.adminUsers }}</td>
-              <td>{{ admin.accessLevels.eServices }}</td> -->
+              <td>{{ admin.dashboard }}</td>
+              <td>{{ admin.analytics }}</td>
+              <td>{{ admin.fieldAgent }}</td>
+              <td>{{ admin.auditLogs }}</td>
+              <td>{{ admin.report }}</td>
+              <td>{{ admin.adminUsers }}</td>
+              <td>{{ admin.eServices }}</td>
             </tr>
           </tbody>
         </table>

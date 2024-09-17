@@ -35,7 +35,7 @@ export class AdminDetailsComponent implements OnInit {
   loadOneAdmin(adminId: string): void {
     this.apiService.getAnAdmin(adminId).subscribe(
       (response) => {
-        this.admin = response;
+        this.admin = response.data;
         console.log('admin:', this.admin);
       },
       (error) => {

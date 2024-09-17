@@ -13,13 +13,13 @@ const routes: Routes = [
     children: [
       { path: 'admins-list', component: AdminsComponent, pathMatch: 'full' },
       {
-        path: 'admin-detail/:id',
+        path: 'admin-detail',
         component: AdminDetailsComponent,
         pathMatch: 'full',
       },
       { path: 'create-admin', component: AddAdminComponent, pathMatch: 'full' },
       {
-        path: 'update-admin/:id',
+        path: 'update-admin',
         component: UpdateAdminComponent,
         pathMatch: 'full',
       },
