@@ -128,7 +128,7 @@ export class ApiService {
     };
 
     return this.http
-      .post<any>(url, body, { headers })
+      .patch<any>(url, body, { headers })
       .pipe(catchError(this.handleError<any>('updateAdmin')));
   }
 
