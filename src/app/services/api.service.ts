@@ -199,6 +199,40 @@ export class ApiService {
       .get<any>(url, { headers })
       .pipe(catchError(this.handleError('getTransportWorkers')));
   }
+
+  getOneTransportWorker(driverId: string): Observable<any> {
+    const url = `${this.baseUrl}/admin/getonedriver/${driverId}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .get<any>(url, { headers })
+      .pipe(catchError(this.handleError('getOneTransportWorker')));
+  }
+
+  updateTransportWorker(driverId: string): Observable<any> {
+    const url = `${this.baseUrl}/admin/updatedriver/${driverId}`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = {};
+
+    return this.http
+      .patch<any>(url, body, { headers })
+      .pipe(catchError(this.handleError<any>('updateTransportWorker')));
+  }
+
+  deleteTransportWorker(driverId: string): Observable<any> {
+    const url = `${this.baseUrl}/admin/deletedriver/${driverId}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .delete<any>(url, { headers })
+      .pipe(catchError(this.handleError<any>('deleteTransportWorker')));
+  }
   getEnumerators(): Observable<any> {
     const url = `${this.baseUrl}/enumerator/getallenumerators`;
     const headers = new HttpHeaders({
