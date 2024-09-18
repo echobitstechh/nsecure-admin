@@ -87,7 +87,6 @@ export class AdminDetailsComponent implements OnInit {
       //api call for deletion
       this.apiService.deleteAdmin(adminId).subscribe(
         () => {
-          // If the API call is successful, show the success modal
           this.showSuccessModal('Account Deleted successfully.');
           this.router.navigate(['/management/admin/admins-list']);
         }
