@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../../../services/api.service';
 import { SuccessDialogComponent } from '../../../../shared/components/success-dialog/success-dialog.component';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-fieldagent-form',
@@ -11,36 +12,50 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 export class FieldagentFormComponent implements OnInit {
   @Input() isUpdate: boolean = false;
-
+  loading: boolean = false;
   fieldagentForm!: FormGroup;
+  agentId!: string;
+  role!: string;
   bsModalRef: BsModalRef | undefined;
 
   constructor(
     private fb: FormBuilder,
     private apiService: ApiService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.initializeForm();
-
-    // if (this.isUpdate) {
-    //   this.fetchAdminDetails(); // Fetch details if in update mode
-    // }
+    this.route.queryParams.subscribe((params) => {
+      this.agentId = params['agentId'];
+      this.role = params['role'];
+    });
+    if (this.isUpdate && this.agentId) {
+      // this.fetchAgentDetails(this.agentId);
+    }
   }
 
   initializeForm(): void {
     this.fieldagentForm = this.fb.group({
-      title: ['Mr', Validators.required],
-      name: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', Validators.required],
-      role: ['field agent', Validators.required],
-      park: ['mangu park', Validators.required],
+      role: ['', Validators.required],
+      address: ['', Validators.required],
+      parkId: ['', Validators.required],
+      supervisorId: [''],
     });
+
+    // if (!this.isUpdate || this.role === 'fieldAgent') {
+    //   this.fieldagentForm
+    //     .get('supervisorId')
+    //     ?.setValidators(Validators.required);
+    // }
   }
 
-  // fetchAdminDetails(id: number): void {
+  // fetchAgentDetails(id: number): void {
   //   this.apiService.getAdminById(id).subscribe((admin) => {
   //     this.adminForm.patchValue({
   //       title: admin.title,
@@ -54,12 +69,48 @@ export class FieldagentFormComponent implements OnInit {
   // }
 
   onSubmit(): void {
+    this.loading = true;
+    console.log('Form submitted', this.fieldagentForm.value); // Log to check
+    if (!this.isUpdate && this.fieldagentForm.invalid) {
+      this.loading = false;
+      return;
+    }
+
+    const formValues = this.fieldagentForm.value;
     if (this.isUpdate) {
+      this.apiService
+        .updateAgent(
+          formValues.email,
+          formValues.firstName,
+          formValues.lastName,
+          formValues.role,
+          formValues.phoneNumber,
+          formValues.address,
+          formValues.parkId,
+          formValues.supervisorId,
+          this.agentId
+        )
+        .subscribe(() => {
+          console.log('Updating admin with ID:', this.agentId);
+          this.showSuccessModal('Field Agent Updated successfully.');
+        });
       // Update admin api call
-      this.showSuccessModal('Field Agent Updated successfully.');
     } else {
       // Create admin api call
-      this.showSuccessModal('Field Agent Created successfully.');
+      this.apiService
+        .createAgent(
+          formValues.email,
+          formValues.firstName,
+          formValues.lastName,
+          formValues.role,
+          formValues.phoneNumber,
+          formValues.address,
+          formValues.parkId,
+          formValues.supervisorId
+        )
+        .subscribe(() => {
+          this.showSuccessModal('Field Agent Created successfully.');
+        });
     }
   }
 
