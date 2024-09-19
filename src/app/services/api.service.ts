@@ -243,6 +243,100 @@ export class ApiService {
       .get<any>(url, { headers })
       .pipe(catchError(this.handleError('getEnumerators')));
   }
+
+  createAgent(
+    email: string,
+    firstName: string,
+    lastName: string,
+    role: string,
+    phoneNumber: string,
+    parkId: string,
+    supervisorId: string,
+    address: string
+  ): Observable<any> {
+    const url = `${this.baseUrl}/agent/create`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = {
+      email,
+      firstName,
+      lastName,
+      role,
+      phoneNumber,
+      address,
+      parkId,
+      supervisorId,
+    };
+
+    return this.http
+      .post<any>(url, body, { headers })
+      .pipe(catchError(this.handleError<any>('createAgent')));
+  }
+
+  updateAgent(
+    email: string,
+    firstName: string,
+    lastName: string,
+    role: string,
+    phoneNumber: string,
+    address: string,
+    parkId: string,
+    supervisorId: string,
+    agentId: string
+  ): Observable<any> {
+    const url = `${this.baseUrl}/agent/agents/${agentId}`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = {
+      email,
+      firstName,
+      lastName,
+      role,
+      phoneNumber,
+      address,
+      parkId,
+      supervisorId,
+    };
+
+    return this.http
+      .put<any>(url, body, { headers })
+      .pipe(catchError(this.handleError<any>('updateAgent')));
+  }
+
+  deleteAgent(agentId: string): Observable<any> {
+    const url = `${this.baseUrl}/agent/agents/${agentId}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .delete<any>(url, { headers })
+      .pipe(catchError(this.handleError<any>('deleteAgent')));
+  }
+
+  getAgents(): Observable<any> {
+    const url = `${this.baseUrl}/agent/agents`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .get<any>(url, { headers })
+      .pipe(catchError(this.handleError('getAgents')));
+  }
+
+  getAnAgent(agentId: string): Observable<any> {
+    const url = `${this.baseUrl}/agent/agents/${agentId}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .get<any>(url, { headers })
+      .pipe(catchError(this.handleError('getAnAgent')));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: HttpErrorResponse): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
