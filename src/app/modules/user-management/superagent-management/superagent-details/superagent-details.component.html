@@ -75,4 +75,17 @@
       <input [type]="superagent.park" readonly />
     </div>
   </div>
+  <div>
+    <app-generic-table [tableDatas]="superagent" [columns]="[
+        { field: 'userId', label: 'Field Agent ID' },
+        { field: 'firstName', label: 'Name' },
+        { field: 'phoneNumber', label: 'Contact Number' },
+        { field: 'carPark', label: 'Park' },
+        { field: 'taxPayers', label: 'Tax Payers' },
+        { field: 'email', label: 'Email' },
+        { field: 'status', label: 'Status' },
+        { field: 'actions', label: '' }
+      ]" [showCheckboxColumn]="true" [showSerialNumber]="false"
+      (rowClick)="onFieldAgentClick($event)"></app-generic-table>
+  </div>
 </div>

@@ -4,6 +4,7 @@ import { AccountActionModalComponent } from '../../../../shared/components/accou
 import { ApiService } from '../../../../services/api.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { SuccessDialogComponent } from '../../../../shared/components/success-dialog/success-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-management-details',
@@ -20,7 +21,8 @@ export class SuperagentDetailsComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private apiService: ApiService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private router: Router
   ) {}
 
   loadOneSuperAgent(): void {
@@ -95,6 +97,12 @@ export class SuperagentDetailsComponent implements OnInit {
     };
     this.bsModalRef = this.modalService.show(SuccessDialogComponent, {
       initialState,
+    });
+  }
+
+  onFieldAgentClick(admin: any): void {
+    this.router.navigate(['/management/field-agent/fieldagent-details'], {
+      queryParams: { adminId: admin.id },
     });
   }
 }

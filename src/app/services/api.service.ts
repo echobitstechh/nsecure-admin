@@ -337,6 +337,18 @@ export class ApiService {
       .pipe(catchError(this.handleError('getAnAgent')));
   }
 
+  createPark(Data: any): Observable<any> {
+    const url = `${this.baseUrl}/park/create`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .post<any>(url, Data, { headers })
+      .pipe(catchError(this.handleError<any>('createTax')));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: HttpErrorResponse): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
