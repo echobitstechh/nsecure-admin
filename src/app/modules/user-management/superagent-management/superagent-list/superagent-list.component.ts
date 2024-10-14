@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-interface ListFieldAgent {
+interface ListSuperAgent {
   firstName: string;
   lastName: string;
   email: string;
@@ -14,12 +14,12 @@ interface ListFieldAgent {
 }
 
 @Component({
-  selector: 'app-fieldagent-page',
-  templateUrl: './fieldagent-page.component.html',
-  styleUrl: './fieldagent-page.component.css',
+  selector: 'app-superagent-list',
+  templateUrl: './superagent-list.component.html',
+  styleUrl: './superagent-list.component.css',
 })
-export class FieldagentPageComponent implements OnInit {
-  fieldAgents: ListFieldAgent[] = [
+export class SuperagentListComponent implements OnInit {
+  superAgents: ListSuperAgent[] = [
     {
       firstName: 'Silifah',
       lastName: 'Admin',
@@ -42,8 +42,8 @@ export class FieldagentPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onFieldAgentClick(admin: ListFieldAgent): void {
-    this.router.navigate(['/management/field-agent/fieldagent-details'], {
+  onSuperAgentClick(admin: ListSuperAgent): void {
+    this.router.navigate(['/management/super-agent/superagent-details'], {
       queryParams: { adminId: admin.id },
     });
   }

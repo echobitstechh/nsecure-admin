@@ -11,11 +11,11 @@
     <app-button-with-loader [classText]="'btn btn-primary'" [svgIcon]="'assets/icons/download.svg'"
       [buttonType]="'button'" [idleStateText]="'Export'"></app-button-with-loader>
     <app-button-with-loader [classText]="'btn btn-custom'" [svgIcon]="'assets/icons/add.svg'" [buttonType]="'button'"
-      [idleStateText]="'Add Field Agent'"
-      [routeLink]="'/management/field-agent/add-fieldagent'"></app-button-with-loader>
+      [idleStateText]="'Add Super Agent'"
+      [routeLink]="'/management/super-agent/add-superagent'"></app-button-with-loader>
   </div>
 </div>
-<app-generic-table [tableDatas]="fieldAgents" [columns]="[
+<app-generic-table [tableDatas]="superAgents" [columns]="[
     { field: 'userId', label: 'Field Agent ID' },
     { field: 'firstName', label: 'Name' },
     { field: 'phoneNumber', label: 'Contact Number' },
@@ -24,4 +24,4 @@
     { field: 'email', label: 'Email' },
     { field: 'status', label: 'Status' },
     { field: 'actions', label: '' }
-  ]" [showCheckboxColumn]="true" [showSerialNumber]="false" (rowClick)="onFieldAgentClick($event)"></app-generic-table>
+  ]" [showCheckboxColumn]="true" [showSerialNumber]="false" (rowClick)="onSuperAgentClick($event)"></app-generic-table>

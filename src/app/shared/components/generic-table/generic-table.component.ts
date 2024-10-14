@@ -72,8 +72,10 @@ export class GenericTableComponent implements OnInit {
   }
   pageSize = 10;
   currentPage = 1;
-  totalPages = Math.ceil(this.tableDatas.length / this.pageSize);
-  isLargeScreen = true;
+get totalPages() {
+    return Math.ceil(this.tableDatas.length / this.pageSize);
+  }
+    isLargeScreen = true;
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.checkScreenSize();
