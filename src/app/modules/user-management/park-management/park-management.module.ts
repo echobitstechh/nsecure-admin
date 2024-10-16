@@ -5,9 +5,18 @@ import { ParkmanagementPageComponent } from './parkmanagement-page/parkmanagemen
 import { ParkmanagementFormComponent } from './parkmanagement-form/parkmanagement-form.component';
 import { SharedModule } from '../../../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ParksListCardComponent } from './parks-list-card/parks-list-card.component';
+import { ParkManagementHomeComponent } from './park-management-home/park-management-home.component';
+import { ParksCardComponent } from './parks-card/parks-card.component';
 
 @NgModule({
-  declarations: [ParkmanagementPageComponent, ParkmanagementFormComponent],
+  declarations: [
+    ParkmanagementPageComponent,
+    ParkmanagementFormComponent,
+    ParksListCardComponent,
+    ParkManagementHomeComponent,
+    ParksCardComponent,
+  ],
   imports: [
     CommonModule,
     ParkManagementRoutingModule,

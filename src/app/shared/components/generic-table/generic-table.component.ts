@@ -62,6 +62,7 @@ export class GenericTableComponent implements OnInit {
   @Input() modalTemplate: TemplateRef<any> | null = null;
   // @Input() routeLink: string | null = null;
   @Output() rowClick = new EventEmitter<any>();
+@Input() buttonLabel: string = "View Details"
 
   onRowClick(row: any): void {
     this.rowClick.emit(row);

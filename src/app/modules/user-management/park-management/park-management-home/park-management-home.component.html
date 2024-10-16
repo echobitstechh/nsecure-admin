@@ -1,0 +1,13 @@
+<div class="px-3">
+    <div>
+        <app-parks-card></app-parks-card>
+    </div>
+    <div class="row gx-3 mt-4">
+        <div class="col-lg-7 p-1 bg-white rounded-lg rounded">
+            <app-generic-table [columns]="[
+                          ]" [showCheckboxColumn]="true" [showSerialNumber]="false"></app-generic-table>
+            <!-- [tableDatas]=""  { field: 'email', label: '' }, -->
+        </div>
+        <app-parks-list-card class="col-lg-5"></app-parks-list-card>
+    </div>
+</div>

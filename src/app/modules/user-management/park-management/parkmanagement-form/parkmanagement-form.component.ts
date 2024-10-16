@@ -52,7 +52,7 @@ export class ParkmanagementFormComponent implements OnInit {
     this.apiService.createPark(formValues).subscribe((response) => {
       if (response.status === 201) {
         this.loading = false;
-        this.showSuccessModal('Field Agent Created successfully.');
+        this.showSuccessModal('Park Created successfully.');
       } else {
       }
     });
