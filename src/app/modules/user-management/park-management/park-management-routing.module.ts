@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ParkmanagementPageComponent } from './parkmanagement-page/parkmanagement-page.component';
 import { ParkmanagementFormComponent } from './parkmanagement-form/parkmanagement-form.component';
 import { ParkManagementHomeComponent } from './park-management-home/park-management-home.component';
+import { ParkDebtorsComponent } from './park-debtors/park-debtors.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'add-park',
         component: ParkmanagementFormComponent,
+      },
+      {
+        path: 'debtors',
+        component: ParkDebtorsComponent,
       },
       {
         path: '',

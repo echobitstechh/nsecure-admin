@@ -1,9 +1,10 @@
-<div class="d-flex flex-column gap-3 shadow shadow-md bg-white p-2">
+<div class="d-flex flex-column gap-1 rounded rounded-md mb-2 shadow shadow-md bg-white p-2">
   <div class="d-flex justify-content-between">
     <p class="title fw-semibold">{{title}}</p>
     <img [src]="icon" alt="">
   </div>
-  <p class="h1 fw-bold value">{{value}}</p>
+  <p class="h1 fw-bold value" *ngIf="value">{{value}}</p>
+  <p class="h1 fw-bold value" *ngIf="valuePrice">₦{{valuePrice}}</p>
   <div class="d-flex justify-content-end">
     <p class="view fw-semibold d-inline-flex gap-3"><img src="assets/icons/arrowblue.svg" alt="" class="image-fluid">
       View</p>

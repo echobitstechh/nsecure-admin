@@ -1,13 +1,22 @@
-<div class="px-3">
-    <div>
-        <app-parks-card></app-parks-card>
+<div class="px-3 py-2">
+    <div class="row gx-2">
+        <app-parks-card class="col-md-3" [value]="89"></app-parks-card>
+        <app-parks-card class="col-md-3" title="" [value]="9475">
+        </app-parks-card>
+        <app-parks-card class="col-md-3" title="" [valuePrice]="30456"></app-parks-card>
+        <app-parks-card class="col-md-3" title="" [valuePrice]="30456"></app-parks-card>
+        <app-parks-card *ngIf="showAllCard" class="col-md-3" title="Debtors" [valuePrice]="30456"
+            routerLink="/management/park-management/debtors"></app-parks-card>
+        <div class="d-flex justify-content-end">
+            <p (click)="toggleAllCards()" class="more-view">{{showAllCard ? 'View Less' : 'View More'}}</p>
+        </div>
     </div>
     <div class="row gx-3 mt-4">
-        <div class="col-lg-7 p-1 bg-white rounded-lg rounded">
+        <div class="col-md-7 p-1 bg-white rounded-lg rounded mb-2">
             <app-generic-table [columns]="[
                           ]" [showCheckboxColumn]="true" [showSerialNumber]="false"></app-generic-table>
             <!-- [tableDatas]=""  { field: 'email', label: '' }, -->
         </div>
-        <app-parks-list-card class="col-lg-5"></app-parks-list-card>
+        <app-parks-list-card class="col-md-5"></app-parks-list-card>
     </div>
 </div>
