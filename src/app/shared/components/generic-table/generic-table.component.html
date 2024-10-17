@@ -105,6 +105,9 @@
               }}</ng-container><ng-container *ngSwitchCase="'gender'">{{
               tableData.gender
               }}</ng-container>
+            <ng-container *ngSwitchCase="'amountDue'">{{
+              tableData.amountDue
+              }}</ng-container>
             <ng-container *ngSwitchCase="'actions'">
               <button mat-button (click)="openDetails(tableData)" class="shadow-sm">
                 {{buttonLabel}}
