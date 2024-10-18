@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../../../../services/api.service';
 
 interface ListSuperAgent {
   firstName: string;
@@ -37,14 +38,31 @@ export class SuperagentListComponent implements OnInit {
       status: 'Inactive',
     },
   ];
+  loading: boolean = false;
+  constructor(private router: Router, private apiService: ApiService) {}
 
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadAgents();
+  }
 
   onSuperAgentClick(admin: ListSuperAgent): void {
     this.router.navigate(['/management/super-agent/superagent-details'], {
       queryParams: { adminId: admin.id },
     });
+  }
+
+  loadAgents(): void {
+    this.loading = true;
+    this.apiService.getAgents('Super Agent').subscribe(
+      (response) => {
+        this.loading = false;
+        this.superAgents = response;
+        console.log('super agents data:', this.superAgents);
+      },
+      (error) => {
+        this.loading = false;
+        console.error('Error fetching super agents data', error);
+      }
+    );
   }
 }

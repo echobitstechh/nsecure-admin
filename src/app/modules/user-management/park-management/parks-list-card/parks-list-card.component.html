@@ -1,16 +1,18 @@
 <div class="card">
-  <a class="card-header" aria-current="page" routerLink="/management/park-management/add-park"
-    routerLinkActive="active">
+  <div class="card-header">
     <div class="card-title">{{ title }}</div>
-    <button class="add-button">+</button>
-  </a>
+    <button class="add-button" *ngIf="!icon">+</button>
+    <img [src]="icon" alt="" class="" *ngIf="icon" />
+  </div>
   <div class="card-body">
-    <div class="enumerator shadow-sm" *ngFor="let park of parks">
+    <div class="enumerator shadow-sm">
+      <img [src]="image" *ngIf="image" alt="" class="enumerator-image">
       <div class="enumerator-info">
         <div class="enumerator-name">
-          {{ park.parkName }}
+          {{ name }}
         </div>
-        <div class="enumerator-park">{{ park.parkNumber }}</div>
+        <div class="enumerator-park" *ngIf="number">{{ number }}</div>
+        <div class="enumerator-park" *ngIf="value">{{ value }}</div>
       </div>
       <button class="more-button">⋮</button>
     </div>

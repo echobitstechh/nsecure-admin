@@ -10,6 +10,10 @@ import { ParkManagementHomeComponent } from './park-management-home/park-managem
 import { ParksCardComponent } from './parks-card/parks-card.component';
 import { ParkDebtorsComponent } from './park-debtors/park-debtors.component';
 import { ParksComponent } from './parks/parks.component';
+import { ParksFieldAgentsComponent } from './parks-field-agents/parks-field-agents.component';
+import { ParksExpectedRevenueComponent } from './parks-expected-revenue/parks-expected-revenue.component';
+import { ParksRevenueComponent } from './parks-revenue/parks-revenue.component';
+import { ParkPieChartComponent } from './park-pie-chart/park-pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { ParksComponent } from './parks/parks.component';
     ParksCardComponent,
     ParkDebtorsComponent,
     ParksComponent,
+    ParksFieldAgentsComponent,
+    ParksExpectedRevenueComponent,
+    ParksRevenueComponent,
+    ParkPieChartComponent,
   ],
   imports: [
     CommonModule,

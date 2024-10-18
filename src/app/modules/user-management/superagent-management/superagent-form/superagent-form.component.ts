@@ -78,39 +78,16 @@ export class SuperagentFormComponent implements OnInit {
 
     const formValues = this.superagentForm.value;
     if (this.isUpdate) {
-      this.apiService
-        .updateAgent(
-          formValues.email,
-          formValues.firstName,
-          formValues.lastName,
-          formValues.role,
-          formValues.phoneNumber,
-          formValues.address,
-          formValues.parkId,
-          formValues.supervisorId,
-          this.agentId
-        )
-        .subscribe(() => {
-          console.log('Updating admin with ID:', this.agentId);
-          this.showSuccessModal('Field Agent Updated successfully.');
-        });
+      this.apiService.updateAgent(formValues, this.agentId).subscribe(() => {
+        console.log('Updating admin with ID:', this.agentId);
+        this.showSuccessModal('Super Agent Updated successfully.');
+      });
       // Update admin api call
     } else {
       // Create admin api call
-      this.apiService
-        .createAgent(
-          formValues.email,
-          formValues.firstName,
-          formValues.lastName,
-          formValues.role,
-          formValues.phoneNumber,
-          formValues.address,
-          formValues.parkId,
-          formValues.supervisorId
-        )
-        .subscribe(() => {
-          this.showSuccessModal('Field Agent Created successfully.');
-        });
+      this.apiService.createAgent(formValues).subscribe(() => {
+        this.showSuccessModal('Super Agent Created successfully.');
+      });
     }
   }
 

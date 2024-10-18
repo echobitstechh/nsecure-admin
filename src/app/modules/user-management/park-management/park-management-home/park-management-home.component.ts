@@ -44,11 +44,11 @@ export class ParkManagementHomeComponent implements OnInit {
         this.loading = false;
         this.parks = response;
         this.tableParks = response.parks;
-        console.log('workers:', this.parks);
+        console.log('parks data:', this.parks);
       },
       (error) => {
         this.loading = false;
-        console.error('Error fetching transport workers', error);
+        console.error('Error fetching parks data', error);
       }
     );
   }

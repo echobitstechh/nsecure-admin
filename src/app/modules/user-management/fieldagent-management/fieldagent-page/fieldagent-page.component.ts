@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../../../../services/api.service';
 
 interface ListFieldAgent {
   firstName: string;
@@ -37,14 +38,32 @@ export class FieldagentPageComponent implements OnInit {
       status: 'Inactive',
     },
   ];
+  loading: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private apiService: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadAgents();
+  }
 
   onFieldAgentClick(admin: ListFieldAgent): void {
     this.router.navigate(['/management/field-agent/fieldagent-details'], {
       queryParams: { adminId: admin.id },
     });
+  }
+
+  loadAgents(): void {
+    this.loading = true;
+    this.apiService.getAgents('Field Agent').subscribe(
+      (response) => {
+        this.loading = false;
+        this.fieldAgents = response;
+        console.log('field agents data:', this.fieldAgents);
+      },
+      (error) => {
+        this.loading = false;
+        console.error('Error fetching field agents data', error);
+      }
+    );
   }
 }

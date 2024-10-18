@@ -28,11 +28,11 @@ export class ParksComponent implements OnInit {
       (response) => {
         this.loading = false;
         this.tableParks = response.parks;
-        console.log('workers:', this.tableParks);
+        console.log('parks:', this.tableParks);
       },
       (error) => {
         this.loading = false;
-        console.error('Error fetching transport workers', error);
+        console.error('Error fetching parks', error);
       }
     );
   }

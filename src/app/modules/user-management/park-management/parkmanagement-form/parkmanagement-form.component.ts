@@ -27,10 +27,6 @@ export class ParkmanagementFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeForm();
-    this.route.queryParams.subscribe((params) => {
-      this.agentId = params['agentId'];
-      this.role = params['role'];
-    });
   }
 
   initializeForm(): void {

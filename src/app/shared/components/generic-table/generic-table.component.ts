@@ -46,8 +46,9 @@ interface TableData {
   location?: string;
   fieldAgentCount?: number;
   driverCount?: number;
-  transportCategoriesCovered?: any
-  chairman?: string
+  transportCategoriesCovered?: any;
+  chairman?: string;
+  currentNoOfAgent?: number;
 }
 
 interface TableColumn {

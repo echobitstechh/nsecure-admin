@@ -3,7 +3,7 @@
     <a class="back" aria-current="page" [routerLink]="
         isUpdate
           ? '/management/super-agent/superagent-details'
-          : '/management/super-agents'
+          : '/management/super-agent'
       " routerLinkActive="active">
       Back
     </a>
@@ -65,14 +65,13 @@
             <option value="mangu park">Mangu Park</option>
             <option value="mararaba park">Mararaba Park</option>
           </select> -->
-          <input type="text" formControlName="parkId" id="parkId" class="form-control"
-            placeholder="tyeuwi-queueyiw-98ydh-twyeu" />
+          <input type="text" formControlName="parkId" id="parkId" class="form-control" placeholder="098276" />
         </div>
 
         <div class="form-group" *ngIf="!isUpdate || role === 'Field Agent'">
           <label for="supervisorId">Supervisor Id</label>
           <input type="text" formControlName="supervisorId" id="supervisorId" class="form-control"
-            placeholder="tyeuwi-queueyiw-98ydh-twyeu" />
+            placeholder="2345678" />
         </div>
       </div>
 

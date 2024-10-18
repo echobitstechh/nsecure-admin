@@ -1,10 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-interface Park {
-  parkName: string;
-  parkNumber: number;
-}
-
 @Component({
   selector: 'app-parks-list-card',
   templateUrl: './parks-list-card.component.html',
@@ -12,20 +7,11 @@ interface Park {
 })
 export class ParksListCardComponent implements OnInit {
   @Input() title: string = 'Add Parks';
-  @Input() parks: Park[] = [
-    {
-      parkName: 'Adela Parkson',
-      parkNumber: 234,
-    },
-    {
-      parkName: 'Christian Mad',
-      parkNumber: 789,
-    },
-    {
-      parkName: 'Jason Statham',
-      parkNumber: 888,
-    },
-  ];
+  @Input() icon: string = '';
+  @Input() image: string = '';
+  @Input() name: string = '';
+  @Input() number!: number;
+  @Input() value: string = '';
   constructor() {}
   ngOnInit(): void {}
 }
