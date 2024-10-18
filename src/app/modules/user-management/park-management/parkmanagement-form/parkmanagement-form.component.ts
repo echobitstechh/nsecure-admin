@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { ApiService } from '../../../../services/api.service';
 import { SuccessDialogComponent } from '../../../../shared/components/success-dialog/success-dialog.component';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-fieldagent-form',
@@ -21,7 +21,8 @@ export class ParkmanagementFormComponent implements OnInit {
     private fb: FormBuilder,
     private apiService: ApiService,
     private modalService: BsModalService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class ParkmanagementFormComponent implements OnInit {
     this.parkmanagementForm = this.fb.group({
       parkName: ['', Validators.required],
       location: ['', Validators.required],
-      transportCategoriesCovered: ['', [Validators.required, Validators.email]],
+      transportCategoriesCovered: this.fb.array([], Validators.required),
       chairman: ['', Validators.required],
       currentNoOfWorker: ['', Validators.required],
       currentNoOfAgent: ['', Validators.required],
@@ -45,17 +46,40 @@ export class ParkmanagementFormComponent implements OnInit {
     });
   }
 
+  onTransportCategoriesCoveredArrayChange(event: any): void {
+    const transportCategoriesCoveredArray = this.parkmanagementForm.get(
+      'transportCategoriesCovered'
+    ) as FormArray;
+
+    if (event.target.checked) {
+      transportCategoriesCoveredArray.push(this.fb.control(event.target.value));
+    } else {
+      const index = transportCategoriesCoveredArray.controls.findIndex(
+        (x) => x.value === event.target.value
+      );
+      transportCategoriesCoveredArray.removeAt(index);
+    }
+  }
+
   onSubmit(): void {
     this.loading = true;
     console.log('Form submitted', this.parkmanagementForm.value); // Log to check
     const formValues = this.parkmanagementForm.value;
-    this.apiService.createPark(formValues).subscribe((response) => {
-      if (response.status === 201) {
+    this.apiService.createPark(formValues).subscribe(
+      (response) => {
+        if (response.status === 201) {
+          this.loading = false;
+          this.showSuccessModal('Park Created successfully.');
+          this.router.navigate(['/management/park-management/parks']);
+        } else {
+          this.loading = false;
+        }
         this.loading = false;
-        this.showSuccessModal('Park Created successfully.');
-      } else {
+      },
+      (error) => {
+        this.loading = false;
       }
-    });
+    );
   }
 
   showSuccessModal(message: string): void {

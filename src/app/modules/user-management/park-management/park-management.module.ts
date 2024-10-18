@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ParksListCardComponent } from './parks-list-card/parks-list-card.component';
 import { ParkManagementHomeComponent } from './park-management-home/park-management-home.component';
 import { ParksCardComponent } from './parks-card/parks-card.component';
+import { ParkDebtorsComponent } from './park-debtors/park-debtors.component';
+import { ParksComponent } from './parks/parks.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ParksCardComponent } from './parks-card/parks-card.component';
     ParksListCardComponent,
     ParkManagementHomeComponent,
     ParksCardComponent,
+    ParkDebtorsComponent,
+    ParksComponent,
   ],
   imports: [
     CommonModule,

@@ -42,6 +42,11 @@ interface TableData {
   taxPayers?: number;
   status?: string;
   amountDue?: number;
+  parkName?: string;
+  location?: string;
+  fieldAgentCount?: number;
+  driverCount?: number;
+  transportCategoriesCovered?: any
 }
 
 interface TableColumn {

@@ -1,22 +1,42 @@
 <div class="px-3 py-2">
+    <div class="row gx-4 px-2 pb-3">
+        <div class="shadow-sm phome-search-div col-md-10">
+            <img src="assets/icons/search.svg" alt="" />
+            <input type="text" placeholder="Search" class="py-2 phome-search-input" />
+        </div>
+        <app-button-with-loader [idleStateText]="'Filters'" [svgIcon]="'assets/icons/filterlines.svg'"
+            [classText]="'btn btn-white shadow shadow-md py-2 w-100 h-100 px-3'"
+            class="col-md-2"></app-button-with-loader>
+
+    </div>
     <div class="row gx-2">
-        <app-parks-card class="col-md-3" [value]="89"></app-parks-card>
-        <app-parks-card class="col-md-3" title="" [value]="9475">
+        <app-parks-card class="col-md-3" [value]="parks?.totalNumberOfParks ?? 0"
+            routerLink="/management/park-management/all-parks"></app-parks-card>
+        <app-parks-card class="col-md-3" title="Assigned Field Agent" [value]="parks?.totalNumberOfFieldAgents ?? 0">
         </app-parks-card>
-        <app-parks-card class="col-md-3" title="" [valuePrice]="30456"></app-parks-card>
-        <app-parks-card class="col-md-3" title="" [valuePrice]="30456"></app-parks-card>
-        <app-parks-card *ngIf="showAllCard" class="col-md-3" title="Debtors" [valuePrice]="30456"
+        <app-parks-card class="col-md-3" title="Average Park Revenue"
+            [valuePrice]="parks?.avgParkRevenue ?? 0"></app-parks-card>
+        <app-parks-card class="col-md-3" title="Average Expected Revenue"
+            [valuePrice]="parks?.avgExpectedRevenue ?? 0"></app-parks-card>
+        <app-parks-card *ngIf="showAllCard" class="col-md-3" title="Debtors" [value]="parks?.totalDebtorsCount ?? 0"
             routerLink="/management/park-management/debtors"></app-parks-card>
         <div class="d-flex justify-content-end">
-            <p (click)="toggleAllCards()" class="more-view">{{showAllCard ? 'View Less' : 'View More'}}</p>
+            <p (click)="toggleAllCards()" class="text-sm fw-semibold more-view">{{showAllCard ? 'View Less Tiles' :
+                'View More
+                Tiles'}}
+                <span>
+                    <img src="assets/icons/moretiles.svg" alt="" *ngIf="!showAllCard" />
+                    <img src="assets/icons/moretilesup.svg" alt="" *ngIf="showAllCard" /></span>
+            </p>
         </div>
     </div>
+
     <div class="row gx-3 mt-4">
-        <div class="col-md-7 p-1 bg-white rounded-lg rounded mb-2">
-            <app-generic-table [columns]="[
+        <div class="col-md-8 p-1 bg-white rounded-lg rounded mb-2">
+            <app-generic-table [tableDatas]="tableParks" [columns]="[
+                { field: 'parkName', label: 'Name of Parks' },{ field: 'location', label: 'Location' },{ field: 'driverCount', label: 'Transport Workers' },{ field: 'transportCategoriesCovered', label: 'Transport Categories Covered' },{ field: 'fieldAgentCount', label: 'Assigned Field Agents' },
                           ]" [showCheckboxColumn]="true" [showSerialNumber]="false"></app-generic-table>
-            <!-- [tableDatas]=""  { field: 'email', label: '' }, -->
         </div>
-        <app-parks-list-card class="col-md-5"></app-parks-list-card>
+        <app-parks-list-card class="col-md-4"></app-parks-list-card>
     </div>
 </div>

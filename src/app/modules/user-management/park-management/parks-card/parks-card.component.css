@@ -9,3 +9,6 @@
 .view {
   color: #053688;
 }
+.p-card {
+  cursor: pointer;
+}

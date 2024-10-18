@@ -349,6 +349,18 @@ export class ApiService {
       .pipe(catchError(this.handleError<any>('createTax')));
   }
 
+  getParks(): Observable<any> {
+    const url = `${this.baseUrl}/park/parkDashboard`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.authService.getJwtToken()}`,
+    });
+
+    return this.http
+      .get<any>(url, { headers })
+      .pipe(catchError(this.handleError('getParks')));
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: HttpErrorResponse): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);

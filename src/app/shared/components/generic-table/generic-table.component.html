@@ -10,7 +10,7 @@
         </th>
         <th *ngFor="let column of columns" class="headarr">
           {{ column.label }}
-          <img *ngIf="column.field !== 'actions'" src="assets/icons/arrowdown.svg" alt="" class="headarrimg" />
+          <!-- <img *ngIf="column.field !== 'actions'" src="assets/icons/arrowdown.svg" alt="" class="headarrimg" /> -->
         </th>
       </tr>
     </thead>
@@ -36,6 +36,21 @@
             </ng-container>
             <ng-container *ngSwitchCase="'category'">{{
               tableData.category
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'parkName'">{{
+              tableData.parkName
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'location'">{{
+              tableData.location
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'fieldAgentCount'">{{
+              tableData.fieldAgentCount
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'transportCategoriesCovered'">{{
+              tableData.transportCategoriesCovered
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'driverCount'">{{
+              tableData.driverCount
               }}</ng-container>
             <ng-container *ngSwitchCase="'email'">{{
               tableData.email

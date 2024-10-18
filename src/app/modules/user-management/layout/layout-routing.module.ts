@@ -35,15 +35,16 @@ const routes: Routes = [
             (m) => m.TworkerManagementModule
           ),
       },
-      {
-        path: 'park-management',
-        loadChildren: () =>
-          import('../park-management/park-management.module').then(
-            (m) => m.ParkManagementModule
-          ),
-      },
+
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
     ],
+  },
+  {
+    path: 'park-management',
+    loadChildren: () =>
+      import('../park-management/park-management.module').then(
+        (m) => m.ParkManagementModule
+      ),
   },
 ];
 

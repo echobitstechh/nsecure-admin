@@ -13,21 +13,18 @@ interface Park {
 export class ParksListCardComponent implements OnInit {
   @Input() title: string = 'Add Parks';
   @Input() parks: Park[] = [
-    // {
-    //   name: 'Adela Parkson',
-    //   park: 'Mengu Park',
-    //   imageUrl: 'assets/images/adela.svg',
-    // },
-    // {
-    //   name: 'Christian Mad',
-    //   park: 'Ado Park',
-    //   imageUrl: 'assets/images/christian.svg',
-    // },
-    // {
-    //   name: 'Jason Statham',
-    //   park: 'Maranabo Park',
-    //   imageUrl: 'assets/images/jason.svg',
-    // },
+    {
+      parkName: 'Adela Parkson',
+      parkNumber: 234,
+    },
+    {
+      parkName: 'Christian Mad',
+      parkNumber: 789,
+    },
+    {
+      parkName: 'Jason Statham',
+      parkNumber: 888,
+    },
   ];
   constructor() {}
   ngOnInit(): void {}

@@ -4,6 +4,7 @@ import { ParkmanagementPageComponent } from './parkmanagement-page/parkmanagemen
 import { ParkmanagementFormComponent } from './parkmanagement-form/parkmanagement-form.component';
 import { ParkManagementHomeComponent } from './park-management-home/park-management-home.component';
 import { ParkDebtorsComponent } from './park-debtors/park-debtors.component';
+import { ParksComponent } from './parks/parks.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
       {
         path: 'add-park',
         component: ParkmanagementFormComponent,
+      },
+      {
+        path: 'all-parks',
+        component: ParksComponent,
       },
       {
         path: 'debtors',

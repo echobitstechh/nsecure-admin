@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../../services/api.service';
 
-interface Park {
-  totalNumberOfParks: number;
-  totalNumberOfFieldAgents: number;
-  totalDebtorsCount: number;
-  avgParkRevenue: number;
-  avgExpectedRevenue: number;
-}
-
 interface Parks {
   parkName: string;
   location: string;
@@ -16,23 +8,16 @@ interface Parks {
   driverCount: number;
   transportCategoriesCovered: any;
 }
+
 @Component({
-  selector: 'app-park-management-home',
-  templateUrl: './park-management-home.component.html',
-  styleUrl: './park-management-home.component.css',
+  selector: 'app-parks',
+  templateUrl: './parks.component.html',
+  styleUrl: './parks.component.css',
 })
-export class ParkManagementHomeComponent implements OnInit {
-  showAllCard: boolean = false;
-  loading: boolean = false;
-  parks: Park | null = null;
+export class ParksComponent implements OnInit {
   tableParks: Parks[] = [];
-
+  loading: boolean = false;
   constructor(private apiService: ApiService) {}
-
-  toggleAllCards() {
-    this.showAllCard = !this.showAllCard;
-  }
-
   ngOnInit(): void {
     this.loadParks();
   }
@@ -42,9 +27,8 @@ export class ParkManagementHomeComponent implements OnInit {
     this.apiService.getParks().subscribe(
       (response) => {
         this.loading = false;
-        this.parks = response;
         this.tableParks = response.parks;
-        console.log('workers:', this.parks);
+        console.log('workers:', this.tableParks);
       },
       (error) => {
         this.loading = false;
