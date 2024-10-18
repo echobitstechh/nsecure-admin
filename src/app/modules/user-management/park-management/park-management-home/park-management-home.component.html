@@ -12,12 +12,13 @@
     <div class="row gx-2">
         <app-parks-card class="col-md-3" [value]="parks?.totalNumberOfParks ?? 0"
             routerLink="/management/park-management/all-parks"></app-parks-card>
-        <app-parks-card class="col-md-3" title="Assigned Field Agent" [value]="parks?.totalNumberOfFieldAgents ?? 0">
+        <app-parks-card class="col-md-3" title="Assigned Field Agent" [value]="parks?.totalNumberOfFieldAgents ?? 0"
+            routerLink="/management/park-management/park-field-agents">
         </app-parks-card>
-        <app-parks-card class="col-md-3" title="Average Park Revenue"
-            [valuePrice]="parks?.avgParkRevenue ?? 0"></app-parks-card>
-        <app-parks-card class="col-md-3" title="Average Expected Revenue"
-            [valuePrice]="parks?.avgExpectedRevenue ?? 0"></app-parks-card>
+        <app-parks-card class="col-md-3" title="Average Park Revenue" [valuePrice]="parks?.avgParkRevenue ?? 0"
+            routerLink="/management/park-management/park-revenues"></app-parks-card>
+        <app-parks-card class="col-md-3" title="Average Expected Revenue" [valuePrice]="parks?.avgExpectedRevenue ?? 0"
+            routerLink="/management/park-management/expected-park-revenues"></app-parks-card>
         <app-parks-card *ngIf="showAllCard" class="col-md-3" title="Debtors" [value]="parks?.totalDebtorsCount ?? 0"
             routerLink="/management/park-management/debtors"></app-parks-card>
         <div class="d-flex justify-content-end">

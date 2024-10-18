@@ -5,6 +5,9 @@ import { ParkmanagementFormComponent } from './parkmanagement-form/parkmanagemen
 import { ParkManagementHomeComponent } from './park-management-home/park-management-home.component';
 import { ParkDebtorsComponent } from './park-debtors/park-debtors.component';
 import { ParksComponent } from './parks/parks.component';
+import { ParksFieldAgentsComponent } from './parks-field-agents/parks-field-agents.component';
+import { ParksRevenueComponent } from './parks-revenue/parks-revenue.component';
+import { ParksExpectedRevenueComponent } from './parks-expected-revenue/parks-expected-revenue.component';
 
 const routes: Routes = [
   {
@@ -26,6 +29,18 @@ const routes: Routes = [
       {
         path: 'debtors',
         component: ParkDebtorsComponent,
+      },
+      {
+        path: 'park-field-agents',
+        component: ParksFieldAgentsComponent,
+      },
+      {
+        path: 'park-revenues',
+        component: ParksRevenueComponent,
+      },
+      {
+        path: 'expected-park-revenues',
+        component: ParksExpectedRevenueComponent,
       },
       {
         path: '',

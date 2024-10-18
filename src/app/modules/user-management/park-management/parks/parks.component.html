@@ -3,11 +3,11 @@
         Back
     </a>
     <div class="row gx-4 px-1 pb-3">
-        <div class="row col-md-10">
+        <div class="row col-lg-10 col-md-6">
             <app-button-with-loader [idleStateText]="'Filters'" [svgIcon]="'assets/icons/filterlines.svg'"
                 [classText]="'btn btn-white shadow shadow-md py-2 h-100 px-3'"
                 class="col-md-2"></app-button-with-loader>
-            <div class="shadow-sm phome-search-div col-md-8">
+            <div class="shadow-sm phome-search-div col-lg-8 col-md-4">
                 <img src="assets/icons/search.svg" alt="" />
                 <input type="text" placeholder="Search" class="py-2 phome-search-input" />
             </div>
@@ -19,6 +19,7 @@
     <div class="p-1 bg-white rounded-lg rounded mb-2">
         <app-generic-table [tableDatas]="tableParks" [columns]="[
                         { field: 'parkName', label: 'Name of Parks' },
+                                                { field: 'chairman', label: 'Chairman' },
                         { field: 'location', label: 'Location' },
                         { field: 'driverCount', label: 'Transport Workers' },
                         { field: 'transportCategoriesCovered', label: 'Transport Categories Covered' },
