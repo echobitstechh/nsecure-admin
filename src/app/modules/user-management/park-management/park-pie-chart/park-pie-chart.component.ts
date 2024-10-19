@@ -13,6 +13,18 @@ interface ChartData {
 })
 export class ParkPieChartComponent implements OnInit {
   @Input() data: ChartData[] = [];
+  @Input() title: string = '';
+  @Input() timeFrames: string[] = [
+    'This Week',
+    'Last Week',
+    'This Month',
+    'Last Month',
+  ];
+  selectedTimeFrame: string = this.timeFrames[0];
+
+  onTimeFrameChange(event: any) {
+    this.selectedTimeFrame = event.target.value;
+  }
 
   private svg: any;
   private margin = 10;
@@ -75,9 +87,7 @@ export class ParkPieChartComponent implements OnInit {
 
     legendDiv.style.display = 'flex';
 
-    const filteredData = this.data.filter((d) => d.name !== 'Other');
-
-    filteredData.forEach((d, i) => {
+    this.data.forEach((d, i) => {
       const legendItem = document.createElement('div');
       legendItem.style.marginBottom = '10px';
 

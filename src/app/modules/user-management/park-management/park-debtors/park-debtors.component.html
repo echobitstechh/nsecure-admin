@@ -3,8 +3,9 @@
         Back
     </a>
     <div class="row gx-4">
-        <div class="p-1 col-md-8 bg-white rounded-lg rounded mb-2">
-            <app-park-pie-chart [data]="pieChartData"></app-park-pie-chart>
+        <div class="col-md-8 bg-white rounded-lg rounded">
+            <app-park-pie-chart [timeFrames]="['Monthly', 'Weekly', 'Daily']"
+                [data]="pieChartData"></app-park-pie-chart>
         </div>
         <app-parks-list-card [title]="'Track Debtors'" [icon]="'assets/icons/track.svg'" class="col-md-4"
             routerLink="/management/field-agent/add-fieldagent"></app-parks-list-card>
