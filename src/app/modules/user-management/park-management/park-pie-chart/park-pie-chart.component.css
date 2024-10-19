@@ -1,0 +1,37 @@
+#pieChart {
+  width: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.text-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.text-div div {
+  display: flex;
+  align-items: center;
+}
+
+.text-div span {
+  margin-right: 5px;
+}
+.card-timeframe {
+  font-size: 16px;
+  color: #8a92a6;
+  border: none;
+  background: none;
+}
+
+select.card-timeframe {
+  font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+select.card-timeframe:focus {
+  outline: none;
+}

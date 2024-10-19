@@ -1,0 +1,85 @@
+<div class="big-admin-form-cont d-flex flex-column gap-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <a class="back" aria-current="page" [routerLink]="
+       '/management/park-management'
+      " routerLinkActive="active">
+      Back
+    </a>
+    <app-button-with-loader [classText]="'btn btn-custom'" [buttonType]="'submit'" [idleStateText]="'Print'"
+      [svgIcon]="'assets/icons/print.svg'"></app-button-with-loader>
+  </div>
+  <div style="border: 4px #e6ebf2; position: relative">
+    <img src="" alt="" class="image-cont" />
+    <!-- <img
+      src="assets/icons/edit.svg"
+      alt=""
+      class=""
+      style="position: absolute"
+    /> -->
+  </div>
+
+  <div class="admin-form-container">
+    <form [formGroup]="parkmanagementForm" (ngSubmit)="onSubmit()">
+      <div class="first-div">
+        <div class="form-group">
+          <label for="firstName">Park Name</label>
+          <input type="text" formControlName="parkName" id="parkName" class="form-control" placeholder="Kubwa park" />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Location</label>
+          <input type="text" formControlName="location" id="location" class="form-control" placeholder="Agege,Lagos" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Chairman</label>
+          <input type="text" formControlName="chairman" id="chairman" class="form-control"
+            placeholder="chairman for the park" />
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Current no of Workers</label>
+          <input type="number" formControlName="currentNoOfWorker" id="currentNoOfWorker" class="form-control"
+            placeholder="60" />
+        </div>
+
+        <div class="form-group">
+          <label for="address">Current no of Agent</label>
+          <input type="number" formControlName="currentNoOfAgent" id="currentNoOfAgent" class="form-control"
+            placeholder="50" />
+        </div>
+
+        <div class="form-group">
+          <label for="parkId">Registration Number</label>
+          <input type="number" formControlName="registrationNumber" id="registrationNumber" class="form-control"
+            placeholder="098948440" />
+        </div>
+
+        <div class="form-group">
+          <label for="sectors" class="col-form-label">Transport Categories Covered</label>
+          <div>
+            <div
+              *ngFor="let transportCategoriesCovered of ['all', 'Danfo', 'Molue', 'InterCityBus', 'Taxi', 'Okada', 'KekeNapep', 'Truck', 'Trailer', 'Tanker', 'PrivateCar', 'CommercialVehicle']; let i = index">
+              <input type="checkbox" [value]="transportCategoriesCovered"
+                (change)="onTransportCategoriesCoveredArrayChange($event)" /> {{
+              transportCategoriesCovered }}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="parkId">Government Allocated Number</label>
+          <input type="number" formControlName="govtAllocatedNumber" id="govtAllocatedNumber" class="form-control"
+            placeholder="2345678" />
+        </div>
+      </div>
+
+      <div class="form-group d-flex justify-content-center mt-5">
+        <app-button-with-loader [isProcessing]="loading" [classText]="'btn btn-custom px-5 block'"
+          [buttonType]="'submit'" [workingStateText]="
+            'Creating Park...'
+          " [idleStateText]="'Create Park'"></app-button-with-loader>
+      </div>
+    </form>
+  </div>
+</div>

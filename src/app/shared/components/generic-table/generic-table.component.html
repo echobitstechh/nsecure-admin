@@ -10,12 +10,7 @@
         </th>
         <th *ngFor="let column of columns" class="headarr">
           {{ column.label }}
-          <img
-            *ngIf="column.field !== 'actions'"
-            src="assets/icons/arrowdown.svg"
-            alt=""
-            class="headarrimg"
-          />
+          <!-- <img *ngIf="column.field !== 'actions'" src="assets/icons/arrowdown.svg" alt="" class="headarrimg" /> -->
         </th>
       </tr>
     </thead>
@@ -29,110 +24,114 @@
           <ng-container [ngSwitch]="column.field">
             <ng-container *ngSwitchCase="'firstName'">
               <div class="dataflex">
-                <img
-                  *ngIf="tableData.image"
-                  [src]="tableData.image"
-                  alt="worker image"
-                  class="generic-image"
-                />
+                <img *ngIf="tableData.image" [src]="tableData.image" alt="worker image" class="generic-image" />
                 <div>
-                  <span
-                    style="color: #101828; font-size: 16px; font-weight: 400"
-                  >
+                  <span style="color: #101828; font-size: 16px; font-weight: 400">
                     {{ tableData.firstName + " " + tableData.lastName }}
                   </span>
-                  <span
-                    *ngIf="tableData.image"
-                    style="color: #667085; font-size: 14px; font-weight: 400"
-                    >{{ tableData.email }}</span
-                  >
+                  <span *ngIf="tableData.image" style="color: #667085; font-size: 14px; font-weight: 400">{{
+                    tableData.email }}</span>
                 </div>
               </div>
             </ng-container>
             <ng-container *ngSwitchCase="'category'">{{
               tableData.category
-            }}</ng-container>
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'parkName'">{{
+              tableData.parkName
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'location'">{{
+              tableData.location
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'fieldAgentCount'">{{
+              tableData.fieldAgentCount
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'currentNoOfAgent'">{{
+              tableData.currentNoOfAgent
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'chairman'">{{
+              tableData.chairman
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'transportCategoriesCovered'">{{
+              tableData.transportCategoriesCovered
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'driverCount'">{{
+              tableData.driverCount
+              }}</ng-container>
             <ng-container *ngSwitchCase="'email'">{{
               tableData.email
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'userId'">{{
               tableData.userId
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'status'">{{
               tableData.status
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'carType'">{{
               tableData.carType
-            }}</ng-container>
+              }}</ng-container>
             <div class="taxp-col">
               <ng-container *ngSwitchCase="'taxPayers'">{{
                 tableData.taxPayers
-              }}</ng-container>
+                }}</ng-container>
             </div>
             <ng-container *ngSwitchCase="'licensePlate'">{{
               tableData.licensePlate
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'residenceAddress'">{{
               tableData.residenceAddress
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'carPark'">{{
               tableData.carPark
-            }}</ng-container
-            ><ng-container *ngSwitchCase="'time'">{{
+              }}</ng-container><ng-container *ngSwitchCase="'time'">{{
               tableData.time
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'username'">{{
               tableData.username
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'session_id'">{{
               tableData.session_id
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'role'">{{
               tableData.role
-            }}</ng-container
-            ><ng-container *ngSwitchCase="'activityType'">{{
+              }}</ng-container><ng-container *ngSwitchCase="'activityType'">{{
               tableData.activityType
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'details'">{{
               tableData.details
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'ip_address'">{{
               tableData.ip_address
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'durations'">{{
               tableData.durations
-            }}</ng-container
-            ><ng-container *ngSwitchCase="'country'">{{
+              }}</ng-container><ng-container *ngSwitchCase="'country'">{{
               tableData.country
-            }}</ng-container
-            ><ng-container *ngSwitchCase="'isActive'">{{
+              }}</ng-container><ng-container *ngSwitchCase="'isActive'">{{
               tableData.isActive
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'createdAt'">{{
               tableData.createdAt
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'updatedAt'">{{
               tableData.updatedAt
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'phoneNumber'">{{
               tableData.phoneNumber
-            }}</ng-container>
+              }}</ng-container>
             <ng-container *ngSwitchCase="'vehicleYear'">{{
               tableData.vehicleYear
-            }}</ng-container
-            ><ng-container *ngSwitchCase="'vehicleManufacturer'">{{
+              }}</ng-container><ng-container *ngSwitchCase="'vehicleManufacturer'">{{
               tableData.vehicleManufacturer
-            }}</ng-container
-            ><ng-container *ngSwitchCase="'gender'">{{
+              }}</ng-container><ng-container *ngSwitchCase="'gender'">{{
               tableData.gender
-            }}</ng-container>
+              }}</ng-container>
+            <ng-container *ngSwitchCase="'amountDue'">{{
+              tableData.amountDue
+              }}</ng-container>
             <ng-container *ngSwitchCase="'actions'">
-              <button
-                mat-button
-                (click)="openDetails(tableData)"
-                class="shadow-sm"
-              >
-                View Details
+              <button mat-button (click)="openDetails(tableData)" class="shadow-sm">
+                {{buttonLabel}}
               </button>
             </ng-container>
           </ng-container>
@@ -144,7 +143,7 @@
     <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">
       Previous
     </button>
-    <span>Page {{ currentPage }}</span>
+    <span>Page {{ currentPage }} of {{totalPages}}</span>
     <button (click)="goToNextPage()" [disabled]="currentPage === totalPages">
       Next
     </button>
@@ -157,21 +156,13 @@
       <h5 *ngIf="column.field === 'firstName'">
         {{ tableData.firstName + " " + tableData.lastName }}
       </h5>
-      <div
-        *ngIf="column.field !== 'actions' && column.field !== 'firstName'"
-        class="d-inline-flex flex-"
-      >
+      <div *ngIf="column.field !== 'actions' && column.field !== 'firstName'" class="d-inline-flex flex-">
         {{ column.label }}: {{ tableData[column.field] }}
       </div>
       <p></p>
     </div>
-    <button
-      mat-button
-      (click)="openDetails(tableData)"
-      class="shadow-sm"
-      *ngIf="hasActionsColumn()"
-    >
-      View Details
+    <button mat-button (click)="openDetails(tableData)" class="shadow-sm" *ngIf="hasActionsColumn()">
+      {{buttonLabel}}
     </button>
   </div>
 </div>

@@ -1,0 +1,91 @@
+<div class="px-4 d-flex flex-column gap-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <a class="back" aria-current="page" [routerLink]="'/management/super-agent/list_of_super-agents'"
+      routerLinkActive="active">
+      Back
+    </a>
+    <app-button-with-loader [classText]="'btn btn-custom'" [buttonType]="'submit'" [idleStateText]="'Print'"
+      [svgIcon]="'assets/icons/print.svg'"></app-button-with-loader>
+  </div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <img src="" alt="" style="height: 4rem; width: 4rem; border-radius: 50%" />
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <button mat-button (click)="openDialog('deactivate')" class="popup-btns" style="
+          color: #000000cc;
+          font-size: 14px;
+          display: inline-flex;
+          gap: 5px;
+          flex-direction: column;
+          align-items: center;
+        ">
+        <img src="assets/icons/deactivate.svg" alt="Deactivation" style="width: 30px; height: 30px" />
+        Deactivate
+      </button>
+      <a style="
+          color: #000000cc;
+          font-size: 14px;
+          display: inline-flex;
+          gap: 5px;
+          text-decoration: none;
+          flex-direction: column;
+          align-items: center;
+        " aria-current="page" routerLink="/management/super-agent/update_super_agent" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        <img src="assets/icons/editmang.svg" alt="Deactivation" style="width: 30px; height: 30px" />
+        Edit
+      </a>
+      <button mat-button (click)="openDialog('delete')" class="popup-btns" style="
+          color: #000000cc;
+          font-size: 14px;
+          display: inline-flex;
+          gap: 5px;
+          flex-direction: column;
+          align-items: center;
+        ">
+        <img src="assets/icons/delete.svg" alt="Deactivation" style="width: 30px; height: 30px" />
+        Delete
+      </button>
+    </div>
+  </div>
+  <div class="admin-input-dis">
+    <div>
+      <label for="title">Title</label>
+      <input [type]="superagent.title" readonly />
+    </div>
+    <div>
+      <label for="name">Name of </label>
+      <input [type]="superagent.name" readonly />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input [type]="superagent.email" readonly />
+    </div>
+    <div>
+      <label for="phoneNumber">Phone Number</label>
+      <input [type]="superagent.phoneNumber" readonly />
+    </div>
+    <div>
+      <label for="role">Role</label>
+      <input [type]="superagent.role" readonly />
+    </div>
+    <div>
+      <label for="park">Park</label>
+      <input [type]="superagent.park" readonly />
+    </div>
+  </div>
+  <div>
+    <app-generic-table [tableDatas]="superagent" [columns]="[
+        { field: 'userId', label: 'Field Agent ID' },
+        { field: 'firstName', label: 'Name' },
+        { field: 'phoneNumber', label: 'Contact Number' },
+        { field: 'carPark', label: 'Park' },
+        { field: 'taxPayers', label: 'Tax Payers' },
+        { field: 'email', label: 'Email' },
+        { field: 'status', label: 'Status' },
+        { field: 'actions', label: '' }
+      ]" [showCheckboxColumn]="true" [showSerialNumber]="false"
+      (rowClick)="onFieldAgentClick($event)"></app-generic-table>
+  </div>
+</div>

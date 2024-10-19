@@ -41,6 +41,14 @@ interface TableData {
   country?: string;
   taxPayers?: number;
   status?: string;
+  amountDue?: number;
+  parkName?: string;
+  location?: string;
+  fieldAgentCount?: number;
+  driverCount?: number;
+  transportCategoriesCovered?: any;
+  chairman?: string;
+  currentNoOfAgent?: number;
 }
 
 interface TableColumn {
@@ -62,6 +70,7 @@ export class GenericTableComponent implements OnInit {
   @Input() modalTemplate: TemplateRef<any> | null = null;
   // @Input() routeLink: string | null = null;
   @Output() rowClick = new EventEmitter<any>();
+  @Input() buttonLabel: string = 'View Details';
 
   onRowClick(row: any): void {
     this.rowClick.emit(row);
@@ -72,7 +81,9 @@ export class GenericTableComponent implements OnInit {
   }
   pageSize = 10;
   currentPage = 1;
-  totalPages = Math.ceil(this.tableDatas.length / this.pageSize);
+  get totalPages() {
+    return Math.ceil(this.tableDatas.length / this.pageSize);
+  }
   isLargeScreen = true;
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

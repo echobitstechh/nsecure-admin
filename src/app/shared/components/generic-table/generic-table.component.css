@@ -15,7 +15,7 @@
 .generic-table td {
   padding: 12px;
   border-bottom: 1px solid #ddd;
-  text-align: left;
+  text-align: center;
 }
 
 .generic-table th {
@@ -68,7 +68,7 @@
 .generic-table td {
   color: #202224;
   background-color: #ffffff;
-  text-align: start;
+  text-align: center;
   font-size: 12px;
 }
 .taxp-col {

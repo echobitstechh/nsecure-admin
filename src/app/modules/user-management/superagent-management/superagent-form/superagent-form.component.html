@@ -1,0 +1,85 @@
+<div class="big-admin-form-cont d-flex flex-column gap-4">
+  <div class="d-flex justify-content-between align-items-center">
+    <a class="back" aria-current="page" [routerLink]="
+        isUpdate
+          ? '/management/super-agent/superagent-details'
+          : '/management/super-agent'
+      " routerLinkActive="active">
+      Back
+    </a>
+    <app-button-with-loader [classText]="'btn btn-custom'" [buttonType]="'submit'" [idleStateText]="'Print'"
+      [svgIcon]="'assets/icons/print.svg'"></app-button-with-loader>
+  </div>
+  <div style="border: 4px #e6ebf2; position: relative">
+    <img src="" alt="" class="image-cont" />
+    <!-- <img
+      src="assets/icons/edit.svg"
+      alt=""
+      class=""
+      style="position: absolute"
+    /> -->
+  </div>
+
+  <div class="admin-form-container">
+    <form [formGroup]="superagentForm" (ngSubmit)="onSubmit()">
+      <div class="first-div">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" formControlName="firstName" id="firstName" class="form-control"
+            placeholder="Name is name" />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Last Name</label>
+          <input type="text" formControlName="lastName" id="lastName" class="form-control" placeholder="Name is name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" formControlName="email" id="email" class="form-control"
+            placeholder="example@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number</label>
+          <input type="text" formControlName="phoneNumber" id="phoneNumber" class="form-control"
+            placeholder="2348199999003" />
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" formControlName="address" id="address" class="form-control"
+            placeholder="unknown location" />
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select formControlName="role" id="role" class="form-control">
+            <option value="Field Agent">Field Agent</option>
+            <option value="Super Agent">Super Agent</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="parkId">Park</label>
+          <!-- <select formControlName="parkId" id="parkId" class="form-control">
+            <option value="mangu park">Mangu Park</option>
+            <option value="mararaba park">Mararaba Park</option>
+          </select> -->
+          <input type="text" formControlName="parkId" id="parkId" class="form-control" placeholder="098276" />
+        </div>
+
+        <div class="form-group" *ngIf="!isUpdate || role === 'Field Agent'">
+          <label for="supervisorId">Supervisor Id</label>
+          <input type="text" formControlName="supervisorId" id="supervisorId" class="form-control"
+            placeholder="2345678" />
+        </div>
+      </div>
+
+      <div class="form-group d-flex justify-content-center mt-5">
+        <app-button-with-loader [classText]="'btn btn-custom px-5 block'" [buttonType]="'submit'" [workingStateText]="
+            isUpdate ? 'Updating...' : 'Creating Super Agent...'
+          " [idleStateText]="isUpdate ? 'Update' : 'Create Super Agent'"></app-button-with-loader>
+      </div>
+    </form>
+  </div>
+</div>
