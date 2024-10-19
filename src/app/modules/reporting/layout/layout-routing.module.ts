@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: ReportingHomeComponent,
     children: [
-      { path: 'payment-report', component: InvoiceReportComponent },
+      { path: 'invoice-report', component: InvoiceReportComponent },
       { path: 'collection-report', component: CollectionReportComponent },
       { path: '', redirectTo: 'collection-report', pathMatch: 'full' },
     ],
