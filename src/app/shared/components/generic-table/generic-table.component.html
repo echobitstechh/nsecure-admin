@@ -113,6 +113,22 @@
                 {{buttonLabel}}
               </button>
             </ng-container>
+            <ng-container *ngSwitchCase="'invoice'">{{
+              tableData.invoice
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'name'">{{
+                tableData.name
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'categorys'">{{
+              tableData.categorys
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'amount'">{{
+              tableData.amount
+            }}</ng-container>
+            <ng-container *ngSwitchCase="'date'">{{
+              tableData.date
+            }}</ng-container>
+              
           </ng-container>
         </td>
       </tr>

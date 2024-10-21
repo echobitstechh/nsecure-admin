@@ -2,9 +2,27 @@
   <p class="reporting-header" style="color: #202224; font-weight: 700; font-size: 32px">
     Reporting
   </p>
-  <div></div>
+  <div class="card">
+    <div class="card-content">
+      <div class="card-content-words">
+        <div class="card-title">{{ title }}</div>
+        <div class="card-value">{{ value }}</div>
+      </div>
+      <div class="">
+        <img *ngIf="iconUrl" [src]="iconUrl" alt="icon" />
+      </div>
+    </div>
+  
+    <div class="card-trend">
+      <img *ngIf="iconUrlTwo" [src]="iconUrlTwo" alt="icon" />
+      <span class="trend-value" [ngClass]="{ green: trendColor === 'green', red: trendColor === 'red' }">{{ trend }}</span>
+      <span class="trend-text">{{ trendText }}</span>
+    </div>
+  </div>
+  
   <div class="" style="background-color: #ffffff">
     <app-reporting-nav></app-reporting-nav>
     <router-outlet></router-outlet>
   </div>
 </div>
+

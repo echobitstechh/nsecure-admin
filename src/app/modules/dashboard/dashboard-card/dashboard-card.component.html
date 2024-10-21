@@ -13,9 +13,7 @@
     <img *ngIf="iconUrlTwo" [src]="iconUrlTwo" alt="icon" />
     <span
       class="trend-value"
-      [ngClass]="{ green: trendColor === 'green', red: trendColor === 'red' }"
-      >{{ trend }}</span
-    >
+      [ngClass]="{ green: trendColor === 'green', red: trendColor === 'red' }">{{ trend }}</span>
     <span class="trend-text">{{ trendText }}</span>
   </div>
 </div>

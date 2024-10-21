@@ -42,6 +42,12 @@ interface TableData {
   taxPayers?: number;
   status?: string;
   amountDue?: number;
+  name?: string;
+  date?: string | number;
+  invoice?: string ;
+  amount?: string ;
+  categorys?: string;
+  
 }
 
 interface TableColumn {

@@ -1,1 +1,39 @@
-<p>collection-report works!</p>
+<!-- <p>collection-report works!</p> -->
+
+<div class="audit-div-three">
+    <app-generic-table
+      [tableDatas]= "auditLogs"
+      [columns]="[
+        { field: 'invoice', label: 'Invoice No' },
+        { field: 'name', label: ' Name' },
+        { field: 'categorys', label: 'Category' },
+        { field: 'amount', label: 'Amount ' },
+        { field: 'date', label: 'Date' },
+        { field: 'actions', label: '' }
+      ]"
+      [modalTemplate]="customModal"
+    ></app-generic-table>
+    <ng-template #customModal let-data>
+      <div class="auditlog-modal-details">
+        
+        <p>
+          Invoice <span>{{ data.invoice }}</span>
+        </p>
+        <p>
+          Name: <span>{{ data.name }}</span>
+        </p>
+        <p>
+          Category: <span>{{ data.categorys }}</span>
+        </p>
+        <p>
+          Amount <span>{{ data.amount }}</span>
+        </p>
+        <p>
+          Date: <span>{{ data.date }}</span>
+        </p>
+       
+      </div>
+    </ng-template>
+  </div>
+
+  
