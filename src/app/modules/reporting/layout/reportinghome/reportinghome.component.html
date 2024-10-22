@@ -2,22 +2,18 @@
   <p class="reporting-header" style="color: #202224; font-weight: 700; font-size: 32px">
     Reporting
   </p>
-  <div class="card">
-    <div class="card-content">
-      <div class="card-content-words">
-        <div class="card-title">{{ title }}</div>
-        <div class="card-value">{{ value }}</div>
-      </div>
-      <div class="">
-        <img *ngIf="iconUrl" [src]="iconUrl" alt="icon" />
-      </div>
-    </div>
-  
-    <div class="card-trend">
-      <img *ngIf="iconUrlTwo" [src]="iconUrlTwo" alt="icon" />
-      <span class="trend-value" [ngClass]="{ green: trendColor === 'green', red: trendColor === 'red' }">{{ trend }}</span>
-      <span class="trend-text">{{ trendText }}</span>
-    </div>
+    
+  <div class="dashboard-first-div">
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Public Transport Workers"
+    [value]="dashboardData?.totalTransportWorkers?.totalDrivers ?? 0"
+    trend="8.5%"
+    trendText="Up from yesterday"
+    iconUrl="assets/icons/ptw.svg"
+    iconUrlTwo="assets/icons/slopeup.svg">
+
+    </app-reportinghome-card>
+   
   </div>
   
   <div class="" style="background-color: #ffffff">

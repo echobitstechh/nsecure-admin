@@ -1,67 +1,47 @@
-.custom-round {
-  border-radius: 14px;
+.dashboard-first-div {
+  display: flex;
+  gap: 18px;
+}
+.dashboard-second-div {
+  display: flex;
+  gap: 27px;
+}
+.dashboard-third-div {
+  display: flex;
+  gap: 16px;
+}
+.dashboard-first-div-card {
+  width: 25%;
+}
+.dashboard-third-div-card {
+  flex: 1;
+}
+.dashboard-second-div-card-one {
+  width: 40%;
+}
+.dashboard-second-div-card-two {
+  width: 60%;
 }
 @media (max-width: 820px) {
-  .reporting-header {
-    font-weight: 500;
-    font-size: 22px;
-    text-align: center;
+  .dashboard-first-div {
+    flex-direction: column;
+    gap: 8px;
   }
-  .custom-round {
-    border-radius: 10px;
+  .dashboard-first-div-card {
+    width: 100%;
   }
-}
-
-.card {
-  padding: 8px 8px;
-  border-radius: 10px;
-  background-color: #fff;
-  /* width: 295px; */
-  height: 160px;
-  border: none;
-}
-
-.card-content {
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: space-between;
-}
-
-.card-title {
-  font-size: 16px;
-  color: #202224;
-  opacity: 70%;
-  margin-top: 10px;
-}
-
-.card-value {
-  font-size: 24px;
-  font-weight: 700;
-  color: #202224;
-}
-
-.card-trend {
-  display: flex;
-  align-items: center;
-  margin-top: 32px;
-}
-.card-trend img {
-  width: 20px;
-  margin-right: 4px;
-}
-.trend-value.green {
-  font-size: 16px;
-  color: #00b69b;
-  margin-right: 4px;
-}
-
-.trend-value.red {
-  font-size: 16px;
-  color: #f93c65;
-  margin-right: 4px;
-}
-.trend-text {
-  font-size: 16px;
-  font-weight: 600;
-  color: #606060;
+  .dashboard-third-div {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .dashboard-second-div {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .dashboard-second-div-card-one {
+    width: 100% !important;
+  }
+  .dashboard-second-div-card-two {
+    width: 100% !important;
+  }
 }

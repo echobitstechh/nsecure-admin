@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ReportingHomeComponent } from './reportinghome/reportinghome.component';
 import { CollectionReportComponent } from '../collection-report/collection-report.component';
 import { InvoiceReportComponent } from '../invoice-report/invoice-report.component';
+import { ReportingHomeCard } from './reportinghome-card/reportinghome-card/reportinghome-card.component';
+
+
+
 
 const routes: Routes = [
   {
     path: '',
-    component: ReportingHomeComponent,
+    component: ReportingHomeCard,
     children: [
       { path: 'invoice-report', component: InvoiceReportComponent },
       { path: 'collection-report', component: CollectionReportComponent },
