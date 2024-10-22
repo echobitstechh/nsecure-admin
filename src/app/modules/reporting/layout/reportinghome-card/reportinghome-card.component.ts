@@ -1,11 +1,9 @@
 
 import { Component, Input } from '@angular/core';
-import { ReportingHomeCardComponent } from '.rd/reportinghome-card.component';
 
 
 @Component({
   selector: 'app-reportinghome-card',
- 
   templateUrl: './reportinghome-card.component.html',
   styleUrl: './reportinghome-card.component.css'
 })
