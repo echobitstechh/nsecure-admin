@@ -15,6 +15,11 @@
     ></app-generic-table>
     <ng-template #customModal let-data>
       <div class="auditlog-modal-details">
+        <div>
+          <h4>Activity</h4>
+          <button mat-button (click)="closeModal()">X</button>
+        </div>
+      
         
         <p>
           Invoice <span>{{ data.invoice }}</span>

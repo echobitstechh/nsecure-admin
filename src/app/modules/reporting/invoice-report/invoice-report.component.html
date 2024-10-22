@@ -1,1 +1,43 @@
-<p>payment-report works!</p>
+<!-- <p>payment-report works!</p> -->
+<div class="audit-div-three">
+    <app-generic-table
+      [tableDatas]= "auditLogs"
+      [columns]="[
+        { field: 'invoice', label: 'Invoice No' },
+        { field: 'name', label: ' Name' },
+        { field: 'categorys', label: 'Category' },
+        { field: 'amount', label: 'Amount Due' },
+        { field: 'date', label: 'Date Due' },
+         { field: 'status', label: 'Status' },
+        { field: 'actions', label: '' }
+      ]"
+      [modalTemplate]="customModal"
+    ></app-generic-table>
+    <ng-template #customModal let-data>
+      <div class="auditlog-modal-details">
+        <div>
+            <h4>Activity</h4>
+            <button mat-button (click)="closeModal()">X</button>
+          </div>
+        
+        <p>
+          Invoice: <span>{{ data.invoice }}</span>
+        </p>
+        <p>
+          Name: <span>{{ data.name }}</span>
+        </p>
+        <p>
+          Category: <span>{{ data.categorys }}</span>
+        </p>
+        <p>
+          Amount Due:<span>{{ data.amount }}</span>
+        </p>
+        <p>
+          Date Due: <span>{{ data.date }}</span>
+        </p>
+        <p>
+            Status: <span>{{ data.status }}</span>
+          </p>
+      </div>
+    </ng-template>
+  </div>

@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './collection-report.component.css',
 })
 export class CollectionReportComponent {
+  constructor(public dialog: MatDialog) {}
   auditLogs = [
     {
       invoice: 'INV12345',
@@ -49,5 +50,8 @@ export class CollectionReportComponent {
       
     },
   ];
+  closeModal() {
+    this.dialog.closeAll();
+  }
 
 }

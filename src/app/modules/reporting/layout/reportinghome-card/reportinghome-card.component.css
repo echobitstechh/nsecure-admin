@@ -33,19 +33,44 @@
   }
   .card-trend img {
     width: 20px;
-    margin-right: 4px;
+    margin-right: 0%;
+    width: 60px;
+    height: 30px;
   }
-  .trend-value.green {
+  .trend-value.orange {
     font-size: 16px;
-    color: #00b69b;
-    margin-right: 4px;
+    color: #FF392B;
+    margin-left: 4px;
+    text-align: right;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* line-height: 21.08px; */
+    /* width: 32px;
+    /* height: 22px;  */
   }
   
-  .trend-value.red {
+   .trend-value.yellow {
     font-size: 16px;
-    color: #f93c65;
+    color: #FF8901;
     margin-right: 4px;
-  }
+    text-align: right;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  } 
+  .trend-value.green {
+    font-size: 16px;
+    color: #279F51;
+    margin-right: 4px;
+    text-align: right;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  } 
   .trend-text {
     font-size: 16px;
     font-weight: 600;

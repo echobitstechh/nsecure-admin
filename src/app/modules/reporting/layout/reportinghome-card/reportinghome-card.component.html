@@ -4,15 +4,14 @@
       <div class="card-title">{{ title }}</div>
       <div class="card-value">{{ value }}</div>
     </div>
-    <div class="">
+    <div class="card-trend">
       <img *ngIf="iconUrl" [src]="iconUrl" alt="icon" />
     </div>
   </div>
 
   <div class="card-trend">
-    <img *ngIf="iconUrlTwo" [src]="iconUrlTwo" alt="icon" />
-    <span class="trend-value" [ngClass]="{ green: trendColor === 'green', red: trendColor === 'red' }">{{ trend
-      }}</span>
-    <span class="trend-text">{{ trendText }}</span>
+    <!-- <img *ngIf="iconUrlTwo" [src]="iconUrlTwo" alt="icon" /> -->
+    <span class="trend-value" [ngClass]="{ orange: trendColor === 'orange', yellow: trendColor === 'yellow' }">{{ trend}}</span>
+    <!-- <span class="trend-text">{{ trendText }}</span> -->
   </div>
 </div>

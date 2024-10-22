@@ -45,3 +45,38 @@
     width: 100% !important;
   }
 }
+.search-bar {
+  border-radius: 8.092px;
+  border: 1.011px solid var(--Gray-300, #D0D5DD);
+  background: var(--White, #FFF);
+  box-shadow: 0px 1.011px 2.023px 0px rgba(16, 24, 40, 0.05);
+}
+.search-input {
+  width: Fixed (974px)px;
+  height: Fixed (60px)px;
+  padding: 10.11px 14.16px 10.11px 14.16px;
+
+  border-radius: 8.092px;
+  border: 1.011px solid ;
+  background: var(--White, #FFF);
+  box-shadow: 0px 1.011px 2.023px 0px rgba(16, 24, 40, 0.05);
+}
+
+input{
+  width: Fixed (974px)px;
+  height: Fixed (60px)px;
+  padding: 10.11px 14.16px 10.11px 14.16px;
+  gap: 8.09px;
+  border-radius: 20px;
+  border: 1.01px 0px 0px 0px;
+  opacity: 0px;
+
+
+}
+
+.filter img{
+  border-radius: 8.092px;
+  border: 1.011px solid var(--Gray-300, #D0D5DD);
+  background: var(--White, #FFF);
+  box-shadow: 0px 1.011px 2.023px 0px rgba(16, 24, 40, 0.05);
+}

@@ -14,6 +14,6 @@ export class ReportingHomeCard{
   @Input() trendText: string = '';
   @Input() iconUrl: string = '';
   @Input() iconUrlTwo: string = '';
-  @Input() trendColor: 'green' | 'red' = 'green';
+  @Input() trendColor: 'orange' | 'yellow'= 'yellow';
 
 }

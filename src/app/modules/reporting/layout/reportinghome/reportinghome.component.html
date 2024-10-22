@@ -5,16 +5,58 @@
     
   <div class="dashboard-first-div">
     <app-reportinghome-card class="dashboard-first-div-card"
-    title="Public Transport Workers"
-    [value]="''"
-    trend="8.5%"
-    trendText="Up from yesterday"
-    iconUrl="assets/icons/ptw.svg"
-    iconUrlTwo="assets/icons/slopeup.svg">
+    title="Admin"
+    [value]="'42'"
+    trend="+22%"
+    trendText=""
+    iconUrl="assets/icons/yellowTrendline.svg"
+    iconUrlTwo="">
+
+    </app-reportinghome-card>
+
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Super Agent"
+    [value]="'432'"
+    trend="+22%"
+    trendText=""
+    iconUrl="assets/icons/yellowTrendline.svg"
+    iconUrlTwo="">
+
+    </app-reportinghome-card>
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Transport Workers"
+    [value]="'9,000'"
+    trend="-15%"
+    trendText=""
+    iconUrl="assets/icons/orangeTrendline.svg"
+    iconUrlTwo="">
+   
+
+    </app-reportinghome-card>
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Field Agent"
+    [value]="'43,765'"
+    trend="+22%"
+    trendText=""
+    iconUrl="assets/icons/greenTrendline.svg"
+    iconUrlTwo="">
 
     </app-reportinghome-card>
    
+   
   </div>
+  <br>
+  <div class="search-bar">
+     <img src="assets/icons/search.svg" alt=""/>
+    <input
+      type="text"
+      placeholder="Search"
+      
+    />
+   
+  </div>
+  
+    
   
   <div class="" style="background-color: #ffffff">
     <app-reporting-nav></app-reporting-nav>
