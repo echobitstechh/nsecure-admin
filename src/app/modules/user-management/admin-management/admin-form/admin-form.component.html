@@ -1,11 +1,6 @@
 <div class="big-admin-form-cont d-flex flex-column gap-4">
   <div class="d-flex justify-content-between align-items-center">
-    <a
-      class="back"
-      aria-current="page"
-      [routerLink]="'/management/admin/admins-list'"
-      routerLinkActive="active"
-    >
+    <a class="back" aria-current="page" [routerLink]="'/management/admin/admins-list'" routerLinkActive="active">
       Back
     </a>
   </div>
@@ -15,17 +10,9 @@
       <div class="first-div">
         <div style="position: relative">
           <!-- Preview Image -->
-          <img
-            [src]="imagePreview"
-            *ngIf="imagePreview; else noImage"
-            alt="Admin Image"
-            class="admin-image-preview"
-          />
+          <img [src]="imagePreview" *ngIf="imagePreview; else noImage" alt="Admin Image" class="admin-image-preview" />
           <ng-template #noImage>
-            <img
-              src="assets/icons/personprofile.svg"
-              style="height: 4rem; width: 4rem; border-radius: 50%"
-            />
+            <img src="assets/icons/personprofile.svg" style="height: 4rem; width: 4rem; border-radius: 50%" />
           </ng-template>
 
           <button type="button" class="upload-btn" (click)="fileInput.click()">
@@ -33,62 +20,36 @@
           </button>
 
           <!-- Hidden File Input -->
-          <input
-            type="file"
-            #fileInput
-            (change)="onFileSelected($event)"
-            accept="image/*"
-            style="display: none"
-          />
+          <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" style="display: none" />
         </div>
         <div class="form-group">
           <label for="firstName">First Name</label>
-          <input
-            type="text"
-            formControlName="firstName"
-            id="firstName"
-            class="form-control"
-            placeholder="First Name"
-          />
+          <input type="text" formControlName="firstName" id="firstName" class="form-control" placeholder="First Name" />
         </div>
 
         <div class="form-group">
           <label for="lastName">Last Name</label>
-          <input
-            type="text"
-            formControlName="lastName"
-            id="lastName"
-            class="form-control"
-            placeholder="Last Name"
-          />
+          <input type="text" formControlName="lastName" id="lastName" class="form-control" placeholder="Last Name" />
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input
-            type="email"
-            formControlName="email"
-            id="email"
-            class="form-control"
-            placeholder="example@example.com"
-          />
+          <input type="email" formControlName="email" id="email" class="form-control"
+            placeholder="example@example.com" />
         </div>
 
         <div class="form-group">
           <label for="phoneNumber">Phone Number</label>
-          <input
-            type="text"
-            formControlName="phoneNumber"
-            id="phoneNumber"
-            class="form-control"
-            placeholder="2348199999003"
-          />
+          <input type="text" formControlName="phoneNumber" id="phoneNumber" class="form-control"
+            placeholder="2348199999003" />
         </div>
 
         <div class="form-group">
           <label for="role">Role</label>
           <select formControlName="role" id="role" class="form-control">
+            <option value="">--Select--</option>
             <option value="Admin">Admin</option>
+            <option value="Super Admin">Super Admin</option>
           </select>
         </div>
       </div>
@@ -99,33 +60,21 @@
           <div class="accessLevels-form">
             <div class="form-group">
               <label for="dashboard">Dashboard</label>
-              <select
-                formControlName="dashboard"
-                id="dashboard"
-                class="form-control"
-              >
+              <select formControlName="dashboard" id="dashboard" class="form-control">
                 <option [value]="true">True</option>
                 <option [value]="false">False</option>
               </select>
             </div>
             <div class="form-group">
               <label for="analytics">Analytics</label>
-              <select
-                formControlName="analytics"
-                id="analytics"
-                class="form-control"
-              >
+              <select formControlName="analytics" id="analytics" class="form-control">
                 <option [value]="true">True</option>
                 <option [value]="false">False</option>
               </select>
             </div>
             <div class="form-group">
               <label for="enumerator">Enumerator</label>
-              <select
-                formControlName="enumerator"
-                id="enumerator"
-                class="form-control"
-              >
+              <select formControlName="enumerator" id="enumerator" class="form-control">
                 <option [value]="true">True</option>
                 <option [value]="false">False</option>
               </select>
@@ -139,44 +88,28 @@
             </div>
             <div class="form-group">
               <label for="taxpayers">Taxpayers</label>
-              <select
-                formControlName="taxpayers"
-                id="taxpayers"
-                class="form-control"
-              >
+              <select formControlName="taxpayers" id="taxpayers" class="form-control">
                 <option [value]="true">True</option>
                 <option [value]="false">False</option>
               </select>
             </div>
             <div class="form-group">
               <label for="adminLists">Admins List</label>
-              <select
-                formControlName="adminLists"
-                id="adminLists"
-                class="form-control"
-              >
+              <select formControlName="adminLists" id="adminLists" class="form-control">
                 <option [value]="true">True</option>
                 <option [value]="false">False</option>
               </select>
             </div>
             <div class="form-group">
               <label for="auditLog">Audit Log</label>
-              <select
-                formControlName="auditLog"
-                id="auditLog"
-                class="form-control"
-              >
+              <select formControlName="auditLog" id="auditLog" class="form-control">
                 <option [value]="true">True</option>
                 <option [value]="false">False</option>
               </select>
             </div>
             <div class="form-group">
               <label for="eServices">E-services</label>
-              <select
-                formControlName="eServices"
-                id="eServices"
-                class="form-control"
-              >
+              <select formControlName="eServices" id="eServices" class="form-control">
                 <option [value]="true">True</option>
                 <option [value]="false">False</option>
               </select>
@@ -186,15 +119,10 @@
       </div>
 
       <div class="form-group d-flex justify-content-center mt-5">
-        <app-button-with-loader
-          [classText]="'btn btn-custom px-5 block'"
-          [buttonType]="'submit'"
-          [isProcessing]="loading"
-          [workingStateText]="
+        <app-button-with-loader [classText]="'btn btn-custom px-5 block'" [buttonType]="'submit'"
+          [isProcessing]="loading" [workingStateText]="
             isUpdate ? 'Updating Admin...' : 'Creating Admin...'
-          "
-          [idleStateText]="isUpdate ? 'Update Admin' : 'Create Admin'"
-        ></app-button-with-loader>
+          " [idleStateText]="isUpdate ? 'Update Admin' : 'Create Admin'"></app-button-with-loader>
       </div>
     </form>
   </div>

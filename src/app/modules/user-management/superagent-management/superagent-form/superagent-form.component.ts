@@ -45,7 +45,6 @@ export class SuperagentFormComponent implements OnInit {
       role: ['', Validators.required],
       address: ['', Validators.required],
       parkId: ['', Validators.required],
-      supervisorId: [''],
     });
 
     // if (!this.isUpdate || this.role === 'fieldAgent') {
@@ -78,15 +77,34 @@ export class SuperagentFormComponent implements OnInit {
 
     const formValues = this.superagentForm.value;
     if (this.isUpdate) {
-      this.apiService.updateAgent(formValues, this.agentId).subscribe(() => {
-        console.log('Updating admin with ID:', this.agentId);
-        this.showSuccessModal('Super Agent Updated successfully.');
-      });
+      this.loading = true;
+      this.apiService.updateAgent(formValues, this.agentId).subscribe(
+        (response) => {
+          console.log('Updating admin with ID:', this.agentId);
+          if (response.status === 200 || response.status === 201) {
+            this.loading = false;
+            this.showSuccessModal('Super Agent Updated successfully.');
+          } else {
+            this.loading = false;
+          }
+          this.loading = false;
+        },
+        (error) => {
+          this.loading = false;
+        }
+      );
       // Update admin api call
     } else {
       // Create admin api call
-      this.apiService.createAgent(formValues).subscribe(() => {
-        this.showSuccessModal('Super Agent Created successfully.');
+      this.loading = true;
+      this.apiService.createAgent(formValues).subscribe((response) => {
+        if (response.status === 201) {
+          this.loading = false;
+          this.showSuccessModal('Super Agent Created successfully.');
+        } else {
+          this.loading = false;
+        }
+        this.loading = false;
       });
     }
   }

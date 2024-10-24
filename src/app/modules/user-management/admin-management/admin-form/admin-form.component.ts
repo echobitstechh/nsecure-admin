@@ -42,7 +42,7 @@ export class AdminFormComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', Validators.required],
-      role: ['Admin', Validators.required],
+      role: ['', Validators.required],
       image: ['', Validators.required],
       accessLevels: this.fb.group({
         dashboard: [true, Validators.required],
