@@ -67,7 +67,11 @@
   width: 100;
   height: fit-content;
 }
-
+@media (min-width: 768px) {
+  .search-div {
+    width: 950px;
+  }
+}
 .search-input {
   border: none;
   outline: none;
