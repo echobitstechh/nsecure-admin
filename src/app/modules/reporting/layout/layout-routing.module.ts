@@ -12,6 +12,7 @@ const routes: Routes = [
       { path: 'invoice-report', component: InvoiceReportComponent },
       { path: 'collection-report', component: CollectionReportComponent },
       { path: '', redirectTo: 'collection-report', pathMatch: 'full' },
+      
     ],
   },
 ];
