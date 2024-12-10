@@ -1,0 +1,38 @@
+<div class="p-3">
+    <a class="back" aria-current="page" [routerLink]="'/management/park-management/parks'" routerLinkActive="active">
+        Back
+    </a>
+    <div class="row gx-4">
+        <div class="col-md-8 bg-white rounded-lg rounded">
+            <app-park-pie-chart [timeFrames]="['Monthly', 'Weekly', 'Daily']"
+                [data]="pieChartData"></app-park-pie-chart>
+        </div>
+        <app-parks-list-card [title]="'Track Debtors'" [icon]="'assets/icons/track.svg'" class="col-md-4"
+            routerLink="/management/field-agent/add-fieldagent"></app-parks-list-card>
+    </div>
+    <div class="row gx-4 px-1 py-4">
+        <div class="row col-lg-10 col-md-6">
+            <app-button-with-loader [idleStateText]="'Filters'" [svgIcon]="'assets/icons/filterlines.svg'"
+                [classText]="'btn btn-white shadow shadow-md py-2 h-100 px-3'"
+                class="col-md-2"></app-button-with-loader>
+            <div class="shadow-sm phome-search-div col-lg-8 col-md-4">
+                <img src="assets/icons/search.svg" alt="" />
+                <input type="text" placeholder="Search" class="py-2 phome-search-input" />
+            </div>
+        </div>
+        <app-button-with-loader [idleStateText]="'Export'" [svgIcon]="'assets/icons/download.svg'"
+            [classText]="'btn btn-transparent border-primary text-primary py-2 w-100 h-100 px-3'"
+            class="col-md-2"></app-button-with-loader>
+    </div>
+    <div class="p-1 bg-white rounded-lg rounded mb-2">
+        <app-generic-table [buttonLabel]="'Track'" [columns]="[
+                        { field: 'parkName', label: 'Name of Parks' },
+                        { field: 'chairman', label: 'Chairman' },
+                        { field: 'location', label: 'Location' },
+                        { field: 'driverCount', label: 'Transport Workers' },
+                        { field: 'transportCategoriesCovered', label: 'Transport Categories Covered' },
+                        { field: 'fieldAgentCount', label: 'Assigned Field Agents' },]" [showCheckboxColumn]="true"
+            [showSerialNumber]="false"></app-generic-table>
+        <!-- [tableDatas]="" -->
+    </div>
+</div>

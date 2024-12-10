@@ -57,6 +57,13 @@ label {
   flex-direction: column;
   gap: 6px;
 }
+.upload-btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  left: 2.8rem;
+  top: 0.5rem;
+}
 @media (max-width: 820px) {
   .first-div {
     grid-template-columns: repeat(1, 1fr);

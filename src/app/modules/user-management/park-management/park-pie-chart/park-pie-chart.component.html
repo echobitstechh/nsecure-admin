@@ -1,0 +1,10 @@
+<div class="pie-cont">
+    <h1></h1>
+    <div id="pieChart"></div>
+    <select class="card-timeframe" (change)="onTimeFrameChange($event)">
+        <option *ngFor="let timeFrame of timeFrames" [value]="timeFrame">
+            {{ timeFrame }}
+        </option>
+    </select>
+</div>
+<div class="text-div" id="legend"></div>

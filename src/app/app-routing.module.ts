@@ -17,7 +17,7 @@ const routes: Routes = [
       import('./modules/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'analytics',
@@ -25,7 +25,7 @@ const routes: Routes = [
       import('./modules/analytics/analytics.module').then(
         (m) => m.AnalyticsModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'forgot-password',
@@ -53,7 +53,7 @@ const routes: Routes = [
       import('./modules/user-management/management.module').then(
         (m) => m.ManagementModule
       ),
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'authentication',

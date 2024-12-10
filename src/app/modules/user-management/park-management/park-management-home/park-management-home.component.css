@@ -1,0 +1,20 @@
+.more-view {
+  cursor: pointer;
+  color: #053688;
+}
+.phome-search-div {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+  gap: 3px;
+  padding: 0px 14px;
+  /* width: 324px; */
+  height: 45px;
+}
+.phome-search-input {
+  border: none;
+  border-radius: 9px;
+  outline: none;
+  cursor: pointer;
+}

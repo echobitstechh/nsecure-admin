@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   HostListener,
   Input,
   OnInit,
+  Output,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -39,6 +41,14 @@ interface TableData {
   country?: string;
   taxPayers?: number;
   status?: string;
+  amountDue?: number;
+  parkName?: string;
+  location?: string;
+  fieldAgentCount?: number;
+  driverCount?: number;
+  transportCategoriesCovered?: any;
+  chairman?: string;
+  currentNoOfAgent?: number;
 }
 
 interface TableColumn {
@@ -58,14 +68,22 @@ export class GenericTableComponent implements OnInit {
   @Input() showCheckboxColumn = false;
   @Input() showSerialNumber = true;
   @Input() modalTemplate: TemplateRef<any> | null = null;
-  @Input() routeLink: string | null = null;
+  // @Input() routeLink: string | null = null;
+  @Output() rowClick = new EventEmitter<any>();
+  @Input() buttonLabel: string = 'View Details';
+
+  onRowClick(row: any): void {
+    this.rowClick.emit(row);
+  }
 
   ngOnInit(): void {
     this.checkScreenSize();
   }
   pageSize = 10;
   currentPage = 1;
-  totalPages = Math.ceil(this.tableDatas.length / this.pageSize);
+  get totalPages() {
+    return Math.ceil(this.tableDatas.length / this.pageSize);
+  }
   isLargeScreen = true;
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -78,8 +96,8 @@ export class GenericTableComponent implements OnInit {
   constructor(public dialog: MatDialog, private router: Router) {}
 
   openDetails(data: TableData) {
-    if (this.routeLink) {
-      this.router.navigate([this.routeLink]);
+    if (this.rowClick.observers.length > 0) {
+      this.rowClick.emit(data);
     } else {
       this.dialog.open(this.modalTemplate || this.detailsModal, {
         data,

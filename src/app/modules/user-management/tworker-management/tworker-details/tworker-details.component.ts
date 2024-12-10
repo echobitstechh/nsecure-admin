@@ -22,16 +22,16 @@ export class TworkerDetailsComponent implements OnInit {
   ) {}
 
   loadOneAdmin(): void {
-    this.apiService.getAnAdmin().subscribe(
-      (response) => {
-        this.tworker = response;
-        console.log('worker:', this.tworker);
-      },
-      (error) => {
-        this.error = 'Error fetching fieldagent';
-        console.error('Error fetching fieldagent', error);
-      }
-    );
+    // this.apiService.getAnAdmin().subscribe(
+    //   (response) => {
+    //     this.tworker = response;
+    //     console.log('worker:', this.tworker);
+    //   },
+    //   (error) => {
+    //     this.error = 'Error fetching fieldagent';
+    //     console.error('Error fetching fieldagent', error);
+    //   }
+    // );
   }
 
   openDialog(actionType: string): void {

@@ -1,0 +1,14 @@
+.value {
+  color: #202224;
+  font-size: 28px;
+}
+.title {
+  color: #202224;
+  opacity: 70%;
+}
+.view {
+  color: #053688;
+}
+.p-card {
+  cursor: pointer;
+}

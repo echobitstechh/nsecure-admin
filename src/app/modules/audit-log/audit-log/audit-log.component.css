@@ -80,4 +80,8 @@
   .audit-search-input {
     flex: 1;
   }
+  .auditlog-modal-details {
+    padding: 14px;
+    width: 350px;
+  }
 }
