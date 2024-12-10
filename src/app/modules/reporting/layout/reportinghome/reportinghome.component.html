@@ -2,9 +2,110 @@
   <p class="reporting-header" style="color: #202224; font-weight: 700; font-size: 32px">
     Reporting
   </p>
-  <div></div>
+    
+  <div class="dashboard-first-div" *ngIf="!matchRoute">
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Admin"
+    [value]="'42'"
+    trend="+22%"
+    trendText=""
+    iconUrl="assets/icons/yellowTrendline.svg"
+    iconUrlTwo="">
+
+    </app-reportinghome-card>
+
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Super Agent"
+    [value]="'432'"
+    trend="+22%"
+    trendText=""
+    iconUrl="assets/icons/yellowTrendline.svg"
+    iconUrlTwo="">
+
+    </app-reportinghome-card>
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Transport Workers"
+    [value]="'9,000'"
+    trend="-15%"
+    trendText=""
+    iconUrl="assets/icons/orangeTrendline.svg"
+    iconUrlTwo="">
+   
+
+    </app-reportinghome-card>
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Field Agent"
+    [value]="'43,765'"
+    trend="+22%"
+    trendText=""
+    iconUrl="assets/icons/greenTrendline.svg"
+    iconUrlTwo="">
+
+    </app-reportinghome-card>
+   
+   
+  </div>
+
+  <div class="dashboard-first-div" *ngIf="matchRoute">
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Admin"
+    [value]="'42'"
+    trend="+26%"
+    trendText=""
+    iconUrl="assets/icons/yellowTrendline.svg"
+    iconUrlTwo="">
+
+    </app-reportinghome-card>
+
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Super Agent"
+    [value]="'432'"
+    trend="+22%"
+    trendText=""
+    iconUrl="assets/icons/yellowTrendline.svg"
+    iconUrlTwo="">
+
+    </app-reportinghome-card>
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Transport Workers"
+    [value]="'9,000'"
+    trend="-15%"
+    trendText=""
+    iconUrl="assets/icons/orangeTrendline.svg"
+    iconUrlTwo="">
+   
+
+    </app-reportinghome-card>
+    <app-reportinghome-card class="dashboard-first-div-card"
+    title="Field Agent"
+    [value]="'43,765'"
+    trend="+42%"
+    trendText=""
+    iconUrl="assets/icons/greenTrendline.svg"
+    iconUrlTwo="">
+
+    </app-reportinghome-card>
+  </div>
+  <br>
+     <!-- <div class="d-flex gap-3 filtandseardiv">
+    <app-button-with-loader [classText]="'btn btn-custom bg-light text-black shadow-sm'" [idleStateText]="'Filters'"
+      [svgIcon]="'assets/icons/filterlines.svg'" [buttonType]="'button'"></app-button-with-loader> -->
+      
+    <div class="d-flex align-items-center shadow-sm search-div">
+      <img src="assets/icons/search.svg" alt="" />
+      <input type="text" placeholder="Search" class="py-2 search-input" />
+    </div>
+  
+  
+  
+   
+  </div>
+   
+    <br>
+  
   <div class="" style="background-color: #ffffff">
     <app-reporting-nav></app-reporting-nav>
     <router-outlet></router-outlet>
   </div>
-</div>
+
+

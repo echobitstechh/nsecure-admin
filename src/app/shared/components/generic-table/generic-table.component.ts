@@ -49,7 +49,12 @@ interface TableData {
   transportCategoriesCovered?: any;
   chairman?: string;
   currentNoOfAgent?: number;
-}
+  name?: string;
+  date?: string | number;
+  invoice?: string ;
+  amount?: string ;
+  categorys?: string;
+  }
 
 interface TableColumn {
   field: keyof TableData | 'actions';

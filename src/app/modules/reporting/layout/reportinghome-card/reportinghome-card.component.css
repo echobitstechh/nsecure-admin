@@ -1,0 +1,79 @@
+.card {
+    padding: 8px 8px;
+    border-radius: 10px;
+    background-color: #fff;
+    /* width: 295px; */
+    height: 160px;
+    border: none;
+  }
+  
+  .card-content {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    color: #202224;
+    opacity: 70%;
+    margin-top: 10px;
+  }
+  
+  .card-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #202224;
+  }
+  
+  .card-trend {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+  }
+  .card-trend img {
+    width: 20px;
+    margin-right: 0%;
+    width: 60px;
+    height: 30px;
+  }
+  .trend-value.orange {
+    font-size: 16px;
+    color: #FF392B;
+    margin-left: 4px;
+    text-align: right;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* line-height: 21.08px; */
+    /* width: 32px;
+    /* height: 22px;  */
+  }
+  
+   .trend-value.yellow {
+    font-size: 16px;
+    color: #FF8901;
+    margin-right: 4px;
+    text-align: right;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  } 
+  .trend-value.green {
+    font-size: 16px;
+    color: #279F51;
+    margin-right: 4px;
+    text-align: right;
+    font-weight: 700;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  } 
+  .trend-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #606060;
+  }
+  
