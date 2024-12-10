@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ParksCardComponent {
   @Input() title: string = 'Total Number of Park';
-  @Input() value: string | number = '';
-  @Input() valuePrice: number | string = '';
+  @Input() value: string | number = 0;
+  @Input() valuePrice: number | string = 0;
   @Input() icon: string = 'assets/icons/persons.svg';
 }
